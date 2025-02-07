@@ -1,0 +1,15 @@
+# This is the last version that uses Pydantic 1.X (required to generate valid schemas)
+fhir.resources==7.1.0
+
+outlines
+
+transformers
+datasets
+accelerate
+torch
+sentencepiece
+
+# xgrammar (alternative to outlines)
+#xgrammar
+#cuda-python
+#nvidia-cuda-nvrtc-cu12
