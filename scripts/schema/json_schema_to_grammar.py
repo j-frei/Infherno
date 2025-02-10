@@ -585,6 +585,13 @@ class SchemaConverter:
               ('additionalProperties' in schema and schema['additionalProperties'] is not True)):
             required = set(schema.get('required', []))
             properties = list(schema.get('properties', {}).items())
+            # We need to consider the element_required flag
+            for prop_name, prop_schema in properties:
+                if prop_name not in required:
+                    # Check for additional required flag
+                    if prop_schema.get("element_required", False):
+                        required.add(prop_name)
+
             return self._add_rule(rule_name, self._build_object_rule(properties, required, name, schema.get('additionalProperties')))
 
         elif schema_type in (None, 'object') and 'allOf' in schema:
@@ -696,8 +703,8 @@ class SchemaConverter:
             )
         #required_props = [k for k in sorted_props if k in required]
         #optional_props = [k for k in sorted_props if k not in required]
-        optional_props = [k for k in sorted_props if k != "resourceType"]
-        required_props = [k for k in sorted_props if k == "resourceType"]
+        required_props = [k for k in sorted_props if k in required or k == "resourceType"]
+        optional_props = [k for k in sorted_props if k not in required and k != "resourceType"]
 
         if additional_properties is not None and additional_properties != False:
             sub_name = f'{name}{"-" if name else ""}additional'
@@ -712,38 +719,76 @@ class SchemaConverter:
             )
             optional_props.append("*")
 
-        rule = '"{" space '
-        rule += ' "," space '.join(prop_kv_rule_names[k] for k in required_props)
+        if "resourceType" in required_props:
+            # We force the 'resourceType' property to appear first
+            # The required elements are enforced in definition order
+            # but can be surrounded by optional elements.
+            # We do not enforce any order on the optional properties
+            # at the expense that element can appear multiple times
 
-        if optional_props:
-            rule += ' ('
-            if required_props:
-                rule += ' "," space ( '
+            rule = '"{" space '
+            # Add leading resourceType first
+            rule += prop_kv_rule_names["resourceType"]
+            required_props = [ k for k in required_props if k != "resourceType" ]
 
-            def get_recursive_refs(ks, first_is_optional):
-                [k, *rest] = ks
-                kv_rule_name = prop_kv_rule_names[k]
-                comma_ref = f'( "," space {kv_rule_name} )'
-                if first_is_optional:
-                    res = comma_ref + ('*' if k == '*' else '?')
-                else:
-                    res = kv_rule_name + (' ' + comma_ref + "*" if k == '*' else '')
-                if len(rest) > 0:
-                    res += ' ' + self._add_rule(
-                        f'{name}{"-" if name else ""}{k}-rest',
-                        get_recursive_refs(rest, first_is_optional=True)
-                    )
-                return res
+            # Now, wrap optional elements around the required elements
+            optional_rules_line = ' ( "," space ( ' + (' | '.join(
+                f'{prop_kv_rule_names[k]}'
+                for k in optional_props
+            )) + ' ))*'
 
-            rule += ' | '.join(
-                get_recursive_refs(optional_props[i:], first_is_optional=False)
-                for i in range(len(optional_props))
-            )
-            if required_props:
-                rule += ' )'
-            rule += ' )?'
+            rule += optional_rules_line
 
-        rule += ' "}" space'
+            for k in required_props:
+                rule += ' "," space ' + prop_kv_rule_names[k]
+                rule += optional_rules_line
+
+            rule += ' "}" space'
+        else:
+            # The required elements are enforced to be first
+            # We do not enforce any order on the optional properties
+            # at the expense that element can appear multiple times
+            rule = '"{" space '
+            rule += ' "," space '.join(prop_kv_rule_names[k] for k in required_props)
+
+            if optional_props:
+                rule += ' ( "," space ( '
+                rule += ' | '.join(
+                    f'{prop_kv_rule_names[k]}'
+                    for k in optional_props
+                )
+                rule += ' ) )*'
+
+            # if optional_props:
+            #     rule += ' ('
+            #     if required_props:
+            #         rule += ' "," space ( '
+
+            #     def get_recursive_refs(ks, first_is_optional):
+            #         [k, *rest] = ks
+            #         kv_rule_name = prop_kv_rule_names[k]
+            #         comma_ref = f'( "," space {kv_rule_name} )'
+            #         if first_is_optional:
+            #             res = comma_ref + ('*' if k == '*' else '?')
+            #         else:
+            #             res = kv_rule_name + (' ' + comma_ref + "*" if k == '*' else '')
+            #         if len(rest) > 0:
+            #             res += ' ' + self._add_rule(
+            #                 f'{name}{"-" if name else ""}{k}-rest',
+            #                 get_recursive_refs(rest, first_is_optional=True)
+            #             )
+            #         return res
+
+            #     rule += ' | '.join(
+            #         get_recursive_refs(optional_props[i:], first_is_optional=False)
+            #         for i in range(len(optional_props))
+            #     )
+            #     if required_props:
+            #         rule += ' )'
+            #     rule += ' )?'
+
+
+            rule += ' "}" space'
 
         return rule
 
