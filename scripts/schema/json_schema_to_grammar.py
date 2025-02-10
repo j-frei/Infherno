@@ -735,7 +735,7 @@ class SchemaConverter:
             optional_rules_line = ' ( "," space ( ' + (' | '.join(
                 f'{prop_kv_rule_names[k]}'
                 for k in optional_props
-            )) + ' ))*'
+            )) + ' ))*' if optional_props else ''
 
             rule += optional_rules_line
 
