@@ -3,6 +3,7 @@ import xgrammar as xgr
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
 
 dpath = os.path.dirname(os.path.realpath(__file__))
+repo_path = os.path.dirname(dpath)
 
 # Loading the model
 print("Loading model...")
@@ -13,7 +14,7 @@ trf_config = AutoConfig.from_pretrained("meta-llama/Llama-3.1-8B-Instruct")
 
 # Loading the grammar
 print("Loading grammar...")
-grammar_path = os.path.join(dpath, "fhir_grammar_xgrammar.gbnf")
+grammar_path = os.path.join(repo_path, "grammar", "fhir_grammar_xgrammar.gbnf")
 with open(grammar_path, "r") as f:
     grammar = f.read().strip()
 

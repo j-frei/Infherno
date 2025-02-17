@@ -4,6 +4,7 @@ from outlines import models
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 dpath = os.path.dirname(os.path.realpath(__file__))
+repo_path = os.path.dirname(dpath)
 
 # Loading the model
 print("Loading model...")
@@ -15,7 +16,7 @@ ol_model = models.Transformers(trf_model, trf_tokenizer)
 
 # Loading the grammar
 print("Loading grammar...")
-grammar_path = os.path.join(dpath, "fhir_grammar.ebnf")
+grammar_path = os.path.join(repo_path, "grammar", "fhir_grammar.ebnf")
 with open(grammar_path, "r") as f:
     grammar = f.read()
 
@@ -34,7 +35,7 @@ A FHIR resource should look as follows, when only the stated information are con
 """.strip() + "\n"
 
 print(prompt, end="")
-# Outlines also supports streaming output
+# Outlines also advertises support for streaming output (but it does not really work)
 stream = generator.stream(prompt, max_tokens=1024)
 while True:
     try:
