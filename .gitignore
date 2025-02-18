@@ -1,9 +1,7 @@
 # Manual stuff
-scripts/fhir_grammar.gbnf
-scripts/fhir_grammar_xgrammar.gbnf
-scripts/fhir_grammar.ebnf
-scripts/fhir_schema.json
-env/
+/env/
+/cache/
+/grammar/
 
 
 

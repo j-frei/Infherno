@@ -6,6 +6,7 @@ from scripts.utils import determine_device
 
 
 dpath = os.path.dirname(os.path.realpath(__file__))
+repo_path = os.path.dirname(dpath)
 
 device = determine_device()
 
@@ -19,7 +20,7 @@ trf_config = AutoConfig.from_pretrained(model_id)
 
 # Loading the grammar
 print("Loading grammar...")
-grammar_path = os.path.join(dpath, "fhir_grammar_xgrammar.gbnf")
+grammar_path = os.path.join(repo_path, "grammar", "fhir_grammar_xgrammar.gbnf")
 with open(grammar_path, "r") as f:
     grammar = f.read().strip()
 

@@ -1,0 +1,379 @@
+from __future__ import annotations
+import os, re, json, sqlite3
+from functools import reduce
+from urllib.parse import urlparse
+from collections import OrderedDict
+
+from typing import Dict, List, Optional, TypedDict
+
+import requests
+
+from infherno.tools.fhircodes.instance import GenericSnomedInstance, getECLfromConceptRoots
+
+THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_DIR = os.path.dirname(os.path.dirname(os.path.dirname(THIS_DIR)))
+CACHE_DIR = os.path.join(REPO_DIR, "cache")
+CODINGS_CACHE = os.path.join(CACHE_DIR, "codings")
+if not os.path.exists(CODINGS_CACHE):
+    os.makedirs(CODINGS_CACHE, exist_ok=True)
+
+_CODESYSTEM_REDIRECT = {
+    "http://terminology.hl7.org/CodeSystem/timing-abbreviation": "http://www.hl7.org/fhir/codesystem-timing-abbreviation.json"
+}
+
+_CODINGS = OrderedDict({
+    "Patient.name.use": {"vs": "http://hl7.org/fhir/ValueSet/name-use", "type": "code"},
+    "Patient.contact.system": {"vs": "http://hl7.org/fhir/ValueSet/contact-point-system", "type": "code"},
+    "Patient.contact.use": {"vs": "http://hl7.org/fhir/ValueSet/contact-point-use", "type": "code"},
+    "Patient.gender": {"vs": "http://hl7.org/fhir/ValueSet/administrative-gender", "type": "code"},
+    "Patient.address.use": {"vs": "http://hl7.org/fhir/ValueSet/address-use", "type": "code"},
+    "Patient.address.type": {"vs": "http://hl7.org/fhir/ValueSet/address-type", "type": "code"},
+    "Patient.maritalStatus": {"vs": "http://hl7.org/fhir/ValueSet/marital-status", "type": "coding"},
+    # IGNORE Patient.contact.relationship
+    "Condition.clinicalStatus": {"vs": "http://hl7.org/fhir/ValueSet/condition-clinical", "type": "coding"},
+    "Condition.verificationStatus": {"vs": "http://hl7.org/fhir/ValueSet/condition-ver-status", "type": "coding"},
+    # IGNORE Condition.category / Condition Category Codes
+    "Condition.severity": {"vs": "http://hl7.org/fhir/ValueSet/condition-severity", "type": "coding"},
+    "Condition.code": {"vs": "http://hl7.org/fhir/valueSet/condition-code", "type": "coding"},
+    "Condition.bodySite": {"vs": "http://hl7.org/fhir/ValueSet/body-site", "type": "coding"},
+    # IGNORE Condition.participant.function
+    "Condition.stage.summary": {"vs": "http://hl7.org/fhir/ValueSet/condition-stage", "type": "coding"},
+    "Condition.stage.type": {"vs": "http://hl7.org/fhir/ValueSet/condition-stage-type", "type": "coding"},
+    "Condition.evidence": {"vs": "http://hl7.org/fhir/ValueSet/clinical-findings", "type": "coding"},
+    "MedicationStatement.status": {"vs": "http://hl7.org/fhir/ValueSet/medication-statement-status", "type": "code"},
+    # IGNORE MedicationStatement.category
+    "MedicationStatement.medication": {"vs": "http://hl7.org/fhir/ValueSet/medication-codes", "type": "coding"},
+    "MedicationStatement.effectiveTiming.repeat.dayOfWeek": {"vs": "http://hl7.org/fhir/ValueSet/days-of-week", "type": "coding"},
+    "MedicationStatement.effectiveTiming.repeat.when": {"vs": "http://hl7.org/fhir/ValueSet/event-timing", "type": "coding"},
+    "MedicationStatement.effectiveTiming.code": {"vs": "http://hl7.org/fhir/ValueSet/timing-abbreviation", "type": "coding"},
+    "MedicationStatement.reason": {"vs": "http://hl7.org/fhir/ValueSet/condition-code", "type": "coding"},
+    # IGNORE MedicationStatement.dosage.additionalInstruction
+    # Unsupported UnitsOfMeasure "MedicationStatement.dosage.timing.repeat.durationUnit": {"vs": "http://hl7.org/fhir/ValueSet/units-of-time", "type": "coding"},
+    # Unsupported UnitsOfMeasure "MedicationStatement.dosage.timing.repeat.periodUnit": {"vs": "http://hl7.org/fhir/ValueSet/units-of-time", "type": "coding"},
+    "MedicationStatement.dosage.timing.repeat.dayOfWeek": {"vs": "http://hl7.org/fhir/ValueSet/days-of-week", "type": "code"},
+    "MedicationStatement.dosage.timing.repeat.when": {"vs": "http://hl7.org/fhir/ValueSet/event-timing", "type": "code"},
+    "MedicationStatement.dosage.timing.code": {"vs": "http://hl7.org/fhir/ValueSet/timing-abbreviation", "type": "coding"},
+    "MedicationStatement.dosage.asNeededFor": {"vs": "http://hl7.org/fhir/ValueSet/medication-as-needed-reason", "type": "coding"},
+    "MedicationStatement.dosage.site": {"vs": "http://hl7.org/fhir/ValueSet/approach-site-codes", "type": "coding"},
+    "MedicationStatement.dosage.route": {"vs": "http://hl7.org/fhir/ValueSet/route-codes", "type": "coding"},
+    "MedicationStatement.dosage.method": {"vs": "http://hl7.org/fhir/ValueSet/administration-method-codes", "type": "coding"},
+    "MedicationStatement.dosage.doseAndRate.type": {"vs": "http://terminology.hl7.org/ValueSet/dose-rate-type", "type": "coding"},
+    "MedicationStatement.adherence.code": {"vs": "http://hl7.org/fhir/ValueSet/medication-statement-adherence", "type": "coding"},
+    "MedicationStatement.adherence.reason": {"vs": "http://hl7.org/fhir/ValueSet/reason-medication-status-codes", "type": "coding"},
+    "Procedure.status": {"vs": "http://hl7.org/fhir/ValueSet/event-status", "type": "code"},
+    "Procedure.statusReason": {"vs": "http://hl7.org/fhir/ValueSet/procedure-not-performed-reason", "type": "coding"},
+    "Procedure.category": {"vs": "http://hl7.org/fhir/ValueSet/procedure-category", "type": "coding"},
+    "Procedure.code": {"vs": "http://hl7.org/fhir/ValueSet/procedure-code", "type": "coding"},
+    # Unsupported UnitsOfMeasure "Procedure.occurrenceTiming.repeat.durationUnit": {"vs": "http://hl7.org/fhir/ValueSet/units-of-time", "type": "coding"},
+    # Unsupported UnitsOfMeasure "Procedure.occurrenceTiming.repeat.periodUnit": {"vs": "http://hl7.org/fhir/ValueSet/units-of-time", "type": "coding"},
+    "Procedure.occurrenceTiming.repeat.dayOfWeek": {"vs": "http://hl7.org/fhir/ValueSet/days-of-week", "type": "coding"},
+    "Procedure.occurrenceTiming.repeat.when": {"vs": "http://hl7.org/fhir/ValueSet/event-timing", "type": "coding"},
+    "Procedure.occurrenceTiming.code": {"vs": "http://hl7.org/fhir/ValueSet/timing-abbreviation", "type": "coding"},
+    "Procedure.reason": {"vs": "http://hl7.org/fhir/ValueSet/procedure-reason", "type": "coding"},
+    "Procedure.bodySite": {"vs": "http://hl7.org/fhir/ValueSet/body-site", "type": "coding"},
+    "Procedure.outcome": {"vs": "http://hl7.org/fhir/ValueSet/procedure-outcome", "type": "coding"},
+    "Procedure.complications": {"vs": "http://hl7.org/fhir/ValueSet/condition-code", "type": "coding"},
+    "Procedure.followUp": {"vs": "http://hl7.org/fhir/ValueSet/procedure-followup", "type": "coding"},
+    # IGNORE Procedure.focalDevice
+    # IGNORE Procedure.used
+    "Encounter.status": {"vs": "http://hl7.org/fhir/ValueSet/encounter-status", "type": "code"},
+    # IGNORE Encounter.class
+    # IGNORE Encounter.priority
+    # IGNORE Encounter.type
+    # IGNORE Encounter.serviceType
+    # IGNORE Encounter.subjectStatus
+    # IGNORE Encounter.participant.type
+})
+
+def safe_filename(filename):
+    """Return a safe filename that can be used on most filesystems."""
+
+    return "".join([c for c in filename if c.isalpha() or c.isdigit() or c==' ']).rstrip()
+
+def cachedRequest(url):
+    global CODINGS_CACHE
+    """Request a URL and cache the result in a file."""
+    cache_filename = safe_filename(url)
+    cache_path = os.path.join(CODINGS_CACHE, cache_filename + ".json")
+    if os.path.exists(cache_path):
+        with open(cache_path, "r") as f:
+            return json.load(f)
+    else:
+        response = requests.get(url, headers={"Accept": "application/json+fhir, application/json, */*"})
+        response.raise_for_status()
+        r_obj = response.json()
+        with open(cache_path, "w") as f:
+            json.dump(r_obj, f)
+        return r_obj
+
+class Concept(TypedDict):
+    code: str
+    system: str
+    description: Optional[str]
+
+class CodeSystemStaticLoader:
+    def __init__(self, concepts) -> None:
+        self.concepts = concepts
+
+        # Setup db for search
+        self.db = sqlite3.connect(":memory:")
+        self.db.execute("CREATE TABLE IF NOT EXISTS concept (\
+                        code TEXT PRIMARY KEY, system TEXT NOT NULL DEFAULT '', \
+                        description TEXT NOT NULL DEFAULT '', \
+                        search TEXT NOT NULL DEFAULT '');")
+        self.db.executemany("INSERT INTO concept VALUES (?, ?, ?, ?)", [
+            (
+                c["code"],
+                c["system"],
+                (c["description"] if c["description"] is not None else ''),
+                re.sub(r'[^0-9a-zA-Z\s]+', '', c["code"] + "\n" + (c["description"] if c["description"] is not None else '')).lower()
+            )
+            for c in self.getConcepts()
+        ])
+        self.db.commit()
+
+    def count(self):
+        return len(self.concepts)
+
+    def isStored(self):
+        return True
+
+    def getConcepts(self):
+        return self.concepts
+
+    def search(self, query: str = None, limit: int = None):
+        query_words = [ re.sub(r'[^0-9a-zA-Z]+', '', q).lower() for q in query.split() ] if query is not None else []
+        # filter for empty words
+        query_words = [ q for q in query_words if q ]
+        # We can build this query because the terms are cleands for azAZ09
+        sub_stmd = " AND ".join([
+            f"instr(search, '{q}')"
+            for q in query_words
+        ])
+        stmd = "SELECT code, system, description FROM concept"
+        if sub_stmd:
+            stmd += " WHERE " + sub_stmd
+
+        if limit:
+            stmd += f" LIMIT {limit}"
+        result = self.db.execute(stmd)
+        result_items = [
+            {"code": code, "system": system, "description": description}
+            for code, system, description in result.fetchall()
+        ]
+        return result_items
+
+    def getByCode(self, code: str):
+        code_list = [ c for c in self.getConcepts() if c["code"] == code ]
+        if len(code_list) == 1: return code_list[0]
+        elif len(code_list) == 0: return None
+        else: raise ValueError(f"Multiple entries found for code {code}")
+
+    @classmethod
+    def from_url(cls, system_url: str, filter_type: str, filter_info: str):
+        cs_doc = cachedRequest(system_url)
+
+        assert "concept" in cs_doc
+        all_concepts = [
+            {
+                "code": concept["code"],
+                "system": system_url,
+                "description": concept.get("definition")
+            }
+            for concept in cs_doc["concept"]
+        ]
+
+        if filter_type == "all":
+            concepts = all_concepts
+        elif filter_type == "filter":
+            raise Exception("Filter type 'filter' not supported.")
+        elif filter_type == "explicit":
+            allowed_codes = [ fi["code"] for fi in filter_info ]
+            concepts = [ concept for concept in all_concepts if concept["code"] in allowed_codes ]
+
+        return CodeSystemStaticLoader(concepts)
+
+class CodeSystemSNOMEDLoader:
+    system = "http://snomed.info/sct"
+    def __init__(self, n_counts: int, filter: str, snomed_instance: GenericSnomedInstance) -> None:
+        self.n_counts = n_counts
+        self.filter = filter
+        self.snomed_instance = snomed_instance
+
+    def count(self):
+        return self.n_counts
+
+    def getConcepts(self, query: str = None, limit: int = None):
+        return [
+            {
+                "code": concept["id"],
+                "system": self.system,
+                "description": concept["term"],
+            }
+            for concept in self.snomed_instance.search_by_concepts(query, ecl=self.filter, limit=limit)
+        ]
+
+    def search(self, query: str = None, limit: int = None):
+        return self.getConcepts(query=query, limit=limit)
+
+    def getByCode(self, code: str):
+        code_list = [
+            {
+                "code": concept["id"],
+                "system": self.system,
+                "description": concept["term"],
+            }
+            for concept in self.snomed_instance.search_by_concepts(None, conceptIds=[code], limit=1)
+        ]
+        if len(code_list) == 1: return code_list[0]
+        elif len(code_list) == 0: return None
+        else: raise ValueError(f"Multiple entries found for code {code}")
+
+    @classmethod
+    def from_snomed(cls,  store_threshold: int, snomed_instance: GenericSnomedInstance, filter_type: str = "all", filter_info: object = None) -> CodeSystemSNOMEDLoader:
+        filter_ecl = None
+        n_counts = None
+        concepts = None
+
+        if filter_type == "all":
+            assert filter_info is None
+            # We essentially cover all SNOMEDs concepts
+            n_counts = snomed_instance.search_by_concepts(getRawResponse=True, limit=1)["total"]
+            if n_counts <= store_threshold:
+                # we should explicitly keep the results
+                concepts = snomed_instance.search_by_concepts()
+                assert len(concepts) == n_counts
+
+        elif filter_type == "filter":
+            assert filter_info is not None
+            # check format
+            assert len(filter_info) == len([ filter_obj for filter_obj in filter_info if filter_obj["op"] == "is-a" and filter_obj["property"] == "concept"])
+
+            # We cover a limited set of SNOMEDs concepts
+            try:
+                filter_ecl = getECLfromConceptRoots([ filter_obj["value"] for filter_obj in filter_info ])
+                n_counts = snomed_instance.search_by_concepts(getRawResponse=True, limit=1, ecl=filter_ecl)["total"]
+            except:
+                # ECL filter fails. Probably the concept ID is disabled?!
+                print(f"We failed to query SNOMED with filter ECL: {filter_ecl}")
+                return None
+            if n_counts <= store_threshold:
+                # we should explicitly keep the results
+                concepts = snomed_instance.search_by_concepts(limit=None, ecl=filter_ecl)
+
+        elif filter_type == "explicit":
+            assert filter_info is not None
+            # check format
+            assert len(filter_info) == len([ filter_obj for filter_obj in filter_info if "code" in filter_obj])
+
+            #n_counts = snomed_instance.search_by_concepts(getRawResponse=True, limit=1)["total"]
+            n_counts = len(filter_info)
+            concepts = snomed_instance.search_by_concepts(limit=None, conceptIds=[ filter_obj["code"] for filter_obj in filter_info ])
+            assert len(concepts) == n_counts
+        else:
+            raise Exception("Unknown state")
+
+        if concepts is not None:
+            concepts = [
+                {
+                    "code": concept["id"],
+                    "system": cls.system,
+                    "description": concept["term"],
+                }
+                for concept in concepts
+            ]
+            return CodeSystemStaticLoader(concepts=concepts)
+        else:
+            return CodeSystemSNOMEDLoader(n_counts=n_counts, filter=filter_ecl, snomed_instance=snomed_instance)
+
+_VSL_ = {}
+class ValueSetLoader:
+    def __init__(self, url: str, cs: List) -> None:
+        self.url: str = url
+        self.cs: List = cs
+
+    @classmethod
+    def from_url(cls, url, store_threshold: int, snomed_instance: GenericSnomedInstance) -> ValueSetLoader:
+        global _VSL_
+        if (url, store_threshold) in _VSL_:
+            return _VSL_[(url, store_threshold)]
+
+        vs_doc = cachedRequest(url)
+
+        cs = []
+
+        all_cs = vs_doc["compose"]["include"]
+        for cs_item in all_cs:
+            assert "system" in cs_item
+            filter_type = "all"
+            filter_info = None
+
+            if "filter" in cs_item:
+                filter_type = "filter"
+                filter_info = cs_item["filter"]
+            elif "concept" in cs_item:
+                filter_type = "explicit"
+                filter_info = cs_item["concept"]
+
+            # find loader
+            ref_url = cs_item["system"]
+            ref_url = _CODESYSTEM_REDIRECT.get(ref_url, ref_url)
+
+            if ref_url == "http://snomed.info/sct":
+                cs_loader = CodeSystemSNOMEDLoader.from_snomed(store_threshold, snomed_instance, filter_type, filter_info)
+                if cs_loader: cs.append(cs_loader)
+            elif urlparse(ref_url).netloc.endswith("hl7.org"):
+                cs.append(CodeSystemStaticLoader.from_url(ref_url, filter_type, filter_info))
+            else:
+                raise NotImplementedError(f"Unhandled URL: {ref_url}")
+
+        vsl = ValueSetLoader(url, cs)
+        _VSL_[(url, store_threshold)] = vsl
+        return vsl
+
+    def getConcepts(self):
+        return reduce(lambda x,y: x+y, [
+            cs.getConcepts() if isinstance(cs, CodeSystemSNOMEDLoader) \
+            else cs.getConcepts() for cs in self.cs
+        ], [])
+
+    def search(self, query: str = None, limit: int = None):
+        return reduce(lambda x,y: x+y, [
+            cs.search(query, limit) for cs in self.cs
+        ], [])
+
+    def getByCode(self, code: str):
+        code_list = [ e for e in [
+            cs.getByCode(code) for cs in self.cs
+        ] if e]
+        if len(code_list) == 1: return code_list[0]
+        elif len(code_list) == 0: return None
+        else:
+            print(f"Multiple entries found for code {code}:", code_list)
+            return code_list[0]
+
+    def count(self):
+        return reduce(lambda x,y: x+y, [ cs.count() for cs in self.cs], 0)
+
+def getValueSet(fhirpath):
+    if fhirpath not in _CODINGS:
+        raise ValueError(f"{fhirpath} does not exist.\nCodings available:\n" + "\n".join([ f"- {q}" for q,_ in _CODINGS.items() ]))
+    return _CODINGS.get(fhirpath)
+
+def listSupportedCodings():
+    global _CODINGS
+    return _CODINGS.keys()
+
+if __name__ == "__main__":
+    vs_loaders = {}
+    for query, coding_info in _CODINGS.items():
+        url = coding_info["vs"]
+        code_type = coding_info["type"]
+        print(f"Checking {query} @ {url}")
+
+        instance = GenericSnomedInstance("http://snowstorm-uk.misit-augsburg.de", branch="MAIN/2023-08-30", branch_encode=False)
+        vsl = ValueSetLoader.from_url(url, store_threshold=20, snomed_instance=instance)
+        vs_loaders[query] = vsl
+
+        print(f"-> {vsl.count()} entries found.")
+        print("-"*5)
