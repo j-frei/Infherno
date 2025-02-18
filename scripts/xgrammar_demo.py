@@ -2,14 +2,20 @@ import os, time
 import xgrammar as xgr
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
 
+from scripts.utils import determine_device
+
+
 dpath = os.path.dirname(os.path.realpath(__file__))
+
+device = determine_device()
 
 # Loading the model
 print("Loading model...")
-trf_tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B-Instruct")
-trf_model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.1-8B-Instruct")
-trf_model.to("cuda")
-trf_config = AutoConfig.from_pretrained("meta-llama/Llama-3.1-8B-Instruct")
+model_id = "meta-llama/Llama-3.1-8B-Instruct"
+trf_tokenizer = AutoTokenizer.from_pretrained(model_id)
+trf_model = AutoModelForCausalLM.from_pretrained(model_id)
+trf_model.to(device)
+trf_config = AutoConfig.from_pretrained(model_id)
 
 # Loading the grammar
 print("Loading grammar...")

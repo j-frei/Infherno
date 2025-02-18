@@ -1,15 +1,22 @@
-import os, time
+import os
 import outlines
+import time
 from outlines import models
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
+from scripts.utils import *
+
+
 dpath = os.path.dirname(os.path.realpath(__file__))
+
+device = determine_device()
 
 # Loading the model
 print("Loading model...")
-trf_tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B-Instruct")
-trf_model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.1-8B-Instruct")
-trf_model.to("cuda")
+model_id = "meta-llama/Llama-3.1-8B-Instruct"
+trf_tokenizer = AutoTokenizer.from_pretrained(model_id)
+trf_model = AutoModelForCausalLM.from_pretrained(model_id)
+trf_model.to(device)
 
 ol_model = models.Transformers(trf_model, trf_tokenizer)
 
@@ -47,7 +54,7 @@ while True:
         print("\nError:", e)
         break
 
-#generated_text = generator(prompt)
+generated_text = generator(prompt)
 
-#print("Final output:")
-#print(prompt + generated_text)
+print("Final output:")
+print(prompt + generated_text)
