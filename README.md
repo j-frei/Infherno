@@ -11,14 +11,26 @@ source env/bin/activate
 python3 -m pip install -r requirements.txt
 ```
 
-### Generate Grammar
+### Generate FHIR Grammar
 
 The FHIR grammar in Outlines' EBNF format can be generated with `./scripts/generate_FHIR_grammar.sh`.
 
-### Outlines Demo
+### Outlines Basic Demo
 
-Run the demo using `python3 scripts/outlines_demo.py`.
+Run the demo using `PYTHONPATH=./scripts python3 scripts/outlines_demo.py`.
 
-### XGrammar Demo
+### XGrammar Basic Demo
 
-Run the demo using `python3 scripts/xgrammar_demo.py`.
+Run the demo using `PYTHONPATH=./scripts python3 scripts/xgrammar_demo.py`.
+
+### Code Search
+Update the `GenericSnomedInstance("http://snowstorm-uk.misit-augsburg.de", branch="MAIN/2023-08-30", branch_encode=False)` codes to an accessible Snowstorm instance in `infherno/codesearch.py`.
+
+Run the code search demo: `PYTHONPATH=. python3 infherno/codesearch.py`.
+
+### Text2FHIR
+
+Update the `GenericSnomedInstance("http://snowstorm-uk.misit-augsburg.de", branch="MAIN/2023-08-30", branch_encode=False)` codes to an accessible Snowstorm instance in `infherno/codesearch.py`.
+
+Update the input text in `infherno/text2fhir.py`.
+Run the Text2FHIR code: `PYTHONPATH=. python3 infherno/text2fhir.py`.

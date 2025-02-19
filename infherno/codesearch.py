@@ -8,6 +8,7 @@ from outlines import models
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from infherno.tools.fhircodes.codings import listSupportedCodings
+from infherno.utils import determine_device
 
 
 dpath = os.path.dirname(os.path.realpath(__file__))
@@ -348,7 +349,7 @@ def code_search(
 
 def runDemo(input_text, path, quote, query, model_path):
     trf_tokenizer = AutoTokenizer.from_pretrained(model_path)
-    trf_model = AutoModelForCausalLM.from_pretrained(model_path).to("cuda")
+    trf_model = AutoModelForCausalLM.from_pretrained(model_path).to(determine_device())
     #ol_model = models.Transformers(trf_model, trf_tokenizer)
 
     # Initial search

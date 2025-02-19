@@ -5,8 +5,10 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from textwrap import dedent, indent
 from functools import reduce
 
+from infherno.samples.text2fhir import getSamples
 from infherno.tools.fhircodes.codings import listSupportedCodings
 from infherno.codesearch import code_search
+from infherno.utils import determine_device
 
 dpath = os.path.dirname(os.path.realpath(__file__))
 repo_path = os.path.dirname(dpath)
@@ -50,35 +52,7 @@ def _make_system_prompt():
     ).strip()
     return system_prompt
 
-FEW_SHOT_DESCRIPTORS = [{
-    "system": _make_system_prompt(),
-    "input_text": dedent("""\
-        Erwähnung von Magenbeschwerden. Etc...!
-        """).strip(),
-    "codes": [
-        {
-            "quote": "Magenbeschwerden",
-            "query": "Stomach ache",
-            "path": "Condition.code",
-            "code": "271681002",
-            "system": "http://snomed.info/sct"
-        }
-    ],
-    "fhir": [
-        json.dumps({
-            "resourceType": "Condition",
-            "code": {
-                "resourceType": "CodeableReference",
-                "coding": [{
-                    "system": "http://snomed.info/sct",
-                    "code": "271681002",
-                    "display": "Stomach ache (finding)"
-                }]
-            },
-        }, indent=2)
-    ],
-    "finished": True
-}]
+FEW_SHOT_DESCRIPTORS = list(getSamples(_make_system_prompt()))
 
 VALID_STATES = [
     "SELECT_ACTION_CODESEARCH_FHIROUTPUT_DONE_CODESEARCH_FHIROUTPUT_DONE",
@@ -184,7 +158,7 @@ def chat2tt(tokenizer, chat, examples=None):
 
     example_tokens = reduce(lambda x,y: x+y,
         [ tokenizer.apply_chat_template(descriptor2chat(example), tokenize=True) for example in examples ]
-    ) if examples else []
+    , []) if examples else []
 
     # check if it ends with [Done]
     tokens_done = tokenizer.apply_chat_template([{"role": "assistant", "content": "\n[Done]\n"}], tokenize=True)
@@ -322,8 +296,7 @@ def execute_actions(model, tokenizer, descriptor):
 
 def run(input_text, model_path):
     trf_tokenizer = AutoTokenizer.from_pretrained(model_path)
-    trf_model = AutoModelForCausalLM.from_pretrained(model_path).to("cuda")
-    #ol_model = models.Transformers(trf_model, trf_tokenizer)
+    trf_model = AutoModelForCausalLM.from_pretrained(model_path).to(determine_device())
 
     descriptor = {
         "system": _make_system_prompt(),
@@ -351,54 +324,12 @@ def run(input_text, model_path):
     return current_descriptor
 
 if __name__ == "__main__":
-    run(dedent("""\
-        Neurologische Fachpraxis
-        Dr. med. Franka Hertz
-        Fachärztin für Neurologie
-        Budapester Strasse 65, 24601 Belau
-        Telefon: 04323 20 56 14
-        Email: info@neuro-hertz.de
-
-        Datum: 16. August 2023
-
-        An: Hausarztpraxis Dr. Leon Bayer
-        Ziegelstr. 37, 98721 Neuhaus
-        Telefon: 08507 99 95 55
-        Email: info@praxis-bayer.de
-
-        Betreff: Entlassungsbericht für Patient: Frau Marlene Achen (Alter: 46 Jahre)
-        Geburtsdatum: 2-12-1977
-
-        Sehr geehrter Herr Dr. Bayer,
-
-        anbei sende ich Ihnen den Entlassungsbericht für die Patientin Frau Marlene Achen, die in meiner neurologischen Praxis aufgrund von Migräne und neurologischen Symptomen in Behandlung war.
-
-        Anamnese:
-        Frau Achen wurde aufgrund wiederkehrender, einseitiger Kopfschmerzen und episodischer neurologischer Ausfälle in meiner Praxis vorstellig. Die Anamnese ergab eine familiäre Belastung für Migräneerkrankungen.
-
-        Klinischer Befund:
-        Die neurologische Untersuchung zeigte unauffällige Reflexe und Sensibilität. Die Kopfschmerzen wurden als pulsierend und einseitig im Schläfenbereich beschrieben. Neurologische Ausfälle traten vorübergehend auf und schienen im Zusammenhang mit den Kopfschmerzepisoden zu stehen.
-
-        Diagnostik:
-        Es wurden folgende Untersuchungen durchgeführt:
-        - Anamnestische Migräne-Diagnose auf Basis der Kriterien der Internationalen Kopfschmerzgesellschaft.
-        - Magnetresonanztomographie (MRT) des Schädels: Keine strukturellen Abnormalitäten.
-        - Elektroenzephalogramm (EEG): Unauffälliger Befund.
-
-        Diagnose:
+    result = run(dedent("""\
         Basierend auf den klinischen Symptomen und den durchgeführten Untersuchungen wird bei Frau Achen eine Migräne mit episodischen neurologischen Symptomen (Migräne mit Aura) diagnostiziert.
-
-        Therapieempfehlung:
-        Frau Achen wurde eine Kombination aus akuter Schmerztherapie und präventiven Maßnahmen empfohlen. In akuten Schmerzphasen kann sie Ibuprofen 400 mg einnehmen. Zur Migräne-Prophylaxe wurde Propranolol 40 mg einmal täglich verordnet.
-
-        Lebensstilmodifikationen:
-        Frau Achen wurde geraten, auf mögliche Auslöser wie Schlafmangel, Stress und bestimmte Nahrungsmittel zu achten. Ein Migränetagebuch zur Erfassung von Auslösern und Symptomen wurde empfohlen.
-
-        Verlaufskontrolle:
-        Ich bitte Sie, Frau Achen in Ihrer Praxis zu betreuen und die Wirksamkeit der Therapie sowie den Verlauf der Symptome zu überwachen. Bei Fragen stehe ich Ihnen gerne zur Verfügung.
-
-        Vielen Dank für Ihre Kooperation und freundliche Grüße,
-
-        Dr. med. Franka Hertz
-        Fachärztin für Neurologie
         """).strip(), "meta-llama/Llama-3.1-8B-Instruct")
+
+    print("Found FHIR Resources:")
+    for fhirItem in result.get("fhir", []):
+        print(fhirItem)
+    if not result.get("fhir", []):
+        print("No FHIR resources found.")

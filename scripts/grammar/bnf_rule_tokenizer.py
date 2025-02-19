@@ -21,7 +21,7 @@ class RuleToken:
     def __repr__(self):
         return f"<Token {self.ttype.name}: {repr(self.val)}>"
 
-ALLOWED_RULE_CHARS = re.compile('[a-zA-Z0-9\-\_]')
+ALLOWED_RULE_CHARS = re.compile(r'[a-zA-Z0-9\-_]')
 def tokenize_rule(expr: str, ttype: RuleTokenType = None):
     if ttype is None:
         # Peek next char

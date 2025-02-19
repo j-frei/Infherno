@@ -4,12 +4,10 @@ import time
 from outlines import models
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from scripts.utils import *
-
+from utils import determine_device
 
 dpath = os.path.dirname(os.path.realpath(__file__))
 repo_path = os.path.dirname(dpath)
-
 device = determine_device()
 
 # Loading the model

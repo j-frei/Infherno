@@ -2,7 +2,7 @@ import os, time
 import xgrammar as xgr
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
 
-from scripts.utils import determine_device
+from utils import determine_device
 
 
 dpath = os.path.dirname(os.path.realpath(__file__))

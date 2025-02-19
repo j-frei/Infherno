@@ -4,11 +4,9 @@ SCHEMA_PATH_IN="$1"
 SCHEMA_PATH_OUT="$2"
 
 echo "Filtering the schema... $SCHEMA_PATH_IN -> $SCHEMA_PATH_OUT"
-echo "#n lines: $(wc -l < "$SCHEMA_PATH_IN")"
 
 # Copy the input schema to the output schema
 cp "$SCHEMA_PATH_IN" "$SCHEMA_PATH_OUT"
-echo "#n lines: $(wc -l < "$SCHEMA_PATH_OUT")"
 
 # Patient
 echo "[Patient] Remove the 'photo' property"
