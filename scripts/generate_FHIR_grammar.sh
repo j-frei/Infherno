@@ -13,7 +13,7 @@ echo "Generating FHIR JSON schema..."
 python3 schema/fhir_json_schema.py \
     --root-resources \
         "Patient" \
-        "Encounter" \
+        `# "Encounter"` \
         "Procedure" \
         "Condition" \
         "MedicationStatement" \

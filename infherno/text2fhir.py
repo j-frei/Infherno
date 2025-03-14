@@ -18,7 +18,7 @@ SUPPORTED_FHIR_RESOURCES = [
     "Patient",
     #"Organization",
     #"Practitioner",
-    "Encounter",
+    #"Encounter",
     "Procedure",
     #"Observation",
     "Condition",
