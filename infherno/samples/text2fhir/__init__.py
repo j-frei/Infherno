@@ -9,6 +9,7 @@ from infherno.samples.text2fhir import (
 dpath = os.path.dirname(os.path.realpath(__file__))
 
 SAMPLES = [
+    # "Magenschmerzen" (without context)
     sample01
 ]
 
