@@ -1,8 +1,8 @@
 import os
 
-from infherno.tools.fhircodes.instance import (
-    to_snowstorm,
-    getLatestBranches
+from infherno.tools.fhircodes.utils import (
+    getLatestBranches,
+    to_snowstorm
 )
 
 # Default values for the SNOMED (Snowstorm instance)
