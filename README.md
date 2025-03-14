@@ -47,6 +47,9 @@ export SNOWSTORM_URL="http://snowstorm-uk.misit-augsburg.de"
 nano infherno/text2fhir.py
 
 # Run the Text2FHIR code
-PYTHONPATH=. python3 infherno/text2fhir.py
+PYTHONPATH=. python3 infherno/text2fhir.py "The patient reports issues with her eye vision." "meta-llama/Llama-3.1-8B-Instruct" --action text2fhir
+
+# See the few shot prompt
+PYTHONPATH=. python3 infherno/text2fhir.py "..." "meta-llama/Llama-3.1-8B-Instruct" --action yield_prompt
 ```
 

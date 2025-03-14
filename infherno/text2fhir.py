@@ -324,12 +324,26 @@ def run(input_text, model_path):
     return current_descriptor
 
 if __name__ == "__main__":
-    result = run(dedent("""\
-        Basierend auf den klinischen Symptomen und den durchgeführten Untersuchungen wird bei Frau Achen eine Migräne mit episodischen neurologischen Symptomen (Migräne mit Aura) diagnostiziert.
-        """).strip(), "meta-llama/Llama-3.1-8B-Instruct")
+    import argparse
+    parser = argparse.ArgumentParser(description="Run the text2fhir model.")
+    parser.add_argument("input_text", type=str, help="The input text to process.")
+    parser.add_argument("model_path", type=str, help="The model path to use.")
+    parser.add_argument("--action", type=str, default="text2fhir", choices=["text2fhir", "yield_prompt"], help="The action to perform.")
+    args = parser.parse_args()
 
-    print("Found FHIR Resources:")
-    for fhirItem in result.get("fhir", []):
-        print(fhirItem)
-    if not result.get("fhir", []):
-        print("No FHIR resources found.")
+    if args.action == "text2fhir":
+        result = run(args.input_text, args.model_path)
+        print("Found FHIR Resources:")
+        for fhirItem in result.get("fhir", []):
+            print(fhirItem)
+        if not result.get("fhir", []):
+            print("No FHIR resources found.")
+    elif args.action == "yield_prompt":
+        # We just need any reasonable tokenizer
+        tokenizer = AutoTokenizer.from_pretrained(args.model_path if args.model_path else "meta-llama/Llama-3.1-8B-Instruct")
+        descriptor = {
+            "system": _make_system_prompt(),
+            "input_text": args.input_text,
+        }
+        text = chat2tt(tokenizer, descriptor2chat(descriptor))[1]
+        print(text)
