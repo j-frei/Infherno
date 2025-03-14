@@ -5,6 +5,11 @@ import requests, urllib
 import requests
 from urllib.parse import urljoin, urlparse
 
+from infherno.defaults import (
+    determine_snowstorm_url,
+    determine_snowstorm_branch
+)
+
 def sanitize_url(url: str) -> str:
     return urljoin(url, urlparse(url).path)
 
@@ -91,7 +96,9 @@ class GenericSnomedInstance:
 
         if base_url is None:
             # Default to public instance
-            self.base_url = "https://browser.ihtsdotools.org/snowstorm/snomed-ct"
+            self.base_url = determine_snowstorm_url()
+            if self.base_url is None:
+                raise ValueError("No base URL provided, defaulting to public instance.")
             print("No base URL provided, defaulting to public instance:", self.base_url, file=sys.stderr)
         else:
             self.base_url = to_snowstorm(base_url)
@@ -100,12 +107,9 @@ class GenericSnomedInstance:
 
         if branch is None:
             # Select first branch of first code system
-            print(self.base_url)
-            branches = getLatestBranches(self.base_url)
-            if len(branches) == 0:
-                raise ValueError("No branches found on instance: " + self.base_url)
-            print("Selecting first branch:", branches[0]["name"], file=sys.stderr)
-            self.branch = branches[0]["branch"]
+            self.branch = determine_snowstorm_branch()
+            if self.branch is None:
+                raise ValueError("No branch provided, defaulting to first branch.")
         else:
             self.branch = branch
 

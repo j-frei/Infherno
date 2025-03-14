@@ -1,6 +1,6 @@
 import os
 
-from infherno.utils import (
+from infherno.tools.fhircodes.instance import (
     to_snowstorm,
     getLatestBranches
 )
