@@ -3,14 +3,17 @@ from glob import glob
 from typing import Generator, Dict
 
 from infherno.samples.text2fhir import (
-    sample01
+    sample01,
+    sample02
 )
 
 dpath = os.path.dirname(os.path.realpath(__file__))
 
 SAMPLES = [
     # "Magenschmerzen" (without context)
-    sample01
+    sample01,
+    # Patient John Doe with hypertension and chest pain Conditions
+    sample02
 ]
 
 def prepareSample(system_prompt: str, raw_sample_obj: Dict) -> Dict:
