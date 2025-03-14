@@ -124,6 +124,10 @@ def descriptor2chat(descriptor: dict) -> dict:
                     code = codeItem["code"]
                     if code:
                         assistant_text += f" `{code}`"
+                        if "description" in codeItem:
+                            description = codeItem["description"]
+                            if description:
+                                assistant_text += f" [{description}]"
                         if "system" in codeItem:
                             system = codeItem["system"]
                             if system:
