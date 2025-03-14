@@ -11,20 +11,20 @@ def getSample() -> Dict:
         ),
         "codes": [
             {
-                "quote": "Magenbeschwerden",
-                "query": "Stomach ache",
-                "path": "Condition.code",
-                "code": "271681002",
-                "system": "http://snomed.info/sct",
-                "description": "Stomach ache (finding)"
-            },
-            {
                 "quote": "",
                 "query": "unknown",
                 "path": "Condition.clinicalStatus",
                 "code": "unknown",
                 "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
                 "description": "Unknown"
+            },
+            {
+                "quote": "Magenbeschwerden",
+                "query": "Stomach ache",
+                "path": "Condition.code",
+                "code": "271681002",
+                "system": "http://snomed.info/sct",
+                "description": "Stomach ache (finding)"
             }
         ],
         "fhir": [

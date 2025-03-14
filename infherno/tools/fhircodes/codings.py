@@ -46,7 +46,7 @@ _CODINGS = OrderedDict({
     "MedicationStatement.effectiveTiming.repeat.dayOfWeek": {"vs": "http://hl7.org/fhir/ValueSet/days-of-week", "type": "coding"},
     "MedicationStatement.effectiveTiming.repeat.when": {"vs": "http://hl7.org/fhir/ValueSet/event-timing", "type": "coding"},
     "MedicationStatement.effectiveTiming.code": {"vs": "http://hl7.org/fhir/ValueSet/timing-abbreviation", "type": "coding"},
-    "MedicationStatement.reason": {"vs": "http://hl7.org/fhir/ValueSet/condition-code", "type": "coding"},
+    ## "MedicationStatement.reason": {"vs": "http://hl7.org/fhir/ValueSet/condition-code", "type": "coding"},
     # IGNORE MedicationStatement.dosage.additionalInstruction
     # Unsupported UnitsOfMeasure "MedicationStatement.dosage.timing.repeat.durationUnit": {"vs": "http://hl7.org/fhir/ValueSet/units-of-time", "type": "coding"},
     # Unsupported UnitsOfMeasure "MedicationStatement.dosage.timing.repeat.periodUnit": {"vs": "http://hl7.org/fhir/ValueSet/units-of-time", "type": "coding"},
@@ -69,7 +69,7 @@ _CODINGS = OrderedDict({
     "Procedure.occurrenceTiming.repeat.dayOfWeek": {"vs": "http://hl7.org/fhir/ValueSet/days-of-week", "type": "coding"},
     "Procedure.occurrenceTiming.repeat.when": {"vs": "http://hl7.org/fhir/ValueSet/event-timing", "type": "coding"},
     "Procedure.occurrenceTiming.code": {"vs": "http://hl7.org/fhir/ValueSet/timing-abbreviation", "type": "coding"},
-    "Procedure.reason": {"vs": "http://hl7.org/fhir/ValueSet/procedure-reason", "type": "coding"},
+    ## "Procedure.reason": {"vs": "http://hl7.org/fhir/ValueSet/procedure-reason", "type": "coding"},
     "Procedure.bodySite": {"vs": "http://hl7.org/fhir/ValueSet/body-site", "type": "coding"},
     "Procedure.outcome": {"vs": "http://hl7.org/fhir/ValueSet/procedure-outcome", "type": "coding"},
     "Procedure.complications": {"vs": "http://hl7.org/fhir/ValueSet/condition-code", "type": "coding"},

@@ -24,6 +24,14 @@ def getSample() -> Dict:
                 "description": "Male"
             },
             {
+                "quote": "",
+                "query": "active",
+                "path": "Condition.clinicalStatus",
+                "code": "active",
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "description": "Active"
+            },
+            {
                 "quote": "hypertension",
                 "query": "hypertension",
                 "path": "Condition.code",
@@ -38,14 +46,6 @@ def getSample() -> Dict:
                 "code": "29857009",
                 "system": "http://snomed.info/sct",
                 "description": "Chest pain (finding)"
-            },
-            {
-                "quote": "",
-                "query": "active",
-                "path": "Condition.clinicalStatus",
-                "code": "active",
-                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                "description": "Active"
             }
         ],
         "fhir": [

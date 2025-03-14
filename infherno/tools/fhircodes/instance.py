@@ -113,6 +113,9 @@ class GenericSnomedInstance:
             else:
                 return []
 
+        if response.status_code != 200:
+            print("Error:", response.status_code, response.text, file=sys.stderr)
+            print(response.text, file=sys.stderr)
         response.raise_for_status()
 
         res = response.json()

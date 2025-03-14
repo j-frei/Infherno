@@ -4,7 +4,9 @@ from typing import Generator, Dict
 
 from infherno.samples.text2fhir import (
     sample01,
-    sample02
+    sample02,
+    sample03,
+    sample04,
 )
 
 dpath = os.path.dirname(os.path.realpath(__file__))
@@ -13,7 +15,11 @@ SAMPLES = [
     # "Magenschmerzen" (without context)
     sample01,
     # Patient John Doe with hypertension and chest pain Conditions
-    sample02
+    sample02,
+    # MedicationStatement with Tylenol PM
+    sample03,
+    # Procedure Appendectomy
+    sample04,
 ]
 
 def prepareSample(system_prompt: str, raw_sample_obj: Dict) -> Dict:
