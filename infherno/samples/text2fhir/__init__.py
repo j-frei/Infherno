@@ -7,6 +7,7 @@ from infherno.samples.text2fhir import (
     sample02,
     sample03,
     sample04,
+    sample05,
 )
 
 dpath = os.path.dirname(os.path.realpath(__file__))
@@ -20,6 +21,8 @@ SAMPLES = [
     sample03,
     # Procedure Appendectomy
     sample04,
+    # Patient Frau Achen (no first name) + migraine with aura
+    sample05,
 ]
 
 def prepareSample(system_prompt: str, raw_sample_obj: Dict) -> Dict:
