@@ -284,7 +284,7 @@ def execute_actions(model, tokenizer, descriptor):
             raise ValueError("The last FHIR output is not None.")
 
         generator = FHIR_CFG_GENERATOR[tokenizer.name_or_path]
-        fhir_text = generator(text+'\n', max_tokens=512)
+        fhir_text = generator(text+'\n', max_tokens=4096)
         updated_descriptor["fhir"][-1] = fhir_text
 
     if state == "DONE":

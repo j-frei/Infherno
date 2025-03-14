@@ -9,6 +9,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from infherno.tools.fhircodes.codings import listSupportedCodings
 from infherno.utils import determine_device
+from infherno.defaults import determine_snowstorm_url, determine_snowstorm_branch
 
 
 dpath = os.path.dirname(os.path.realpath(__file__))
@@ -236,7 +237,7 @@ def execute_actions(model: "AutoModelForCausalLM", tokenizer: "AutoTokenizer", d
         assert path in listSupportedCodings(), f"Path '{path}' is not supported"
         vs_info = getValueSet(path)
 
-        instance = GenericSnomedInstance("http://snowstorm-uk.misit-augsburg.de", branch="MAIN/2023-08-30", branch_encode=False)
+        instance = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch(), branch_encode=False)
         vsl = ValueSetLoader.from_url(vs_info["vs"], store_threshold=20, snomed_instance=instance)
 
         # Search for term....
@@ -359,7 +360,7 @@ def runDemo(input_text, path, quote, query, model_path):
     assert path in listSupportedCodings(), f"Path '{path}' is not supported"
     vs_info = getValueSet(path)
 
-    instance = GenericSnomedInstance("http://snowstorm-uk.misit-augsburg.de", branch="MAIN/2023-08-30", branch_encode=False)
+    instance = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch(), branch_encode=False)
     vsl = ValueSetLoader.from_url(vs_info["vs"], store_threshold=20, snomed_instance=instance)
 
     # Search for term....
