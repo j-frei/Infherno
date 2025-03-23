@@ -53,3 +53,12 @@ PYTHONPATH=. python3 infherno/text2fhir.py "The patient reports issues with her 
 PYTHONPATH=. python3 infherno/text2fhir.py "..." "meta-llama/Llama-3.1-8B-Instruct" --action yield_prompt
 ```
 
+#### Tests
+Most tests rely on [NL-Augmenter](https://github.com/GEM-benchmark/NL-Augmenter).
+
+1. Download glove into nlaugmenter folder: http://nlp.stanford.edu/data/glove.6B.zip
+2. Install spaCy core model 
+```bash
+python -m spacy download en_core_web_sm
+```
+

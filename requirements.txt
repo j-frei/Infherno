@@ -9,6 +9,11 @@ accelerate
 torch
 sentencepiece
 
+# For tests:
+#spacy
+#nltk
+#sacremoses
+
 # xgrammar (alternative to outlines)
 #xgrammar
 #cuda-python

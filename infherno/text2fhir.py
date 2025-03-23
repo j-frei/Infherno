@@ -26,7 +26,8 @@ SUPPORTED_FHIR_RESOURCES = [
 ]
 
 def _make_system_prompt():
-    supported_fhir_codings = [ c for c in listSupportedCodings() if any([c.startswith(r + ".") for r in SUPPORTED_FHIR_RESOURCES]) ]
+    supported_fhir_codings = [ c for c in listSupportedCodings() if any([c.startswith(r + ".")
+                                                                         for r in SUPPORTED_FHIR_RESOURCES]) ]
     system_prompt = dedent("""\
         You are a bot that
         - reads an input text from the user,
@@ -97,15 +98,36 @@ def descriptor2state(descriptor):
     return state
 
 def descriptor2chat(descriptor: dict) -> dict:
+    """ Main function for constructing the prompt """
     chat_entries = []
 
     # Add system prompt if given and non-blank
     if descriptor.get("system"):
+        # TODO: Option to add persona to system prompt
         chat_entries.append(
             {"role": "system", "content": descriptor.get("system")}
         )
     if descriptor.get("input_text"):
-        input_msg = "The text is as follows:\n```\n{}\n```\n".format(descriptor.get("input_text"))
+        input_text = descriptor.get("input_text")
+
+        if args.test_type:
+            if args.test_type == "abbreviation":
+                from tests.reductions import abbreviate
+                input_text = abbreviate(input_text)
+
+            elif args.test_type == "antonyms":
+                from tests.augmentations import antonyms_substitute
+                input_text = antonyms_substitute(input_text)
+
+            elif args.test_type == "backtranslation":
+                from tests.translations import backtranslate
+                input_text = backtranslate(input_text)
+
+            # TODO: "butter_fingers", "date_format",
+            #  "homophones", "filler_words", "mixed_language", "number_to_word", "ocr", "hypernyms",
+            #  "segment_shuffle", "summarization", "underscore", "whitespace", "anonymization"
+
+        input_msg = "The text is as follows:\n```\n{}\n```\n".format(input_text)
         chat_entries.append(
             {"role": "user", "content": input_msg}
         )
@@ -332,7 +354,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the text2fhir model.")
     parser.add_argument("input_text", type=str, help="The input text to process.")
     parser.add_argument("model_path", type=str, help="The model path to use.")
-    parser.add_argument("--action", type=str, default="text2fhir", choices=["text2fhir", "yield_prompt"], help="The action to perform.")
+    parser.add_argument("--action", type=str, default="text2fhir", choices=["text2fhir", "yield_prompt"],
+                        help="The action to perform.")
+    parser.add_argument("--test_type", type=str, default=None,
+                        choices=["abbreviation", "antonyms", "backtranslation", "butter_fingers", "date_format",
+                                 "homophones", "filler_words", "mixed_language", "number_to_word", "ocr", "hypernyms",
+                                 "segment_shuffle", "summarization", "underscore", "whitespace", "anonymization"])
     args = parser.parse_args()
 
     if args.action == "text2fhir":
@@ -344,7 +371,8 @@ if __name__ == "__main__":
             print("No FHIR resources found.")
     elif args.action == "yield_prompt":
         # We just need any reasonable tokenizer
-        tokenizer = AutoTokenizer.from_pretrained(args.model_path if args.model_path else "meta-llama/Llama-3.1-8B-Instruct")
+        tokenizer = AutoTokenizer.from_pretrained(
+            args.model_path if args.model_path else "meta-llama/Llama-3.1-8B-Instruct")
         descriptor = {
             "system": _make_system_prompt(),
             "input_text": args.input_text,
