@@ -62,3 +62,6 @@ Most tests rely on [NL-Augmenter](https://github.com/GEM-benchmark/NL-Augmenter)
 python -m spacy download en_core_web_sm
 ```
 
+### Smolagent
+
+Run the agent using `SNOWSTORM_URL="http://<SNOMED-Instance>" PYTHONPATH=. python3 infherno/smol.py`
