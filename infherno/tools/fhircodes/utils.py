@@ -1,6 +1,6 @@
 
 from typing import Optional, TypedDict, List
-import requests
+import requests, sys
 from urllib.parse import urljoin, urlparse
 
 

@@ -24,7 +24,7 @@ def determine_snowstorm_url() -> str:
 
 SNOWSTORM_BRANCHES = None
 SNOWSTORM_BRANCH = None
-def determine_snowstorm_branch() -> str:
+def determine_snowstorm_branch(snomed_url: str = None) -> str:
     global SNOWSTORM_BRANCHES
     global SNOWSTORM_BRANCH
 
@@ -32,8 +32,11 @@ def determine_snowstorm_branch() -> str:
         return SNOWSTORM_BRANCH
     else:
         if SNOWSTORM_BRANCHES is None:
+            if snomed_url is None:
+                snomed_url = determine_snowstorm_url()
+
             # Read available branched for the Snowstorm instance
-            SNOWSTORM_BRANCHES = getLatestBranches(determine_snowstorm_url())
+            SNOWSTORM_BRANCHES = getLatestBranches(snomed_url)
             given_branch = os.getenv("SNOWSTORM_BRANCH", None)
             # Check if the custom branch is available
             if given_branch is not None:

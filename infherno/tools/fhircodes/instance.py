@@ -37,7 +37,7 @@ class GenericSnomedInstance:
 
         if branch is None:
             # Select first branch of first code system
-            self.branch = determine_snowstorm_branch()
+            self.branch = determine_snowstorm_branch(self.base_url)
             if self.branch is None:
                 raise ValueError("No branch provided, defaulting to first branch.")
         else:
