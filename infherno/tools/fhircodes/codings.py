@@ -187,10 +187,13 @@ class CodeSystemStaticLoader:
             return CodeSystemStaticLoader([])
 
         assert "concept" in cs_doc
+        assert "url" in cs_doc
+        advertised_url = cs_doc["url"]
         all_concepts = [
             {
                 "code": concept["code"],
-                "system": system_url,
+                "system": advertised_url,
+                "actual_system_url": system_url,
                 "description": concept.get("definition")
             }
             for concept in cs_doc["concept"]
