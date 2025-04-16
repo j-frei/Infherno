@@ -8,7 +8,7 @@ from infherno.tools.fhircodes.codings import listSupportedCodings, getValueSet, 
 from infherno.tools.fhircodes.codings import listSupportedCodings
 from infherno.utils import determine_device
 from infherno.defaults import determine_snowstorm_url, determine_snowstorm_branch
-SNOMED_INSTANCE = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch(), branch_encode=False)
+SNOMED_INSTANCE = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch())
 
 MAX_COUNT_NOSEARCH = 10 # If <=10, just paste all results in the chat
 MAX_SEARCH_RESULTS = 10 # If >10, only show 10 results (truncated)
@@ -73,12 +73,12 @@ model = TransformersModel(
     max_new_tokens=32000,
 )
 
-#agent = CodeAgent(
 agent = ToolCallingAgent(
     tools=[
         search_for_code_or_coding,
     ],
     model=model,
+    verbosity_level=2
 )
 
 agent.run("""
