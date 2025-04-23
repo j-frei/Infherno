@@ -157,7 +157,6 @@ class AcademicAuth:
                 print("Auth cookie is invalid. Proceeding with authentication...", file=sys.stderr)
                 self.session.cookies.clear()
                 self.auth_cookie = None
-            return self.auth_cookie
 
         # Step 0: Initial GET request to the endpoint;
         # -> extract the redirect form to the first authentication page
