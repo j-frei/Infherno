@@ -3,19 +3,22 @@ import os, re, json, sqlite3
 from functools import reduce
 from urllib.parse import urlparse
 from collections import OrderedDict
-
 from typing import Dict, List, Optional, TypedDict
 
 import requests
-
+from infherno.defaults import determine_snowstorm_url, determine_snowstorm_branch
 from infherno.tools.fhircodes.instance import GenericSnomedInstance, getECLfromConceptRoots
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_DIR = os.path.dirname(os.path.dirname(os.path.dirname(THIS_DIR)))
+
+# Caching
 CACHE_DIR = os.path.join(REPO_DIR, "cache")
 CODINGS_CACHE = os.path.join(CACHE_DIR, "codings")
 if not os.path.exists(CODINGS_CACHE):
     os.makedirs(CODINGS_CACHE, exist_ok=True)
+
+# URL fixes
 _CODESYSTEM_REDIRECT = {
     "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus": "http://terminology.hl7.org/4.0.0/CodeSystem-v3-MaritalStatus.json",
     "http://terminology.hl7.org/CodeSystem/v3-NullFlavor": "http://terminology.hl7.org/4.0.0/CodeSystem-v3-NullFlavor.json",
@@ -26,9 +29,11 @@ _CODESYSTEM_REDIRECT = {
     "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation": "http://terminology.hl7.org/4.0.0/CodeSystem-v3-GTSAbbreviation.json",
 
     # Fix for CodeSystem-allergyintolerance-clinical (broken concept JSON list)
-    "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical": "https://myweb.rz.uni-augsburg.de/~freijoha/fhir/CodeSystem-allergyintolerance-clinical.json"
+    "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical": "https://myweb.rz.uni-augsburg.de/~freijoha/fhir/CodeSystem-allergyintolerance-clinical.json",
+    "http://terminology.hl7.org/CodeSystem/medication-statement-category": "http://hl7.org/fhir/R4/codesystem-medication-statement-category.json",
 }
 
+# Supported Codes/Codings
 _CODINGS = OrderedDict({
     "Patient.name.use": {"vs": "http://hl7.org/fhir/R4/valueset-name-use.json", "type": "code"},
     "Patient.contact.system": {"vs": "http://hl7.org/fhir/R4/valueset-contact-point-system.json", "type": "code"},
@@ -50,6 +55,7 @@ _CODINGS = OrderedDict({
     "Condition.evidence": {"vs": "http://hl7.org/fhir/R4/valueset-clinical-findings.json", "type": "coding"},
     "MedicationStatement.status": {"vs": "http://hl7.org/fhir/R4/valueset-medication-statement-status.json", "type": "code"},
     # IGNORE MedicationStatement.category
+    "MedicationStatement.category": {"vs": "http://hl7.org/fhir/R4/valueset-medication-statement-category.json", "type": "coding"},
     "MedicationStatement.medication": {"vs": "http://hl7.org/fhir/R4/valueset-medication-codes.json", "type": "coding"},
     "MedicationStatement.effectiveTiming.repeat.dayOfWeek": {"vs": "http://hl7.org/fhir/R4/valueset-days-of-week.json", "type": "coding"},
     "MedicationStatement.effectiveTiming.repeat.when": {"vs": "http://hl7.org/fhir/R4/valueset-event-timing.json", "type": "coding"},
@@ -120,10 +126,14 @@ def cachedRequest(url):
         response = requests.get(url, headers={
             "Accept": "application/json, */*",
             # We somehow need to set a User Agent.
-            # E.g. 'http://terminology.hl7.org/4.0.0/CodeSystem-v3-MaritalStatus.json' is not available using Curl or requests.get
+            # E.g. 'http://terminology.hl7.org/4.0.0/CodeSystem-v3-MaritalStatus.json' is sometimes not available using Curl or requests.get() w/o User-Agent
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
         })
-        response.raise_for_status()
+        try:
+            response.raise_for_status()
+        except:
+            print(f"URL {url} raised an error with status code: {response.status_code}")
+
         r_obj = response.json()
         with open(cache_path, "w") as f:
             json.dump(r_obj, f)
@@ -366,7 +376,7 @@ class ValueSetLoader:
                 rec_vs_urls = cs_item["valueSet"]
                 for rec_vs_url in rec_vs_urls:
                     rec_vs_url = _CODESYSTEM_REDIRECT.get(rec_vs_url, rec_vs_url)
-                    rec_vsl = ValueSetLoader.from_url(rec_vs_url, store_threshold=store_threshold, snomed_instance=instance)
+                    rec_vsl = ValueSetLoader.from_url(rec_vs_url, store_threshold=store_threshold, snomed_instance=snomed_instance)
                     cs.extend(rec_vsl.cs)
             else:
                 raise NotImplementedError(f"Unhandled Item: {cs_item}")
@@ -410,14 +420,12 @@ def listSupportedCodings():
 
 if __name__ == "__main__":
     vs_loaders = {}
+    snomed_instance = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch())
     for query, coding_info in _CODINGS.items():
-        if not query.startswith("AllergyIntolerance"): continue
         url = coding_info["vs"]
         code_type = coding_info["type"]
         print(f"Checking {query} @ {url}")
-
-        instance = GenericSnomedInstance("http://t2f.johann-frei.de")
-        vsl = ValueSetLoader.from_url(url, store_threshold=20, snomed_instance=instance)
+        vsl = ValueSetLoader.from_url(url, store_threshold=20, snomed_instance=snomed_instance)
         vs_loaders[query] = vsl
 
         print(f"-> {vsl.count()} entries found.")

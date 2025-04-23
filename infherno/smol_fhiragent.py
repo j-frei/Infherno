@@ -1,17 +1,14 @@
 import os
 import getpass
 
-from smolagents import CodeAgent, ToolCallingAgent, HfApiModel, TransformersModel, tool, LiteLLMModel
-
 from infherno.smolagents.fhiragent import FHIRAgent
 from infherno.smolagents.smolcodesearch import search_for_code_or_coding
 from infherno.tools.fhircodes.instance import GenericSnomedInstance
-from infherno.tools.fhircodes.codings import listSupportedCodings, getValueSet, ValueSetLoader
-from infherno.tools.fhircodes.codings import listSupportedCodings
-from infherno.utils import determine_device
 from infherno.defaults import determine_snowstorm_url, determine_snowstorm_branch
 from infherno.smolagents.academiccloud.model import AcademicCloudModel
 from infherno.smolagents.academiccloud.auth import AcademicAuth, AcademicUniAugsburgCredentialsFlow
+
+
 SNOMED_INSTANCE = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch())
 
 MAX_COUNT_NOSEARCH = 10 # If <=10, just paste all results in the chat
