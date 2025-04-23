@@ -36,12 +36,7 @@ model = AcademicCloudModel(
     #model_id="meta-llama-3.1-8b-instruct",
     #model_id="llama-4-scout-17b-16e-instruct",
     model_id="llama-3.3-70b-instruct",
-    openidc_session_cookie=AcademicAuth().authenticate(
-        AcademicUniAugsburgCredentialsFlow(
-            username=input("UAux Academic username: "),
-            password=getpass.getpass(prompt="UAux Academic password: "),
-        )
-    ),
+    openidc_session_cookie=AcademicAuth().authenticate(AcademicUniAugsburgCredentialsFlow()),
 )
 
 # Ollama model

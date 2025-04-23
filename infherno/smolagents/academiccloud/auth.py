@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import os
+import getpass
 from requests import Session
 from bs4 import BeautifulSoup
 
@@ -17,9 +18,13 @@ class AcademicFederatedCredentialsFlow:
 
 
 class AcademicUniAugsburgCredentialsFlow(AcademicFederatedCredentialsFlow):
-    def __init__(self, username: str, password: str):
+    def __init__(self, username: str = None, password: str = None):
         super().__init__()
         self.login_provider = "University of Augsburg"
+        if username is None:
+            username = input(f"Username ({self.login_provider}): ")
+        if password is None:
+            password = getpass.getpass(prompt=f"Password of {username} ({self.login_provider}): "),
         self.username = username
         self.password = password
 
