@@ -24,6 +24,9 @@ _CODESYSTEM_REDIRECT = {
     "http://terminology.hl7.org/CodeSystem/dose-rate-type": "http://hl7.org/fhir/R4/codesystem-dose-rate-type.json",
     "http://terminology.hl7.org/CodeSystem/v3-TimingEvent": "http://terminology.hl7.org/4.0.0/CodeSystem-v3-TimingEvent.json",
     "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation": "http://terminology.hl7.org/4.0.0/CodeSystem-v3-GTSAbbreviation.json",
+
+    # Fix for CodeSystem-allergyintolerance-clinical (broken concept JSON list)
+    "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical": "https://myweb.rz.uni-augsburg.de/~freijoha/fhir/CodeSystem-allergyintolerance-clinical.json"
 }
 
 _CODINGS = OrderedDict({
@@ -87,6 +90,16 @@ _CODINGS = OrderedDict({
     # IGNORE Encounter.serviceType
     # IGNORE Encounter.subjectStatus
     # IGNORE Encounter.participant.type
+
+    # clinicalStatus is broken in the concept JSON property: https://terminology.hl7.org/6.2.0/CodeSystem-allergyintolerance-clinical.json.html
+    "AllergyIntolerance.clinicalStatus": {"vs": "http://hl7.org/fhir/R4/valueset-allergyintolerance-clinical.json", "type": "coding"},
+    "AllergyIntolerance.verificationStatus": {"vs": "http://hl7.org/fhir/R4/valueset-allergyintolerance-verification.json", "type": "coding"},
+    "AllergyIntolerance.type": {"vs": "http://hl7.org/fhir/R4/valueset-allergy-intolerance-type.json", "type": "code"},
+    "AllergyIntolerance.category": {"vs": "http://hl7.org/fhir/R4/valueset-allergy-intolerance-category.json", "type": "code"},
+    "AllergyIntolerance.criticality": {"vs": "http://hl7.org/fhir/R4/valueset-allergy-intolerance-criticality.json", "type": "code"},
+    "AllergyIntolerance.code": {"vs": "http://hl7.org/fhir/R4/valueset-allergyintolerance-code.json", "type": "coding"},
+    "AllergyIntolerance.bodySite": {"vs": "http://hl7.org/fhir/R4/valueset-body-site.json", "type": "coding"},
+
 })
 
 def safe_filename(filename):
@@ -103,6 +116,7 @@ def cachedRequest(url):
         with open(cache_path, "r") as f:
             return json.load(f)
     else:
+        print(f"Requesting {url}")
         response = requests.get(url, headers={
             "Accept": "application/json, */*",
             # We somehow need to set a User Agent.
@@ -323,28 +337,39 @@ class ValueSetLoader:
 
         all_cs = vs_doc["compose"]["include"]
         for cs_item in all_cs:
-            assert "system" in cs_item
-            filter_type = "all"
-            filter_info = None
+            if "system" in cs_item:
+                # The CS seems to be a direct reference
+                filter_type = "all"
+                filter_info = None
 
-            if "filter" in cs_item:
-                filter_type = "filter"
-                filter_info = cs_item["filter"]
-            elif "concept" in cs_item:
-                filter_type = "explicit"
-                filter_info = cs_item["concept"]
+                if "filter" in cs_item:
+                    filter_type = "filter"
+                    filter_info = cs_item["filter"]
+                elif "concept" in cs_item:
+                    filter_type = "explicit"
+                    filter_info = cs_item["concept"]
 
-            # find loader
-            ref_url = cs_item["system"]
-            ref_url = _CODESYSTEM_REDIRECT.get(ref_url, ref_url)
+                # find loader
+                ref_url = cs_item["system"]
+                ref_url = _CODESYSTEM_REDIRECT.get(ref_url, ref_url)
 
-            if ref_url == "http://snomed.info/sct":
-                cs_loader = CodeSystemSNOMEDLoader.from_snomed(store_threshold, snomed_instance, filter_type, filter_info)
-                if cs_loader: cs.append(cs_loader)
-            elif urlparse(ref_url).netloc.endswith("hl7.org"):
-                cs.append(CodeSystemStaticLoader.from_url(ref_url, filter_type, filter_info))
+                if ref_url == "http://snomed.info/sct":
+                    cs_loader = CodeSystemSNOMEDLoader.from_snomed(store_threshold, snomed_instance, filter_type, filter_info)
+                    if cs_loader: cs.append(cs_loader)
+                elif urlparse(ref_url).netloc.endswith("hl7.org") or urlparse(ref_url).netloc.endswith("myweb.rz.uni-augsburg.de"):
+                    cs.append(CodeSystemStaticLoader.from_url(ref_url, filter_type, filter_info))
+                else:
+                    raise NotImplementedError(f"Unhandled URL: {ref_url}")
+            elif "valueSet" in cs_item:
+                # Apparently, the CS can also be a reference to another value set
+                # We use a recursive ValueSetLoader here, and just append the codesystems to the root cs list
+                rec_vs_urls = cs_item["valueSet"]
+                for rec_vs_url in rec_vs_urls:
+                    rec_vs_url = _CODESYSTEM_REDIRECT.get(rec_vs_url, rec_vs_url)
+                    rec_vsl = ValueSetLoader.from_url(rec_vs_url, store_threshold=store_threshold, snomed_instance=instance)
+                    cs.extend(rec_vsl.cs)
             else:
-                raise NotImplementedError(f"Unhandled URL: {ref_url}")
+                raise NotImplementedError(f"Unhandled Item: {cs_item}")
 
         vsl = ValueSetLoader(url, cs)
         _VSL_[(url, store_threshold)] = vsl
@@ -386,6 +411,7 @@ def listSupportedCodings():
 if __name__ == "__main__":
     vs_loaders = {}
     for query, coding_info in _CODINGS.items():
+        if not query.startswith("AllergyIntolerance"): continue
         url = coding_info["vs"]
         code_type = coding_info["type"]
         print(f"Checking {query} @ {url}")
