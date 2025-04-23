@@ -21,3 +21,9 @@ sentencepiece
 
 # For Smolagents
 smolagents
+openai
+litellm
+
+# For AcademicCloud
+requests
+BeautifulSoup4

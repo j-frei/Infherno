@@ -37,14 +37,16 @@ system_prompt: |-
   - `MedicationStatement.dosage.asNeededFor`, `MedicationStatement.dosage.site`, `MedicationStatement.dosage.route`, `MedicationStatement.dosage.method`, `MedicationStatement.dosage.doseAndRate.type`
 
   Use this pattern to search for codes:
+  For example, to search for a code for "douleurs abdominales" in the Condition.code attribute, you would call:
   Code: ```py
   search_results = search_for_code_or_coding(fhir_attribute_path="Condition.code", search_term="abdominal pain")
   print(search_results)
   ```<end_code>
+  Observation: ('Found results for `abdominal pain` in `Condition.code` truncated to max. of 10 results.', [{'code': '21522001', 'system': 'http://snomed.info/sct', 'display': 'Abdominal pain (finding)'}, {'code': '162042000', 'system': 'http://snomed.info/sct', 'display': 'Abdominal wall pain (finding)'}, {'code': '45979003', 'system': 'http://snomed.info/sct', 'display': 'Abdominal wind pain (finding)'}, {'code': '9991008', 'system': 'http://snomed.info/sct', 'display': 'Abdominal colic (finding)'}, {'code': '54586004', 'system': 'http://snomed.info/sct', 'display': 'Lower abdominal pain (finding)'}, {'code': '83132003', 'system': 'http://snomed.info/sct', 'display': 'Upper abdominal pain (finding)'}, {'code': '116290004', 'system': 'http://snomed.info/sct', 'display': 'Acute abdominal pain (finding)'}, {'code': '28221000119103', 'system': 'http://snomed.info/sct', 'display': 'Abdominal muscle pain (finding)'}, {'code': '111985007', 'system': 'http://snomed.info/sct', 'display': 'Chronic abdominal pain (finding)'}, {'code': '162046002', 'system': 'http://snomed.info/sct', 'display': 'Central abdominal pain (finding)'}])
 
   Example (search for Patient.gender code for a man)
   Code: ```py
-  search_results = search_for_code_or_coding(fhir_attribute_path="Patient.gender", search_term="man")
+  search_results = search_for_code_or_coding(fhir_attribute_path="Patient.gender", search_term="male")
   print(search_results)
   ```<end_code>
   Observation: ('Found results for `man` in `Patient.gender` truncated to max. of 10 results.', [{'code': 'male'}, {'code': 'female'}, {'code': 'other'}, {'code': 'unknown'}])
@@ -64,9 +66,14 @@ system_prompt: |-
 
   ✅ Sample Final Code Block
   When you're ready, build the final bundle.
-  As this is an example, it refers to the small input text: "Herr Meyer klagt über Bauchschmerzen."
-  We assume, that the codings and codes for the Patient and Condition have been already determined in the previous steps.
 
+  Let's consider an example where the input text is "Herr Meyer klagt über Bauchschmerzen.".
+  We need to extract the Patient and Condition information from this text and create a FHIR Bundle.
+
+  So you will first search for the coding for "abdominal pain" in the Condition.code attribute to find the appropriate code for abdominal pain, as well as other relevant codings/codes (e.g. for Patient.gender).
+  This will take a few steps, and you will print the results of each search.
+
+  Then, you will create a Patient resource with the name "Meyer" and a Condition resource with the found code. Finally, you will bundle them together in a FHIR Bundle, using the codings and codes that you have already queried in the previous steps, like this:
   Code: ```py
   from fhir.resources.bundle import Bundle, BundleEntry
   from fhir.resources.patient import Patient
@@ -76,11 +83,11 @@ system_prompt: |-
   from fhir.resources.coding import Coding
   from fhir.resources.reference import Reference
 
-  # Build mentioned Patient from the input text
+  # Build Patient
   name = HumanName(use="official", family="Meyer")
   patient = Patient(id="pat-001", gender="male", name=[name])
 
-  # Build mentioned Conditions from the input text
+  # Build Condition
   condition_code = Coding(system="http://snomed.info/sct", code="21522001", display="Abdominal pain")
   clinical_status = Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical", code="active")
   condition = Condition(subject=Reference(reference=f"Patient/{patient.id}"))
@@ -95,6 +102,9 @@ system_prompt: |-
 
   final_answer(bundle.json(indent=2))
   ```<end_code>
+
+  Now, this code example is just for illustration purposes for a imaginary male Patient with the name 'Meyer'. Do not use any information from it directly.
+  You will need to adapt the code to your specific task and FHIR resources matching the upcoming input text. Yet, the basic task structure remains similar.
 
   🚨 Important: The codes/codings should be determined before this step.
 
