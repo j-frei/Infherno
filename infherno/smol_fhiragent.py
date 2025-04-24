@@ -1,5 +1,5 @@
 import os
-import getpass
+from smolagents import HfApiModel, TransformersModel, LiteLLMModel
 
 from infherno.smolagents.fhiragent import FHIRAgent
 from infherno.smolagents.smolcodesearch import search_for_code_or_coding
@@ -32,21 +32,21 @@ MAX_SEARCH_RESULTS = 10 # If >10, only show 10 results (truncated)
 #     max_new_tokens=32000,
 # )
 
-model = AcademicCloudModel(
-    #model_id="meta-llama-3.1-8b-instruct",
-    #model_id="llama-4-scout-17b-16e-instruct",
-    model_id="llama-3.3-70b-instruct",
-    openidc_session_cookie=AcademicAuth().authenticate(AcademicUniAugsburgCredentialsFlow()),
-)
+# model = AcademicCloudModel(
+#     #model_id="meta-llama-3.1-8b-instruct",
+#     #model_id="llama-4-scout-17b-16e-instruct",
+#     model_id="llama-3.3-70b-instruct",
+#     openidc_session_cookie=AcademicAuth().authenticate(AcademicUniAugsburgCredentialsFlow()),
+# )
 
 # Ollama model
-# model = LiteLLMModel(
-#     #model_id="ollama/gemma3:12b",
-#     model_id="ollama/llama3.3:70b-instruct-q4_K_M",
-#     num_ctx=131072, # 128k context
-#     api_key="ollama",
-#     api_base=os.environ.get("OLLAMA_ENDPOINT", "http://localhost:11434")
-# )
+model = LiteLLMModel(
+    #model_id="ollama/gemma3:12b",
+    model_id="ollama/llama3.3:70b-instruct-q4_K_M",
+    num_ctx=131072, # 128k context
+    api_key="ollama",
+    api_base=os.environ.get("OLLAMA_ENDPOINT", "http://localhost:11434")
+)
 
 agent = FHIRAgent(
     tools=[
@@ -61,6 +61,7 @@ The input text is as follows:
 ```
 Magenbeschwerden seit 2 Tagen, Übelkeit, Erbrechen, kein Durchfall.
 Patient hat eine Allergie gegen Penicillin, keine weiteren Allergien bekannt.
+Verschrieben wurde deshalb Pantoprazol 20mg 1-0-1.
 ```
 """
 )
