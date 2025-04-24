@@ -105,6 +105,10 @@ _CODINGS = OrderedDict({
     "AllergyIntolerance.criticality": {"vs": "http://hl7.org/fhir/R4/valueset-allergy-intolerance-criticality.json", "type": "code"},
     "AllergyIntolerance.code": {"vs": "http://hl7.org/fhir/R4/valueset-allergyintolerance-code.json", "type": "coding"},
     "AllergyIntolerance.bodySite": {"vs": "http://hl7.org/fhir/R4/valueset-body-site.json", "type": "coding"},
+    "AllergyIntolerance.reaction.substance": {"vs": "http://hl7.org/fhir/R4/valueset-clinical-findings.json", "type": "coding"},
+    "AllergyIntolerance.reaction.manifestation": {"vs": "http://hl7.org/fhir/R4/valueset-clinical-findings.json", "type": "coding"},
+    "AllergyIntolerance.reaction.severity": {"vs": "http://hl7.org/fhir/R4/valueset-reaction-event-severity.json", "type": "code"},
+    "AllergyIntolerance.reaction.exposureRoute": {"vs": "http://hl7.org/fhir/R4/valueset-route-codes.json", "type": "coding"},
 
 })
 
