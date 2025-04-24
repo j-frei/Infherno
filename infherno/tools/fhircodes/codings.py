@@ -35,6 +35,7 @@ _CODESYSTEM_REDIRECT = {
 
 # Supported Codes/Codings
 _CODINGS = OrderedDict({
+    # Patient
     "Patient.name.use": {"vs": "http://hl7.org/fhir/R4/valueset-name-use.json", "type": "code"},
     "Patient.contact.system": {"vs": "http://hl7.org/fhir/R4/valueset-contact-point-system.json", "type": "code"},
     "Patient.contact.use": {"vs": "http://hl7.org/fhir/R4/valueset-contact-point-use.json", "type": "code"},
@@ -42,53 +43,66 @@ _CODINGS = OrderedDict({
     "Patient.address.use": {"vs": "http://hl7.org/fhir/R4/valueset-address-use.json", "type": "code"},
     "Patient.address.type": {"vs": "http://hl7.org/fhir/R4/valueset-address-type.json", "type": "code"},
     "Patient.maritalStatus": {"vs": "http://hl7.org/fhir/R4/valueset-marital-status.json", "type": "coding"},
-    # IGNORE Patient.contact.relationship
+    "Patient.contact.relationship": {"vs": "http://hl7.org/fhir/R4/valueset-relationship.json", "type": "coding"},
     "Condition.clinicalStatus": {"vs": "http://hl7.org/fhir/R4/valueset-condition-clinical.json", "type": "coding"},
     "Condition.verificationStatus": {"vs": "http://hl7.org/fhir/R4/valueset-condition-ver-status.json", "type": "coding"},
-    # IGNORE Condition.category / Condition Category Codes
+    "Condition.category": {"vs": "http://hl7.org/fhir/R4/valueset-condition-category.json", "type": "coding"},
     "Condition.severity": {"vs": "http://hl7.org/fhir/R4/valueset-condition-severity.json", "type": "coding"},
     "Condition.code": {"vs": "http://hl7.org/fhir/R4/valueset-condition-code.json", "type": "coding"},
     "Condition.bodySite": {"vs": "http://hl7.org/fhir/R4/valueset-body-site.json", "type": "coding"},
-    # IGNORE Condition.participant.function
     "Condition.stage.summary": {"vs": "http://hl7.org/fhir/R4/valueset-condition-stage.json", "type": "coding"},
     "Condition.stage.type": {"vs": "http://hl7.org/fhir/R4/valueset-condition-stage-type.json", "type": "coding"},
     "Condition.evidence": {"vs": "http://hl7.org/fhir/R4/valueset-clinical-findings.json", "type": "coding"},
+
+    # MedicationStatement
     "MedicationStatement.status": {"vs": "http://hl7.org/fhir/R4/valueset-medication-statement-status.json", "type": "code"},
-    # IGNORE MedicationStatement.category
+    "MedicationStatement.statusReason": {"vs": "https://hl7.org/fhir/R4/valueset-reason-medication-status-codes.json", "type": "coding"},
     "MedicationStatement.category": {"vs": "http://hl7.org/fhir/R4/valueset-medication-statement-category.json", "type": "coding"},
-    "MedicationStatement.medication": {"vs": "http://hl7.org/fhir/R4/valueset-medication-codes.json", "type": "coding"},
-    "MedicationStatement.effectiveTiming.repeat.dayOfWeek": {"vs": "http://hl7.org/fhir/R4/valueset-days-of-week.json", "type": "coding"},
-    "MedicationStatement.effectiveTiming.repeat.when": {"vs": "http://hl7.org/fhir/R4/valueset-event-timing.json", "type": "coding"},
-    "MedicationStatement.effectiveTiming.code": {"vs": "http://hl7.org/fhir/R4/valueset-timing-abbreviation.json", "type": "coding"},
-    ## "MedicationStatement.reason": {"vs": "http://hl7.org/fhir/ValueSet/condition-code", "type": "coding"},
-    # IGNORE MedicationStatement.dosage.additionalInstruction
+    "MedicationStatement.medication": {"vs": "http://hl7.org/fhir/R4/valueset-medication-codes.json", "type": "coding"}, "MedicationStatement.medicationCodeableConcept": {"vs": "http://hl7.org/fhir/R4/valueset-medication-codes.json", "type": "coding"},
+    "MedicationStatement.reasonCode": {"vs": "http://hl7.org/fhir/R4/valueset-condition-code.json", "type": "coding"},
+
+    # not R4 "MedicationStatement.effectiveTiming.repeat.dayOfWeek": {"vs": "http://hl7.org/fhir/R4/valueset-days-of-week.json", "type": "coding"},
+    # not R4 "MedicationStatement.effectiveTiming.repeat.when": {"vs": "http://hl7.org/fhir/R4/valueset-event-timing.json", "type": "coding"},
+    # not R4 "MedicationStatement.effectiveTiming.code": {"vs": "http://hl7.org/fhir/R4/valueset-timing-abbreviation.json", "type": "coding"},
+    # not R4 "MedicationStatement.reason": {"vs": "http://hl7.org/fhir/ValueSet/condition-code", "type": "coding"},
     # Unsupported UnitsOfMeasure "MedicationStatement.dosage.timing.repeat.durationUnit": {"vs": "http://hl7.org/fhir/ValueSet/units-of-time", "type": "coding"},
     # Unsupported UnitsOfMeasure "MedicationStatement.dosage.timing.repeat.periodUnit": {"vs": "http://hl7.org/fhir/ValueSet/units-of-time", "type": "coding"},
 
+    "MedicationStatement.dosage.additionalInstruction": {"vs": "http://hl7.org/fhir/R4/valueset-additional-instruction-codes.json", "type": "coding"},
+
+    # UnitsOfMeasure "MedicationStatement.dosage.timing.repeat.durationUnit": {"vs": "http://hl7.org/fhir/R4/valueset-units-of-time.json", "type": "period"},
+    # UnitsOfMeasure "MedicationStatement.dosage.timing.repeat.periodUnit": {"vs": "http://hl7.org/fhir/R4/valueset-units-of-time.json", "type": "period"},
     "MedicationStatement.dosage.timing.repeat.dayOfWeek": {"vs": "http://hl7.org/fhir/R4/valueset-days-of-week.json", "type": "code"},
     "MedicationStatement.dosage.timing.repeat.when": {"vs": "http://hl7.org/fhir/R4/valueset-event-timing.json", "type": "code"},
     "MedicationStatement.dosage.timing.code": {"vs": "http://hl7.org/fhir/R4/valueset-timing-abbreviation.json", "type": "coding"},
-    "MedicationStatement.dosage.asNeededFor": {"vs": "http://hl7.org/fhir/R4/valueset-medication-as-needed-reason.json", "type": "coding"},
+
+    "MedicationStatement.dosage.asNeeded": {"vs": "http://hl7.org/fhir/R4/valueset-medication-as-needed-reason.json", "type": "coding"}, "MedicationStatement.dosage.asNeededCodeableConcept": {"vs": "http://hl7.org/fhir/R4/valueset-medication-as-needed-reason.json", "type": "coding"},
     "MedicationStatement.dosage.site": {"vs": "http://hl7.org/fhir/R4/valueset-approach-site-codes.json", "type": "coding"},
     "MedicationStatement.dosage.route": {"vs": "http://hl7.org/fhir/R4/valueset-route-codes.json", "type": "coding"},
     "MedicationStatement.dosage.method": {"vs": "http://hl7.org/fhir/R4/valueset-administration-method-codes.json", "type": "coding"},
     "MedicationStatement.dosage.doseAndRate.type": {"vs": "http://hl7.org/fhir/R4/valueset-dose-rate-type.json", "type": "coding"},
+
+    # Procedure
     "Procedure.status": {"vs": "http://hl7.org/fhir/R4/valueset-event-status.json", "type": "code"},
     "Procedure.statusReason": {"vs": "http://hl7.org/fhir/R4/valueset-procedure-not-performed-reason.json", "type": "coding"},
     "Procedure.category": {"vs": "http://hl7.org/fhir/R4/valueset-procedure-category.json", "type": "coding"},
     "Procedure.code": {"vs": "http://hl7.org/fhir/R4/valueset-procedure-code.json", "type": "coding"},
-    # Unsupported UnitsOfMeasure "Procedure.occurrenceTiming.repeat.durationUnit": {"vs": "http://hl7.org/fhir/ValueSet/units-of-time", "type": "coding"},
-    # Unsupported UnitsOfMeasure "Procedure.occurrenceTiming.repeat.periodUnit": {"vs": "http://hl7.org/fhir/ValueSet/units-of-time", "type": "coding"},
-    "Procedure.occurrenceTiming.repeat.dayOfWeek": {"vs": "http://hl7.org/fhir/R4/valueset-days-of-week.json", "type": "coding"},
-    "Procedure.occurrenceTiming.repeat.when": {"vs": "http://hl7.org/fhir/R4/valueset-event-timing.json", "type": "coding"},
-    "Procedure.occurrenceTiming.code": {"vs": "http://hl7.org/fhir/R4/valueset-timing-abbreviation.json", "type": "coding"},
-    ## "Procedure.reason": {"vs": "http://hl7.org/fhir/ValueSet/procedure-reason", "type": "coding"},
+    # not R4 Unsupported UnitsOfMeasure "Procedure.occurrenceTiming.repeat.durationUnit": {"vs": "http://hl7.org/fhir/ValueSet/units-of-time", "type": "coding"},
+    # not R4 Unsupported UnitsOfMeasure "Procedure.occurrenceTiming.repeat.periodUnit": {"vs": "http://hl7.org/fhir/ValueSet/units-of-time", "type": "coding"},
+    # not R4 "Procedure.occurrenceTiming.repeat.dayOfWeek": {"vs": "http://hl7.org/fhir/R4/valueset-days-of-week.json", "type": "coding"},
+    # not R4 "Procedure.occurrenceTiming.repeat.when": {"vs": "http://hl7.org/fhir/R4/valueset-event-timing.json", "type": "coding"},
+    # not R4 "Procedure.occurrenceTiming.code": {"vs": "http://hl7.org/fhir/R4/valueset-timing-abbreviation.json", "type": "coding"},
+    # not R4 "Procedure.reason": {"vs": "http://hl7.org/fhir/ValueSet/procedure-reason", "type": "coding"},
+    "Procedure.performer.function": {"vs": "https://hl7.org/fhir/R4/valueset-performer-role.json", "type": "coding"},
+    "Procedure.reasonCode": {"vs": "http://hl7.org/fhir/R4/valueset-procedure-reason.json", "type": "coding"},
     "Procedure.bodySite": {"vs": "http://hl7.org/fhir/R4/valueset-body-site.json", "type": "coding"},
     "Procedure.outcome": {"vs": "http://hl7.org/fhir/R4/valueset-procedure-outcome.json", "type": "coding"},
     "Procedure.complications": {"vs": "http://hl7.org/fhir/R4/valueset-condition-code.json", "type": "coding"},
     "Procedure.followUp": {"vs": "http://hl7.org/fhir/R4/valueset-procedure-followup.json", "type": "coding"},
-    # IGNORE Procedure.focalDevice
-    # IGNORE Procedure.used
+    "Procedure.focalDevice.action": {"vs": "http://hl7.org/fhir/R4/valueset-device-action.json", "type": "coding"},
+    "Procedure.usedCode": {"vs": "https://hl7.org/fhir/R4/valueset-device-kind.json", "type": "coding"},
+
+    # Encounter
     "Encounter.status": {"vs": "http://hl7.org/fhir/R4/valueset-encounter-status.json", "type": "code"},
     # IGNORE Encounter.class
     # IGNORE Encounter.priority
@@ -110,6 +124,19 @@ _CODINGS = OrderedDict({
     "AllergyIntolerance.reaction.severity": {"vs": "http://hl7.org/fhir/R4/valueset-reaction-event-severity.json", "type": "code"},
     "AllergyIntolerance.reaction.exposureRoute": {"vs": "http://hl7.org/fhir/R4/valueset-route-codes.json", "type": "coding"},
 
+    # Immunization
+    "Immunization.status": {"vs": "http://hl7.org/fhir/R4/valueset-immunization-status.json", "type": "code"},
+    "Immunization.statusReason": {"vs": "http://hl7.org/fhir/R4/valueset-immunization-status-reason.json", "type": "coding"},
+    #"Immunization.vaccineCode": {"vs": "http://hl7.org/fhir/R4/valueset-vaccine-code.json", "type": "coding"},
+    "Immunization.recordOrigin": {"vs": "http://hl7.org/fhir/R4/valueset-immunization-origin.json", "type": "coding"},
+    "Immunization.site": {"vs": "http://hl7.org/fhir/R4/valueset-approach-site-codes.json", "type": "coding"},
+    "Immunization.route": {"vs": "http://hl7.org/fhir/R4/valueset-route-codes.json", "type": "coding"},
+    "Immunization.performer.function": {"vs": "http://hl7.org/fhir/R4/valueset-immunization-function.json", "type": "coding"},
+    "Immunization.reasonCode": {"vs": "http://hl7.org/fhir/R4/valueset-immunization-reason.json", "type": "coding"},
+    "Immunization.subpotentReason": {"vs": "http://hl7.org/fhir/R4/valueset-immunization-subpotent-reason.json", "type": "coding"},
+    "Immunization.programEligibility": {"vs": "http://hl7.org/fhir/R4/valueset-immunization-program-eligibility.json", "type": "coding"},
+    "Immunization.fundingSource": {"vs": "http://hl7.org/fhir/R4/valueset-immunization-funding-source.json", "type": "coding"},
+    "Immunization.protocolApplied.targetDisease": {"vs": "http://hl7.org/fhir/R4/valueset-immunization-target-disease.json", "type": "coding"},
 })
 
 def safe_filename(filename):
