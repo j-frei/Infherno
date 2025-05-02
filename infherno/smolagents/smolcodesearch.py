@@ -4,7 +4,7 @@ from smolagents import CodeAgent, ToolCallingAgent, HfApiModel, TransformersMode
 
 from infherno.tools.fhircodes.instance import GenericSnomedInstance
 from infherno.tools.fhircodes.codings import listSupportedCodings, getValueSet, ValueSetLoader
-from infherno.tools.fhircodes.codings import listSupportedCodings
+from infherno.tools.fhircodes.terminology_bindings import search_for_path
 from infherno.defaults import determine_snowstorm_url, determine_snowstorm_branch
 
 # Setup the SNOMED CT instance
@@ -26,6 +26,8 @@ def search_for_code_or_coding(fhir_attribute_path: str, search_term: str) -> Tup
         A tuple of (info text, candidate list) describing the search results.
         The candidate list contains the codes and codings found in the ValueSet.
     """
+    return search_for_path(fhir_attribute_path, search_term, limit=MAX_SEARCH_RESULTS, max_nosearch=MAX_COUNT_NOSEARCH, snomed_instance=SNOMED_INSTANCE)
+
     if not fhir_attribute_path in listSupportedCodings():
         return [], f'Path "{fhir_attribute_path}" is not supported. Supported paths are: {json.dumps(listSupportedCodings())}'
 
