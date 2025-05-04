@@ -1,6 +1,6 @@
 from smolagents import CodeAgent
 
-from infherno.smolagents.smolcodesearch import search_for_code_or_coding
+from infherno.smolagents_utils.smolcodesearch import search_for_code_or_coding
 
 def create_text2fhir_agent(model) -> CodeAgent:
     """

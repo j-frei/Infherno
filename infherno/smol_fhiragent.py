@@ -1,12 +1,12 @@
 import os
 from smolagents import HfApiModel, TransformersModel, LiteLLMModel
 
-from infherno.smolagents.fhiragent import FHIRAgent
-from infherno.smolagents.smolcodesearch import search_for_code_or_coding
+from infherno.smolagents_utils.fhiragent import FHIRAgent
+from infherno.smolagents_utils.smolcodesearch import search_for_code_or_coding
 from infherno.tools.fhircodes.instance import GenericSnomedInstance
 from infherno.defaults import determine_snowstorm_url, determine_snowstorm_branch
-from infherno.smolagents.academiccloud.model import AcademicCloudModel
-from infherno.smolagents.academiccloud.auth import AcademicAuth, AcademicUniAugsburgCredentialsFlow
+from infherno.smolagents_utils.academiccloud.model import AcademicCloudModel
+from infherno.smolagents_utils.academiccloud.auth import AcademicAuth, AcademicUniAugsburgCredentialsFlow
 
 
 SNOMED_INSTANCE = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch())

@@ -8,7 +8,7 @@ from infherno.tools.fhircodes.codings import listSupportedCodings, getValueSet, 
 from infherno.tools.fhircodes.codings import _CODINGS
 from infherno.utils import determine_device
 from infherno.defaults import determine_snowstorm_url, determine_snowstorm_branch
-from infherno.smolagents.smoltext2fhir import create_text2fhir_agent
+from infherno.smolagents_utils.smoltext2fhir import create_text2fhir_agent
 
 # Or just stick to the HF model
 model = TransformersModel(
