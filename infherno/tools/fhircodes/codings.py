@@ -93,14 +93,33 @@ _CODINGS = OrderedDict({
     # not R4 "Procedure.occurrenceTiming.repeat.when": {"vs": "http://hl7.org/fhir/R4/valueset-event-timing.json", "type": "coding"},
     # not R4 "Procedure.occurrenceTiming.code": {"vs": "http://hl7.org/fhir/R4/valueset-timing-abbreviation.json", "type": "coding"},
     # not R4 "Procedure.reason": {"vs": "http://hl7.org/fhir/ValueSet/procedure-reason", "type": "coding"},
-    "Procedure.performer.function": {"vs": "https://hl7.org/fhir/R4/valueset-performer-role.json", "type": "coding"},
+    "Procedure.performer.function": {"vs": "http://hl7.org/fhir/R4/valueset-performer-role.json", "type": "coding"},
     "Procedure.reasonCode": {"vs": "http://hl7.org/fhir/R4/valueset-procedure-reason.json", "type": "coding"},
     "Procedure.bodySite": {"vs": "http://hl7.org/fhir/R4/valueset-body-site.json", "type": "coding"},
     "Procedure.outcome": {"vs": "http://hl7.org/fhir/R4/valueset-procedure-outcome.json", "type": "coding"},
     "Procedure.complications": {"vs": "http://hl7.org/fhir/R4/valueset-condition-code.json", "type": "coding"},
     "Procedure.followUp": {"vs": "http://hl7.org/fhir/R4/valueset-procedure-followup.json", "type": "coding"},
     "Procedure.focalDevice.action": {"vs": "http://hl7.org/fhir/R4/valueset-device-action.json", "type": "coding"},
-    "Procedure.usedCode": {"vs": "https://hl7.org/fhir/R4/valueset-device-kind.json", "type": "coding"},
+    "Procedure.usedCode": {"vs": "http://hl7.org/fhir/R4/valueset-device-kind.json", "type": "coding"},
+
+    # Observation
+    "Observation.status": {"vs": "http://hl7.org/fhir/R4/valueset-observation-status.json", "type": "code"},
+    "Observation.category": {"vs": "http://hl7.org/fhir/R4/valueset-observation-category.json", "type": "coding"},
+    "Observation.code": {"vs": "http://hl7.org/fhir/R4/valueset-observation-codes.json", "type": "coding"},
+    "Observation.effectiveTiming.repeat.dayOfWeek": {"vs": "http://hl7.org/fhir/R4/valueset-days-of-week.json", "type": "code"},
+    "Observation.effectiveTiming.repeat.when": {"vs": "http://hl7.org/fhir/R4/valueset-event-timing.json", "type": "code"},
+    "Observation.effectiveTiming.code": {"vs": "http://hl7.org/fhir/R4/valueset-timing-abbreviation.json", "type": "coding"},
+    "Observation.value": {"vs": "http://hl7.org/fhir/R4/valueset-observation-codes.json", "type": "coding"}, "Observation.valueCodeableConcept": {"vs": "http://hl7.org/fhir/R4/valueset-observation-codes.json", "type": "coding"},
+    "Observation.dataAbsentReason": {"vs": "http://hl7.org/fhir/R4/valueset-data-absent-reason.json", "type": "coding"},
+    "Observation.interpretation": {"vs": "http://hl7.org/fhir/R4/valueset-observation-interpretation.json", "type": "coding"},
+    "Observation.bodySite": {"vs": "http://hl7.org/fhir/R4/valueset-body-site.json", "type": "coding"},
+    "Observation.method": {"vs": "http://hl7.org/fhir/R4/valueset-observation-methods.json", "type": "coding"},
+    "Observation.referenceRange.type": {"vs": "http://hl7.org/fhir/R4/valueset-referencerange-meaning.json", "type": "coding"},
+    # Issues with filter + non-SNOMED: "Observation.referenceRange.appliesTo": {"vs": "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.json", "type": "coding"},
+    "Observation.component.code": {"vs": "http://hl7.org/fhir/R4/valueset-observation-codes.json", "type": "coding"},
+    "Observation.component.value": {"vs": "http://hl7.org/fhir/R4/valueset-observation-codes.json", "type": "coding"}, "Observation.component.valueCodeableConcept": {"vs": "http://hl7.org/fhir/R4/valueset-observation-codes.json", "type": "coding"},
+    "Observation.component.dataAbsentReason": {"vs": "http://hl7.org/fhir/R4/valueset-data-absent-reason.json", "type": "coding"},
+    "Observation.component.interpretation": {"vs": "http://hl7.org/fhir/R4/valueset-observation-interpretation.json", "type": "coding"},
 
     # Encounter
     "Encounter.status": {"vs": "http://hl7.org/fhir/R4/valueset-encounter-status.json", "type": "code"},
@@ -111,7 +130,7 @@ _CODINGS = OrderedDict({
     # IGNORE Encounter.subjectStatus
     # IGNORE Encounter.participant.type
 
-    # clinicalStatus is broken in the concept JSON property: https://terminology.hl7.org/6.2.0/CodeSystem-allergyintolerance-clinical.json.html
+    # AllergyIntolerance.clinicalStatus has a broken concept JSON property?!: https://terminology.hl7.org/6.2.0/CodeSystem-allergyintolerance-clinical.json.html
     "AllergyIntolerance.clinicalStatus": {"vs": "http://hl7.org/fhir/R4/valueset-allergyintolerance-clinical.json", "type": "coding"},
     "AllergyIntolerance.verificationStatus": {"vs": "http://hl7.org/fhir/R4/valueset-allergyintolerance-verification.json", "type": "coding"},
     "AllergyIntolerance.type": {"vs": "http://hl7.org/fhir/R4/valueset-allergy-intolerance-type.json", "type": "code"},
@@ -377,7 +396,11 @@ class ValueSetLoader:
         cs = []
 
         all_cs = vs_doc["compose"]["include"]
+        if "exclude" in vs_doc["compose"]:
+            print("At: {} Exclusion not supported. Ignoring.".format(url))
         for cs_item in all_cs:
+            if "exclude" in cs_item:
+                print("At: {} Exclusion not supported. Ignoring.".format(url))
             if "system" in cs_item:
                 # The CS seems to be a direct reference
                 filter_type = "all"
@@ -399,6 +422,10 @@ class ValueSetLoader:
                     if cs_loader: cs.append(cs_loader)
                 elif urlparse(ref_url).netloc.endswith("hl7.org") or urlparse(ref_url).netloc.endswith("myweb.rz.uni-augsburg.de"):
                     cs.append(CodeSystemStaticLoader.from_url(ref_url, filter_type, filter_info))
+                elif urlparse(ref_url).netloc.endswith("loinc.org"):
+                    print("-"*20, flush=True)
+                    print("At: {} LOINC not supported. Ignoring.".format(url), flush=True)
+                    print("-"*20, flush=True)
                 else:
                     raise NotImplementedError(f"Unhandled URL: {ref_url}")
             elif "valueSet" in cs_item:

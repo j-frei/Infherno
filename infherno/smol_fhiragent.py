@@ -11,9 +11,6 @@ from infherno.smolagents_utils.academiccloud.auth import AcademicAuth, AcademicU
 
 SNOMED_INSTANCE = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch())
 
-MAX_COUNT_NOSEARCH = 10 # If <=10, just paste all results in the chat
-MAX_SEARCH_RESULTS = 10 # If >10, only show 10 results (truncated)
-
 # Choose which LLM engine to use!
 # model = HfApiModel()
 # model = TransformersModel(model_id="meta-llama/Llama-3.2-2B-Instruct")
