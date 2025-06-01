@@ -1,56 +1,31 @@
-import os
-from smolagents import HfApiModel, TransformersModel, LiteLLMModel
-
-from infherno.smolagents_utils.fhiragent import FHIRAgent
+from infherno import default_config as config
+from infherno.defaults import determine_snowstorm_url, determine_snowstorm_branch
+from infherno.models import load_model
+from infherno.smolagents_utils.fhiragent import FHIRAgent, FHIRAgentLogger
 from infherno.smolagents_utils.smolcodesearch import search_for_code_or_coding
 from infherno.tools.fhircodes.instance import GenericSnomedInstance
-from infherno.defaults import determine_snowstorm_url, determine_snowstorm_branch
-from infherno.smolagents_utils.academiccloud.model import AcademicCloudModel
-from infherno.smolagents_utils.academiccloud.auth import AcademicAuth, AcademicUniAugsburgCredentialsFlow
+from infherno.utils import setup_logging
 
+
+logger, log_file = setup_logging(config)
+logger.info(f"Analysis results will be saved to: {log_file}")
 
 SNOMED_INSTANCE = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch())
 
-# Choose which LLM engine to use!
-# model = HfApiModel()
-# model = TransformersModel(model_id="meta-llama/Llama-3.2-2B-Instruct")
-
-# For anthropic: change model_id below to 'anthropic/claude-3-5-sonnet-20240620'
-# model = LiteLLMModel(model_id="gpt-4o")
-
-# Or just stick to the HF model
-# model = TransformersModel(
-#     model_id="meta-llama/Llama-3.1-8B-Instruct",
-#     #model_id="Qwen/Qwen2.5-7B-Instruct",
-#     #model_id="Qwen/Qwen2.5-14B-Instruct",
-#     #model_id="google/gemma-3-12b-it",
-#     #model_id="meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-#     #model_id="bartowski/Llama-3.3-70B-Instruct-GGUF",
-#     max_new_tokens=32000,
-# )
-
-# model = AcademicCloudModel(
-#     #model_id="meta-llama-3.1-8b-instruct",
-#     #model_id="llama-4-scout-17b-16e-instruct",
-#     model_id="llama-3.3-70b-instruct",
-#     openidc_session_cookie=AcademicAuth().authenticate(AcademicUniAugsburgCredentialsFlow()),
-# )
-
-# Ollama model
-model = LiteLLMModel(
-    #model_id="ollama/gemma3:12b",
-    model_id="ollama/llama3.3:70b-instruct-q4_K_M",
-    num_ctx=131072, # 128k context
-    api_key="ollama",
-    api_base=os.environ.get("OLLAMA_ENDPOINT", "http://localhost:11434")
-)
+agent_logger = FHIRAgentLogger(logger, level=2)
 
 agent = FHIRAgent(
     tools=[
         search_for_code_or_coding,
     ],
-    model=model,
-    verbosity_level=2
+    model=load_model(
+        model_class=config.MODEL_CLASS,
+        model_id=config.MODEL_ID,
+        context_length=config.CONTEXT_LENGTH,
+        max_new_tokens=config.MAX_NEW_TOKENS,
+        api_key=config.API_KEY,
+    ),
+    logger=agent_logger,
 )
 
 result = agent.run("""

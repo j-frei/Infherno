@@ -1,5 +1,10 @@
+import logging
+import os
+import yaml
+from logging import Logger
 from typing import List, Callable, Dict, Optional, Any, Union
-import os, yaml
+
+from smolagents import AgentLogger
 from smolagents.agents import (
     MultiStepAgent,
     Tool,
@@ -78,7 +83,9 @@ class FHIRAgent(MultiStepAgent):
         )
         if "*" in self.additional_authorized_imports:
             self.logger.log(
-                "Caution: you set an authorization for all imports, meaning your agent can decide to import any package it deems necessary. This might raise issues if the package is not installed in your environment.",
+                "Caution: you set an authorization for all imports, meaning your agent can decide to import "
+                "any package it deems necessary. This might raise issues if the package is not installed in your "
+                "environment.",
                 0,
             )
         self.executor_type = executor_type or "local"
@@ -125,6 +132,7 @@ class FHIRAgent(MultiStepAgent):
         memory_messages = self.write_memory_to_messages()
 
         self.input_messages = memory_messages.copy()
+        self.logger.log(input_message["content"][0]["text"] for input_message in memory_messages)
 
         # Add new step in logs
         memory_step.model_input_messages = memory_messages.copy()
@@ -194,7 +202,9 @@ class FHIRAgent(MultiStepAgent):
             error_msg = str(e)
             if "Import of " in error_msg and " is not allowed" in error_msg:
                 self.logger.log(
-                    "[bold red]Warning to user: Code execution failed due to an unauthorized import - Consider passing said import under `additional_authorized_imports` when initializing your CodeAgent.",
+                    "[bold red]Warning to user: Code execution failed due to an unauthorized import - "
+                    "Consider passing said import under `additional_authorized_imports` "
+                    "when initializing your CodeAgent.",
                     level=LogLevel.INFO,
                 )
             raise AgentExecutionError(error_msg, self.logger)
@@ -225,3 +235,37 @@ class FHIRAgent(MultiStepAgent):
         agent_dict["executor_kwargs"] = self.executor_kwargs
         agent_dict["max_print_outputs_length"] = self.max_print_outputs_length
         return agent_dict
+
+
+class FHIRAgentLogger(AgentLogger):
+    def __init__(self, root_logger, **kwargs):
+        super().__init__(**kwargs)
+        self.root_logger = root_logger
+
+    def log(self, *args, level: str | LogLevel = LogLevel.INFO, **kwargs) -> None:
+        """Logs a message to the console.
+
+        Args:
+            level (LogLevel, optional): Defaults to LogLevel.INFO.
+        """
+        if isinstance(level, str):
+            level = LogLevel[level.upper()]
+        if level <= self.level:
+            self.console.print(*args, **kwargs)
+
+        # Capture the rich renderable as plain text and send to logger
+        with self.console.capture() as capture:
+            self.console.print(*args, **kwargs)
+        text_output = capture.get()
+
+        # Log the rendered string
+        if level == LogLevel.DEBUG:
+            self.root_logger.debug(text_output)
+        elif level == LogLevel.INFO:
+            self.root_logger.info(text_output)
+        elif level == LogLevel.WARNING:
+            self.root_logger.warning(text_output)
+        elif level == LogLevel.ERROR:
+            self.root_logger.error(text_output)
+        elif level == LogLevel.CRITICAL:
+            self.root_logger.critical(text_output)
