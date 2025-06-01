@@ -1,7 +1,8 @@
-import logging
 import os
 import yaml
-from logging import Logger
+from rich.console import Group
+from rich.panel import Panel
+from rich.rule import Rule
 from typing import List, Callable, Dict, Optional, Any, Union
 
 from smolagents import AgentLogger
@@ -257,6 +258,10 @@ class FHIRAgentLogger(AgentLogger):
         with self.console.capture() as capture:
             self.console.print(*args, **kwargs)
         text_output = capture.get()
+
+        # Heuristic: add newline before "block-like" renderables
+        if args and isinstance(args[0], (Panel, Rule, Group)):
+            text_output = "\n" + text_output
 
         # Log the rendered string
         if level == LogLevel.DEBUG:

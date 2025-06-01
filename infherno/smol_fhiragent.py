@@ -23,6 +23,7 @@ agent = FHIRAgent(
         model_id=config.MODEL_ID,
         context_length=config.CONTEXT_LENGTH,
         max_new_tokens=config.MAX_NEW_TOKENS,
+        device_map=config.DEVICE_MAP,
         api_key=config.API_KEY,
     ),
     logger=agent_logger,

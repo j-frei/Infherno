@@ -5,7 +5,7 @@ from infherno.smolagents_utils.academiccloud.model import AcademicCloudModel
 from infherno.smolagents_utils.academiccloud.auth import AcademicAuth, AcademicUniAugsburgCredentialsFlow
 
 
-def load_model(model_class, model_id, context_length, max_new_tokens, api_key):
+def load_model(model_class, model_id, context_length, max_new_tokens, device_map, api_key):
     if model_class == "HfApiModel":
         model = HfApiModel(
             model_id=model_id,
@@ -42,6 +42,7 @@ def load_model(model_class, model_id, context_length, max_new_tokens, api_key):
             #model_id="meta-llama/Llama-4-Maverick-17B-128E-Instruct",
             #model_id="bartowski/Llama-3.3-70B-Instruct-GGUF",
             max_new_tokens=32000,
+            device_map=device_map,
         )
 
     elif model_class == "AcademicCloudModel":
