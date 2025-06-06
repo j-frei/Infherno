@@ -251,12 +251,13 @@ class FHIRAgentLogger(AgentLogger):
         """
         if isinstance(level, str):
             level = LogLevel[level.upper()]
-        if level <= self.level:
-            self.console.print(*args, **kwargs)
 
         # Capture the rich renderable as plain text and send to logger
         with self.console.capture() as capture:
-            self.console.print(*args, **kwargs)
+            try:
+                self.console.print(*args, **kwargs)
+            except AttributeError:
+                print(*args)
         text_output = capture.get()
 
         # Heuristic: add newline before "block-like" renderables
@@ -268,9 +269,5 @@ class FHIRAgentLogger(AgentLogger):
             self.root_logger.debug(text_output)
         elif level == LogLevel.INFO:
             self.root_logger.info(text_output)
-        elif level == LogLevel.WARNING:
-            self.root_logger.warning(text_output)
         elif level == LogLevel.ERROR:
             self.root_logger.error(text_output)
-        elif level == LogLevel.CRITICAL:
-            self.root_logger.critical(text_output)

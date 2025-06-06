@@ -27,7 +27,7 @@ def load_model(model_class, model_id, context_length, max_new_tokens, device_map
             model = LiteLLMModel(
                 # model_id="gpt-4o",
                 # model_id="anthropic/claude-3-5-sonnet-20240620",
-                model_id="gemini/gemini-1.5-pro",
+                model_id=model_id,
                 num_ctx=context_length,
                 api_key=api_key,
             )
