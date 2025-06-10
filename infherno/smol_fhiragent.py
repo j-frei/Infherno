@@ -1,4 +1,5 @@
 from infherno import default_config as config
+from infherno.data_utils import load_cardiode, load_n2c2
 from infherno.defaults import determine_snowstorm_url, determine_snowstorm_branch
 from infherno.models import load_model
 from infherno.smolagents_utils.fhiragent import FHIRAgent, FHIRAgentLogger
@@ -29,12 +30,27 @@ agent = FHIRAgent(
     logger=agent_logger,
 )
 
-result = agent.run("""
-The input text is as follows:
-```
-Magenbeschwerden seit 2 Tagen, Übelkeit, Erbrechen, kein Durchfall.
-Patient hat eine Allergie gegen Penicillin, keine weiteren Allergien bekannt.
-Verschrieben wurde deshalb Pantoprazol 20mg 1-0-1.
-```
-"""
-)
+if config.TARGET_DATA == "dummy":
+    result = agent.run("""
+        The input text is as follows:
+        ```
+        Magenbeschwerden seit 2 Tagen, Übelkeit, Erbrechen, kein Durchfall.
+        Patient hat eine Allergie gegen Penicillin, keine weiteren Allergien bekannt.
+        Verschrieben wurde deshalb Pantoprazol 20mg 1-0-1.
+        ```
+        """
+    )
+elif config.TARGET_DATA in ["cardiode", "n2c2"]:
+    if config.TARGET_DATA == "n2c2":
+        data = load_n2c2()
+    elif config.TARGET_DATA == "cardiode":
+        data = load_cardiode()
+    else:
+        raise ValueError(f"Target data {config.TARGET_DATA} is not supported!")
+
+    if config.RANDOMIZE_DATA:
+        data = data.shuffle(seed=42)
+
+    for instance in data:
+        instance_text = instance["text"]
+        result = agent.run(f"The input text is as follows:\n```\n{instance_text}\n```")

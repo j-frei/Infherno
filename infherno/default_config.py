@@ -10,9 +10,9 @@ API_KEY = "ollama"
 DEVICE_MAP = "cuda:0"
 
 
-# === DATA ===  # TODO: Currently unused
-TARGET_DATA = "samples"
-FHIR_VALUESETS = [
+# === DATA ===
+TARGET_DATA = "dummy"
+FHIR_VALUESETS = [   # TODO: Currently unused
     "Patient",
     "Condition"
     "MedicationStatement",
