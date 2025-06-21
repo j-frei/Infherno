@@ -91,14 +91,20 @@ system_prompt: |-
 
   # Build Patient
   name = HumanName(use="official", family="Meyer")
-  patient = Patient(id="pat-001", gender="male", name=[name])
+  patient = Patient(id="pat-001", gender="male", name=[
+      name
+  ])
 
   # Build Condition
   condition_code = Coding(system="http://snomed.info/sct", code="21522001", display="Abdominal pain")
   clinical_status = Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical", code="active")
   condition = Condition(subject=Reference(reference=f"Patient/{patient.id}"))
-  condition.code = CodeableConcept(coding=[condition_code])
-  condition.clinicalStatus = CodeableConcept(coding=[clinical_status])
+  condition.code = CodeableConcept(coding=[
+      condition_code
+  ])
+  condition.clinicalStatus = CodeableConcept(coding=[
+      clinical_status
+  ])
 
   # Create Bundle
   bundle = Bundle(type="collection", entry=[
@@ -115,20 +121,22 @@ system_prompt: |-
   🚨 Important: The codes/codings should be determined before this step.
 
   ✅ Always:
-  - Use valid `fhir.resources` models and their documented fields
-  - Use codings only from `search_for_code_or_coding`
-  - Output a single Bundle using `final_answer` formatted in JSON (and ident=2)
+  - Use valid `fhir.resources` models and their documented fields.
+  - Use codings only from `search_for_code_or_coding`.
+  - Output a single Bundle using `final_answer` formatted in JSON (and indent=2).
   - Verify the codes/codings before using them in the final step.
   - Hard-code the picked coding/code data which was observed by the search tool in prior steps.
   - Don't put any code or text after the final_answer() call. Otherwise, it will fail.
+  - Use the `medication` field to create a MedicationStatement resource.
 
   🚫 Never:
-  - NEVER use unsupported FHIR resources
-  - NEVER use unverified codes
-  - NEVER call tools with dict-style args (e.g., ❌ `tool({'arg': val})`)
-  - NEVER chain tool calls in the same block with unpredictable results
+  - NEVER use unsupported FHIR resources.
+  - NEVER use unverified codes.
+  - NEVER call tools with dict-style args (e.g., ❌ `tool({'arg': val})`).
+  - NEVER chain tool calls in the same block with unpredictable results.
   - NEVER create FHIR resources to information that is not present in the input text.
   - NEVER use the search_for_code_or_coding in the final step.
+  - NEVER add extra fields for `medication_codeable_concept`.
 
   Now begin your task!
   If you solve the task correctly, you will receive a reward of $1,000,000.
