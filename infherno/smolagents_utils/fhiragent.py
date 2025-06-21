@@ -33,7 +33,7 @@ from smolagents.agents import (
     Text,
 )
 from typing import List, Callable, Dict, Optional, Any, Union
-
+from infherno.tools.fhircodes.codings import listSupportedCodings
 
 class FHIRAgentLogger(AgentLogger):
     def __init__(self, root_logger, **kwargs):
@@ -177,7 +177,18 @@ class FHIRAgent(MultiStepAgent):
                     if "*" in self.authorized_imports
                     else str(self.authorized_imports)
                 ),
-                "fhir_config": self.fhir_config,
+                "fhir_config": {
+                    "FHIR_VALUESETS": getattr(self.fhir_config, "FHIR_VALUESETS", ["Patient", "Condition", "MedicationStatement"]),
+                    "SUPPORTED_QUERY_PATHS": [
+                        fhir_attribute_path
+                        for fhir_attribute_path in listSupportedCodings()
+                        # Only accept paths that start with "Patient.XYZ", "Condition.XYZ", or "MedicationStatement.XYZ"
+                        if any(
+                            fhir_attribute_path.startswith(fhir_resource + ".")
+                            for fhir_resource in getattr(self.fhir_config, "FHIR_VALUESETS" ["Patient", "Condition", "MedicationStatement"])
+                        )
+                    ]
+                }
             },
         )
         return system_prompt

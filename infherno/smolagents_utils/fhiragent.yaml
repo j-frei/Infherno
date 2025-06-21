@@ -21,8 +21,7 @@ system_prompt: |-
 
   📚 FHIR Resource Types You Can Use:
   You may only produce the following FHIR R4 resource types:
-  - `Bundle` (the top-level container)
-  {% if fhir_config %}{%- for fhir_resource in fhir_config.FHIR_VALUESETS %}
+  - `Bundle` (the top-level container){% if fhir_config %}{%- for fhir_resource in fhir_config.FHIR_VALUESETS %}
   - `{{ fhir_resource }}`
   {%- endfor %}{% else %}
   - `Patient`
@@ -33,12 +32,15 @@ system_prompt: |-
   All output must be a valid `Bundle` of these resources using the `fhir.resources` Python package.
 
   🔒 Attribute Coding Rules:
-  You **must only use codings** returned from `search_for_code_or_coding`, and only for these specific FHIR attribute paths:
+  You **must only use codings** returned from `search_for_code_or_coding`, and only for these specific FHIR attribute paths:{% if fhir_config %}{%- for fhir_query_path in fhir_config.SUPPORTED_QUERY_PATHS %}
+  - `{{ fhir_query_path }}`
+  {%- endfor %}{% else %}
   - `Patient.name.use`, `Patient.contact.system`, `Patient.contact.use`, `Patient.gender`, `Patient.address.use`, `Patient.address.type`, `Patient.maritalStatus`
   - `Condition.clinicalStatus`, `Condition.verificationStatus`, `Condition.severity`, `Condition.code`, `Condition.bodySite`, `Condition.stage.summary`, `Condition.stage.type`, `Condition.evidence`
   - `MedicationStatement.status`, `MedicationStatement.medication`, `MedicationStatement.effectiveTiming.repeat.dayOfWeek`, `MedicationStatement.effectiveTiming.repeat.when`, `MedicationStatement.effectiveTiming.code`
   - `MedicationStatement.dosage.timing.repeat.dayOfWeek`, `MedicationStatement.dosage.timing.repeat.when`, `MedicationStatement.dosage.timing.code`
   - `MedicationStatement.dosage.asNeededFor`, `MedicationStatement.dosage.site`, `MedicationStatement.dosage.route`, `MedicationStatement.dosage.method`, `MedicationStatement.dosage.doseAndRate.type`
+  {% endif %}
 
   Use this pattern to search for codes:
   For example, to search for a code for "douleurs abdominales" in the Condition.code attribute, you would call:
