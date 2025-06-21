@@ -11,6 +11,7 @@ DEVICE_MAP = "auto"
 
 
 # === DATA ===
+DIRECTORY = "./"
 TARGET_DATA = "dummy"
 FHIR_VALUESETS = [   # TODO: Currently unused
     "Patient",
