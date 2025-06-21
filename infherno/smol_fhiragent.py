@@ -28,6 +28,7 @@ agent = FHIRAgent(
         api_key=config.API_KEY,
     ),
     logger=agent_logger,
+    fhir_config=config,
 )
 
 if config.TARGET_DATA == "dummy":

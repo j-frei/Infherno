@@ -117,6 +117,7 @@ class FHIRAgent(MultiStepAgent):
         executor_kwargs: Optional[Dict[str, Any]] = None,
         max_print_outputs_length: Optional[int] = None,
         logger: FHIRAgentLogger = None,
+        fhir_config = None,
         **kwargs,
     ):
         self.additional_authorized_imports = ["fhir.resources", "datetime", "time", "dateutil"]
@@ -124,6 +125,8 @@ class FHIRAgent(MultiStepAgent):
         self.max_print_outputs_length = max_print_outputs_length
         with open(os.path.join(os.path.dirname(__file__), "fhiragent.yaml")) as f:
             prompt_templates = yaml.safe_load(f)
+
+        self.fhir_config = fhir_config
 
         super().__init__(
             tools=tools,
@@ -174,6 +177,7 @@ class FHIRAgent(MultiStepAgent):
                     if "*" in self.authorized_imports
                     else str(self.authorized_imports)
                 ),
+                "fhir_config": self.fhir_config,
             },
         )
         return system_prompt

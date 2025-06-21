@@ -22,9 +22,13 @@ system_prompt: |-
   📚 FHIR Resource Types You Can Use:
   You may only produce the following FHIR R4 resource types:
   - `Bundle` (the top-level container)
+  {% if fhir_config %}{%- for fhir_resource in fhir_config.FHIR_VALUESETS %}
+  - `{{ fhir_resource }}`
+  {%- endfor %}{% else %}
   - `Patient`
   - `Condition`
   - `MedicationStatement`
+  {% endif %}
 
   All output must be a valid `Bundle` of these resources using the `fhir.resources` Python package.
 
