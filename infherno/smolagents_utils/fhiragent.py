@@ -168,7 +168,7 @@ class FHIRAgent(MultiStepAgent):
 
     def initialize_system_prompt(self) -> str:
         # Get the FHIR valuesets from the fhir_config, or use default ones
-        fhir_valuesets = getattr(self.fhir_config, "FHIR_VALUESETS", ["Patient", "Condition", "MedicationStatement"]),
+        fhir_valuesets = getattr(self.fhir_config, "FHIR_VALUESETS", ["Patient", "Condition", "MedicationStatement"])
 
         system_prompt = populate_template(
             self.prompt_templates["system_prompt"],
@@ -180,7 +180,6 @@ class FHIRAgent(MultiStepAgent):
                     if "*" in self.authorized_imports
                     else str(self.authorized_imports)
                 ),
-
                 "fhir_config": {
                     "FHIR_VALUESETS": fhir_valuesets,
                     "SUPPORTED_QUERY_PATHS": [
