@@ -7,7 +7,7 @@ MAX_NEW_TOKENS = 32000
 API_KEY = "ollama"
 
 # for local models
-DEVICE_MAP = "cuda:0"
+DEVICE_MAP = "auto"
 
 
 # === DATA ===

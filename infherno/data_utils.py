@@ -65,7 +65,7 @@ def load_cardiode(data_path: str = "../CARDIODE400_main@deanonymized_slim.jsonl"
     return raw_dataset
 
 
-def load_n2c2(data_path: str = "../n2c2_gold@deanonymized_slim.jsonl", partitioning: bool = False) -> Dataset:
+def load_n2c2(data_path: str = "../n2c2_gold@deanonymized_slim.jsonl") -> Dataset:
     raw_dataset = load_dataset("json", data_files=data_path)["train"]
     # Add unique IDs (int)
     raw_dataset = raw_dataset.map(
