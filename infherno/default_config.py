@@ -17,7 +17,11 @@ FHIR_VALUESETS = [   # TODO: Currently unused
     "Condition",
     "MedicationStatement",
 ]
+APPLY_PARTITIONING = True
 RANDOMIZE_DATA = False
+SHORTEST_FIRST = False
+TAKE_SUBSAMPLE = True
+SUBSAMPLE_SIZE = 10
 
 
 # === TESTS / EVALUATION ===  # TODO: Currently unused

@@ -1,5 +1,5 @@
 from infherno import default_config as config
-from infherno.data_utils import load_cardiode, load_n2c2
+from infherno.data_utils import apply_partitioning, load_cardiode, load_n2c2
 from infherno.defaults import determine_snowstorm_url, determine_snowstorm_branch
 from infherno.models import load_model
 from infherno.smolagents_utils.fhiragent import FHIRAgent, FHIRAgentLogger
@@ -49,8 +49,21 @@ elif config.TARGET_DATA in ["cardiode", "n2c2"]:
     else:
         raise ValueError(f"Target data {config.TARGET_DATA} is not supported!")
 
-    if config.RANDOMIZE_DATA:
+    if config.SHORTEST_FIRST:
+        lengths = [len(t) for t in data["text"]]
+        # Get the sorted ordering of indices, shortest first
+        sorted_idx = sorted(range(len(lengths)), key=lambda i: lengths[i])
+        # Reorder dataset
+        data = data.select(sorted_idx)
+
+    elif config.RANDOMIZE_DATA:
         data = data.shuffle(seed=42)
+
+    if config.TAKE_SUBSAMPLE:
+        data = data.select(range(config.SUBSAMPLE_SIZE))
+
+    if config.APPLY_PARTITIONING:
+        data = apply_partitioning(data)
 
     for instance in data:
         instance_text = instance["text"]
