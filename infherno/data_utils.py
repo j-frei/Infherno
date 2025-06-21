@@ -1,7 +1,7 @@
 import re
 from datasets import Dataset, load_dataset
 
-from infherno.local_config import DIRECTORY
+from infherno.default_config import DIRECTORY
 
 
 N2C2_HEADER_RE = re.compile(r"^[A-Z][A-Z0-9 /]+:\s*$")
