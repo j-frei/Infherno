@@ -33,7 +33,7 @@ from smolagents.agents import (
     Text,
 )
 from typing import List, Callable, Dict, Optional, Any, Union
-from infherno.tools.fhircodes.codings import listSupportedCodings
+from infherno.tools.fhircodes.terminology_bindings import getTerminologyBindings
 
 class FHIRAgentLogger(AgentLogger):
     def __init__(self, root_logger, **kwargs):
@@ -167,6 +167,9 @@ class FHIRAgent(MultiStepAgent):
                 raise ValueError(f"Unsupported executor type: {self.executor_type}")
 
     def initialize_system_prompt(self) -> str:
+        # Get the FHIR valuesets from the fhir_config, or use default ones
+        fhir_valuesets = getattr(self.fhir_config, "FHIR_VALUESETS", ["Patient", "Condition", "MedicationStatement"]),
+
         system_prompt = populate_template(
             self.prompt_templates["system_prompt"],
             variables={
@@ -177,15 +180,16 @@ class FHIRAgent(MultiStepAgent):
                     if "*" in self.authorized_imports
                     else str(self.authorized_imports)
                 ),
+
                 "fhir_config": {
-                    "FHIR_VALUESETS": getattr(self.fhir_config, "FHIR_VALUESETS", ["Patient", "Condition", "MedicationStatement"]),
+                    "FHIR_VALUESETS": fhir_valuesets,
                     "SUPPORTED_QUERY_PATHS": [
                         fhir_attribute_path
-                        for fhir_attribute_path in listSupportedCodings()
+                        for fhir_attribute_path in getTerminologyBindings("R4").keys()
                         # Only accept paths that start with "Patient.XYZ", "Condition.XYZ", or "MedicationStatement.XYZ"
                         if any(
                             fhir_attribute_path.startswith(fhir_resource + ".")
-                            for fhir_resource in getattr(self.fhir_config, "FHIR_VALUESETS", ["Patient", "Condition", "MedicationStatement"])
+                            for fhir_resource in fhir_valuesets
                         )
                     ]
                 }
