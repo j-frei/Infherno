@@ -14,7 +14,7 @@ DEVICE_MAP = "cuda:0"
 TARGET_DATA = "dummy"
 FHIR_VALUESETS = [   # TODO: Currently unused
     "Patient",
-    "Condition"
+    "Condition",
     "MedicationStatement",
 ]
 RANDOMIZE_DATA = False
