@@ -20,7 +20,7 @@ sentencepiece
 #nvidia-cuda-nvrtc-cu12
 
 # For Smolagents
-smolagents
+smolagents==1.13.0
 openai
 litellm
 

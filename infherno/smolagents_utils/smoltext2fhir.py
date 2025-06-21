@@ -12,7 +12,7 @@ def create_text2fhir_agent(model) -> CodeAgent:
     return CodeAgent(
         tools=[search_for_code_or_coding],
         model=model,
-        additional_authorized_imports=["fhir.resources", "datetime", "time", "dateutil"],
+        additional_authorized_imports=["fhir.*", "datetime", "time", "dateutil"],
         name="Text2FHIR_Agent",
         description="Translate a given input text into a list of FHIR resources accurately matching facts stated in the input text.",
         verbosity_level=2,
