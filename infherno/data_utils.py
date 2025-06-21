@@ -1,8 +1,6 @@
 import re
 from datasets import Dataset, load_dataset
 
-from infherno.default_config import DIRECTORY
-
 
 N2C2_HEADER_RE = re.compile(r"^[A-Z][A-Z0-9 /]+:\s*$")
 
@@ -62,13 +60,13 @@ def apply_partitioning(raw_dataset):
     return new_ds
 
 
-def load_cardiode(data_path: str = f"{DIRECTORY}/CARDIODE400_main@deanonymized_slim.jsonl") -> Dataset:
-    raw_dataset = load_dataset("json", data_files=data_path)["train"]
+def load_cardiode(data_path: str = f"./") -> Dataset:
+    raw_dataset = load_dataset("json", data_files=data_path + "CARDIODE400_main@deanonymized_slim.jsonl")["train"]
     return raw_dataset
 
 
-def load_n2c2(data_path: str = f"{DIRECTORY}/n2c2_gold@deanonymized_slim.jsonl") -> Dataset:
-    raw_dataset = load_dataset("json", data_files=data_path)["train"]
+def load_n2c2(data_path: str = f"./") -> Dataset:
+    raw_dataset = load_dataset("json", data_files=data_path + "n2c2_gold@deanonymized_slim.jsonl")["train"]
     # Add unique IDs (int)
     raw_dataset = raw_dataset.map(
         lambda example, idx: {"id": idx},
