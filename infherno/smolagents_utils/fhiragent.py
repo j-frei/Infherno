@@ -185,7 +185,7 @@ class FHIRAgent(MultiStepAgent):
                         # Only accept paths that start with "Patient.XYZ", "Condition.XYZ", or "MedicationStatement.XYZ"
                         if any(
                             fhir_attribute_path.startswith(fhir_resource + ".")
-                            for fhir_resource in getattr(self.fhir_config, "FHIR_VALUESETS" ["Patient", "Condition", "MedicationStatement"])
+                            for fhir_resource in getattr(self.fhir_config, "FHIR_VALUESETS", ["Patient", "Condition", "MedicationStatement"])
                         )
                     ]
                 }
