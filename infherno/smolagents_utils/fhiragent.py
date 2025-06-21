@@ -1,10 +1,12 @@
+import hashlib
+import json
 import os
+import types
 import yaml
+from collections import defaultdict
 from rich.console import Group
 from rich.panel import Panel
 from rich.rule import Rule
-from typing import List, Callable, Dict, Optional, Any, Union
-
 from smolagents import AgentLogger
 from smolagents.agents import (
     MultiStepAgent,
@@ -30,6 +32,54 @@ from smolagents.agents import (
     Group,
     Text,
 )
+from typing import List, Callable, Dict, Optional, Any, Union
+
+
+class FHIRAgentLogger(AgentLogger):
+    def __init__(self, root_logger, **kwargs):
+        super().__init__(**kwargs)
+        self.root_logger = root_logger
+
+    def _expand_args(self, args):
+        expanded = []
+        for arg in args:
+            if isinstance(arg, types.GeneratorType):
+                expanded.append(list(arg))  # Materialize generator
+            else:
+                expanded.append(arg)
+        return expanded
+
+    def log(self, *args, level: str | LogLevel = LogLevel.INFO, **kwargs) -> None:
+        """Logs a message to the console.
+
+        Args:
+            level (LogLevel, optional): Defaults to LogLevel.INFO.
+        """
+        if isinstance(level, str):
+            level = LogLevel[level.upper()]
+
+        safe_args = self._expand_args(args)
+
+        # Capture the rich renderable as plain text and send to logger
+        with self.console.capture() as capture:
+            try:
+                self.console.print(*safe_args, **kwargs)
+            except AttributeError:
+                print(*safe_args)
+        text_output = capture.get()
+
+        # Heuristic: add newline before "block-like" renderables
+        if args and isinstance(args[0], (Panel, Rule, Group)):
+            text_output = "\n" + text_output
+
+        # Log the rendered string
+        if level == LogLevel.DEBUG:
+            self.root_logger.debug(text_output)
+        elif level == LogLevel.INFO:
+            self.root_logger.info(text_output)
+        elif level == LogLevel.ERROR:
+            self.root_logger.error(text_output)
+
 
 '''
 Mostly copied from smolagents' codeagent.py with slight modifications
@@ -66,6 +116,7 @@ class FHIRAgent(MultiStepAgent):
         executor_type: str | None = "local",
         executor_kwargs: Optional[Dict[str, Any]] = None,
         max_print_outputs_length: Optional[int] = None,
+        logger: FHIRAgentLogger = None,
         **kwargs,
     ):
         self.additional_authorized_imports = ["fhir.resources", "datetime", "time", "dateutil"]
@@ -92,6 +143,8 @@ class FHIRAgent(MultiStepAgent):
         self.executor_type = executor_type or "local"
         self.executor_kwargs = executor_kwargs or {}
         self.python_executor = self.create_python_executor()
+        self.logger = logger
+        self._seen_message_hashes = set()
 
     def create_python_executor(self) -> PythonExecutor:
         match self.executor_type:
@@ -125,6 +178,19 @@ class FHIRAgent(MultiStepAgent):
         )
         return system_prompt
 
+    def _hash_message(self, message):
+        # Serialize the full message dict deterministically
+        return hashlib.sha256(json.dumps(message, sort_keys=True).encode()).hexdigest()
+
+    def _get_new_memory_messages(self, memory_messages):
+        new_messages = []
+        for msg in memory_messages:
+            h = self._hash_message(msg)
+            if h not in self._seen_message_hashes:
+                self._seen_message_hashes.add(h)
+                new_messages.append(msg)
+        return new_messages
+
     def step(self, memory_step: ActionStep) -> Union[None, Any]:
         """
         Perform one step in the ReAct framework: the agent thinks, acts, and observes the result.
@@ -133,7 +199,21 @@ class FHIRAgent(MultiStepAgent):
         memory_messages = self.write_memory_to_messages()
 
         self.input_messages = memory_messages.copy()
-        self.logger.log(input_message["content"][0]["text"] for input_message in memory_messages)
+        new_messages = self._get_new_memory_messages(memory_messages)
+
+        if new_messages:
+            # Group new messages by role
+            messages_by_role = defaultdict(list)
+            for msg in new_messages:
+                role = msg.get("role", "unknown")
+                text = msg.get("content", [{}])[0].get("text", "")
+                messages_by_role[role].append(text)
+
+            # Create and log one Panel per role
+            for role, texts in messages_by_role.items():
+                block = "\n".join(texts)
+                panel = Panel(block, title=role, expand=False)
+                self.logger.log(panel)
 
         # Add new step in logs
         memory_step.model_input_messages = memory_messages.copy()
@@ -236,38 +316,3 @@ class FHIRAgent(MultiStepAgent):
         agent_dict["executor_kwargs"] = self.executor_kwargs
         agent_dict["max_print_outputs_length"] = self.max_print_outputs_length
         return agent_dict
-
-
-class FHIRAgentLogger(AgentLogger):
-    def __init__(self, root_logger, **kwargs):
-        super().__init__(**kwargs)
-        self.root_logger = root_logger
-
-    def log(self, *args, level: str | LogLevel = LogLevel.INFO, **kwargs) -> None:
-        """Logs a message to the console.
-
-        Args:
-            level (LogLevel, optional): Defaults to LogLevel.INFO.
-        """
-        if isinstance(level, str):
-            level = LogLevel[level.upper()]
-
-        # Capture the rich renderable as plain text and send to logger
-        with self.console.capture() as capture:
-            try:
-                self.console.print(*args, **kwargs)
-            except AttributeError:
-                print(*args)
-        text_output = capture.get()
-
-        # Heuristic: add newline before "block-like" renderables
-        if args and isinstance(args[0], (Panel, Rule, Group)):
-            text_output = "\n" + text_output
-
-        # Log the rendered string
-        if level == LogLevel.DEBUG:
-            self.root_logger.debug(text_output)
-        elif level == LogLevel.INFO:
-            self.root_logger.info(text_output)
-        elif level == LogLevel.ERROR:
-            self.root_logger.error(text_output)

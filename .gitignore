@@ -179,3 +179,12 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+infherno/local_config.py
+
+*@deanonymized_slim.jsonl
+
+*.DS_STORE
+
+nlaugmenter
+nlaugmenter_package

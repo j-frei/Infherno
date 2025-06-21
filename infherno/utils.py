@@ -96,11 +96,51 @@ def setup_logging(
     }
 
     # Define sensitive keys to exclude
-    sensitive_keys = {"API_KEY"}
+    logger.sensitive_keys = {
+        "API_KEY": config.API_KEY,
+    }
+
+    class RedactFilter(logging.Filter):
+        def __init__(self, tokens_to_redact):
+            super().__init__()
+            self.tokens_to_redact = tokens_to_redact
+
+        def filter(self, record: logging.LogRecord) -> bool:
+            if hasattr(record, "args") and isinstance(record.args, tuple):
+                new_args = []
+                for arg in record.args:
+                    arg_str = str(arg)
+                    redacted = arg_str
+                    for token in self.tokens_to_redact:
+                        if token and token in redacted:
+                            redacted = redacted.replace(token, "REDACTED")
+                    # If redacted value is different, use it as str; else preserve original type
+                    if redacted != arg_str:
+                        new_args.append(redacted)
+                    else:
+                        new_args.append(arg)
+                record.args = tuple(new_args)
+
+            # Sanitize record.msg itself (rare case where it’s a full string)
+            if isinstance(record.msg, str):
+                for token in self.tokens_to_redact:
+                    if token and token in record.msg:
+                        record.msg = record.msg.replace(token, "REDACTED")
+
+            return True
+
+    tokens_to_redact = [config.API_KEY]
+    redact_filter = RedactFilter(tokens_to_redact)
+
+    for logger_name in ["root", "httpx", "LiteLLM", "smolagents"]:
+        log = logging.getLogger(logger_name)
+        log.addFilter(redact_filter)
+        log.setLevel(logging.INFO)
+        log.propagate = True
 
     # Log each config parameter, excluding sensitive ones
     for key, value in sorted(config_dict.items()):
-        if key in sensitive_keys:
+        if key in list(logger.sensitive_keys.keys()):
             continue
         try:
             # Try to convert to JSON for cleaner formatting of complex objects
