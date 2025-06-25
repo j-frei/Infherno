@@ -33,7 +33,7 @@ from smolagents.agents import (
     Text,
 )
 from typing import List, Callable, Dict, Optional, Any, Union
-from infherno.tools.fhircodes.terminology_bindings import getTerminologyBindings
+from infherno.tools.fhircodes.terminology_bindings import getTerminologyBindingData, loadTerminologyBindings
 
 class FHIRAgentLogger(AgentLogger):
     def __init__(self, root_logger, **kwargs):
@@ -168,7 +168,8 @@ class FHIRAgent(MultiStepAgent):
 
     def initialize_system_prompt(self) -> str:
         # Get the FHIR valuesets from the fhir_config, or use default ones
-        fhir_valuesets = getattr(self.fhir_config, "FHIR_VALUESETS", ["Patient", "Condition", "MedicationStatement"])
+        root_fhir_resources = getattr(self.fhir_config, "ROOT_FHIR_RESOURCES", ["Patient", "Condition", "MedicationStatement"])
+        terminology_bindings = loadTerminologyBindings(root_fhir_resources, "R4")
 
         system_prompt = populate_template(
             self.prompt_templates["system_prompt"],
@@ -181,16 +182,8 @@ class FHIRAgent(MultiStepAgent):
                     else str(self.authorized_imports)
                 ),
                 "fhir_config": {
-                    "FHIR_VALUESETS": fhir_valuesets,
-                    "SUPPORTED_QUERY_PATHS": [
-                        fhir_attribute_path
-                        for fhir_attribute_path in getTerminologyBindings("R4").keys()
-                        # Only accept paths that start with "Patient.XYZ", "Condition.XYZ", or "MedicationStatement.XYZ"
-                        if any(
-                            fhir_attribute_path.startswith(fhir_resource + ".")
-                            for fhir_resource in fhir_valuesets
-                        )
-                    ]
+                    "ROOT_FHIR_RESOURCES": root_fhir_resources,
+                    "SUPPORTED_QUERY_PATHS": terminology_bindings.keys()
                 }
             },
         )

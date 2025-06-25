@@ -21,7 +21,7 @@ system_prompt: |-
 
   📚 FHIR Resource Types You Can Use:
   You may only produce the following FHIR R4 resource types:
-  - `Bundle` (the top-level container){% if fhir_config %}{%- for fhir_resource in fhir_config.FHIR_VALUESETS %}
+  - `Bundle` (the top-level container){% if fhir_config %}{%- for fhir_resource in fhir_config.ROOT_FHIR_RESOURCES %}
   - `{{ fhir_resource }}`
   {%- endfor %}{% else %}
   - `Patient`
@@ -90,21 +90,24 @@ system_prompt: |-
   from fhir.resources.reference import Reference
 
   # Build Patient
-  name = HumanName(use="official", family="Meyer")
-  patient = Patient(id="pat-001", gender="male", name=[
-      name
-  ])
+  pat_name = HumanName(use="official", family="Meyer")
+  patient = Patient(id="pat-001", gender="male", name=[pat_name])
 
   # Build Condition
-  condition_code = Coding(system="http://snomed.info/sct", code="21522001", display="Abdominal pain")
-  clinical_status = Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical", code="active")
-  condition = Condition(subject=Reference(reference=f"Patient/{patient.id}"))
-  condition.code = CodeableConcept(coding=[
-      condition_code
+  condition_code_coding = Coding(system="http://snomed.info/sct", code="21522001", display="Abdominal pain")
+  condition_clinicalStatus_coding = Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical", code="active")
+  condition_code_codableConcept = CodeableConcept(coding=[
+      condition_code_coding
   ])
-  condition.clinicalStatus = CodeableConcept(coding=[
-      clinical_status
+  condition_clinicalStatus_codableConcept = CodeableConcept(coding=[
+      condition_clinicalStatus_coding
   ])
+  # Create the final Condition resource with all necessary fields set on creation to avoid validation errors (also applies to other resources)
+  condition = Condition(
+    subject=Reference(reference=f"Patient/{patient.id}"),
+    code=condition_code_codableConcept,
+    clinicalStatus=condition_clinicalStatus_codableConcept,
+  )
 
   # Create Bundle
   bundle = Bundle(type="collection", entry=[

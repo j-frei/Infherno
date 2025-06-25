@@ -4,6 +4,7 @@ import os
 import json
 import zipfile
 import urllib.parse
+from functools import reduce
 
 import requests
 
@@ -68,9 +69,11 @@ def downloadTerminologyDefinitionFile(release: str = "R4"):
 
         # Extract the terminology bindings
         bindings = {}
+        dependencies = {}
         for entry in dataelements.get("entry", []):
             # elements
             for element in entry.get("resource", {}).get("snapshot", {}).get("element", []):
+                # Extract the binding information
                 if "path" in element and "binding" in element:
                     # We have some binding info
                     path = element.get("path")
@@ -95,13 +98,28 @@ def downloadTerminologyDefinitionFile(release: str = "R4"):
                                 print(f"Warning: Different type found for path {path}.", file=sys.stderr)
                             if existing_binding["strength"] != strength:
                                 print(f"Warning: Different strength found for path {path}.", file=sys.stderr)
+                # Extract dependencies
+                if "path" in element:
+                    path = element.get("path")
+                    type_info = list(set(([ t.get("code") for t in element.get("type", []) if "code" in t ])))
+                    actual_types = [
+                        t for t in type_info
+                        if not (
+                            t.startswith("http://hl7.org/fhirpath/") or t[0].islower()
+                        )
+                    ]
+                    if actual_types:
+                        dependencies[path] = list(set(dependencies.get(path, []) + actual_types))
 
         # Save the bindings to a file
         with open(bindings_path, "w") as f:
-            json.dump(bindings, f, indent=2)
+            json.dump({
+                "bindings": bindings,
+                "dependencies": dependencies
+            }, f, indent=2)
 
 BINDINGS = {}
-def getTerminologyBindings(release: str = "R4"):
+def getTerminologyBindingData(release: str = "R4"):
     global BINDINGS
     if release in BINDINGS:
         return BINDINGS[release]
@@ -116,6 +134,54 @@ def getTerminologyBindings(release: str = "R4"):
     else:
         raise Exception(f"Bindings file not found: {bindings_path}")
 
+def getSubBindingElements(resource, explored_resouces: List[str] = None, release: str = "R4") -> List[str]:
+    '''
+    Get the sub-binding elements for a given resource.
+
+    e.g. MedicationStatement has a sub-element 'Dosage' which has its own bindings.
+    So we need to find these as well.
+    '''
+    if explored_resouces is None:
+        explored_resouces = []
+
+    if resource in explored_resouces:
+        # If the resource is already explored, we can skip it
+        return explored_resouces
+    else:
+        explored_resouces.append(resource)
+
+    binding_data = getTerminologyBindingData(release)
+
+    # Find sub-elements of resource (e.g. MedicationStatement.dosage -> Dosage)
+    subelements = list(set(
+        reduce(lambda x,y: x+y, [ dep_v for dep_k, dep_v in binding_data["dependencies"].items() if dep_k.startswith(resource + ".") ], [])
+    ))
+    subelements = [subelement for subelement in subelements if subelement not in explored_resouces]
+
+    for subelement in subelements:
+        getSubBindingElements(subelement, explored_resouces, release)
+
+    return explored_resouces
+
+def loadTerminologyBindings(supported_resources: List[str], release: str = "R4") -> Dict[str, Dict]:
+    elements = []
+    # Find all elements and sub-elements for the supported resources
+    for resource in supported_resources:
+        # Get the sub-binding elements for the resource
+        getSubBindingElements(resource, elements, release=release)
+
+    # Load the bindings for the elements
+    binding_data = getTerminologyBindingData(release)
+    bindings = binding_data["bindings"]
+
+    # Filter the bindings for the elements
+    filtered_bindings = {}
+    for fhir_path, binding_info in bindings.items():
+        # Check if the fhir_path starts with any of the elements
+        if any(fhir_path.startswith(element + ".") for element in elements):
+            filtered_bindings[fhir_path] = binding_info
+
+    return filtered_bindings
 
 def search_for_path(
         fhir_path: str,
@@ -125,7 +191,7 @@ def search_for_path(
         snomed_instance: GenericSnomedInstance = None,
         release: str = "R4") -> Tuple[str, List[Dict]]:
     # Get the terminology bindings
-    bindings = getTerminologyBindings(release)
+    bindings = getTerminologyBindingData(release)["bindings"]
 
     if snomed_instance is None:
         # Create a new instance of GenericSnomedInstance
