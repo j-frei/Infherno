@@ -91,7 +91,9 @@ system_prompt: |-
 
   # Build Patient
   pat_name = HumanName(use="official", family="Meyer")
-  patient = Patient(id="pat-001", gender="male", name=[pat_name])
+  patient = Patient(id="pat-001", gender="male", name=[
+      pat_name
+  ])
 
   # Build Condition
   condition_code_coding = Coding(system="http://snomed.info/sct", code="21522001", display="Abdominal pain")
