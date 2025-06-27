@@ -181,6 +181,14 @@ def loadTerminologyBindings(supported_resources: List[str], release: str = "R4")
         if any(fhir_path.startswith(element + ".") for element in elements):
             filtered_bindings[fhir_path] = binding_info
 
+    # Filter out bindings with units of measure (UCUM)
+    for ucum_paths in [
+        "Timing.repeat.durationUnit",
+        "Timing.repeat.periodUnit",
+    ]:
+        if ucum_paths in filtered_bindings:
+            del filtered_bindings[ucum_paths]
+
     return filtered_bindings
 
 def search_for_path(
