@@ -1,4 +1,5 @@
 import datetime
+from datetime import timezone
 import importlib.util
 import inspect
 import json
@@ -43,9 +44,9 @@ def setup_logging(
 
     # Generate timestamped filename
     try:
-        timestamp = datetime.datetime.now(tz=datetime.UTC).strftime("%Y-%m-%d_%H-%M-%S")
+        timestamp = datetime.datetime.now(tz=timezone.utc).strftime("%Y-%m-%d_%H-%M-%S")
     except AttributeError:
-        timestamp = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d_%H-%M-%S")
+        timestamp = datetime.datetime.now(tz=timezone.utc).strftime("%Y-%m-%d_%H-%M-%S")
 
     model_name = getattr(config, "MODEL_ID", "unknown_model")
     safe_model_name = model_name.replace("/", "_")
