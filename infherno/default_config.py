@@ -5,6 +5,8 @@ MODEL_CLASS = "LiteLLMModel"
 CONTEXT_LENGTH = 131072
 MAX_NEW_TOKENS = 32000
 API_KEY = "ollama"
+MAX_API_RETRIES = 3
+API_SLEEP_SECONDS = 60
 
 # for local models
 DEVICE_MAP = "auto"

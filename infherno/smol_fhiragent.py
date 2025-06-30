@@ -1,6 +1,8 @@
+import os
 from tqdm import tqdm
 
 from infherno import default_config as config
+from infherno.constants import LOGS_PATH
 from infherno.data_utils import apply_partitioning, load_dummy, load_cardiode, load_n2c2, load_synthetic
 from infherno.defaults import determine_snowstorm_url, determine_snowstorm_branch
 from infherno.models import load_model
@@ -42,6 +44,11 @@ if config.APPLY_PARTITIONING:
 
 for instance_id, instance in enumerate(tqdm(data, total=len(data), desc=f"\nInstances {config.TARGET_DATA}")):
     config.INSTANCE_ID = instance_id
+
+    if any(f"{config.TARGET_DATA}_{instance_id}" in filename for filename in os.listdir(LOGS_PATH)):
+        # Skip already processed instances
+        continue
+
     logger, log_file = setup_logging(config)
     logger.info(f"Analysis results will be saved to: {log_file}")
 

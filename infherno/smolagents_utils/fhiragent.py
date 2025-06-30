@@ -1,6 +1,8 @@
 import hashlib
+import httpx
 import json
 import os
+import time
 import types
 import yaml
 from collections import defaultdict
@@ -228,25 +230,37 @@ class FHIRAgent(MultiStepAgent):
 
         # Add new step in logs
         memory_step.model_input_messages = memory_messages.copy()
-        try:
-            additional_args = {"grammar": self.grammar} if self.grammar is not None else {}
-            chat_message: ChatMessage = self.model(
-                self.input_messages,
-                stop_sequences=["<end_code>", "Observation:", "Calling tools:"],
-                **additional_args,
-            )
-            memory_step.model_output_message = chat_message
-            model_output = chat_message.content
 
-            # This adds <end_code> sequence to the history.
-            # This will nudge ulterior LLM calls to finish with <end_code>, thus efficiently stopping generation.
-            if model_output and model_output.strip().endswith("```"):
-                model_output += "<end_code>"
-                memory_step.model_output_message.content = model_output
+        for attempt in range(1, self.fhir_config.MAX_API_RETRIES + 1):
+            try:
+                additional_args = {"grammar": self.grammar} if self.grammar is not None else {}
+                chat_message: ChatMessage = self.model(
+                    self.input_messages,
+                    stop_sequences=["<end_code>", "Observation:", "Calling tools:"],
+                    **additional_args,
+                )
+                memory_step.model_output_message = chat_message
+                model_output = chat_message.content
 
-            memory_step.model_output = model_output
-        except Exception as e:
-            raise AgentGenerationError(f"Error in generating model output:\n{e}", self.logger) from e
+                # This adds <end_code> sequence to the history.
+                # This will nudge ulterior LLM calls to finish with <end_code>, thus efficiently stopping generation.
+                if model_output and model_output.strip().endswith("```"):
+                    model_output += "<end_code>"
+                    memory_step.model_output_message.content = model_output
+
+                memory_step.model_output = model_output
+                break
+            except httpx.ConnectError as e:
+                print(f"Attempt {attempt}: Connection error: {e}")
+                if attempt < self.fhir_config.MAX_API_RETRIES:
+                    print(f"Sleeping {self.fhir_config.API_SLEEP_SECONDS} seconds before retry...")
+                    time.sleep(self.fhir_config.API_SLEEP_SECONDS)
+                else:
+                    print("Max retries reached. Giving up.")
+
+            except Exception as e:
+                self.logger.log(f"Error in generating model output:\n{e}")
+                break
 
         self.logger.log_markdown(
             content=model_output,
