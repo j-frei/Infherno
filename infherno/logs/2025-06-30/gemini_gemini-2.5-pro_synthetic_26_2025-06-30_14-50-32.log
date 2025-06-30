@@ -1,0 +1,2382 @@
+2025-06-30 16:50:32,931 - root - INFO - 
+2025-06-30 16:50:32,932 - root - INFO - ================================================================================
+2025-06-30 16:50:32,932 - root - INFO - CONFIGURATION PARAMETERS
+2025-06-30 16:50:32,933 - root - INFO - ================================================================================
+2025-06-30 16:50:32,934 - root - INFO - API_SLEEP_SECONDS = 60
+2025-06-30 16:50:32,935 - root - INFO - APPLIED_TESTS = None
+2025-06-30 16:50:32,935 - root - INFO - APPLY_PARTITIONING = False
+2025-06-30 16:50:32,935 - root - INFO - CONTEXT_LENGTH = 131072
+2025-06-30 16:50:32,936 - root - INFO - DATA_DIRECTORY = ../
+2025-06-30 16:50:32,936 - root - INFO - DEVICE_MAP = auto
+2025-06-30 16:50:32,936 - root - INFO - INSTANCE_ID = 26
+2025-06-30 16:50:32,936 - root - INFO - MAX_API_RETRIES = 3
+2025-06-30 16:50:32,937 - root - INFO - MAX_NEW_TOKENS = 32000
+2025-06-30 16:50:32,937 - root - INFO - MODEL_CLASS = LiteLLMModel
+2025-06-30 16:50:32,937 - root - INFO - MODEL_ID = gemini/gemini-2.5-pro
+2025-06-30 16:50:32,937 - root - INFO - RANDOMIZE_DATA = False
+2025-06-30 16:50:32,938 - root - INFO - ROOT_FHIR_RESOURCES = ["Patient", "Condition", "MedicationStatement"]
+2025-06-30 16:50:32,938 - root - INFO - SHORTEST_FIRST = False
+2025-06-30 16:50:32,938 - root - INFO - SUBSAMPLE_SIZE = 10
+2025-06-30 16:50:32,938 - root - INFO - TAKE_SUBSAMPLE = False
+2025-06-30 16:50:32,939 - root - INFO - TARGET_DATA = synthetic
+2025-06-30 16:50:32,939 - root - INFO - ================================================================================
+2025-06-30 16:50:32,939 - root - INFO - ANALYSIS RESULTS
+2025-06-30 16:50:32,939 - root - INFO - ================================================================================
+2025-06-30 16:50:32,939 - root - INFO - Analysis results will be saved to: logs/gemini_gemini-2.5-pro_synthetic_26_2025-06-30_14-50-32.log
+2025-06-30 16:50:33,103 - root - INFO - 
+╭────────────────────────────────── New run ───────────────────────────────────╮
+│                                                                              │
+│ The input text is as follows:                                                │
+│ ```                                                                          │
+│ Prof. Dr. Eric Kirsch                                                        │
+│ Chirurgie Wirfus                                                             │
+│ Wallstrasse 28                                                               │
+│ 56814 Wirfus                                                                 │
+│                                                                              │
+│ 03.05.2023                                                                   │
+│                                                                              │
+│ Frau Doktor Diana Abendroth                                                  │
+│ Ärztehaus Bad Segeberg                                                       │
+│ Hans-Grade-Allee 50                                                          │
+│ 23784 Bad Segeberg                                                           │
+│                                                                              │
+│ Arztbrief zu Krankenhausaufenthalt und Chirurgischem Eingriff für Patient    │
+│ Luca Frei, geb. Nov. 1997                                                    │
+│                                                                              │
+│ Sehr geehrte Frau Doktor Abendroth,                                          │
+│                                                                              │
+│ ich möchte Ihnen einen ausführlichen Bericht über den Krankenhausaufenthalt  │
+│ und den durchgeführten chirurgischen Eingriff für Patient Luca Frei zur      │
+│ Verfügung stellen. Der Patient wurde von 21.02.2023 bis 01.03.2023 in        │
+│ unserer Einrichtung behandelt.                                               │
+│                                                                              │
+│ Anamnese und Diagnose:                                                       │
+│ Herr Luca Frei wurde mit anhaltenden Bauchschmerzen und einer                │
+│ diagnostizierten Appendizitis aufgenommen. Nach klinischer Untersuchung und  │
+│ bildgebenden Verfahren wurde entschieden, eine Appendektomie durchzuführen.  │
+│                                                                              │
+│ Operation und Verlauf:                                                       │
+│ Die Appendektomie wurde am 24.02 erfolgreich durchgeführt. Der postoperative │
+│ Verlauf verlief komplikationsfrei, und Herr Luca Frei konnte nach            │
+│ sorgfältiger Überwachung entlassen werden.                                   │
+│                                                                              │
+│ Medikation bei Entlassung:                                                   │
+│                                                                              │
+│ Paracetamol 500 mg bei Bedarf zur Schmerzlinderung.                          │
+│ Cefuroxim 500 mg dreimal täglich für 5 Tage zur Prophylaxe von Infektionen.  │
+│ Metoclopramid 10 mg bei Bedarf zur Linderung von Übelkeit.                   │
+│ Weiterbehandlung und Empfehlungen:                                           │
+│ Herr Luca Frei sollte die verordnete Medikation gemäß den Anweisungen        │
+│ einnehmen. Er sollte sich an eine schonende Ernährung halten und körperliche │
+│ Anstrengungen vorerst vermeiden. Die Entfernung der Pflaster und Fäden       │
+│ erfolgt am 14.03.                                                            │
+│                                                                              │
+│ Vielen Dank und mit freundlichen Grüßen,                                     │
+│                                                                              │
+│ Kirsch                                                                       │
+│ ```                                                                          │
+│                                                                              │
+╰─ LiteLLMModel - gemini/gemini-2.5-pro ───────────────────────────────────────╯
+
+2025-06-30 16:50:33,103 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 16:50:33,153 - root - INFO - 
+╭─────────────────────────────────── system ───────────────────────────────────╮
+│ You are a code agent with expertise in Information Extraction of medical     │
+│ information from free text. Your task is to translate clinical information   │
+│ into valid FHIR R4 resources, using step-by-step reasoning and supported     │
+│ tooling.                                                                     │
+│                                                                              │
+│ You work by **thinking step by step** in cycles of:                          │
+│ - `Thought:` - where you explain your current reasoning and intended         │
+│ approach.                                                                    │
+│ - `Code:` - where you write Python code using `fhir.resources` or supported  │
+│ tools, always ending with `<end_code>`.                                      │
+│ - `Observation:` - where you receive the printed outputs or results of your  │
+│ code.                                                                        │
+│ You repeat this cycle until you're ready to give the final output using the  │
+│ `final_answer()` tool.                                                       │
+│ At each cycle step, you must start next line plainly with "Thought:",        │
+│ "Code:", or "Observation:" (without quotes), otherwise it will fail.         │
+│                                                                              │
+│ 🛠️ Tools Available:                                                           │
+│ You ONLY have access to the following tools:                                 │
+│ - `search_for_code_or_coding`: Search for a code/coding in a FHIR ValueSet   │
+│ using SNOMED CT or HL7 ValueSets.                                            │
+│   Takes inputs:                                                              │
+│   - `fhir_attribute_path` (e.g., `"Condition.code"`)                         │
+│   - `search_term` (e.g., `"abdominal pain"`)                                 │
+│   Returns: A list of possible codings for that attribute.                    │
+│                                                                              │
+│ - `final_answer`: Provides the final result (usually a FHIR Bundle).         │
+│   Takes input: `answer`                                                      │
+│                                                                              │
+│ 📚 FHIR Resource Types You Can Use:                                          │
+│ You may only produce the following FHIR R4 resource types:                   │
+│ - `Bundle` (the top-level container)                                         │
+│ - `Patient`                                                                  │
+│ - `Condition`                                                                │
+│ - `MedicationStatement`                                                      │
+│                                                                              │
+│ All output must be a valid `Bundle` of these resources using the             │
+│ `fhir.resources` Python package.                                             │
+│                                                                              │
+│ 🔒 Attribute Coding Rules:                                                   │
+│ You **must only use codings** returned from `search_for_code_or_coding`, and │
+│ only for these specific FHIR attribute paths:                                │
+│ - `Meta.security`                                                            │
+│ - `Meta.tag`                                                                 │
+│ - `Address.use`                                                              │
+│ - `Address.type`                                                             │
+│ - `Contributor.type`                                                         │
+│ - `Attachment.contentType`                                                   │
+│ - `Attachment.language`                                                      │
+│ - `DataRequirement.type`                                                     │
+│ - `DataRequirement.subject`                                                  │
+│ - `DataRequirement.sort.direction`                                           │
+│ - `Dosage.additionalInstruction`                                             │
+│ - `Dosage.asNeeded`                                                          │
+│ - `Dosage.site`                                                              │
+│ - `Dosage.route`                                                             │
+│ - `Dosage.method`                                                            │
+│ - `Dosage.doseAndRate.type`                                                  │
+│ - `Money.currency`                                                           │
+│ - `HumanName.use`                                                            │
+│ - `ContactPoint.system`                                                      │
+│ - `ContactPoint.use`                                                         │
+│ - `Identifier.use`                                                           │
+│ - `Identifier.type`                                                          │
+│ - `Reference.type`                                                           │
+│ - `TriggerDefinition.type`                                                   │
+│ - `Quantity.comparator`                                                      │
+│ - `RelatedArtifact.type`                                                     │
+│ - `UsageContext.code`                                                        │
+│ - `UsageContext.value`                                                       │
+│ - `Expression.language`                                                      │
+│ - `Signature.type`                                                           │
+│ - `Signature.targetFormat`                                                   │
+│ - `Signature.sigFormat`                                                      │
+│ - `Timing.repeat.dayOfWeek`                                                  │
+│ - `Timing.repeat.when`                                                       │
+│ - `Timing.code`                                                              │
+│ - `ParameterDefinition.use`                                                  │
+│ - `ParameterDefinition.type`                                                 │
+│ - `Narrative.status`                                                         │
+│ - `Resource.language`                                                        │
+│ - `Condition.language`                                                       │
+│ - `Condition.clinicalStatus`                                                 │
+│ - `Condition.verificationStatus`                                             │
+│ - `Condition.category`                                                       │
+│ - `Condition.severity`                                                       │
+│ - `Condition.code`                                                           │
+│ - `Condition.bodySite`                                                       │
+│ - `Condition.stage.summary`                                                  │
+│ - `Condition.stage.type`                                                     │
+│ - `Condition.evidence.code`                                                  │
+│ - `MedicationStatement.language`                                             │
+│ - `MedicationStatement.status`                                               │
+│ - `MedicationStatement.statusReason`                                         │
+│ - `MedicationStatement.category`                                             │
+│ - `MedicationStatement.medication`                                           │
+│ - `MedicationStatement.reasonCode`                                           │
+│ - `Patient.language`                                                         │
+│ - `Patient.gender`                                                           │
+│ - `Patient.maritalStatus`                                                    │
+│ - `Patient.contact.relationship`                                             │
+│ - `Patient.contact.gender`                                                   │
+│ - `Patient.communication.language`                                           │
+│ - `Patient.link.type`                                                        │
+│ For a few elements, specifically for Units of Measure (UCUM) element, you    │
+│ directly use the string value (e.g., `mg`, `ml`, etc.) instead of trying to  │
+│ search for the unit types.                                                   │
+│                                                                              │
+│ Use this pattern to search for codes:                                        │
+│ For example, to search for a code for "douleurs abdominales" in the          │
+│ Condition.code attribute, you would call:                                    │
+│ Code: ```py                                                                  │
+│ search_results =                                                             │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
+│ search_term="abdominal pain")                                                │
+│ print(search_results)                                                        │
+│ ```<end_code>                                                                │
+│ Observation: ('Found results for `abdominal pain` in `Condition.code`        │
+│ truncated to max. of 10 results.', [{'code': '21522001', 'system':           │
+│ 'http://snomed.info/sct', 'display': 'Abdominal pain (finding)'}, {'code':   │
+│ '162042000', 'system': 'http://snomed.info/sct', 'display': 'Abdominal wall  │
+│ pain (finding)'}, {'code': '45979003', 'system': 'http://snomed.info/sct',   │
+│ 'display': 'Abdominal wind pain (finding)'}, {'code': '9991008', 'system':   │
+│ 'http://snomed.info/sct', 'display': 'Abdominal colic (finding)'}, {'code':  │
+│ '54586004', 'system': 'http://snomed.info/sct', 'display': 'Lower abdominal  │
+│ pain (finding)'}, {'code': '83132003', 'system': 'http://snomed.info/sct',   │
+│ 'display': 'Upper abdominal pain (finding)'}, {'code': '116290004',          │
+│ 'system': 'http://snomed.info/sct', 'display': 'Acute abdominal pain         │
+│ (finding)'}, {'code': '28221000119103', 'system': 'http://snomed.info/sct',  │
+│ 'display': 'Abdominal muscle pain (finding)'}, {'code': '111985007',         │
+│ 'system': 'http://snomed.info/sct', 'display': 'Chronic abdominal pain       │
+│ (finding)'}, {'code': '162046002', 'system': 'http://snomed.info/sct',       │
+│ 'display': 'Central abdominal pain (finding)'}])                             │
+│                                                                              │
+│ Example (search for Patient.gender code for a man)                           │
+│ Code: ```py                                                                  │
+│ search_results =                                                             │
+│ search_for_code_or_coding(fhir_attribute_path="Patient.gender",              │
+│ search_term="male")                                                          │
+│ print(search_results)                                                        │
+│ ```<end_code>                                                                │
+│ Observation: ('Found results for `man` in `Patient.gender` truncated to max. │
+│ of 10 results.', [{'code': 'male'}, {'code': 'female'}, {'code': 'other'},   │
+│ {'code': 'unknown'}])                                                        │
+│                                                                              │
+│ You need to search and print the results before the creating the final FHIR  │
+│ data in the final step, where you pick the most fitting items from the       │
+│ observed print outputs.                                                      │
+│                                                                              │
+│ 🧠 Process Strategy:                                                         │
+│ 1. **Start with a `Thought:`** describing your plan to extract relevant      │
+│ medical info and convert to FHIR resources.                                  │
+│ 2. Use `Code:` blocks to either:                                             │
+│   - call `search_for_code_or_coding` to get valid SNOMED/HL7 codings and     │
+│ print it                                                                     │
+│   - construct FHIR resource objects (`Patient`, `Condition`, etc.) (when you │
+│ have all the needed info from previous steps)                                │
+│   - build the final `Bundle`                                                 │
+│   - call `final_answer(bundle.json(indent=2))` to output the final result    │
+│ 3. At each step, explain and print intermediate info you’ll need in later    │
+│ steps.                                                                       │
+│ 4. Never reuse tool parameters unnecessarily; only call tools when needed.   │
+│ 5. Stick to valid FHIR attributes and use `fhir.resources` models.           │
+│                                                                              │
+│ ✅ Sample Final Code Block                                                   │
+│ When you're ready, build the final bundle.                                   │
+│                                                                              │
+│ Let's consider an example where the input text is "Herr Meyer klagt über     │
+│ Bauchschmerzen.".                                                            │
+│ We need to extract the Patient and Condition information from this text and  │
+│ create a FHIR Bundle.                                                        │
+│                                                                              │
+│ So you will first search for the coding for "abdominal pain" in the          │
+│ Condition.code attribute to find the appropriate code for abdominal pain, as │
+│ well as other relevant codings/codes (e.g. for Patient.gender).              │
+│ This will take a few steps, and you will print the results of each search.   │
+│                                                                              │
+│ Then, you will create a Patient resource with the name "Meyer" and a         │
+│ Condition resource with the found code. Finally, you will bundle them        │
+│ together in a FHIR Bundle, using the codings and codes that you have already │
+│ queried in the previous steps, like this:                                    │
+│ Code: ```py                                                                  │
+│ from fhir.resources.R4B.bundle import Bundle, BundleEntry                    │
+│ from fhir.resources.R4B.patient import Patient                               │
+│ from fhir.resources.R4B.condition import Condition                           │
+│ from fhir.resources.R4B.humanname import HumanName                           │
+│ from fhir.resources.R4B.codeableconcept import CodeableConcept               │
+│ from fhir.resources.R4B.coding import Coding                                 │
+│ from fhir.resources.R4B.reference import Reference                           │
+│                                                                              │
+│ # Build Patient                                                              │
+│ pat_name = HumanName(use="official", family="Meyer")                         │
+│ patient = Patient(id="pat-001", gender="male", name=[                        │
+│     pat_name                                                                 │
+│ ])                                                                           │
+│                                                                              │
+│ # Build Condition                                                            │
+│ condition_code_coding = Coding(system="http://snomed.info/sct",              │
+│ code="21522001", display="Abdominal pain")                                   │
+│ condition_clinicalStatus_coding =                                            │
+│ Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical",    │
+│ code="active")                                                               │
+│ condition_code_codableConcept = CodeableConcept(coding=[                     │
+│     condition_code_coding                                                    │
+│ ])                                                                           │
+│ condition_clinicalStatus_codableConcept = CodeableConcept(coding=[           │
+│     condition_clinicalStatus_coding                                          │
+│ ])                                                                           │
+│ # Create the final Condition resource with all necessary fields set on       │
+│ creation to avoid validation errors (also applies to other resources)        │
+│ condition = Condition(                                                       │
+│   subject=Reference(reference=f"Patient/{patient.id}"),                      │
+│   code=condition_code_codableConcept,                                        │
+│   clinicalStatus=condition_clinicalStatus_codableConcept,                    │
+│ )                                                                            │
+│                                                                              │
+│ # Create Bundle                                                              │
+│ bundle = Bundle(type="collection", entry=[                                   │
+│     BundleEntry(resource=patient),                                           │
+│     BundleEntry(resource=condition)                                          │
+│ ])                                                                           │
+│                                                                              │
+│ final_answer(bundle.json(indent=2))                                          │
+│ ```<end_code>                                                                │
+│                                                                              │
+│ Now, this code example is just for illustration purposes for a imaginary     │
+│ male Patient with the name 'Meyer'. Do not use any information from it       │
+│ directly.                                                                    │
+│ You will need to adapt the code to your specific task and FHIR resources     │
+│ matching the upcoming input text. Yet, the basic task structure remains      │
+│ similar.                                                                     │
+│                                                                              │
+│ 🚨 Important: The codes/codings should be determined before this step.       │
+│                                                                              │
+│ # Additional Examples:                                                       │
+│ Try to avoid exclusively text-only encodings (e.g. for Dosage.text) in       │
+│ MedicationStatement that could also be encoded in a structured fashion using │
+│ dosage and timing. Other information, such as the reasonCode or              │
+│ reasonReference may be used as well (e.g. referencing to Conditions).        │
+│ Use the code search tool to find the appropriate codes for these fields.     │
+│                                                                              │
+│ E.g. if you have a text phrase like 'x Pantoprazol (5mg) pro Tag (oral)',    │
+│ and you queried:                                                             │
+│ - MedicationStatement.medication for Pantoprazole: {'system':                │
+│ 'http://snomed.info/sct', 'code': '395821003', 'display': 'Pantoprazole'}    │
+│ - MedicationStatement.doseAndRate.type for 'ordered': {'system':             │
+│ 'http://terminology.hl7.org/CodeSystem/dose-rate-type', 'code': 'ordered',   │
+│ 'display': 'Ordered'}                                                        │
+│ - Dosage.doseAndRate.type for 'ordered': {'system':                          │
+│ 'http://terminology.hl7.org/CodeSystem/dose-rate-type', 'code': 'ordered',   │
+│ 'display': 'Ordered'}                                                        │
+│ - Dosage.route for 'oral': {'system': 'http://snomed.info/sct', 'code':      │
+│ '26643006', 'display': 'Oral route'}                                         │
+│                                                                              │
+│ then you can create a MedicationStatement with the following code snippet:   │
+│ ```py                                                                        │
+│ from fhir.resources.R4B.medicationstatement import MedicationStatement       │
+│ from fhir.resources.R4B.codeableconcept import CodeableConcept               │
+│ from fhir.resources.R4B.coding import Coding                                 │
+│ from fhir.resources.R4B.reference import Reference                           │
+│ from fhir.resources.R4B.dosage import Dosage, DosageDoseAndRate              │
+│ from fhir.resources.R4B.timing import Timing, TimingRepeat                   │
+│ ...                                                                          │
+│                                                                              │
+│ ... other objects as needed ...                                              │
+│                                                                              │
+│ # Medication                                                                 │
+│ medication_coding = Coding(                                                  │
+│     system="http://snomed.info/sct",                                         │
+│     code="395821003",                                                        │
+│     display="Pantoprazole"                                                   │
+│ )                                                                            │
+│ medication_codableconcept = CodeableConcept(                                 │
+│     coding=[                                                                 │
+│         medication_coding                                                    │
+│     ],                                                                       │
+│     text="Pantoprazole"                                                      │
+│ )                                                                            │
+│                                                                              │
+│ # Route                                                                      │
+│ route_coding = Coding(                                                       │
+│     system="http://snomed.info/sct",                                         │
+│     code="26643006",                                                         │
+│     display="Oral route"                                                     │
+│ )                                                                            │
+│ route_codableconcept = CodeableConcept(                                      │
+│     coding=[                                                                 │
+│         route_coding                                                         │
+│     ]                                                                        │
+│ )                                                                            │
+│                                                                              │
+│ # Dose and Rate                                                              │
+│ dose_rate_type_coding = Coding(                                              │
+│     system="http://terminology.hl7.org/CodeSystem/dose-rate-type",           │
+│     code="ordered",                                                          │
+│     display="Ordered"                                                        │
+│ )                                                                            │
+│ dose_rate_type = CodeableConcept(                                            │
+│     coding=[                                                                 │
+│         dose_rate_type_coding                                                │
+│     ]                                                                        │
+│ )                                                                            │
+│                                                                              │
+│ dose_and_rate = DosageDoseAndRate(                                           │
+│     type=dose_rate_type                                                      │
+│ )                                                                            │
+│                                                                              │
+│ # Timing                                                                     │
+│ timing_repeat = TimingRepeat(                                                │
+│     frequency=1,                                                             │
+│     period=1,                                                                │
+│     periodUnit="d"                                                           │
+│ )                                                                            │
+│ timing = Timing(                                                             │
+│     repeat=timing_repeat                                                     │
+│ )                                                                            │
+│                                                                              │
+│ # Dosage                                                                     │
+│ dosage_instruction = Dosage(                                                 │
+│     sequence=1,                                                              │
+│     text="1x Pantoprazol (5mg) pro Tag",                                     │
+│     asNeededBoolean=False,                                                   │
+│     route=route_codableconcept,                                              │
+│     doseAndRate=[                                                            │
+│         dose_and_rate                                                        │
+│     ],                                                                       │
+│     timing=timing                                                            │
+│ )                                                                            │
+│                                                                              │
+│ # Subject                                                                    │
+│ subject_reference = Reference(                                               │
+│     # Your patient id here                                                   │
+│     reference="Patient/pat-001"                                              │
+│ )                                                                            │
+│                                                                              │
+│ # MedicationStatement                                                        │
+│ med_statement = MedicationStatement(                                         │
+│     id="med-stat-001",                                                       │
+│     status="active",                                                         │
+│     medicationCodeableConcept=medication_codableconcept,                     │
+│     subject=subject_reference,                                               │
+│     dosage=[                                                                 │
+│         dosage_instruction                                                   │
+│     ]                                                                        │
+│ )                                                                            │
+│                                                                              │
+│ ... continue with other fields as needed ...                                 │
+│ ```                                                                          │
+│ This will create a MedicationStatement resource with the structured dosage   │
+│ and timing information, avoiding text-only encodings.                        │
+│                                                                              │
+│ MedicationStatement can encode Dosage (including Timing information) via     │
+│ multiple methods to accurately represent text phrases on MedicationStatement │
+│ data in a structured way.                                                    │
+│ Dosage and Timing information is complex. The following table shows various  │
+│ combinations to encode Timing information given a given description:         │
+│ |     |     |     |     |     |     |     |     |     |     |     |     |    │
+│ |     |                                                                      │
+│ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |    │
+│ --- | --- |                                                                  │
+│ | **description** | **duration** | **durationUnit** | **frequency** |        │
+│ **frequencyMax** | **period** | **periodUnit** | **periodMax** | **Day of    │
+│ Week** | **Time Of Day** | **when** | **offset** | **bounds[x\]** |          │
+│ **count** |                                                                  │
+│ | Every 8 hours |     |     | 1   |     | 8   | h   |     |     |     |      │
+│ |     |     |     |                                                          │
+│ | Every 7 days |     |     | 1   |     | 7   | d   |     |     |     |     | │
+│ |     |     |                                                                │
+│ | 3 times a day |     |     | 3   |     | 1   | d   |     |     |     |      │
+│ |     |     |     |                                                          │
+│ | 3-4 times a day |     |     | 3   | 4   | 1   | d   |     |     |     |    │
+│ |     |     |     |                                                          │
+│ | Every 4-6 hours |     |     | 1   |     | 4   | h   | 6   |     |     |    │
+│ |     |     |     |                                                          │
+│ | Every 21 days for 1 hour | 1   | hr  | 1   |     | 21  | d   |     |     | │
+│ |     |     |     |     |                                                    │
+│ | Three times a week for ½ hour | 0.5 | hr  | 3   |     | 1   | wk  |     |  │
+│ |     |     |     |     |     |                                              │
+│ | With breakfast |     |     |     |     |     |     |     |     |     | CM  │
+│ |     |     |     |                                                          │
+│ | For 5 minutes, 10 minutes before meals | 5   | min |     |     |     |     │
+│ |     |     |     | AC  | 10  |     |     |                                  │
+│ | 1 tablet 3 times daily, 30 minutes before meals |     |     | 3   |     |  │
+│ 1   | d   |     |     |     | AC  | 30  |     |     |                        │
+│ | BID, 30 mins before meal, for next 10 days |     |     | 2   |     | 1   | │
+│ d   |     |     |     | AC  | 30  | Duration = 10 days |     |               │
+│ | TID, for 14 days |     |     | 3   |     | 1   | d   |     |     |     |   │
+│ |     | Duration = 14 days |     |                                           │
+│ | BID, start on 7/1/2015 at 1:00 PM |     |     | 2   |     | 1   | d   |    │
+│ |     |     |     |     | Period.start = 2015-07-01T13:00:00 |     |         │
+│ | Mon, Wed, Fri Morning |     |     | 1   |     | 1   | d   |     | mon \|   │
+│ wed \| fri |     | MORN |     |     |     |                                  │
+│ | Every day at 10am |     |     | 1   |     | 1   | d   |     |     | 10:00  │
+│ |     |     |     |     |                                                    │
+│ | Take once, at any time |     |     |     |     |     |     |     |     |   │
+│ |     |     |     | 1   |                                                    │
+│ | Take every second day, in the morning, until 20 have been taken |     |    │
+│ | 1   |     | 2   | d   |     |     |     | MORN |     |     | 20  |         │
+│                                                                              │
+│ ✅ Always:                                                                   │
+│ - Use valid `fhir.resources` models and their documented fields.             │
+│ - Use codings only from `search_for_code_or_coding`.                         │
+│ - Output a single Bundle using `final_answer` formatted in JSON (and         │
+│ indent=2).                                                                   │
+│ - Verify the codes/codings before using them in the final step.              │
+│ - Hard-code the picked coding/code data which was observed by the search     │
+│ tool in prior steps.                                                         │
+│ - Don't put any code or text after the final_answer() call. Otherwise, it    │
+│ will fail.                                                                   │
+│ - Use the `medication` field to create a MedicationStatement resource.       │
+│                                                                              │
+│ 🚫 Never:                                                                    │
+│ - NEVER use unsupported FHIR resources.                                      │
+│ - NEVER use unverified codes.                                                │
+│ - NEVER call tools with dict-style args (e.g., ❌ `tool({'arg': val})`).     │
+│ - NEVER chain tool calls in the same block with unpredictable results.       │
+│ - NEVER create FHIR resources to information that is not present in the      │
+│ input text.                                                                  │
+│ - NEVER use the search_for_code_or_coding in the final step.                 │
+│ - NEVER add extra fields for `medication_codeable_concept`.                  │
+│                                                                              │
+│ Now begin your task!                                                         │
+│ If you solve the task correctly, you will receive a reward of $1,000,000.    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:50:33,157 - root - INFO - 
+╭──────────────────────────────────── user ────────────────────────────────────╮
+│ New task:                                                                    │
+│ The input text is as follows:                                                │
+│ ```                                                                          │
+│ Prof. Dr. Eric Kirsch                                                        │
+│ Chirurgie Wirfus                                                             │
+│ Wallstrasse 28                                                               │
+│ 56814 Wirfus                                                                 │
+│                                                                              │
+│ 03.05.2023                                                                   │
+│                                                                              │
+│ Frau Doktor Diana Abendroth                                                  │
+│ Ärztehaus Bad Segeberg                                                       │
+│ Hans-Grade-Allee 50                                                          │
+│ 23784 Bad Segeberg                                                           │
+│                                                                              │
+│ Arztbrief zu Krankenhausaufenthalt und Chirurgischem Eingriff für Patient    │
+│ Luca Frei, geb. Nov. 1997                                                    │
+│                                                                              │
+│ Sehr geehrte Frau Doktor Abendroth,                                          │
+│                                                                              │
+│ ich möchte Ihnen einen ausführlichen Bericht über den Krankenhausaufenthalt  │
+│ und den durchgeführten chirurgischen Eingriff für Patient Luca Frei zur      │
+│ Verfügung stellen. Der Patient wurde von 21.02.2023 bis 01.03.2023 in        │
+│ unserer Einrichtung behandelt.                                               │
+│                                                                              │
+│ Anamnese und Diagnose:                                                       │
+│ Herr Luca Frei wurde mit anhaltenden Bauchschmerzen und einer                │
+│ diagnostizierten Appendizitis aufgenommen. Nach klinischer Untersuchung und  │
+│ bildgebenden Verfahren wurde entschieden, eine Appendektomie durchzuführen.  │
+│                                                                              │
+│ Operation und Verlauf:                                                       │
+│ Die Appendektomie wurde am 24.02 erfolgreich durchgeführt. Der postoperative │
+│ Verlauf verlief komplikationsfrei, und Herr Luca Frei konnte nach            │
+│ sorgfältiger Überwachung entlassen werden.                                   │
+│                                                                              │
+│ Medikation bei Entlassung:                                                   │
+│                                                                              │
+│ Paracetamol 500 mg bei Bedarf zur Schmerzlinderung.                          │
+│ Cefuroxim 500 mg dreimal täglich für 5 Tage zur Prophylaxe von Infektionen.  │
+│ Metoclopramid 10 mg bei Bedarf zur Linderung von Übelkeit.                   │
+│ Weiterbehandlung und Empfehlungen:                                           │
+│ Herr Luca Frei sollte die verordnete Medikation gemäß den Anweisungen        │
+│ einnehmen. Er sollte sich an eine schonende Ernährung halten und körperliche │
+│ Anstrengungen vorerst vermeiden. Die Entfernung der Pflaster und Fäden       │
+│ erfolgt am 14.03.                                                            │
+│                                                                              │
+│ Vielen Dank und mit freundlichen Grüßen,                                     │
+│                                                                              │
+│ Kirsch                                                                       │
+│ ```                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:50:33,158 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 16:50:47,200 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 16:50:47,209 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 16:50:47,210 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:50:47,211 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:50:47,234 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:50:47,255 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",         
+  search_term="male"))                                                          
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 16:50:47,546 - root - INFO - 
+Execution logs:
+('Found 4 hits for male in Patient.gender', [{'system': 
+'http://hl7.org/fhir/administrative-gender', 'code': 'female', 'display': 
+'Female'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code': 
+'male', 'display': 'Male'}, {'system': 
+'http://hl7.org/fhir/administrative-gender', 'code': 'other', 'display': 
+'Other'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code': 
+'unknown', 'display': 'Unknown'}])
+
+Out: None
+
+2025-06-30 16:50:47,548 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 16:50:47,555 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ Okay, I will start by extracting the information from the text and creating  │
+│ a plan to convert it into FHIR resources.                                    │
+│                                                                              │
+│ **1. Patient Information:**                                                  │
+│ *   Name: Luca Frei                                                          │
+│ *   Gender: "Herr" -> male                                                   │
+│ *   Date of Birth: November 1997                                             │
+│                                                                              │
+│ **2. Condition Information:**                                                │
+│ *   Appendicitis: This is a diagnosis. I will search for the corresponding   │
+│ SNOMED CT code. The appendectomy was successful, so the condition can be     │
+│ considered resolved.                                                         │
+│ *   Bauchschmerzen (Abdominal pain): This is a symptom leading to the        │
+│ diagnosis. I will search for its SNOMED CT code. As pain medication is       │
+│ prescribed "as needed", I will set its status to active.                     │
+│                                                                              │
+│ **3. Medication Information:**                                               │
+│ *   Paracetamol 500 mg: Prescribed as needed for pain relief.                │
+│ *   Cefuroxim 500 mg: Prescribed three times a day for 5 days.               │
+│ *   Metoclopramid 10 mg: Prescribed as needed for nausea.                    │
+│                                                                              │
+│ I will need to search for codes for the patient's gender, the conditions,    │
+│ the medications, the medication status, dosage routes, and timing.           │
+│                                                                              │
+│ I will start by searching for the patient's gender.Code:                     │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",        │
+│ search_term="male"))                                                         │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:50:47,556 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_1', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",       │
+│ search_term="male"))'}}]                                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:50:47,559 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_1                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 4 hits for male in Patient.gender', [{'system':                      │
+│ 'http://hl7.org/fhir/administrative-gender', 'code': 'female', 'display':    │
+│ 'Female'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code':   │
+│ 'male', 'display': 'Male'}, {'system':                                       │
+│ 'http://hl7.org/fhir/administrative-gender', 'code': 'other', 'display':     │
+│ 'Other'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code':    │
+│ 'unknown', 'display': 'Unknown'}])                                           │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:50:47,560 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 16:50:53,756 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 16:50:53,765 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 16:50:53,766 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:50:53,767 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:50:53,783 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:50:53,790 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
+  search_term="Appendicitis"))                                                  
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 16:50:54,294 - root - INFO - 
+Execution logs:
+('Found 35 hits for Appendicitis in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '74400008', 'display': 'Appendicitis'}, 
+{'system': 'http://snomed.info/sct', 'code': '85189001', 'display': 'Acute 
+appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '123601005', 
+'display': 'Focal appendicitis'}, {'system': 'http://snomed.info/sct', 'code': 
+'91313006', 'display': 'Pelvic appendicitis'}, {'system': 
+'http://snomed.info/sct', 'code': '123602003', 'display': 'Healed 
+appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '26826005', 
+'display': 'Amebic appendicitis'}, {'system': 'http://snomed.info/sct', 'code': 
+'58997001', 'display': 'Chronic appendicitis'}, {'system': 
+'http://snomed.info/sct', 'code': '42640003', 'display': 'Suppurative 
+appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '5596004', 
+'display': 'Atypical appendicitis'}, {'system': 'http://snomed.info/sct', 
+'code': '9124008', 'display': 'Subacute appendicitis'}])
+
+Out: None
+
+2025-06-30 16:50:54,297 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 16:50:54,303 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for 'male' in `Patient.gender`. Next, I will search    │
+│ for the SNOMED CT code for "Appendicitis". Then, I'll search for the         │
+│ condition `clinicalStatus` and `verificationStatus`. Finally, I will search  │
+│ for the code for "abdominal pain".Code:                                      │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
+│ search_term="Appendicitis"))                                                 │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:50:54,305 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_2', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
+│ search_term="Appendicitis"))'}}]                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:50:54,311 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_2                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 35 hits for Appendicitis in Condition.code', [{'system':             │
+│ 'http://snomed.info/sct', 'code': '74400008', 'display': 'Appendicitis'},    │
+│ {'system': 'http://snomed.info/sct', 'code': '85189001', 'display': 'Acute   │
+│ appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '123601005',    │
+│ 'display': 'Focal appendicitis'}, {'system': 'http://snomed.info/sct',       │
+│ 'code': '91313006', 'display': 'Pelvic appendicitis'}, {'system':            │
+│ 'http://snomed.info/sct', 'code': '123602003', 'display': 'Healed            │
+│ appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '26826005',     │
+│ 'display': 'Amebic appendicitis'}, {'system': 'http://snomed.info/sct',      │
+│ 'code': '58997001', 'display': 'Chronic appendicitis'}, {'system':           │
+│ 'http://snomed.info/sct', 'code': '42640003', 'display': 'Suppurative        │
+│ appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '5596004',      │
+│ 'display': 'Atypical appendicitis'}, {'system': 'http://snomed.info/sct',    │
+│ 'code': '9124008', 'display': 'Subacute appendicitis'}])                     │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:50:54,314 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 16:50:57,852 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 16:50:57,859 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 16:50:57,860 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:50:57,862 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:50:57,878 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:50:57,886 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatu  
+  s", search_term="resolved"))                                                  
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 16:50:58,151 - root - INFO - 
+Execution logs:
+('Found 6 hits for resolved in Condition.clinicalStatus', [{'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'active', 
+'display': 'Active'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'inactive', 
+'display': 'Inactive'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 
+'recurrence', 'display': 'Recurrence'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'relapse', 
+'display': 'Relapse'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'remission',
+'display': 'Remission'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'resolved', 
+'display': 'Resolved'}])
+
+Out: None
+
+2025-06-30 16:50:58,152 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 16:50:58,155 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for "Appendicitis". The most appropriate code is       │
+│ `74400008` for "Appendicitis". The text states the appendectomy was          │
+│ successful, so I'll search for a `clinicalStatus` that reflects this.        │
+│ `inactive` or `resolved` seem like good candidates. I will search for        │
+│ `resolved`.Code:                                                             │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatu │
+│ s", search_term="resolved"))                                                 │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:50:58,157 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_3', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStat │
+│ us", search_term="resolved"))'}}]                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:50:58,160 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_3                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 6 hits for resolved in Condition.clinicalStatus', [{'system':        │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'active', 'display': 'Active'}, {'system':                                   │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'inactive', 'display': 'Inactive'}, {'system':                               │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'recurrence', 'display': 'Recurrence'}, {'system':                           │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'relapse', 'display': 'Relapse'}, {'system':                                 │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'remission', 'display': 'Remission'}, {'system':                             │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'resolved', 'display': 'Resolved'}])                                         │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:50:58,162 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 16:51:00,867 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 16:51:00,872 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 16:51:00,873 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:00,874 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:00,890 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:00,895 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.verificationS  
+  tatus", search_term="confirmed"))                                             
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 16:51:01,206 - root - INFO - 
+Execution logs:
+('Found 6 hits for confirmed in Condition.verificationStatus', [{'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'confirmed', 'display': 'Confirmed'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'differential', 'display': 'Differential'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'entered-in-error', 'display': 'Entered in Error'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'provisional', 'display': 'Provisional'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 'refuted',
+'display': 'Refuted'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'unconfirmed', 'display': 'Unconfirmed'}])
+
+Out: None
+
+2025-06-30 16:51:01,207 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 5 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 16:51:01,209 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for "resolved" for the `clinicalStatus` of the         │
+│ appendicitis. Next, I will search for a `verificationStatus`, "confirmed"    │
+│ seems appropriate.Code:                                                      │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.verificationS │
+│ tatus", search_term="confirmed"))                                            │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:01,211 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_4', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.verification │
+│ Status", search_term="confirmed"))'}}]                                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:01,214 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_4                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 6 hits for confirmed in Condition.verificationStatus', [{'system':   │
+│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
+│ 'confirmed', 'display': 'Confirmed'}, {'system':                             │
+│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
+│ 'differential', 'display': 'Differential'}, {'system':                       │
+│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
+│ 'entered-in-error', 'display': 'Entered in Error'}, {'system':               │
+│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
+│ 'provisional', 'display': 'Provisional'}, {'system':                         │
+│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
+│ 'refuted', 'display': 'Refuted'}, {'system':                                 │
+│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
+│ 'unconfirmed', 'display': 'Unconfirmed'}])                                   │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:01,216 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 16:51:03,879 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 16:51:03,884 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 16:51:03,885 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:03,886 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:03,904 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:03,909 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
+  search_term="abdominal pain"))                                                
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 16:51:04,436 - root - INFO - 
+Execution logs:
+('Found 39 hits for abdominal pain in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '21522001', 'display': 'Abdominal pain'}, 
+{'system': 'http://snomed.info/sct', 'code': '45979003', 'display': 'Abdominal 
+wind pain'}, {'system': 'http://snomed.info/sct', 'code': '162042000', 
+'display': 'Abdominal wall pain'}, {'system': 'http://snomed.info/sct', 'code': 
+'83132003', 'display': 'Upper abdominal pain'}, {'system': 
+'http://snomed.info/sct', 'code': '116290004', 'display': 'Acute abdominal 
+pain'}, {'system': 'http://snomed.info/sct', 'code': '54586004', 'display': 
+'Lower abdominal pain'}, {'system': 'http://snomed.info/sct', 'code': '9991008',
+'display': 'Abdominal colic'}, {'system': 'http://snomed.info/sct', 'code': 
+'28221000119103', 'display': 'Abdominal muscle pain'}, {'system': 
+'http://snomed.info/sct', 'code': '111985007', 'display': 'Chronic abdominal 
+pain'}, {'system': 'http://snomed.info/sct', 'code': '162046002', 'display': 
+'Central abdominal pain'}])
+
+Out: None
+
+2025-06-30 16:51:04,439 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 6 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 16:51:04,444 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for "confirmed" for the `verificationStatus`. Now I    │
+│ will search for the code for "abdominal pain". This is a symptom, and since  │
+│ pain medication is prescribed, it should be considered "active".Code:        │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
+│ search_term="abdominal pain"))                                               │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:04,447 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_5', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
+│ search_term="abdominal pain"))'}}]                                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:04,452 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_5                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 39 hits for abdominal pain in Condition.code', [{'system':           │
+│ 'http://snomed.info/sct', 'code': '21522001', 'display': 'Abdominal pain'},  │
+│ {'system': 'http://snomed.info/sct', 'code': '45979003', 'display':          │
+│ 'Abdominal wind pain'}, {'system': 'http://snomed.info/sct', 'code':         │
+│ '162042000', 'display': 'Abdominal wall pain'}, {'system':                   │
+│ 'http://snomed.info/sct', 'code': '83132003', 'display': 'Upper abdominal    │
+│ pain'}, {'system': 'http://snomed.info/sct', 'code': '116290004', 'display': │
+│ 'Acute abdominal pain'}, {'system': 'http://snomed.info/sct', 'code':        │
+│ '54586004', 'display': 'Lower abdominal pain'}, {'system':                   │
+│ 'http://snomed.info/sct', 'code': '9991008', 'display': 'Abdominal colic'},  │
+│ {'system': 'http://snomed.info/sct', 'code': '28221000119103', 'display':    │
+│ 'Abdominal muscle pain'}, {'system': 'http://snomed.info/sct', 'code':       │
+│ '111985007', 'display': 'Chronic abdominal pain'}, {'system':                │
+│ 'http://snomed.info/sct', 'code': '162046002', 'display': 'Central abdominal │
+│ pain'}])                                                                     │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:04,455 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 16:51:11,168 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 16:51:11,175 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 16:51:11,176 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:11,177 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:11,192 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:11,206 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med  
+  ication[x]", search_term="Paracetamol"))                                      
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 16:51:12,090 - root - INFO - 
+Execution logs:
+('Found 382 hits for Paracetamol in MedicationStatement.medication[x]', 
+[{'system': 'http://snomed.info/sct', 'code': '90332006', 'display': 
+'Paracetamol-containing product'}, {'system': 'http://snomed.info/sct', 'code': 
+'387517004', 'display': 'Paracetamol'}, {'system': 'http://snomed.info/sct', 
+'code': '424102008', 'display': 'Aspirin- and paracetamol-containing product'}, 
+{'system': 'http://snomed.info/sct', 'code': '350309002', 'display': 'Caffeine- 
+and paracetamol-containing product'}, {'system': 'http://snomed.info/sct', 
+'code': '412556009', 'display': 'Codeine- and paracetamol-containing product'}, 
+{'system': 'http://snomed.info/sct', 'code': '437876006', 'display': 
+'Acetaminophen-containing product in oral dose form'}, {'system': 
+'http://snomed.info/sct', 'code': '413396001', 'display': 'Acetaminophen- and 
+tramadol-containing product'}, {'system': 'http://snomed.info/sct', 'code': 
+'398918002', 'display': 'Methionine- and paracetamol-containing product'}, 
+{'system': 'http://snomed.info/sct', 'code': '437858004', 'display': 
+'Paracetamol-containing product in rectal dose form'}, {'system': 
+'http://snomed.info/sct', 'code': '777067000', 'display': 'Acetaminophen only 
+product'}])
+
+Out: None
+
+2025-06-30 16:51:12,094 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 7 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 16:51:12,101 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for "abdominal pain", which is `21522001`. Since pain  │
+│ medication is prescribed, I will set the `clinicalStatus` to "active". I've  │
+│ already searched for "resolved", and the search returned "active" as well,   │
+│ so I can reuse that. I'll also use "confirmed" for the `verificationStatus`. │
+│                                                                              │
+│ Now I will move on to the medications. I need to find codes for Paracetamol, │
+│ Cefuroxim, and Metoclopramide. I will start with Paracetamol.Code:           │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med │
+│ ication", search_term="Paracetamol"))                                        │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:12,106 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_6', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.me │
+│ dication", search_term="Paracetamol"))'}}]                                   │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:12,113 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_6                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 382 hits for Paracetamol in MedicationStatement.medication',         │
+│ [{'system': 'http://snomed.info/sct', 'code': '90332006', 'display':         │
+│ 'Paracetamol-containing product'}, {'system': 'http://snomed.info/sct',      │
+│ 'code': '387517004', 'display': 'Paracetamol'}, {'system':                   │
+│ 'http://snomed.info/sct', 'code': '424102008', 'display': 'Aspirin- and      │
+│ paracetamol-containing product'}, {'system': 'http://snomed.info/sct',       │
+│ 'code': '350309002', 'display': 'Caffeine- and paracetamol-containing        │
+│ product'}, {'system': 'http://snomed.info/sct', 'code': '412556009',         │
+│ 'display': 'Codeine- and paracetamol-containing product'}, {'system':        │
+│ 'http://snomed.info/sct', 'code': '437876006', 'display':                    │
+│ 'Acetaminophen-containing product in oral dose form'}, {'system':            │
+│ 'http://snomed.info/sct', 'code': '413396001', 'display': 'Acetaminophen-    │
+│ and tramadol-containing product'}, {'system': 'http://snomed.info/sct',      │
+│ 'code': '398918002', 'display': 'Methionine- and paracetamol-containing      │
+│ product'}, {'system': 'http://snomed.info/sct', 'code': '437858004',         │
+│ 'display': 'Paracetamol-containing product in rectal dose form'}, {'system': │
+│ 'http://snomed.info/sct', 'code': '777067000', 'display': 'Acetaminophen     │
+│ only product'}])                                                             │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:12,116 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 16:51:17,818 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 16:51:17,823 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 16:51:17,823 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:17,824 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:17,838 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:17,845 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med  
+  ication[x]", search_term="Cefuroxime"))                                       
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 16:51:18,445 - root - INFO - 
+Execution logs:
+('Found 39 hits for Cefuroxime in MedicationStatement.medication[x]', 
+[{'system': 'http://snomed.info/sct', 'code': '73986003', 'display': 
+'Cefuroxime-containing product'}, {'system': 'http://snomed.info/sct', 'code': 
+'372833007', 'display': 'Cefuroxime'}, {'system': 'http://snomed.info/sct', 
+'code': '350136007', 'display': 'Cefuroxime-containing product in oral dose 
+form'}, {'system': 'http://snomed.info/sct', 'code': '89678001', 'display': 
+'Cefuroxime axetil'}, {'system': 'http://snomed.info/sct', 'code': '48753004', 
+'display': 'Cefuroxime sodium'}, {'system': 'http://snomed.info/sct', 'code': 
+'350137003', 'display': 'Cefuroxime-containing product in parenteral dose 
+form'}, {'system': 'http://snomed.info/sct', 'code': '775121004', 'display': 
+'Cefuroxime only product'}, {'system': 'http://snomed.info/sct', 'code': 
+'346365007', 'display': 'Cefuroxime- and metronidazole-containing product'}, 
+{'system': 'http://snomed.info/sct', 'code': '376969002', 'display': 'Cefuroxime
+axetil 300 mg oral tablet'}, {'system': 'http://snomed.info/sct', 'code': 
+'370361001', 'display': 'Cefuroxime (as cefuroxime axetil) 50 mg/mL oral 
+suspension'}])
+
+Out: None
+
+2025-06-30 16:51:18,449 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 8 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 16:51:18,454 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for Paracetamol, `387517004`. Now I will search for    │
+│ Cefuroxime.Code:                                                             │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med │
+│ ication", search_term="Cefuroxime"))                                         │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:18,456 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_7', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.me │
+│ dication", search_term="Cefuroxime"))'}}]                                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:18,464 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_7                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 39 hits for Cefuroxime in MedicationStatement.medication',           │
+│ [{'system': 'http://snomed.info/sct', 'code': '73986003', 'display':         │
+│ 'Cefuroxime-containing product'}, {'system': 'http://snomed.info/sct',       │
+│ 'code': '372833007', 'display': 'Cefuroxime'}, {'system':                    │
+│ 'http://snomed.info/sct', 'code': '350136007', 'display':                    │
+│ 'Cefuroxime-containing product in oral dose form'}, {'system':               │
+│ 'http://snomed.info/sct', 'code': '89678001', 'display': 'Cefuroxime         │
+│ axetil'}, {'system': 'http://snomed.info/sct', 'code': '48753004',           │
+│ 'display': 'Cefuroxime sodium'}, {'system': 'http://snomed.info/sct',        │
+│ 'code': '350137003', 'display': 'Cefuroxime-containing product in parenteral │
+│ dose form'}, {'system': 'http://snomed.info/sct', 'code': '775121004',       │
+│ 'display': 'Cefuroxime only product'}, {'system': 'http://snomed.info/sct',  │
+│ 'code': '346365007', 'display': 'Cefuroxime- and metronidazole-containing    │
+│ product'}, {'system': 'http://snomed.info/sct', 'code': '376969002',         │
+│ 'display': 'Cefuroxime axetil 300 mg oral tablet'}, {'system':               │
+│ 'http://snomed.info/sct', 'code': '370361001', 'display': 'Cefuroxime (as    │
+│ cefuroxime axetil) 50 mg/mL oral suspension'}])                              │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:18,468 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 16:51:23,530 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 16:51:23,537 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 16:51:23,538 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:23,539 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:23,560 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:23,561 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med  
+  ication[x]", search_term="Metoclopramide"))                                   
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 16:51:24,123 - root - INFO - 
+Execution logs:
+('Found 30 hits for Metoclopramide in MedicationStatement.medication[x]', 
+[{'system': 'http://snomed.info/sct', 'code': '56549003', 'display': 
+'Metoclopramide-containing product'}, {'system': 'http://snomed.info/sct', 
+'code': '372776000', 'display': 'Metoclopramide'}, {'system': 
+'http://snomed.info/sct', 'code': '349804004', 'display': 
+'Metoclopramide-containing product in oral dose form'}, {'system': 
+'http://snomed.info/sct', 'code': '400487008', 'display': 'Aspirin- and 
+metoclopramide-containing product'}, {'system': 'http://snomed.info/sct', 
+'code': '349806002', 'display': 'Metoclopramide-containing product in parenteral
+dose form'}, {'system': 'http://snomed.info/sct', 'code': '400658001', 
+'display': 'Acetaminophen- and metoclopramide-containing product'}, {'system': 
+'http://snomed.info/sct', 'code': '31147000', 'display': 'Metoclopramide 
+hydrochloride'}, {'system': 'http://snomed.info/sct', 'code': '776766009', 
+'display': 'Metoclopramide only product'}, {'system': 'http://snomed.info/sct', 
+'code': '1332208003', 'display': 'Metoclopramide hydrochloride anhydrous'}, 
+{'system': 'http://snomed.info/sct', 'code': '774675004', 'display': 'Aspirin 
+and metoclopramide only product'}])
+
+Out: None
+
+2025-06-30 16:51:24,126 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 16:51:24,131 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for Cefuroxime, `372833007`. Next, I will search for   │
+│ Metoclopramide.Code:                                                         │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med │
+│ ication", search_term="Metoclopramide"))                                     │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:24,133 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_8', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.me │
+│ dication", search_term="Metoclopramide"))'}}]                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:24,140 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_8                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 30 hits for Metoclopramide in MedicationStatement.medication',       │
+│ [{'system': 'http://snomed.info/sct', 'code': '56549003', 'display':         │
+│ 'Metoclopramide-containing product'}, {'system': 'http://snomed.info/sct',   │
+│ 'code': '372776000', 'display': 'Metoclopramide'}, {'system':                │
+│ 'http://snomed.info/sct', 'code': '349804004', 'display':                    │
+│ 'Metoclopramide-containing product in oral dose form'}, {'system':           │
+│ 'http://snomed.info/sct', 'code': '400487008', 'display': 'Aspirin- and      │
+│ metoclopramide-containing product'}, {'system': 'http://snomed.info/sct',    │
+│ 'code': '349806002', 'display': 'Metoclopramide-containing product in        │
+│ parenteral dose form'}, {'system': 'http://snomed.info/sct', 'code':         │
+│ '400658001', 'display': 'Acetaminophen- and metoclopramide-containing        │
+│ product'}, {'system': 'http://snomed.info/sct', 'code': '31147000',          │
+│ 'display': 'Metoclopramide hydrochloride'}, {'system':                       │
+│ 'http://snomed.info/sct', 'code': '776766009', 'display': 'Metoclopramide    │
+│ only product'}, {'system': 'http://snomed.info/sct', 'code': '1332208003',   │
+│ 'display': 'Metoclopramide hydrochloride anhydrous'}, {'system':             │
+│ 'http://snomed.info/sct', 'code': '774675004', 'display': 'Aspirin and       │
+│ metoclopramide only product'}])                                              │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:24,144 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 16:51:27,650 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 16:51:27,659 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 16:51:27,660 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:27,661 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:27,676 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:27,688 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.sta  
+  tus", search_term="active"))                                                  
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 16:51:27,944 - root - INFO - 
+Execution logs:
+('Found 8 hits for active in MedicationStatement.status', [{'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 'active', 
+'display': 'Active'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 
+'completed', 'display': 'Completed'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 
+'entered-in-error', 'display': 'Entered in Error'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 
+'intended', 'display': 'Intended'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 
+'not-taken', 'display': 'Not Taken'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 'on-hold',
+'display': 'On Hold'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 'stopped',
+'display': 'Stopped'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 'unknown',
+'display': 'Unknown'}])
+
+Out: None
+
+2025-06-30 16:51:27,945 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 16:51:27,947 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for Metoclopramide, `372776000`.                       │
+│                                                                              │
+│ Now I need to find codes for the dosage and timing.                          │
+│ *   "bei Bedarf" (as needed) is a timing instruction.                        │
+│ *   "dreimal täglich" (three times a day) is a timing instruction.           │
+│ *   "für 5 Tage" (for 5 days) is a timing instruction.                       │
+│ *   "oral" is implied for tablets.                                           │
+│                                                                              │
+│ I will search for the medication status `active`.Code:                       │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.sta │
+│ tus", search_term="active"))                                                 │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:27,948 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_9', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.st │
+│ atus", search_term="active"))'}}]                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:27,951 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_9                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 8 hits for active in MedicationStatement.status', [{'system':        │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'active', 'display': 'Active'}, {'system':                                   │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'completed', 'display': 'Completed'}, {'system':                             │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'entered-in-error', 'display': 'Entered in Error'}, {'system':               │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'intended', 'display': 'Intended'}, {'system':                               │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'not-taken', 'display': 'Not Taken'}, {'system':                             │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'on-hold', 'display': 'On Hold'}, {'system':                                 │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'stopped', 'display': 'Stopped'}, {'system':                                 │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'unknown', 'display': 'Unknown'}])                                           │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:27,952 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 16:51:33,893 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 16:51:33,897 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 16:51:33,898 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:33,898 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:33,913 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:51:33,922 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Dosage.route",           
+  search_term="oral"))                                                          
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 16:51:38,524 - root - INFO - 
+Execution logs:
+('Found 1 hits for oral in Dosage.route', [{'system': 'http://snomed.info/sct', 
+'code': '26643006', 'display': 'Oral route'}])
+
+Out: None
+
+2025-06-30 16:51:38,528 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 11 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 16:51:38,534 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for `MedicationStatement.status` "active".             │
+│                                                                              │
+│ Now I will search for the route. Since the medications are tablets, the      │
+│ route is "oral".Code:                                                        │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Dosage.route",          │
+│ search_term="oral"))                                                         │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:38,536 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_10', 'type': 'function', 'function': {'name':                  │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Dosage.route",         │
+│ search_term="oral"))'}}]                                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:38,539 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_10                                                             │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 1 hits for oral in Dosage.route', [{'system':                        │
+│ 'http://snomed.info/sct', 'code': '26643006', 'display': 'Oral route'}])     │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:51:38,544 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 16:52:00,947 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 16:52:00,955 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 16:52:00,956 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:52:00,956 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:52:00,979 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:52:01,121 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  from fhir.resources.R4B.bundle import Bundle, BundleEntry                     
+  from fhir.resources.R4B.patient import Patient                                
+  from fhir.resources.R4B.condition import Condition                            
+  from fhir.resources.R4B.medicationstatement import MedicationStatement        
+  from fhir.resources.R4B.humanname import HumanName                            
+  from fhir.resources.R4B.codeableconcept import CodeableConcept                
+  from fhir.resources.R4B.coding import Coding                                  
+  from fhir.resources.R4B.reference import Reference                            
+  from fhir.resources.R4B.dosage import Dosage, DosageDoseAndRate               
+  from fhir.resources.R4B.timing import Timing, TimingRepeat                    
+  from fhir.resources.R4B.quantity import Quantity                              
+                                                                                
+  # 1. Patient                                                                  
+  patient = Patient(                                                            
+      id="pat-001",                                                             
+      name=[HumanName(use="official", family="Frei", given=["Luca"])],          
+      gender="male",                                                            
+      birthDate="1997-11"                                                       
+  )                                                                             
+                                                                                
+  # 2. Condition (Appendicitis)                                                 
+  appendicitis_code = CodeableConcept(                                          
+      coding=[                                                                  
+          Coding(system="http://snomed.info/sct", code="74400008",              
+  display="Appendicitis")                                                       
+      ]                                                                         
+  )                                                                             
+  appendicitis_clinical_status = CodeableConcept(                               
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-clini  
+  cal", code="resolved", display="Resolved")                                    
+      ]                                                                         
+  )                                                                             
+  appendicitis_verification_status = CodeableConcept(                           
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-s  
+  tatus", code="confirmed", display="Confirmed")                                
+      ]                                                                         
+  )                                                                             
+  appendicitis_condition = Condition(                                           
+      id="cond-001",                                                            
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
+      code=appendicitis_code,                                                   
+      clinicalStatus=appendicitis_clinical_status,                              
+      verificationStatus=appendicitis_verification_status,                      
+      onsetDateTime="2023-02-21",                                               
+      abatementDateTime="2023-03-01"                                            
+  )                                                                             
+                                                                                
+  # 3. Condition (Abdominal Pain)                                               
+  abdominal_pain_code = CodeableConcept(                                        
+      coding=[                                                                  
+          Coding(system="http://snomed.info/sct", code="21522001",              
+  display="Abdominal pain")                                                     
+      ],                                                                        
+      text="Bauchschmerzen"                                                     
+  )                                                                             
+  abdominal_pain_clinical_status = CodeableConcept(                             
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-clini  
+  cal", code="active", display="Active")                                        
+      ]                                                                         
+  )                                                                             
+  abdominal_pain_verification_status = CodeableConcept(                         
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-s  
+  tatus", code="confirmed", display="Confirmed")                                
+      ]                                                                         
+  )                                                                             
+  abdominal_pain_condition = Condition(                                         
+      id="cond-002",                                                            
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
+      code=abdominal_pain_code,                                                 
+      clinicalStatus=abdominal_pain_clinical_status,                            
+      verificationStatus=abdominal_pain_verification_status                     
+  )                                                                             
+                                                                                
+  # Shared Medication properties                                                
+  med_status_active = "active"                                                  
+  oral_route = CodeableConcept(                                                 
+      coding=[                                                                  
+          Coding(system="http://snomed.info/sct", code="26643006",              
+  display="Oral route")                                                         
+      ]                                                                         
+  )                                                                             
+                                                                                
+  # 4. MedicationStatement (Paracetamol)                                        
+  paracetamol_medication = CodeableConcept(                                     
+      coding=[                                                                  
+          Coding(system="http://snomed.info/sct", code="387517004",             
+  display="Paracetamol")                                                        
+      ]                                                                         
+  )                                                                             
+  paracetamol_dosage = Dosage(                                                  
+      asNeededBoolean=True,                                                     
+      text="Paracetamol 500 mg bei Bedarf zur Schmerzlinderung.",               
+      route=oral_route,                                                         
+      doseAndRate=[DosageDoseAndRate(doseQuantity=Quantity(value=500,           
+  unit="mg"))]                                                                  
+  )                                                                             
+  paracetamol_statement = MedicationStatement(                                  
+      id="med-stat-001",                                                        
+      status=med_status_active,                                                 
+      medicationCodeableConcept=paracetamol_medication,                         
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
+      dosage=[paracetamol_dosage],                                              
+      reasonReference=[Reference(reference=f"Condition/{abdominal_pain_conditi  
+  on.id}")]                                                                     
+  )                                                                             
+                                                                                
+                                                                                
+  # 5. MedicationStatement (Cefuroxim)                                          
+  cefuroxime_medication = CodeableConcept(                                      
+      coding=[                                                                  
+          Coding(system="http://snomed.info/sct", code="372833007",             
+  display="Cefuroxime")                                                         
+      ]                                                                         
+  )                                                                             
+  cefuroxime_timing = Timing(                                                   
+      repeat=TimingRepeat(                                                      
+          frequency=3,                                                          
+          period=1,                                                             
+          periodUnit="d",                                                       
+          boundsDuration=Quantity(value=5, unit="d")                            
+      )                                                                         
+  )                                                                             
+  cefuroxime_dosage = Dosage(                                                   
+      text="Cefuroxim 500 mg dreimal täglich für 5 Tage zur Prophylaxe von      
+  Infektionen.",                                                                
+      route=oral_route,                                                         
+      timing=cefuroxime_timing,                                                 
+      doseAndRate=[DosageDoseAndRate(doseQuantity=Quantity(value=500,           
+  unit="mg"))]                                                                  
+  )                                                                             
+  cefuroxime_statement = MedicationStatement(                                   
+      id="med-stat-002",                                                        
+      status=med_status_active,                                                 
+      medicationCodeableConcept=cefuroxime_medication,                          
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
+      dosage=[cefuroxime_dosage],                                               
+      reasonReference=[Reference(reference=f"Condition/{appendicitis_condition  
+  .id}")]                                                                       
+  )                                                                             
+                                                                                
+  # 6. MedicationStatement (Metoclopramid)                                      
+  metoclopramide_medication = CodeableConcept(                                  
+      coding=[                                                                  
+          Coding(system="http://snomed.info/sct", code="372776000",             
+  display="Metoclopramide")                                                     
+      ]                                                                         
+  )                                                                             
+  metoclopramide_dosage = Dosage(                                               
+      asNeededBoolean=True,                                                     
+      text="Metoclopramid 10 mg bei Bedarf zur Linderung von Übelkeit.",        
+      route=oral_route,                                                         
+      doseAndRate=[DosageDoseAndRate(doseQuantity=Quantity(value=10,            
+  unit="mg"))]                                                                  
+  )                                                                             
+  metoclopramide_statement = MedicationStatement(                               
+      id="med-stat-003",                                                        
+      status=med_status_active,                                                 
+      medicationCodeableConcept=metoclopramide_medication,                      
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
+      dosage=[metoclopramide_dosage]                                            
+  )                                                                             
+                                                                                
+                                                                                
+  # 7. Bundle                                                                   
+  bundle = Bundle(                                                              
+      type="collection",                                                        
+      entry=[                                                                   
+          BundleEntry(resource=patient, fullUrl=f"Patient/{patient.id}"),       
+          BundleEntry(resource=appendicitis_condition,                          
+  fullUrl=f"Condition/{appendicitis_condition.id}"),                            
+          BundleEntry(resource=abdominal_pain_condition,                        
+  fullUrl=f"Condition/{abdominal_pain_condition.id}"),                          
+          BundleEntry(resource=paracetamol_statement,                           
+  fullUrl=f"MedicationStatement/{paracetamol_statement.id}"),                   
+          BundleEntry(resource=cefuroxime_statement,                            
+  fullUrl=f"MedicationStatement/{cefuroxime_statement.id}"),                    
+          BundleEntry(resource=metoclopramide_statement,                        
+  fullUrl=f"MedicationStatement/{metoclopramide_statement.id}")                 
+      ]                                                                         
+  )                                                                             
+                                                                                
+  final_answer(bundle.json(indent=2))                                           
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 16:52:01,155 - root - ERROR - Code execution failed at line 'cefuroxime_timing = Timing(
+    repeat=TimingRepeat(
+        frequency=3,
+        period=1,
+        periodUnit="d",
+        boundsDuration=Quantity(value=5, unit="d")
+    )
+)' due to: ValidationError: 1 validation error for TimingRepeat
+boundsDuration.root
+  Value is expected from the instance of Duration, but got type <class 
+'fhir.resources.R4B.quantity.Quantity'> [type=model_validation_format, 
+input_value=Quantity(fhir_comments=No...l('5'), value__ext=None), 
+input_type=Quantity\]
+
+2025-06-30 16:52:01,156 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 12 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 16:52:01,174 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for "Oral route".                                      │
+│                                                                              │
+│ Now I have all the necessary codes. I will now construct the FHIR resources. │
+│                                                                              │
+│ Here's the plan:                                                             │
+│ 1.  **Patient**: Create a Patient resource for Luca Frei.                    │
+│ 2.  **Condition (Appendicitis)**: Create a Condition resource for            │
+│ Appendicitis, with `clinicalStatus` "resolved" and `verificationStatus`      │
+│ "confirmed".                                                                 │
+│ 3.  **Condition (Abdominal Pain)**: Create a Condition resource for          │
+│ Abdominal Pain, with `clinicalStatus` "active" and `verificationStatus`      │
+│ "confirmed".                                                                 │
+│ 4.  **MedicationStatement (Paracetamol)**: Create a MedicationStatement for  │
+│ Paracetamol, with dosage "as needed".                                        │
+│ 5.  **MedicationStatement (Cefuroxim)**: Create a MedicationStatement for    │
+│ Cefuroxime, with dosage "three times a day for 5 days".                      │
+│ 6.  **MedicationStatement (Metoclopramid)**: Create a MedicationStatement    │
+│ for Metoclopramide, with dosage "as needed".                                 │
+│ 7.  **Bundle**: Combine all resources into a Bundle.                         │
+│                                                                              │
+│ I will now write the Python code to create these resources and the final     │
+│ bundle.Code:                                                                 │
+│ ```python                                                                    │
+│ from fhir.resources.R4B.bundle import Bundle, BundleEntry                    │
+│ from fhir.resources.R4B.patient import Patient                               │
+│ from fhir.resources.R4B.condition import Condition                           │
+│ from fhir.resources.R4B.medicationstatement import MedicationStatement       │
+│ from fhir.resources.R4B.humanname import HumanName                           │
+│ from fhir.resources.R4B.codeableconcept import CodeableConcept               │
+│ from fhir.resources.R4B.coding import Coding                                 │
+│ from fhir.resources.R4B.reference import Reference                           │
+│ from fhir.resources.R4B.dosage import Dosage, DosageDoseAndRate              │
+│ from fhir.resources.R4B.timing import Timing, TimingRepeat                   │
+│ from fhir.resources.R4B.quantity import Quantity                             │
+│                                                                              │
+│ # 1. Patient                                                                 │
+│ patient = Patient(                                                           │
+│     id="pat-001",                                                            │
+│     name=[HumanName(use="official", family="Frei", given=["Luca"])],         │
+│     gender="male",                                                           │
+│     birthDate="1997-11"                                                      │
+│ )                                                                            │
+│                                                                              │
+│ # 2. Condition (Appendicitis)                                                │
+│ appendicitis_code = CodeableConcept(                                         │
+│     coding=[                                                                 │
+│         Coding(system="http://snomed.info/sct", code="74400008",             │
+│ display="Appendicitis")                                                      │
+│     ]                                                                        │
+│ )                                                                            │
+│ appendicitis_clinical_status = CodeableConcept(                              │
+│     coding=[                                                                 │
+│         Coding(system="http://terminology.hl7.org/CodeSystem/condition-clini │
+│ cal", code="resolved", display="Resolved")                                   │
+│     ]                                                                        │
+│ )                                                                            │
+│ appendicitis_verification_status = CodeableConcept(                          │
+│     coding=[                                                                 │
+│         Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-s │
+│ tatus", code="confirmed", display="Confirmed")                               │
+│     ]                                                                        │
+│ )                                                                            │
+│ appendicitis_condition = Condition(                                          │
+│     id="cond-001",                                                           │
+│     subject=Reference(reference=f"Patient/{patient.id}"),                    │
+│     code=appendicitis_code,                                                  │
+│     clinicalStatus=appendicitis_clinical_status,                             │
+│     verificationStatus=appendicitis_verification_status,                     │
+│     onsetDateTime="2023-02-21",                                              │
+│     abatementDateTime="2023-03-01"                                           │
+│ )                                                                            │
+│                                                                              │
+│ # 3. Condition (Abdominal Pain)                                              │
+│ abdominal_pain_code = CodeableConcept(                                       │
+│     coding=[                                                                 │
+│         Coding(system="http://snomed.info/sct", code="21522001",             │
+│ display="Abdominal pain")                                                    │
+│     ],                                                                       │
+│     text="Bauchschmerzen"                                                    │
+│ )                                                                            │
+│ abdominal_pain_clinical_status = CodeableConcept(                            │
+│     coding=[                                                                 │
+│         Coding(system="http://terminology.hl7.org/CodeSystem/condition-clini │
+│ cal", code="active", display="Active")                                       │
+│     ]                                                                        │
+│ )                                                                            │
+│ abdominal_pain_verification_status = CodeableConcept(                        │
+│     coding=[                                                                 │
+│         Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-s │
+│ tatus", code="confirmed", display="Confirmed")                               │
+│     ]                                                                        │
+│ )                                                                            │
+│ abdominal_pain_condition = Condition(                                        │
+│     id="cond-002",                                                           │
+│     subject=Reference(reference=f"Patient/{patient.id}"),                    │
+│     code=abdominal_pain_code,                                                │
+│     clinicalStatus=abdominal_pain_clinical_status,                           │
+│     verificationStatus=abdominal_pain_verification_status                    │
+│ )                                                                            │
+│                                                                              │
+│ # Shared Medication properties                                               │
+│ med_status_active = "active"                                                 │
+│ oral_route = CodeableConcept(                                                │
+│     coding=[                                                                 │
+│         Coding(system="http://snomed.info/sct", code="26643006",             │
+│ display="Oral route")                                                        │
+│     ]                                                                        │
+│ )                                                                            │
+│                                                                              │
+│ # 4. MedicationStatement (Paracetamol)                                       │
+│ paracetamol_medication = CodeableConcept(                                    │
+│     coding=[                                                                 │
+│         Coding(system="http://snomed.info/sct", code="387517004",            │
+│ display="Paracetamol")                                                       │
+│     ]                                                                        │
+│ )                                                                            │
+│ paracetamol_dosage = Dosage(                                                 │
+│     asNeededBoolean=True,                                                    │
+│     text="Paracetamol 500 mg bei Bedarf zur Schmerzlinderung.",              │
+│     route=oral_route,                                                        │
+│     doseAndRate=[DosageDoseAndRate(doseQuantity=Quantity(value=500,          │
+│ unit="mg"))]                                                                 │
+│ )                                                                            │
+│ paracetamol_statement = MedicationStatement(                                 │
+│     id="med-stat-001",                                                       │
+│     status=med_status_active,                                                │
+│     medicationCodeableConcept=paracetamol_medication,                        │
+│     subject=Reference(reference=f"Patient/{patient.id}"),                    │
+│     dosage=,                                                                 │
+│     reasonReference=[Reference(reference=f"Condition/{abdominal_pain_conditi │
+│ on.id}")]                                                                    │
+│ )                                                                            │
+│                                                                              │
+│                                                                              │
+│ # 5. MedicationStatement (Cefuroxim)                                         │
+│ cefuroxime_medication = CodeableConcept(                                     │
+│     coding=[                                                                 │
+│         Coding(system="http://snomed.info/sct", code="372833007",            │
+│ display="Cefuroxime")                                                        │
+│     ]                                                                        │
+│ )                                                                            │
+│ cefuroxime_timing = Timing(                                                  │
+│     repeat=TimingRepeat(                                                     │
+│         frequency=3,                                                         │
+│         period=1,                                                            │
+│         periodUnit="d",                                                      │
+│         boundsDuration=Quantity(value=5, unit="d")                           │
+│     )                                                                        │
+│ )                                                                            │
+│ cefuroxime_dosage = Dosage(                                                  │
+│     text="Cefuroxim 500 mg dreimal täglich für 5 Tage zur Prophylaxe von     │
+│ Infektionen.",                                                               │
+│     route=oral_route,                                                        │
+│     timing=cefuroxime_timing,                                                │
+│     doseAndRate=[DosageDoseAndRate(doseQuantity=Quantity(value=500,          │
+│ unit="mg"))]                                                                 │
+│ )                                                                            │
+│ cefuroxime_statement = MedicationStatement(                                  │
+│     id="med-stat-002",                                                       │
+│     status=med_status_active,                                                │
+│     medicationCodeableConcept=cefuroxime_medication,                         │
+│     subject=Reference(reference=f"Patient/{patient.id}"),                    │
+│     dosage=,                                                                 │
+│     reasonReference=[Reference(reference=f"Condition/{appendicitis_condition │
+│ .id}")]                                                                      │
+│ )                                                                            │
+│                                                                              │
+│ # 6. MedicationStatement (Metoclopramid)                                     │
+│ metoclopramide_medication = CodeableConcept(                                 │
+│     coding=[                                                                 │
+│         Coding(system="http://snomed.info/sct", code="372776000",            │
+│ display="Metoclopramide")                                                    │
+│     ]                                                                        │
+│ )                                                                            │
+│ metoclopramide_dosage = Dosage(                                              │
+│     asNeededBoolean=True,                                                    │
+│     text="Metoclopramid 10 mg bei Bedarf zur Linderung von Übelkeit.",       │
+│     route=oral_route,                                                        │
+│     doseAndRate=[DosageDoseAndRate(doseQuantity=Quantity(value=10,           │
+│ unit="mg"))]                                                                 │
+│ )                                                                            │
+│ metoclopramide_statement = MedicationStatement(                              │
+│     id="med-stat-003",                                                       │
+│     status=med_status_active,                                                │
+│     medicationCodeableConcept=metoclopramide_medication,                     │
+│     subject=Reference(reference=f"Patient/{patient.id}"),                    │
+│     dosage=                                                                  │
+│ )                                                                            │
+│                                                                              │
+│                                                                              │
+│ # 7. Bundle                                                                  │
+│ bundle = Bundle(                                                             │
+│     type="collection",                                                       │
+│     entry=[                                                                  │
+│         BundleEntry(resource=patient, fullUrl=f"Patient/{patient.id}"),      │
+│         BundleEntry(resource=appendicitis_condition,                         │
+│ fullUrl=f"Condition/{appendicitis_condition.id}"),                           │
+│         BundleEntry(resource=abdominal_pain_condition,                       │
+│ fullUrl=f"Condition/{abdominal_pain_condition.id}"),                         │
+│         BundleEntry(resource=paracetamol_statement,                          │
+│ fullUrl=f"MedicationStatement/{paracetamol_statement.id}"),                  │
+│         BundleEntry(resource=cefuroxime_statement,                           │
+│ fullUrl=f"MedicationStatement/{cefuroxime_statement.id}"),                   │
+│         BundleEntry(resource=metoclopramide_statement,                       │
+│ fullUrl=f"MedicationStatement/{metoclopramide_statement.id}")                │
+│     ]                                                                        │
+│ )                                                                            │
+│                                                                              │
+│ final_answer(bundle.json(indent=2))                                          │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:52:01,182 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_11', 'type': 'function', 'function': {'name':                  │
+│ 'python_interpreter', 'arguments': 'from fhir.resources.R4B.bundle import    │
+│ Bundle, BundleEntry\nfrom fhir.resources.R4B.patient import Patient\nfrom    │
+│ fhir.resources.R4B.condition import Condition\nfrom                          │
+│ fhir.resources.R4B.medicationstatement import MedicationStatement\nfrom      │
+│ fhir.resources.R4B.humanname import HumanName\nfrom                          │
+│ fhir.resources.R4B.codeableconcept import CodeableConcept\nfrom              │
+│ fhir.resources.R4B.coding import Coding\nfrom fhir.resources.R4B.reference   │
+│ import Reference\nfrom fhir.resources.R4B.dosage import Dosage,              │
+│ DosageDoseAndRate\nfrom fhir.resources.R4B.timing import Timing,             │
+│ TimingRepeat\nfrom fhir.resources.R4B.quantity import Quantity\n\n# 1.       │
+│ Patient\npatient = Patient(\n    id="pat-001",\n                             │
+│ name=[HumanName(use="official", family="Frei", given=["Luca"])],\n           │
+│ gender="male",\n    birthDate="1997-11"\n)\n\n# 2. Condition                 │
+│ (Appendicitis)\nappendicitis_code = CodeableConcept(\n    coding=[\n         │
+│ Coding(system="http://snomed.info/sct", code="74400008",                     │
+│ display="Appendicitis")\n    ]\n)\nappendicitis_clinical_status =            │
+│ CodeableConcept(\n    coding=[\n                                             │
+│ Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical",    │
+│ code="resolved", display="Resolved")\n                                       │
+│ ]\n)\nappendicitis_verification_status = CodeableConcept(\n    coding=[\n    │
+│ Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-status",  │
+│ code="confirmed", display="Confirmed")\n    ]\n)\nappendicitis_condition =   │
+│ Condition(\n    id="cond-001",\n                                             │
+│ subject=Reference(reference=f"Patient/{patient.id}"),\n                      │
+│ code=appendicitis_code,\n    clinicalStatus=appendicitis_clinical_status,\n  │
+│ verificationStatus=appendicitis_verification_status,\n                       │
+│ onsetDateTime="2023-02-21",\n    abatementDateTime="2023-03-01"\n)\n\n# 3.   │
+│ Condition (Abdominal Pain)\nabdominal_pain_code = CodeableConcept(\n         │
+│ coding=[\n        Coding(system="http://snomed.info/sct", code="21522001",   │
+│ display="Abdominal pain")\n    ],\n                                          │
+│ text="Bauchschmerzen"\n)\nabdominal_pain_clinical_status =                   │
+│ CodeableConcept(\n    coding=[\n                                             │
+│ Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical",    │
+│ code="active", display="Active")\n                                           │
+│ ]\n)\nabdominal_pain_verification_status = CodeableConcept(\n    coding=[\n  │
+│ Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-status",  │
+│ code="confirmed", display="Confirmed")\n    ]\n)\nabdominal_pain_condition = │
+│ Condition(\n    id="cond-002",\n                                             │
+│ subject=Reference(reference=f"Patient/{patient.id}"),\n                      │
+│ code=abdominal_pain_code,\n                                                  │
+│ clinicalStatus=abdominal_pain_clinical_status,\n                             │
+│ verificationStatus=abdominal_pain_verification_status\n)\n\n# Shared         │
+│ Medication properties\nmed_status_active = "active"\noral_route =            │
+│ CodeableConcept(\n    coding=[\n                                             │
+│ Coding(system="http://snomed.info/sct", code="26643006", display="Oral       │
+│ route")\n    ]\n)\n\n# 4. MedicationStatement                                │
+│ (Paracetamol)\nparacetamol_medication = CodeableConcept(\n    coding=[\n     │
+│ Coding(system="http://snomed.info/sct", code="387517004",                    │
+│ display="Paracetamol")\n    ]\n)\nparacetamol_dosage = Dosage(\n             │
+│ asNeededBoolean=True,\n    text="Paracetamol 500 mg bei Bedarf zur           │
+│ Schmerzlinderung.",\n    route=oral_route,\n                                 │
+│ doseAndRate=[DosageDoseAndRate(doseQuantity=Quantity(value=500,              │
+│ unit="mg"))]\n)\nparacetamol_statement = MedicationStatement(\n              │
+│ id="med-stat-001",\n    status=med_status_active,\n                          │
+│ medicationCodeableConcept=paracetamol_medication,\n                          │
+│ subject=Reference(reference=f"Patient/{patient.id}"),\n    dosage=,\n        │
+│ reasonReference=[Reference(reference=f"Condition/{abdominal_pain_condition.i │
+│ d}")]\n)\n\n\n# 5. MedicationStatement (Cefuroxim)\ncefuroxime_medication =  │
+│ CodeableConcept(\n    coding=[\n                                             │
+│ Coding(system="http://snomed.info/sct", code="372833007",                    │
+│ display="Cefuroxime")\n    ]\n)\ncefuroxime_timing = Timing(\n               │
+│ repeat=TimingRepeat(\n        frequency=3,\n        period=1,\n              │
+│ periodUnit="d",\n        boundsDuration=Quantity(value=5, unit="d")\n        │
+│ )\n)\ncefuroxime_dosage = Dosage(\n    text="Cefuroxim 500 mg dreimal        │
+│ täglich für 5 Tage zur Prophylaxe von Infektionen.",\n                       │
+│ route=oral_route,\n    timing=cefuroxime_timing,\n                           │
+│ doseAndRate=[DosageDoseAndRate(doseQuantity=Quantity(value=500,              │
+│ unit="mg"))]\n)\ncefuroxime_statement = MedicationStatement(\n               │
+│ id="med-stat-002",\n    status=med_status_active,\n                          │
+│ medicationCodeableConcept=cefuroxime_medication,\n                           │
+│ subject=Reference(reference=f"Patient/{patient.id}"),\n    dosage=,\n        │
+│ reasonReference=[Reference(reference=f"Condition/{appendicitis_condition.id} │
+│ ")]\n)\n\n# 6. MedicationStatement                                           │
+│ (Metoclopramid)\nmetoclopramide_medication = CodeableConcept(\n              │
+│ coding=[\n        Coding(system="http://snomed.info/sct", code="372776000",  │
+│ display="Metoclopramide")\n    ]\n)\nmetoclopramide_dosage = Dosage(\n       │
+│ asNeededBoolean=True,\n    text="Metoclopramid 10 mg bei Bedarf zur          │
+│ Linderung von Übelkeit.",\n    route=oral_route,\n                           │
+│ doseAndRate=[DosageDoseAndRate(doseQuantity=Quantity(value=10,               │
+│ unit="mg"))]\n)\nmetoclopramide_statement = MedicationStatement(\n           │
+│ id="med-stat-003",\n    status=med_status_active,\n                          │
+│ medicationCodeableConcept=metoclopramide_medication,\n                       │
+│ subject=Reference(reference=f"Patient/{patient.id}"),\n    dosage=\n)\n\n\n# │
+│ 7. Bundle\nbundle = Bundle(\n    type="collection",\n    entry=[\n           │
+│ BundleEntry(resource=patient, fullUrl=f"Patient/{patient.id}"),\n            │
+│ BundleEntry(resource=appendicitis_condition,                                 │
+│ fullUrl=f"Condition/{appendicitis_condition.id}"),\n                         │
+│ BundleEntry(resource=abdominal_pain_condition,                               │
+│ fullUrl=f"Condition/{abdominal_pain_condition.id}"),\n                       │
+│ BundleEntry(resource=paracetamol_statement,                                  │
+│ fullUrl=f"MedicationStatement/{paracetamol_statement.id}"),\n                │
+│ BundleEntry(resource=cefuroxime_statement,                                   │
+│ fullUrl=f"MedicationStatement/{cefuroxime_statement.id}"),\n                 │
+│ BundleEntry(resource=metoclopramide_statement,                               │
+│ fullUrl=f"MedicationStatement/{metoclopramide_statement.id}")\n              │
+│ ]\n)\n\nfinal_answer(bundle.json(indent=2))'}}]                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:52:01,184 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_11                                                             │
+│ Error:                                                                       │
+│ Code execution failed at line 'cefuroxime_timing = Timing(                   │
+│     repeat=TimingRepeat(                                                     │
+│         frequency=3,                                                         │
+│         period=1,                                                            │
+│         periodUnit="d",                                                      │
+│         boundsDuration=Quantity(value=5, unit="d")                           │
+│     )                                                                        │
+│ )' due to: ValidationError: 1 validation error for TimingRepeat              │
+│ boundsDuration.root                                                          │
+│   Value is expected from the instance of Duration, but got type <class       │
+│ 'fhir.resources.R4B.quantity.Quantity'>                                      │
+│ Now let's retry: take care not to repeat previous errors! If you have        │
+│ retried several times, try a completely different approach.                  │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 16:52:01,186 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 16:52:24,276 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 16:52:24,286 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 16:52:24,287 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:52:24,287 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:52:24,304 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 16:52:24,448 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  from fhir.resources.R4B.bundle import Bundle, BundleEntry                     
+  from fhir.resources.R4B.patient import Patient                                
+  from fhir.resources.R4B.condition import Condition                            
+  from fhir.resources.R4B.medicationstatement import MedicationStatement        
+  from fhir.resources.R4B.humanname import HumanName                            
+  from fhir.resources.R4B.codeableconcept import CodeableConcept                
+  from fhir.resources.R4B.coding import Coding                                  
+  from fhir.resources.R4B.reference import Reference                            
+  from fhir.resources.R4B.dosage import Dosage, DosageDoseAndRate               
+  from fhir.resources.R4B.timing import Timing, TimingRepeat                    
+  from fhir.resources.R4B.quantity import Quantity                              
+  from fhir.resources.R4B.duration import Duration                              
+                                                                                
+  # 1. Patient                                                                  
+  patient = Patient(                                                            
+      id="pat-001",                                                             
+      name=[HumanName(use="official", family="Frei", given=["Luca"])],          
+      gender="male",                                                            
+      birthDate="1997-11"                                                       
+  )                                                                             
+                                                                                
+  # 2. Condition (Appendicitis)                                                 
+  appendicitis_code = CodeableConcept(                                          
+      coding=[                                                                  
+          Coding(system="http://snomed.info/sct", code="74400008",              
+  display="Appendicitis")                                                       
+      ]                                                                         
+  )                                                                             
+  appendicitis_clinical_status = CodeableConcept(                               
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-clini  
+  cal", code="resolved", display="Resolved")                                    
+      ]                                                                         
+  )                                                                             
+  appendicitis_verification_status = CodeableConcept(                           
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-s  
+  tatus", code="confirmed", display="Confirmed")                                
+      ]                                                                         
+  )                                                                             
+  appendicitis_condition = Condition(                                           
+      id="cond-001",                                                            
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
+      code=appendicitis_code,                                                   
+      clinicalStatus=appendicitis_clinical_status,                              
+      verificationStatus=appendicitis_verification_status,                      
+      onsetDateTime="2023-02-21",                                               
+      abatementDateTime="2023-03-01"                                            
+  )                                                                             
+                                                                                
+  # 3. Condition (Abdominal Pain)                                               
+  abdominal_pain_code = CodeableConcept(                                        
+      coding=[                                                                  
+          Coding(system="http://snomed.info/sct", code="21522001",              
+  display="Abdominal pain")                                                     
+      ],                                                                        
+      text="Bauchschmerzen"                                                     
+  )                                                                             
+  abdominal_pain_clinical_status = CodeableConcept(                             
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-clini  
+  cal", code="active", display="Active")                                        
+      ]                                                                         
+  )                                                                             
+  abdominal_pain_verification_status = CodeableConcept(                         
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-s  
+  tatus", code="confirmed", display="Confirmed")                                
+      ]                                                                         
+  )                                                                             
+  abdominal_pain_condition = Condition(                                         
+      id="cond-002",                                                            
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
+      code=abdominal_pain_code,                                                 
+      clinicalStatus=abdominal_pain_clinical_status,                            
+      verificationStatus=abdominal_pain_verification_status                     
+  )                                                                             
+                                                                                
+  # Shared Medication properties                                                
+  med_status_active = "active"                                                  
+  oral_route = CodeableConcept(                                                 
+      coding=[                                                                  
+          Coding(system="http://snomed.info/sct", code="26643006",              
+  display="Oral route")                                                         
+      ]                                                                         
+  )                                                                             
+                                                                                
+  # 4. MedicationStatement (Paracetamol)                                        
+  paracetamol_medication = CodeableConcept(                                     
+      coding=[                                                                  
+          Coding(system="http://snomed.info/sct", code="387517004",             
+  display="Paracetamol")                                                        
+      ]                                                                         
+  )                                                                             
+  paracetamol_dosage = Dosage(                                                  
+      asNeededBoolean=True,                                                     
+      text="Paracetamol 500 mg bei Bedarf zur Schmerzlinderung.",               
+      route=oral_route,                                                         
+      doseAndRate=[DosageDoseAndRate(doseQuantity=Quantity(value=500,           
+  unit="mg"))]                                                                  
+  )                                                                             
+  paracetamol_statement = MedicationStatement(                                  
+      id="med-stat-001",                                                        
+      status=med_status_active,                                                 
+      medicationCodeableConcept=paracetamol_medication,                         
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
+      dosage=[paracetamol_dosage],                                              
+      reasonReference=[Reference(reference=f"Condition/{abdominal_pain_conditi  
+  on.id}")]                                                                     
+  )                                                                             
+                                                                                
+                                                                                
+  # 5. MedicationStatement (Cefuroxim)                                          
+  cefuroxime_medication = CodeableConcept(                                      
+      coding=[                                                                  
+          Coding(system="http://snomed.info/sct", code="372833007",             
+  display="Cefuroxime")                                                         
+      ]                                                                         
+  )                                                                             
+  cefuroxime_timing = Timing(                                                   
+      repeat=TimingRepeat(                                                      
+          frequency=3,                                                          
+          period=1,                                                             
+          periodUnit="d",                                                       
+          boundsDuration=Duration(value=5, unit="days",                         
+  system="http://unitsofmeasure.org", code="d")                                 
+      )                                                                         
+  )                                                                             
+  cefuroxime_dosage = Dosage(                                                   
+      text="Cefuroxim 500 mg dreimal täglich für 5 Tage zur Prophylaxe von      
+  Infektionen.",                                                                
+      route=oral_route,                                                         
+      timing=cefuroxime_timing,                                                 
+      doseAndRate=[DosageDoseAndRate(doseQuantity=Quantity(value=500,           
+  unit="mg"))]                                                                  
+  )                                                                             
+  cefuroxime_statement = MedicationStatement(                                   
+      id="med-stat-002",                                                        
+      status=med_status_active,                                                 
+      medicationCodeableConcept=cefuroxime_medication,                          
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
+      dosage=[cefuroxime_dosage],                                               
+      reasonReference=[Reference(reference=f"Condition/{appendicitis_condition  
+  .id}")]                                                                       
+  )                                                                             
+                                                                                
+  # 6. MedicationStatement (Metoclopramid)                                      
+  metoclopramide_medication = CodeableConcept(                                  
+      coding=[                                                                  
+          Coding(system="http://snomed.info/sct", code="372776000",             
+  display="Metoclopramide")                                                     
+      ]                                                                         
+  )                                                                             
+  metoclopramide_dosage = Dosage(                                               
+      asNeededBoolean=True,                                                     
+      text="Metoclopramid 10 mg bei Bedarf zur Linderung von Übelkeit.",        
+      route=oral_route,                                                         
+      doseAndRate=[DosageDoseAndRate(doseQuantity=Quantity(value=10,            
+  unit="mg"))]                                                                  
+  )                                                                             
+  metoclopramide_statement = MedicationStatement(                               
+      id="med-stat-003",                                                        
+      status=med_status_active,                                                 
+      medicationCodeableConcept=metoclopramide_medication,                      
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
+      dosage=[metoclopramide_dosage]                                            
+  )                                                                             
+                                                                                
+                                                                                
+  # 7. Bundle                                                                   
+  bundle = Bundle(                                                              
+      type="collection",                                                        
+      entry=[                                                                   
+          BundleEntry(resource=patient, fullUrl=f"Patient/{patient.id}"),       
+          BundleEntry(resource=appendicitis_condition,                          
+  fullUrl=f"Condition/{appendicitis_condition.id}"),                            
+          BundleEntry(resource=abdominal_pain_condition,                        
+  fullUrl=f"Condition/{abdominal_pain_condition.id}"),                          
+          BundleEntry(resource=paracetamol_statement,                           
+  fullUrl=f"MedicationStatement/{paracetamol_statement.id}"),                   
+          BundleEntry(resource=cefuroxime_statement,                            
+  fullUrl=f"MedicationStatement/{cefuroxime_statement.id}"),                    
+          BundleEntry(resource=metoclopramide_statement,                        
+  fullUrl=f"MedicationStatement/{metoclopramide_statement.id}")                 
+      ]                                                                         
+  )                                                                             
+                                                                                
+  final_answer(bundle.json(indent=2))                                           
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 16:52:24,493 - root - INFO - 
+Out - Final answer: {
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "Patient/pat-001",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-001",
+        "name": [
+          {
+            "use": "official",
+            "family": "Frei",
+            "given": [
+              "Luca"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1997-11"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-001",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-001",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "74400008",
+              "display": "Appendicitis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        },
+        "onsetDateTime": "2023-02-21",
+        "abatementDateTime": "2023-03-01"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-002",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-002",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "21522001",
+              "display": "Abdominal pain"
+            }
+          ],
+          "text": "Bauchschmerzen"
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-stat-001",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-stat-001",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387517004",
+              "display": "Paracetamol"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/cond-002"
+          }
+        ],
+        "dosage": [
+          {
+            "text": "Paracetamol 500 mg bei Bedarf zur Schmerzlinderung.",
+            "asNeededBoolean": true,
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006",
+                  "display": "Oral route"
+                }
+              ]
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 500.0,
+                  "unit": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-stat-002",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-stat-002",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372833007",
+              "display": "Cefuroxime"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/cond-001"
+          }
+        ],
+        "dosage": [
+          {
+            "text": "Cefuroxim 500 mg dreimal täglich für 5 Tage zur Prophylaxe 
+von Infektionen.",
+            "timing": {
+              "repeat": {
+                "boundsDuration": {
+                  "value": 5.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                },
+                "frequency": 3,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006",
+                  "display": "Oral route"
+                }
+              ]
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 500.0,
+                  "unit": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-stat-003",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-stat-003",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372776000",
+              "display": "Metoclopramide"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        },
+        "dosage": [
+          {
+            "text": "Metoclopramid 10 mg bei Bedarf zur Linderung von 
+Übelkeit.",
+            "asNeededBoolean": true,
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006",
+                  "display": "Oral route"
+                }
+              ]
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 10.0,
+                  "unit": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+

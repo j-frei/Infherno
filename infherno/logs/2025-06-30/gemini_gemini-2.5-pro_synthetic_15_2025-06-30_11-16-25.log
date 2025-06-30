@@ -1,0 +1,2369 @@
+2025-06-30 13:16:25,162 - root - INFO - 
+2025-06-30 13:16:25,162 - root - INFO - ================================================================================
+2025-06-30 13:16:25,162 - root - INFO - CONFIGURATION PARAMETERS
+2025-06-30 13:16:25,162 - root - INFO - ================================================================================
+2025-06-30 13:16:25,162 - root - INFO - API_SLEEP_SECONDS = 60
+2025-06-30 13:16:25,162 - root - INFO - APPLIED_TESTS = None
+2025-06-30 13:16:25,162 - root - INFO - APPLY_PARTITIONING = False
+2025-06-30 13:16:25,162 - root - INFO - CONTEXT_LENGTH = 131072
+2025-06-30 13:16:25,162 - root - INFO - DATA_DIRECTORY = ../
+2025-06-30 13:16:25,162 - root - INFO - DEVICE_MAP = auto
+2025-06-30 13:16:25,162 - root - INFO - INSTANCE_ID = 15
+2025-06-30 13:16:25,162 - root - INFO - MAX_API_RETRIES = 3
+2025-06-30 13:16:25,162 - root - INFO - MAX_NEW_TOKENS = 32000
+2025-06-30 13:16:25,162 - root - INFO - MODEL_CLASS = LiteLLMModel
+2025-06-30 13:16:25,162 - root - INFO - MODEL_ID = gemini/gemini-2.5-pro
+2025-06-30 13:16:25,163 - root - INFO - RANDOMIZE_DATA = False
+2025-06-30 13:16:25,163 - root - INFO - ROOT_FHIR_RESOURCES = ["Patient", "Condition", "MedicationStatement"]
+2025-06-30 13:16:25,163 - root - INFO - SHORTEST_FIRST = False
+2025-06-30 13:16:25,163 - root - INFO - SUBSAMPLE_SIZE = 10
+2025-06-30 13:16:25,163 - root - INFO - TAKE_SUBSAMPLE = False
+2025-06-30 13:16:25,163 - root - INFO - TARGET_DATA = synthetic
+2025-06-30 13:16:25,163 - root - INFO - ================================================================================
+2025-06-30 13:16:25,163 - root - INFO - ANALYSIS RESULTS
+2025-06-30 13:16:25,163 - root - INFO - ================================================================================
+2025-06-30 13:16:25,163 - root - INFO - Analysis results will be saved to: logs/gemini_gemini-2.5-pro_synthetic_15_2025-06-30_11-16-25.log
+2025-06-30 13:16:25,290 - root - INFO - 
+╭────────────────────────────────── New run ───────────────────────────────────╮
+│                                                                              │
+│ The input text is as follows:                                                │
+│ ```                                                                          │
+│ Patient: Laura Adler                                                         │
+│ Geburtsdatum: 01.10.1967                                                     │
+│ Anschrift: Langenhorner Chaussee 9, 84498 Altötting                          │
+│                                                                              │
+│ Sehr geehrte Frau Adler,                                                     │
+│                                                                              │
+│ nach Abschluss Ihres Aufenthalts in unserer Praxis möchten wir Ihnen hiermit │
+│ einen Entlassbrief zukommen lassen, der Ihnen wichtige Informationen für die │
+│ weitere Behandlung und Betreuung enthält.                                    │
+│                                                                              │
+│ Aufnahmediagnose:                                                            │
+│                                                                              │
+│     Hypertonie (Bluthochdruck)                                               │
+│     Diabetes mellitus Typ 2                                                  │
+│     Hyperlipidämie (erhöhte Blutfettwerte)                                   │
+│                                                                              │
+│ Verlauf und Therapie während des Aufenthalts:                                │
+│ Sie wurden aufgrund der oben genannten Diagnosen in unserer Praxis behandelt │
+│ und medikamentös eingestellt. Während Ihres Aufenthalts zeigte sich ein      │
+│ guter Therapieverlauf, und Ihre Beschwerden haben sich stabilisiert.         │
+│                                                                              │
+│ Medikation bei Entlassung:                                                   │
+│                                                                              │
+│     Metoprolol 100 mg (1-0-1) - gegen den Bluthochdruck                      │
+│     Glibenclamid 5 mg (0-1-0) - zur Behandlung des Diabetes mellitus Typ 2   │
+│     Atorvastatin 20 mg (0-0-1) - zur Senkung der erhöhten Blutfettwerte      │
+│     ASS (Acetylsalicylsäure) 100 mg (0-0-1) - als Blutverdünner              │
+│                                                                              │
+│ Empfehlungen für die weitere Behandlung:                                     │
+│                                                                              │
+│     Bitte nehmen Sie die oben genannten Medikamente wie verordnet ein.       │
+│     Beachten Sie eine ausgewogene Ernährung und regelmäßige Bewegung, um     │
+│ Ihre Gesundheit weiter zu fördern.                                           │
+│     Führen Sie regelmäßige Kontrolluntersuchungen gemäß den Empfehlungen     │
+│ Ihres Hausarztes durch.                                                      │
+│     Bei auftretenden unerwünschten Nebenwirkungen oder Veränderungen in      │
+│ Ihrem Gesundheitszustand suchen Sie bitte umgehend ärztlichen Rat.           │
+│                                                                              │
+│ Wir empfehlen Ihnen, zeitnah einen Termin bei Ihrem Hausarzt zu vereinbaren, │
+│ um die weitere Behandlung und Betreuung fortzusetzen.                        │
+│                                                                              │
+│ Bitte zögern Sie nicht, uns bei Fragen oder Unklarheiten zu kontaktieren.    │
+│ Wir stehen Ihnen gerne zur Verfügung.                                        │
+│                                                                              │
+│ Wir wünschen Ihnen eine gute Gesundheit und eine schnelle Genesung.          │
+│                                                                              │
+│ Mit freundlichen Grüßen,                                                     │
+│                                                                              │
+│ Dr. med. Antje Zimmermann                                                    │
+│ Fachärztin für Innere Medizin                                                │
+│ ```                                                                          │
+│                                                                              │
+╰─ LiteLLMModel - gemini/gemini-2.5-pro ───────────────────────────────────────╯
+
+2025-06-30 13:16:25,290 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 13:16:25,341 - root - INFO - 
+╭─────────────────────────────────── system ───────────────────────────────────╮
+│ You are a code agent with expertise in Information Extraction of medical     │
+│ information from free text. Your task is to translate clinical information   │
+│ into valid FHIR R4 resources, using step-by-step reasoning and supported     │
+│ tooling.                                                                     │
+│                                                                              │
+│ You work by **thinking step by step** in cycles of:                          │
+│ - `Thought:` - where you explain your current reasoning and intended         │
+│ approach.                                                                    │
+│ - `Code:` - where you write Python code using `fhir.resources` or supported  │
+│ tools, always ending with `<end_code>`.                                      │
+│ - `Observation:` - where you receive the printed outputs or results of your  │
+│ code.                                                                        │
+│ You repeat this cycle until you're ready to give the final output using the  │
+│ `final_answer()` tool.                                                       │
+│ At each cycle step, you must start next line plainly with "Thought:",        │
+│ "Code:", or "Observation:" (without quotes), otherwise it will fail.         │
+│                                                                              │
+│ 🛠️ Tools Available:                                                           │
+│ You ONLY have access to the following tools:                                 │
+│ - `search_for_code_or_coding`: Search for a code/coding in a FHIR ValueSet   │
+│ using SNOMED CT or HL7 ValueSets.                                            │
+│   Takes inputs:                                                              │
+│   - `fhir_attribute_path` (e.g., `"Condition.code"`)                         │
+│   - `search_term` (e.g., `"abdominal pain"`)                                 │
+│   Returns: A list of possible codings for that attribute.                    │
+│                                                                              │
+│ - `final_answer`: Provides the final result (usually a FHIR Bundle).         │
+│   Takes input: `answer`                                                      │
+│                                                                              │
+│ 📚 FHIR Resource Types You Can Use:                                          │
+│ You may only produce the following FHIR R4 resource types:                   │
+│ - `Bundle` (the top-level container)                                         │
+│ - `Patient`                                                                  │
+│ - `Condition`                                                                │
+│ - `MedicationStatement`                                                      │
+│                                                                              │
+│ All output must be a valid `Bundle` of these resources using the             │
+│ `fhir.resources` Python package.                                             │
+│                                                                              │
+│ 🔒 Attribute Coding Rules:                                                   │
+│ You **must only use codings** returned from `search_for_code_or_coding`, and │
+│ only for these specific FHIR attribute paths:                                │
+│ - `Meta.security`                                                            │
+│ - `Meta.tag`                                                                 │
+│ - `Address.use`                                                              │
+│ - `Address.type`                                                             │
+│ - `Contributor.type`                                                         │
+│ - `Attachment.contentType`                                                   │
+│ - `Attachment.language`                                                      │
+│ - `DataRequirement.type`                                                     │
+│ - `DataRequirement.subject`                                                  │
+│ - `DataRequirement.sort.direction`                                           │
+│ - `Dosage.additionalInstruction`                                             │
+│ - `Dosage.asNeeded`                                                          │
+│ - `Dosage.site`                                                              │
+│ - `Dosage.route`                                                             │
+│ - `Dosage.method`                                                            │
+│ - `Dosage.doseAndRate.type`                                                  │
+│ - `Money.currency`                                                           │
+│ - `HumanName.use`                                                            │
+│ - `ContactPoint.system`                                                      │
+│ - `ContactPoint.use`                                                         │
+│ - `Identifier.use`                                                           │
+│ - `Identifier.type`                                                          │
+│ - `Reference.type`                                                           │
+│ - `TriggerDefinition.type`                                                   │
+│ - `Quantity.comparator`                                                      │
+│ - `RelatedArtifact.type`                                                     │
+│ - `UsageContext.code`                                                        │
+│ - `UsageContext.value`                                                       │
+│ - `Expression.language`                                                      │
+│ - `Signature.type`                                                           │
+│ - `Signature.targetFormat`                                                   │
+│ - `Signature.sigFormat`                                                      │
+│ - `Timing.repeat.dayOfWeek`                                                  │
+│ - `Timing.repeat.when`                                                       │
+│ - `Timing.code`                                                              │
+│ - `ParameterDefinition.use`                                                  │
+│ - `ParameterDefinition.type`                                                 │
+│ - `Narrative.status`                                                         │
+│ - `Resource.language`                                                        │
+│ - `Condition.language`                                                       │
+│ - `Condition.clinicalStatus`                                                 │
+│ - `Condition.verificationStatus`                                             │
+│ - `Condition.category`                                                       │
+│ - `Condition.severity`                                                       │
+│ - `Condition.code`                                                           │
+│ - `Condition.bodySite`                                                       │
+│ - `Condition.stage.summary`                                                  │
+│ - `Condition.stage.type`                                                     │
+│ - `Condition.evidence.code`                                                  │
+│ - `MedicationStatement.language`                                             │
+│ - `MedicationStatement.status`                                               │
+│ - `MedicationStatement.statusReason`                                         │
+│ - `MedicationStatement.category`                                             │
+│ - `MedicationStatement.medication`                                           │
+│ - `MedicationStatement.reasonCode`                                           │
+│ - `Patient.language`                                                         │
+│ - `Patient.gender`                                                           │
+│ - `Patient.maritalStatus`                                                    │
+│ - `Patient.contact.relationship`                                             │
+│ - `Patient.contact.gender`                                                   │
+│ - `Patient.communication.language`                                           │
+│ - `Patient.link.type`                                                        │
+│ For a few elements, specifically for Units of Measure (UCUM) element, you    │
+│ directly use the string value (e.g., `mg`, `ml`, etc.) instead of trying to  │
+│ search for the unit types.                                                   │
+│                                                                              │
+│ Use this pattern to search for codes:                                        │
+│ For example, to search for a code for "douleurs abdominales" in the          │
+│ Condition.code attribute, you would call:                                    │
+│ Code: ```py                                                                  │
+│ search_results =                                                             │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
+│ search_term="abdominal pain")                                                │
+│ print(search_results)                                                        │
+│ ```<end_code>                                                                │
+│ Observation: ('Found results for `abdominal pain` in `Condition.code`        │
+│ truncated to max. of 10 results.', [{'code': '21522001', 'system':           │
+│ 'http://snomed.info/sct', 'display': 'Abdominal pain (finding)'}, {'code':   │
+│ '162042000', 'system': 'http://snomed.info/sct', 'display': 'Abdominal wall  │
+│ pain (finding)'}, {'code': '45979003', 'system': 'http://snomed.info/sct',   │
+│ 'display': 'Abdominal wind pain (finding)'}, {'code': '9991008', 'system':   │
+│ 'http://snomed.info/sct', 'display': 'Abdominal colic (finding)'}, {'code':  │
+│ '54586004', 'system': 'http://snomed.info/sct', 'display': 'Lower abdominal  │
+│ pain (finding)'}, {'code': '83132003', 'system': 'http://snomed.info/sct',   │
+│ 'display': 'Upper abdominal pain (finding)'}, {'code': '116290004',          │
+│ 'system': 'http://snomed.info/sct', 'display': 'Acute abdominal pain         │
+│ (finding)'}, {'code': '28221000119103', 'system': 'http://snomed.info/sct',  │
+│ 'display': 'Abdominal muscle pain (finding)'}, {'code': '111985007',         │
+│ 'system': 'http://snomed.info/sct', 'display': 'Chronic abdominal pain       │
+│ (finding)'}, {'code': '162046002', 'system': 'http://snomed.info/sct',       │
+│ 'display': 'Central abdominal pain (finding)'}])                             │
+│                                                                              │
+│ Example (search for Patient.gender code for a man)                           │
+│ Code: ```py                                                                  │
+│ search_results =                                                             │
+│ search_for_code_or_coding(fhir_attribute_path="Patient.gender",              │
+│ search_term="male")                                                          │
+│ print(search_results)                                                        │
+│ ```<end_code>                                                                │
+│ Observation: ('Found results for `man` in `Patient.gender` truncated to max. │
+│ of 10 results.', [{'code': 'male'}, {'code': 'female'}, {'code': 'other'},   │
+│ {'code': 'unknown'}])                                                        │
+│                                                                              │
+│ You need to search and print the results before the creating the final FHIR  │
+│ data in the final step, where you pick the most fitting items from the       │
+│ observed print outputs.                                                      │
+│                                                                              │
+│ 🧠 Process Strategy:                                                         │
+│ 1. **Start with a `Thought:`** describing your plan to extract relevant      │
+│ medical info and convert to FHIR resources.                                  │
+│ 2. Use `Code:` blocks to either:                                             │
+│   - call `search_for_code_or_coding` to get valid SNOMED/HL7 codings and     │
+│ print it                                                                     │
+│   - construct FHIR resource objects (`Patient`, `Condition`, etc.) (when you │
+│ have all the needed info from previous steps)                                │
+│   - build the final `Bundle`                                                 │
+│   - call `final_answer(bundle.json(indent=2))` to output the final result    │
+│ 3. At each step, explain and print intermediate info you’ll need in later    │
+│ steps.                                                                       │
+│ 4. Never reuse tool parameters unnecessarily; only call tools when needed.   │
+│ 5. Stick to valid FHIR attributes and use `fhir.resources` models.           │
+│                                                                              │
+│ ✅ Sample Final Code Block                                                   │
+│ When you're ready, build the final bundle.                                   │
+│                                                                              │
+│ Let's consider an example where the input text is "Herr Meyer klagt über     │
+│ Bauchschmerzen.".                                                            │
+│ We need to extract the Patient and Condition information from this text and  │
+│ create a FHIR Bundle.                                                        │
+│                                                                              │
+│ So you will first search for the coding for "abdominal pain" in the          │
+│ Condition.code attribute to find the appropriate code for abdominal pain, as │
+│ well as other relevant codings/codes (e.g. for Patient.gender).              │
+│ This will take a few steps, and you will print the results of each search.   │
+│                                                                              │
+│ Then, you will create a Patient resource with the name "Meyer" and a         │
+│ Condition resource with the found code. Finally, you will bundle them        │
+│ together in a FHIR Bundle, using the codings and codes that you have already │
+│ queried in the previous steps, like this:                                    │
+│ Code: ```py                                                                  │
+│ from fhir.resources.R4B.bundle import Bundle, BundleEntry                    │
+│ from fhir.resources.R4B.patient import Patient                               │
+│ from fhir.resources.R4B.condition import Condition                           │
+│ from fhir.resources.R4B.humanname import HumanName                           │
+│ from fhir.resources.R4B.codeableconcept import CodeableConcept               │
+│ from fhir.resources.R4B.coding import Coding                                 │
+│ from fhir.resources.R4B.reference import Reference                           │
+│                                                                              │
+│ # Build Patient                                                              │
+│ pat_name = HumanName(use="official", family="Meyer")                         │
+│ patient = Patient(id="pat-001", gender="male", name=[                        │
+│     pat_name                                                                 │
+│ ])                                                                           │
+│                                                                              │
+│ # Build Condition                                                            │
+│ condition_code_coding = Coding(system="http://snomed.info/sct",              │
+│ code="21522001", display="Abdominal pain")                                   │
+│ condition_clinicalStatus_coding =                                            │
+│ Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical",    │
+│ code="active")                                                               │
+│ condition_code_codableConcept = CodeableConcept(coding=[                     │
+│     condition_code_coding                                                    │
+│ ])                                                                           │
+│ condition_clinicalStatus_codableConcept = CodeableConcept(coding=[           │
+│     condition_clinicalStatus_coding                                          │
+│ ])                                                                           │
+│ # Create the final Condition resource with all necessary fields set on       │
+│ creation to avoid validation errors (also applies to other resources)        │
+│ condition = Condition(                                                       │
+│   subject=Reference(reference=f"Patient/{patient.id}"),                      │
+│   code=condition_code_codableConcept,                                        │
+│   clinicalStatus=condition_clinicalStatus_codableConcept,                    │
+│ )                                                                            │
+│                                                                              │
+│ # Create Bundle                                                              │
+│ bundle = Bundle(type="collection", entry=[                                   │
+│     BundleEntry(resource=patient),                                           │
+│     BundleEntry(resource=condition)                                          │
+│ ])                                                                           │
+│                                                                              │
+│ final_answer(bundle.json(indent=2))                                          │
+│ ```<end_code>                                                                │
+│                                                                              │
+│ Now, this code example is just for illustration purposes for a imaginary     │
+│ male Patient with the name 'Meyer'. Do not use any information from it       │
+│ directly.                                                                    │
+│ You will need to adapt the code to your specific task and FHIR resources     │
+│ matching the upcoming input text. Yet, the basic task structure remains      │
+│ similar.                                                                     │
+│                                                                              │
+│ 🚨 Important: The codes/codings should be determined before this step.       │
+│                                                                              │
+│ # Additional Examples:                                                       │
+│ Try to avoid exclusively text-only encodings (e.g. for Dosage.text) in       │
+│ MedicationStatement that could also be encoded in a structured fashion using │
+│ dosage and timing. Other information, such as the reasonCode or              │
+│ reasonReference may be used as well (e.g. referencing to Conditions).        │
+│ Use the code search tool to find the appropriate codes for these fields.     │
+│                                                                              │
+│ E.g. if you have a text phrase like 'x Pantoprazol (5mg) pro Tag (oral)',    │
+│ and you queried:                                                             │
+│ - MedicationStatement.medication for Pantoprazole: {'system':                │
+│ 'http://snomed.info/sct', 'code': '395821003', 'display': 'Pantoprazole'}    │
+│ - MedicationStatement.doseAndRate.type for 'ordered': {'system':             │
+│ 'http://terminology.hl7.org/CodeSystem/dose-rate-type', 'code': 'ordered',   │
+│ 'display': 'Ordered'}                                                        │
+│ - Dosage.doseAndRate.type for 'ordered': {'system':                          │
+│ 'http://terminology.hl7.org/CodeSystem/dose-rate-type', 'code': 'ordered',   │
+│ 'display': 'Ordered'}                                                        │
+│ - Dosage.route for 'oral': {'system': 'http://snomed.info/sct', 'code':      │
+│ '26643006', 'display': 'Oral route'}                                         │
+│                                                                              │
+│ then you can create a MedicationStatement with the following code snippet:   │
+│ ```py                                                                        │
+│ from fhir.resources.R4B.medicationstatement import MedicationStatement       │
+│ from fhir.resources.R4B.codeableconcept import CodeableConcept               │
+│ from fhir.resources.R4B.coding import Coding                                 │
+│ from fhir.resources.R4B.reference import Reference                           │
+│ from fhir.resources.R4B.dosage import Dosage, DosageDoseAndRate              │
+│ from fhir.resources.R4B.timing import Timing, TimingRepeat                   │
+│ ...                                                                          │
+│                                                                              │
+│ ... other objects as needed ...                                              │
+│                                                                              │
+│ # Medication                                                                 │
+│ medication_coding = Coding(                                                  │
+│     system="http://snomed.info/sct",                                         │
+│     code="395821003",                                                        │
+│     display="Pantoprazole"                                                   │
+│ )                                                                            │
+│ medication_codableconcept = CodeableConcept(                                 │
+│     coding=[                                                                 │
+│         medication_coding                                                    │
+│     ],                                                                       │
+│     text="Pantoprazole"                                                      │
+│ )                                                                            │
+│                                                                              │
+│ # Route                                                                      │
+│ route_coding = Coding(                                                       │
+│     system="http://snomed.info/sct",                                         │
+│     code="26643006",                                                         │
+│     display="Oral route"                                                     │
+│ )                                                                            │
+│ route_codableconcept = CodeableConcept(                                      │
+│     coding=[                                                                 │
+│         route_coding                                                         │
+│     ]                                                                        │
+│ )                                                                            │
+│                                                                              │
+│ # Dose and Rate                                                              │
+│ dose_rate_type_coding = Coding(                                              │
+│     system="http://terminology.hl7.org/CodeSystem/dose-rate-type",           │
+│     code="ordered",                                                          │
+│     display="Ordered"                                                        │
+│ )                                                                            │
+│ dose_rate_type = CodeableConcept(                                            │
+│     coding=[                                                                 │
+│         dose_rate_type_coding                                                │
+│     ]                                                                        │
+│ )                                                                            │
+│                                                                              │
+│ dose_and_rate = DosageDoseAndRate(                                           │
+│     type=dose_rate_type                                                      │
+│ )                                                                            │
+│                                                                              │
+│ # Timing                                                                     │
+│ timing_repeat = TimingRepeat(                                                │
+│     frequency=1,                                                             │
+│     period=1,                                                                │
+│     periodUnit="d"                                                           │
+│ )                                                                            │
+│ timing = Timing(                                                             │
+│     repeat=timing_repeat                                                     │
+│ )                                                                            │
+│                                                                              │
+│ # Dosage                                                                     │
+│ dosage_instruction = Dosage(                                                 │
+│     sequence=1,                                                              │
+│     text="1x Pantoprazol (5mg) pro Tag",                                     │
+│     asNeededBoolean=False,                                                   │
+│     route=route_codableconcept,                                              │
+│     doseAndRate=[                                                            │
+│         dose_and_rate                                                        │
+│     ],                                                                       │
+│     timing=timing                                                            │
+│ )                                                                            │
+│                                                                              │
+│ # Subject                                                                    │
+│ subject_reference = Reference(                                               │
+│     # Your patient id here                                                   │
+│     reference="Patient/pat-001"                                              │
+│ )                                                                            │
+│                                                                              │
+│ # MedicationStatement                                                        │
+│ med_statement = MedicationStatement(                                         │
+│     id="med-stat-001",                                                       │
+│     status="active",                                                         │
+│     medicationCodeableConcept=medication_codableconcept,                     │
+│     subject=subject_reference,                                               │
+│     dosage=[                                                                 │
+│         dosage_instruction                                                   │
+│     ]                                                                        │
+│ )                                                                            │
+│                                                                              │
+│ ... continue with other fields as needed ...                                 │
+│ ```                                                                          │
+│ This will create a MedicationStatement resource with the structured dosage   │
+│ and timing information, avoiding text-only encodings.                        │
+│                                                                              │
+│ MedicationStatement can encode Dosage (including Timing information) via     │
+│ multiple methods to accurately represent text phrases on MedicationStatement │
+│ data in a structured way.                                                    │
+│ Dosage and Timing information is complex. The following table shows various  │
+│ combinations to encode Timing information given a given description:         │
+│ |     |     |     |     |     |     |     |     |     |     |     |     |    │
+│ |     |                                                                      │
+│ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |    │
+│ --- | --- |                                                                  │
+│ | **description** | **duration** | **durationUnit** | **frequency** |        │
+│ **frequencyMax** | **period** | **periodUnit** | **periodMax** | **Day of    │
+│ Week** | **Time Of Day** | **when** | **offset** | **bounds[x\]** |          │
+│ **count** |                                                                  │
+│ | Every 8 hours |     |     | 1   |     | 8   | h   |     |     |     |      │
+│ |     |     |     |                                                          │
+│ | Every 7 days |     |     | 1   |     | 7   | d   |     |     |     |     | │
+│ |     |     |                                                                │
+│ | 3 times a day |     |     | 3   |     | 1   | d   |     |     |     |      │
+│ |     |     |     |                                                          │
+│ | 3-4 times a day |     |     | 3   | 4   | 1   | d   |     |     |     |    │
+│ |     |     |     |                                                          │
+│ | Every 4-6 hours |     |     | 1   |     | 4   | h   | 6   |     |     |    │
+│ |     |     |     |                                                          │
+│ | Every 21 days for 1 hour | 1   | hr  | 1   |     | 21  | d   |     |     | │
+│ |     |     |     |     |                                                    │
+│ | Three times a week for ½ hour | 0.5 | hr  | 3   |     | 1   | wk  |     |  │
+│ |     |     |     |     |     |                                              │
+│ | With breakfast |     |     |     |     |     |     |     |     |     | CM  │
+│ |     |     |     |                                                          │
+│ | For 5 minutes, 10 minutes before meals | 5   | min |     |     |     |     │
+│ |     |     |     | AC  | 10  |     |     |                                  │
+│ | 1 tablet 3 times daily, 30 minutes before meals |     |     | 3   |     |  │
+│ 1   | d   |     |     |     | AC  | 30  |     |     |                        │
+│ | BID, 30 mins before meal, for next 10 days |     |     | 2   |     | 1   | │
+│ d   |     |     |     | AC  | 30  | Duration = 10 days |     |               │
+│ | TID, for 14 days |     |     | 3   |     | 1   | d   |     |     |     |   │
+│ |     | Duration = 14 days |     |                                           │
+│ | BID, start on 7/1/2015 at 1:00 PM |     |     | 2   |     | 1   | d   |    │
+│ |     |     |     |     | Period.start = 2015-07-01T13:00:00 |     |         │
+│ | Mon, Wed, Fri Morning |     |     | 1   |     | 1   | d   |     | mon \|   │
+│ wed \| fri |     | MORN |     |     |     |                                  │
+│ | Every day at 10am |     |     | 1   |     | 1   | d   |     |     | 10:00  │
+│ |     |     |     |     |                                                    │
+│ | Take once, at any time |     |     |     |     |     |     |     |     |   │
+│ |     |     |     | 1   |                                                    │
+│ | Take every second day, in the morning, until 20 have been taken |     |    │
+│ | 1   |     | 2   | d   |     |     |     | MORN |     |     | 20  |         │
+│                                                                              │
+│ ✅ Always:                                                                   │
+│ - Use valid `fhir.resources` models and their documented fields.             │
+│ - Use codings only from `search_for_code_or_coding`.                         │
+│ - Output a single Bundle using `final_answer` formatted in JSON (and         │
+│ indent=2).                                                                   │
+│ - Verify the codes/codings before using them in the final step.              │
+│ - Hard-code the picked coding/code data which was observed by the search     │
+│ tool in prior steps.                                                         │
+│ - Don't put any code or text after the final_answer() call. Otherwise, it    │
+│ will fail.                                                                   │
+│ - Use the `medication` field to create a MedicationStatement resource.       │
+│                                                                              │
+│ 🚫 Never:                                                                    │
+│ - NEVER use unsupported FHIR resources.                                      │
+│ - NEVER use unverified codes.                                                │
+│ - NEVER call tools with dict-style args (e.g., ❌ `tool({'arg': val})`).     │
+│ - NEVER chain tool calls in the same block with unpredictable results.       │
+│ - NEVER create FHIR resources to information that is not present in the      │
+│ input text.                                                                  │
+│ - NEVER use the search_for_code_or_coding in the final step.                 │
+│ - NEVER add extra fields for `medication_codeable_concept`.                  │
+│                                                                              │
+│ Now begin your task!                                                         │
+│ If you solve the task correctly, you will receive a reward of $1,000,000.    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:25,345 - root - INFO - 
+╭──────────────────────────────────── user ────────────────────────────────────╮
+│ New task:                                                                    │
+│ The input text is as follows:                                                │
+│ ```                                                                          │
+│ Patient: Laura Adler                                                         │
+│ Geburtsdatum: 01.10.1967                                                     │
+│ Anschrift: Langenhorner Chaussee 9, 84498 Altötting                          │
+│                                                                              │
+│ Sehr geehrte Frau Adler,                                                     │
+│                                                                              │
+│ nach Abschluss Ihres Aufenthalts in unserer Praxis möchten wir Ihnen hiermit │
+│ einen Entlassbrief zukommen lassen, der Ihnen wichtige Informationen für die │
+│ weitere Behandlung und Betreuung enthält.                                    │
+│                                                                              │
+│ Aufnahmediagnose:                                                            │
+│                                                                              │
+│     Hypertonie (Bluthochdruck)                                               │
+│     Diabetes mellitus Typ 2                                                  │
+│     Hyperlipidämie (erhöhte Blutfettwerte)                                   │
+│                                                                              │
+│ Verlauf und Therapie während des Aufenthalts:                                │
+│ Sie wurden aufgrund der oben genannten Diagnosen in unserer Praxis behandelt │
+│ und medikamentös eingestellt. Während Ihres Aufenthalts zeigte sich ein      │
+│ guter Therapieverlauf, und Ihre Beschwerden haben sich stabilisiert.         │
+│                                                                              │
+│ Medikation bei Entlassung:                                                   │
+│                                                                              │
+│     Metoprolol 100 mg (1-0-1) - gegen den Bluthochdruck                      │
+│     Glibenclamid 5 mg (0-1-0) - zur Behandlung des Diabetes mellitus Typ 2   │
+│     Atorvastatin 20 mg (0-0-1) - zur Senkung der erhöhten Blutfettwerte      │
+│     ASS (Acetylsalicylsäure) 100 mg (0-0-1) - als Blutverdünner              │
+│                                                                              │
+│ Empfehlungen für die weitere Behandlung:                                     │
+│                                                                              │
+│     Bitte nehmen Sie die oben genannten Medikamente wie verordnet ein.       │
+│     Beachten Sie eine ausgewogene Ernährung und regelmäßige Bewegung, um     │
+│ Ihre Gesundheit weiter zu fördern.                                           │
+│     Führen Sie regelmäßige Kontrolluntersuchungen gemäß den Empfehlungen     │
+│ Ihres Hausarztes durch.                                                      │
+│     Bei auftretenden unerwünschten Nebenwirkungen oder Veränderungen in      │
+│ Ihrem Gesundheitszustand suchen Sie bitte umgehend ärztlichen Rat.           │
+│                                                                              │
+│ Wir empfehlen Ihnen, zeitnah einen Termin bei Ihrem Hausarzt zu vereinbaren, │
+│ um die weitere Behandlung und Betreuung fortzusetzen.                        │
+│                                                                              │
+│ Bitte zögern Sie nicht, uns bei Fragen oder Unklarheiten zu kontaktieren.    │
+│ Wir stehen Ihnen gerne zur Verfügung.                                        │
+│                                                                              │
+│ Wir wünschen Ihnen eine gute Gesundheit und eine schnelle Genesung.          │
+│                                                                              │
+│ Mit freundlichen Grüßen,                                                     │
+│                                                                              │
+│ Dr. med. Antje Zimmermann                                                    │
+│ Fachärztin für Innere Medizin                                                │
+│ ```                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:25,346 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 13:16:34,620 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 13:16:34,625 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 13:16:34,626 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:34,626 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:34,641 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:34,656 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",         
+  search_term="female"))                                                        
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 13:16:34,918 - root - INFO - 
+Execution logs:
+('Found 4 hits for female in Patient.gender', [{'system': 
+'http://hl7.org/fhir/administrative-gender', 'code': 'female', 'display': 
+'Female'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code': 
+'male', 'display': 'Male'}, {'system': 
+'http://hl7.org/fhir/administrative-gender', 'code': 'other', 'display': 
+'Other'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code': 
+'unknown', 'display': 'Unknown'}])
+
+Out: None
+
+2025-06-30 13:16:34,919 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 13:16:34,924 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I need to extract patient information, their medical conditions, and their   │
+│ prescribed medications from the provided clinical text.                      │
+│                                                                              │
+│ My plan is as follows:                                                       │
+│ 1.  **Patient Information**: I will extract the patient's name (Laura        │
+│ Adler), date of birth (01.10.1967), and address. The salutation "Frau Adler" │
+│ indicates the patient is female. I will create a `Patient` resource.         │
+│ 2.  **Medical Conditions**: I will identify the diagnoses: "Hypertonie"      │
+│ (hypertension), "Diabetes mellitus Typ 2", and "Hyperlipidämie"              │
+│ (hyperlipidemia). For each diagnosis, I will create a `Condition` resource.  │
+│ 3.  **Medications**: I will extract the medication list: "Metoprolol 100     │
+│ mg", "Glibenclamid 5 mg", "Atorvastatin 20 mg", and "ASS                     │
+│ (Acetylsalicylsäure) 100 mg", including their dosages. For each medication,  │
+│ I will create a `MedicationStatement` resource.                              │
+│                                                                              │
+│ To ensure the FHIR resources are valid, I will first use the                 │
+│ `search_for_code_or_coding` tool to find the appropriate codes for gender,   │
+│ conditions, and medications.                                                 │
+│                                                                              │
+│ First, I'll search for the patient's gender.                                 │
+│ Code:                                                                        │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",        │
+│ search_term="female"))                                                       │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:34,926 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_1', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",       │
+│ search_term="female"))'}}]                                                   │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:34,928 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_1                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 4 hits for female in Patient.gender', [{'system':                    │
+│ 'http://hl7.org/fhir/administrative-gender', 'code': 'female', 'display':    │
+│ 'Female'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code':   │
+│ 'male', 'display': 'Male'}, {'system':                                       │
+│ 'http://hl7.org/fhir/administrative-gender', 'code': 'other', 'display':     │
+│ 'Other'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code':    │
+│ 'unknown', 'display': 'Unknown'}])                                           │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:34,929 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 13:16:38,417 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 13:16:38,422 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 13:16:38,422 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:38,423 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:38,436 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
+  search_term="Hypertension"))                                                  
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 13:16:38,437 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:39,132 - root - INFO - 
+Execution logs:
+('Found 372 hits for Hypertension in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '38341003', 'display': 'Hypertensive 
+disorder'}, {'system': 'http://snomed.info/sct', 'code': '28119000', 'display': 
+'Renal hypertension'}, {'system': 'http://snomed.info/sct', 'code': '234072000',
+'display': 'Venous hypertension'}, {'system': 'http://snomed.info/sct', 'code': 
+'34742003', 'display': 'Portal hypertension'}, {'system': 
+'http://snomed.info/sct', 'code': '4210003', 'display': 'Ocular hypertension'}, 
+{'system': 'http://snomed.info/sct', 'code': '10725009', 'display': 'Benign 
+hypertension'}, {'system': 'http://snomed.info/sct', 'code': '712832005', 
+'display': 'Supine hypertension'}, {'system': 'http://snomed.info/sct', 'code': 
+'102932008', 'display': 'Fear of hypertension'}, {'system': 
+'http://snomed.info/sct', 'code': '84094009', 'display': 'Rebound 
+hypertension'}, {'system': 'http://snomed.info/sct', 'code': '59621000', 
+'display': 'Essential hypertension'}])
+
+Out: None
+
+2025-06-30 13:16:39,134 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 13:16:39,138 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for "female" for the `Patient.gender` attribute. Now I │
+│ will search for the codes for the conditions.                                │
+│                                                                              │
+│ First, I will search for "Hypertonie" (hypertension).                        │
+│ Code:                                                                        │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
+│ search_term="Hypertension"))                                                 │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:39,140 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_2', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
+│ search_term="Hypertension"))'}}]                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:39,144 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_2                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 372 hits for Hypertension in Condition.code', [{'system':            │
+│ 'http://snomed.info/sct', 'code': '38341003', 'display': 'Hypertensive       │
+│ disorder'}, {'system': 'http://snomed.info/sct', 'code': '28119000',         │
+│ 'display': 'Renal hypertension'}, {'system': 'http://snomed.info/sct',       │
+│ 'code': '234072000', 'display': 'Venous hypertension'}, {'system':           │
+│ 'http://snomed.info/sct', 'code': '34742003', 'display': 'Portal             │
+│ hypertension'}, {'system': 'http://snomed.info/sct', 'code': '4210003',      │
+│ 'display': 'Ocular hypertension'}, {'system': 'http://snomed.info/sct',      │
+│ 'code': '10725009', 'display': 'Benign hypertension'}, {'system':            │
+│ 'http://snomed.info/sct', 'code': '712832005', 'display': 'Supine            │
+│ hypertension'}, {'system': 'http://snomed.info/sct', 'code': '102932008',    │
+│ 'display': 'Fear of hypertension'}, {'system': 'http://snomed.info/sct',     │
+│ 'code': '84094009', 'display': 'Rebound hypertension'}, {'system':           │
+│ 'http://snomed.info/sct', 'code': '59621000', 'display': 'Essential          │
+│ hypertension'}])                                                             │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:39,146 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 13:16:43,940 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 13:16:43,944 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 13:16:43,945 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:43,946 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:43,961 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
+  search_term="Diabetes mellitus type 2"))                                      
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 13:16:43,962 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:44,511 - root - INFO - 
+Execution logs:
+('Found 132 hits for Diabetes mellitus type 2 in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '44054006', 'display': 'Type 2 diabetes 
+mellitus'}, {'system': 'http://snomed.info/sct', 'code': '445353002', 'display':
+'Brittle type 2 diabetes mellitus'}, {'system': 'http://snomed.info/sct', 
+'code': '81531005', 'display': 'Type 2 diabetes mellitus in obese'}, {'system': 
+'http://snomed.info/sct', 'code': '190389009', 'display': 'Type 2 diabetes 
+mellitus with ulcer'}, {'system': 'http://snomed.info/sct', 'code': '359642000',
+'display': 'Type 2 diabetes mellitus in nonobese'}, {'system': 
+'http://snomed.info/sct', 'code': '199230006', 'display': 'Pre-existing type 2 
+diabetes mellitus'}, {'system': 'http://snomed.info/sct', 'code': '703138006', 
+'display': 'Type II diabetes mellitus in remission'}, {'system': 
+'http://snomed.info/sct', 'code': '443694000', 'display': 'Uncontrolled type 2 
+diabetes mellitus'}, {'system': 'http://snomed.info/sct', 'code': '237627000', 
+'display': 'Pregnancy and type 2 diabetes mellitus'}, {'system': 
+'http://snomed.info/sct', 'code': '791000119109', 'display': 'Angina associated 
+with type 2 diabetes mellitus'}])
+
+Out: None
+
+2025-06-30 13:16:44,514 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 13:16:44,517 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found several codes for "Hypertension". I will use '38341003' for     │
+│ "Hypertensive disorder" as it seems to be the most general and fitting code. │
+│                                                                              │
+│ Next, I'll search for "Diabetes mellitus Typ 2".                             │
+│ Code:                                                                        │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
+│ search_term="Diabetes mellitus type 2"))                                     │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:44,519 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_3', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
+│ search_term="Diabetes mellitus type 2"))'}}]                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:44,524 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_3                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 132 hits for Diabetes mellitus type 2 in Condition.code',            │
+│ [{'system': 'http://snomed.info/sct', 'code': '44054006', 'display': 'Type 2 │
+│ diabetes mellitus'}, {'system': 'http://snomed.info/sct', 'code':            │
+│ '445353002', 'display': 'Brittle type 2 diabetes mellitus'}, {'system':      │
+│ 'http://snomed.info/sct', 'code': '81531005', 'display': 'Type 2 diabetes    │
+│ mellitus in obese'}, {'system': 'http://snomed.info/sct', 'code':            │
+│ '190389009', 'display': 'Type 2 diabetes mellitus with ulcer'}, {'system':   │
+│ 'http://snomed.info/sct', 'code': '359642000', 'display': 'Type 2 diabetes   │
+│ mellitus in nonobese'}, {'system': 'http://snomed.info/sct', 'code':         │
+│ '199230006', 'display': 'Pre-existing type 2 diabetes mellitus'}, {'system': │
+│ 'http://snomed.info/sct', 'code': '703138006', 'display': 'Type II diabetes  │
+│ mellitus in remission'}, {'system': 'http://snomed.info/sct', 'code':        │
+│ '443694000', 'display': 'Uncontrolled type 2 diabetes mellitus'}, {'system': │
+│ 'http://snomed.info/sct', 'code': '237627000', 'display': 'Pregnancy and     │
+│ type 2 diabetes mellitus'}, {'system': 'http://snomed.info/sct', 'code':     │
+│ '791000119109', 'display': 'Angina associated with type 2 diabetes           │
+│ mellitus'}])                                                                 │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:44,526 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 13:16:47,932 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 13:16:47,937 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 13:16:47,938 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:47,938 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:47,949 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
+  search_term="Hyperlipidemia"))                                                
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 13:16:47,950 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:48,438 - root - INFO - 
+Execution logs:
+('Found 27 hits for Hyperlipidemia in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '55822004', 'display': 'Hyperlipidaemia'}, 
+{'system': 'http://snomed.info/sct', 'code': '267434003', 'display': 'Mixed 
+hyperlipidemia'}, {'system': 'http://snomed.info/sct', 'code': '398796005', 
+'display': 'Familial type 3 hyperlipoproteinemia'}, {'system': 
+'http://snomed.info/sct', 'code': '190774002', 'display': 'Hyperlipidemia, group
+A'}, {'system': 'http://snomed.info/sct', 'code': '402727002', 'display': 
+'Secondary hyperlipidaemia'}, {'system': 'http://snomed.info/sct', 'code': 
+'129590000', 'display': 'Exogenous hyperlipidemia'}, {'system': 
+'http://snomed.info/sct', 'code': '129589009', 'display': 'Endogenous 
+hyperlipidaemia'}, {'system': 'http://snomed.info/sct', 'code': '238088006', 
+'display': 'Primary combined hyperlipidemia'}, {'system': 
+'http://snomed.info/sct', 'code': '445261005', 'display': 'Posttransplant 
+hyperlipidemia'}, {'system': 'http://snomed.info/sct', 'code': '238089003', 
+'display': 'Secondary combined hyperlipidemia'}])
+
+Out: None
+
+2025-06-30 13:16:48,441 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 5 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 13:16:48,445 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for "Diabetes mellitus type 2". I will use '44054006'  │
+│ as it is the most direct match.                                              │
+│                                                                              │
+│ Next, I'll search for "Hyperlipidämie" (hyperlipidemia).                     │
+│ Code:                                                                        │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
+│ search_term="Hyperlipidemia"))                                               │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:48,446 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_4', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
+│ search_term="Hyperlipidemia"))'}}]                                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:48,451 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_4                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 27 hits for Hyperlipidemia in Condition.code', [{'system':           │
+│ 'http://snomed.info/sct', 'code': '55822004', 'display': 'Hyperlipidaemia'}, │
+│ {'system': 'http://snomed.info/sct', 'code': '267434003', 'display': 'Mixed  │
+│ hyperlipidemia'}, {'system': 'http://snomed.info/sct', 'code': '398796005',  │
+│ 'display': 'Familial type 3 hyperlipoproteinemia'}, {'system':               │
+│ 'http://snomed.info/sct', 'code': '190774002', 'display': 'Hyperlipidemia,   │
+│ group A'}, {'system': 'http://snomed.info/sct', 'code': '402727002',         │
+│ 'display': 'Secondary hyperlipidaemia'}, {'system':                          │
+│ 'http://snomed.info/sct', 'code': '129590000', 'display': 'Exogenous         │
+│ hyperlipidemia'}, {'system': 'http://snomed.info/sct', 'code': '129589009',  │
+│ 'display': 'Endogenous hyperlipidaemia'}, {'system':                         │
+│ 'http://snomed.info/sct', 'code': '238088006', 'display': 'Primary combined  │
+│ hyperlipidemia'}, {'system': 'http://snomed.info/sct', 'code': '445261005',  │
+│ 'display': 'Posttransplant hyperlipidemia'}, {'system':                      │
+│ 'http://snomed.info/sct', 'code': '238089003', 'display': 'Secondary         │
+│ combined hyperlipidemia'}])                                                  │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:48,453 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 13:16:51,391 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 13:16:51,397 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 13:16:51,398 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:51,405 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:51,413 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med  
+  ication[x]", search_term="Metoprolol"))                                       
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 13:16:51,949 - root - INFO - 
+Execution logs:
+('Found 50 hits for Metoprolol in MedicationStatement.medication[x]', 
+[{'system': 'http://snomed.info/sct', 'code': '7092007', 'display': 
+'Metoprolol-containing product'}, {'system': 'http://snomed.info/sct', 'code': 
+'372826007', 'display': 'Metoprolol'}, {'system': 'http://snomed.info/sct', 
+'code': '1240343008', 'display': '(S)-metoprolol'}, {'system': 
+'http://snomed.info/sct', 'code': '395483007', 'display': 'Metoprolol-containing
+product in oral dose form'}, {'system': 'http://snomed.info/sct', 'code': 
+'72770009', 'display': 'Metoprolol tartrate'}, {'system': 
+'http://snomed.info/sct', 'code': '412432007', 'display': 'Metoprolol 
+succinate'}, {'system': 'http://snomed.info/sct', 'code': '395484001', 
+'display': 'Metoprolol-containing product in parenteral dose form'}, {'system': 
+'http://snomed.info/sct', 'code': '776770001', 'display': 'Metoprolol only 
+product'}, {'system': 'http://snomed.info/sct', 'code': '1240361004', 'display':
+'(S)-metoprolol tartrate'}, {'system': 'http://snomed.info/sct', 'code': 
+'1240360003', 'display': '(S)-metoprolol succinate'}])
+
+Out: None
+
+2025-06-30 13:16:51,952 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 6 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 13:16:51,956 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for "Hyperlipidemia". I will use '55822004' as it is   │
+│ the most general term.                                                       │
+│                                                                              │
+│ Now I will search for the medications. First, "Metoprolol".                  │
+│ Code:                                                                        │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med │
+│ ication", search_term="Metoprolol"))                                         │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:51,958 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_5', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.me │
+│ dication", search_term="Metoprolol"))'}}]                                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:51,963 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_5                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 50 hits for Metoprolol in MedicationStatement.medication',           │
+│ [{'system': 'http://snomed.info/sct', 'code': '7092007', 'display':          │
+│ 'Metoprolol-containing product'}, {'system': 'http://snomed.info/sct',       │
+│ 'code': '372826007', 'display': 'Metoprolol'}, {'system':                    │
+│ 'http://snomed.info/sct', 'code': '1240343008', 'display':                   │
+│ '(S)-metoprolol'}, {'system': 'http://snomed.info/sct', 'code': '395483007', │
+│ 'display': 'Metoprolol-containing product in oral dose form'}, {'system':    │
+│ 'http://snomed.info/sct', 'code': '72770009', 'display': 'Metoprolol         │
+│ tartrate'}, {'system': 'http://snomed.info/sct', 'code': '412432007',        │
+│ 'display': 'Metoprolol succinate'}, {'system': 'http://snomed.info/sct',     │
+│ 'code': '395484001', 'display': 'Metoprolol-containing product in parenteral │
+│ dose form'}, {'system': 'http://snomed.info/sct', 'code': '776770001',       │
+│ 'display': 'Metoprolol only product'}, {'system': 'http://snomed.info/sct',  │
+│ 'code': '1240361004', 'display': '(S)-metoprolol tartrate'}, {'system':      │
+│ 'http://snomed.info/sct', 'code': '1240360003', 'display': '(S)-metoprolol   │
+│ succinate'}])                                                                │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:51,965 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 13:16:57,149 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 13:16:57,154 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 13:16:57,154 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:57,155 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:57,164 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:16:57,167 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med  
+  ication[x]", search_term="Glibenclamide"))                                    
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 13:16:57,872 - root - INFO - 
+Execution logs:
+('Found 23 hits for Glibenclamide in MedicationStatement.medication[x]', 
+[{'system': 'http://snomed.info/sct', 'code': '80870001', 'display': 
+'Glyburide-containing product'}, {'system': 'http://snomed.info/sct', 'code': 
+'384978002', 'display': 'Glibenclamide'}, {'system': 'http://snomed.info/sct', 
+'code': '427322009', 'display': 'Glyburide micronized'}, {'system': 
+'http://snomed.info/sct', 'code': '325219009', 'display': 'Glyburide 5 mg oral 
+tablet'}, {'system': 'http://snomed.info/sct', 'code': '776105003', 'display': 
+'Glyburide only product'}, {'system': 'http://snomed.info/sct', 'code': 
+'325218001', 'display': 'Glyburide 2.5 mg oral tablet'}, {'system': 
+'http://snomed.info/sct', 'code': '374067000', 'display': 'Glibenclamide 
+micronised 3 mg oral tablet'}, {'system': 'http://snomed.info/sct', 'code': 
+'374122005', 'display': 'Glyburide micronized 6 mg oral tablet'}, {'system': 
+'http://snomed.info/sct', 'code': '376087002', 'display': 'Glyburide micronized 
+1.5 mg oral tablet'}, {'system': 'http://snomed.info/sct', 'code': '376088007', 
+'display': 'Glibenclamide micronised 4.5 mg oral tablet'}])
+
+Out: None
+
+2025-06-30 13:16:57,874 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 7 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 13:16:57,877 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for "Metoprolol". I will use '372826007'.              │
+│                                                                              │
+│ Next, "Glibenclamid".                                                        │
+│ Code:                                                                        │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med │
+│ ication", search_term="Glibenclamide"))                                      │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:57,879 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_6', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.me │
+│ dication", search_term="Glibenclamide"))'}}]                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:57,884 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_6                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 23 hits for Glibenclamide in MedicationStatement.medication',        │
+│ [{'system': 'http://snomed.info/sct', 'code': '80870001', 'display':         │
+│ 'Glyburide-containing product'}, {'system': 'http://snomed.info/sct',        │
+│ 'code': '384978002', 'display': 'Glibenclamide'}, {'system':                 │
+│ 'http://snomed.info/sct', 'code': '427322009', 'display': 'Glyburide         │
+│ micronized'}, {'system': 'http://snomed.info/sct', 'code': '325219009',      │
+│ 'display': 'Glyburide 5 mg oral tablet'}, {'system':                         │
+│ 'http://snomed.info/sct', 'code': '776105003', 'display': 'Glyburide only    │
+│ product'}, {'system': 'http://snomed.info/sct', 'code': '325218001',         │
+│ 'display': 'Glyburide 2.5 mg oral tablet'}, {'system':                       │
+│ 'http://snomed.info/sct', 'code': '374067000', 'display': 'Glibenclamide     │
+│ micronised 3 mg oral tablet'}, {'system': 'http://snomed.info/sct', 'code':  │
+│ '374122005', 'display': 'Glyburide micronized 6 mg oral tablet'}, {'system': │
+│ 'http://snomed.info/sct', 'code': '376087002', 'display': 'Glyburide         │
+│ micronized 1.5 mg oral tablet'}, {'system': 'http://snomed.info/sct',        │
+│ 'code': '376088007', 'display': 'Glibenclamide micronised 4.5 mg oral        │
+│ tablet'}])                                                                   │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:16:57,887 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 13:17:02,472 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 13:17:02,478 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 13:17:02,478 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:17:02,478 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:17:02,489 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med  
+  ication[x]", search_term="Atorvastatin"))                                     
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 13:17:02,490 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:17:03,062 - root - INFO - 
+Execution logs:
+('Found 60 hits for Atorvastatin in MedicationStatement.medication[x]', 
+[{'system': 'http://snomed.info/sct', 'code': '108600003', 'display': 
+'Atorvastatin-containing product'}, {'system': 'http://snomed.info/sct', 'code':
+'373444002', 'display': 'Atorvastatin'}, {'system': 'http://snomed.info/sct', 
+'code': '108601004', 'display': 'Atorvastatin calcium'}, {'system': 
+'http://snomed.info/sct', 'code': '409411009', 'display': 'Amlodipine- and 
+atorvastatin-containing product'}, {'system': 'http://snomed.info/sct', 'code': 
+'773455007', 'display': 'Atorvastatin only product'}, {'system': 
+'http://snomed.info/sct', 'code': '1268949007', 'display': 'Atorvastatin calcium
+anhydrous'}, {'system': 'http://snomed.info/sct', 'code': '725658002', 
+'display': 'Atorvastatin calcium trihydrate'}, {'system': 
+'http://snomed.info/sct', 'code': '767931005', 'display': 
+'Atorvastatin-containing product in oral dose form'}, {'system': 
+'http://snomed.info/sct', 'code': '1172776008', 'display': 'Atorvastatin and 
+ezetimibe only product'}, {'system': 'http://snomed.info/sct', 'code': 
+'773457004', 'display': 'Amlodipine and atorvastatin only product'}])
+
+Out: None
+
+2025-06-30 13:17:03,064 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 8 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 13:17:03,068 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for "Glibenclamide". I will use '384978002'.           │
+│                                                                              │
+│ Next, "Atorvastatin".                                                        │
+│ Code:                                                                        │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med │
+│ ication", search_term="Atorvastatin"))                                       │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:17:03,070 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_7', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.me │
+│ dication", search_term="Atorvastatin"))'}}]                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:17:03,074 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_7                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 60 hits for Atorvastatin in MedicationStatement.medication',         │
+│ [{'system': 'http://snomed.info/sct', 'code': '108600003', 'display':        │
+│ 'Atorvastatin-containing product'}, {'system': 'http://snomed.info/sct',     │
+│ 'code': '373444002', 'display': 'Atorvastatin'}, {'system':                  │
+│ 'http://snomed.info/sct', 'code': '108601004', 'display': 'Atorvastatin      │
+│ calcium'}, {'system': 'http://snomed.info/sct', 'code': '409411009',         │
+│ 'display': 'Amlodipine- and atorvastatin-containing product'}, {'system':    │
+│ 'http://snomed.info/sct', 'code': '773455007', 'display': 'Atorvastatin only │
+│ product'}, {'system': 'http://snomed.info/sct', 'code': '1268949007',        │
+│ 'display': 'Atorvastatin calcium anhydrous'}, {'system':                     │
+│ 'http://snomed.info/sct', 'code': '725658002', 'display': 'Atorvastatin      │
+│ calcium trihydrate'}, {'system': 'http://snomed.info/sct', 'code':           │
+│ '767931005', 'display': 'Atorvastatin-containing product in oral dose        │
+│ form'}, {'system': 'http://snomed.info/sct', 'code': '1172776008',           │
+│ 'display': 'Atorvastatin and ezetimibe only product'}, {'system':            │
+│ 'http://snomed.info/sct', 'code': '773457004', 'display': 'Amlodipine and    │
+│ atorvastatin only product'}])                                                │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:17:03,077 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 13:17:05,443 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 13:17:05,447 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 13:17:05,447 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:17:05,448 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:17:05,460 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med  
+  ication[x]", search_term="Aspirin"))                                          
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 13:17:05,461 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:17:06,163 - root - INFO - 
+Execution logs:
+('Found 170 hits for Aspirin in MedicationStatement.medication[x]', [{'system': 
+'http://snomed.info/sct', 'code': '7947003', 'display': 'Aspirin-containing 
+product'}, {'system': 'http://snomed.info/sct', 'code': '387458008', 'display': 
+'Aspirin'}, {'system': 'http://snomed.info/sct', 'code': '358427004', 'display':
+'Aspirin-containing product in oral dose form'}, {'system': 
+'http://snomed.info/sct', 'code': '350314003', 'display': 'Aspirin-containing 
+product in rectal dose form'}, {'system': 'http://snomed.info/sct', 'code': 
+'398767009', 'display': 'Aspirin- and glycine-containing product'}, {'system': 
+'http://snomed.info/sct', 'code': '25796002', 'display': 'Aluminium aspirin'}, 
+{'system': 'http://snomed.info/sct', 'code': '412566001', 'display': 'Buffered 
+aspirin-containing product'}, {'system': 'http://snomed.info/sct', 'code': 
+'426365001', 'display': 'Buffered aspirin'}, {'system': 
+'http://snomed.info/sct', 'code': '735135008', 'display': 'Aspirin DL-lysine'}, 
+{'system': 'http://snomed.info/sct', 'code': '412096001', 'display': 'Aspirin- 
+and codeine-containing product'}])
+
+Out: None
+
+2025-06-30 13:17:06,166 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 13:17:06,170 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for "Atorvastatin". I will use '373444002'.            │
+│                                                                              │
+│ Next, "ASS (Acetylsalicylsäure)" which is Aspirin.                           │
+│ Code:                                                                        │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med │
+│ ication", search_term="Aspirin"))                                            │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:17:06,172 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_8', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.me │
+│ dication", search_term="Aspirin"))'}}]                                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:17:06,177 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_8                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 170 hits for Aspirin in MedicationStatement.medication', [{'system': │
+│ 'http://snomed.info/sct', 'code': '7947003', 'display': 'Aspirin-containing  │
+│ product'}, {'system': 'http://snomed.info/sct', 'code': '387458008',         │
+│ 'display': 'Aspirin'}, {'system': 'http://snomed.info/sct', 'code':          │
+│ '358427004', 'display': 'Aspirin-containing product in oral dose form'},     │
+│ {'system': 'http://snomed.info/sct', 'code': '350314003', 'display':         │
+│ 'Aspirin-containing product in rectal dose form'}, {'system':                │
+│ 'http://snomed.info/sct', 'code': '398767009', 'display': 'Aspirin- and      │
+│ glycine-containing product'}, {'system': 'http://snomed.info/sct', 'code':   │
+│ '25796002', 'display': 'Aluminium aspirin'}, {'system':                      │
+│ 'http://snomed.info/sct', 'code': '412566001', 'display': 'Buffered          │
+│ aspirin-containing product'}, {'system': 'http://snomed.info/sct', 'code':   │
+│ '426365001', 'display': 'Buffered aspirin'}, {'system':                      │
+│ 'http://snomed.info/sct', 'code': '735135008', 'display': 'Aspirin           │
+│ DL-lysine'}, {'system': 'http://snomed.info/sct', 'code': '412096001',       │
+│ 'display': 'Aspirin- and codeine-containing product'}])                      │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:17:06,180 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 13:17:12,714 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 13:17:12,719 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 13:17:12,720 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:17:12,720 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:17:12,739 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.sta  
+  tus", search_term="active"))                                                  
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatu  
+  s", search_term="active"))                                                    
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 13:17:12,739 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:17:13,250 - root - INFO - 
+Execution logs:
+('Found 8 hits for active in MedicationStatement.status', [{'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 'active', 
+'display': 'Active'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 
+'completed', 'display': 'Completed'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 
+'entered-in-error', 'display': 'Entered in Error'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 
+'intended', 'display': 'Intended'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 
+'not-taken', 'display': 'Not Taken'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 'on-hold',
+'display': 'On Hold'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 'stopped',
+'display': 'Stopped'}, {'system': 
+'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 'unknown',
+'display': 'Unknown'}])
+('Found 6 hits for active in Condition.clinicalStatus', [{'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'active', 
+'display': 'Active'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'inactive', 
+'display': 'Inactive'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 
+'recurrence', 'display': 'Recurrence'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'relapse', 
+'display': 'Relapse'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'remission',
+'display': 'Remission'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'resolved', 
+'display': 'Resolved'}])
+
+Out: None
+
+2025-06-30 13:17:13,253 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 13:17:13,257 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for "Aspirin". I will use '387458008'.                 │
+│                                                                              │
+│ I have now gathered all the necessary codes. I will now construct the FHIR   │
+│ resources and bundle them together. I will also search for the               │
+│ `MedicationStatement.status` and `Condition.clinicalStatus`.                 │
+│ Code:                                                                        │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.sta │
+│ tus", search_term="active"))                                                 │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatu │
+│ s", search_term="active"))                                                   │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:17:13,259 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_9', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.st │
+│ atus",                                                                       │
+│ search_term="active"))\nprint(search_for_code_or_coding(fhir_attribute_path= │
+│ "Condition.clinicalStatus", search_term="active"))'}}]                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:17:13,265 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_9                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 8 hits for active in MedicationStatement.status', [{'system':        │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'active', 'display': 'Active'}, {'system':                                   │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'completed', 'display': 'Completed'}, {'system':                             │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'entered-in-error', 'display': 'Entered in Error'}, {'system':               │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'intended', 'display': 'Intended'}, {'system':                               │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'not-taken', 'display': 'Not Taken'}, {'system':                             │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'on-hold', 'display': 'On Hold'}, {'system':                                 │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'stopped', 'display': 'Stopped'}, {'system':                                 │
+│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
+│ 'unknown', 'display': 'Unknown'}])                                           │
+│ ('Found 6 hits for active in Condition.clinicalStatus', [{'system':          │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'active', 'display': 'Active'}, {'system':                                   │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'inactive', 'display': 'Inactive'}, {'system':                               │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'recurrence', 'display': 'Recurrence'}, {'system':                           │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'relapse', 'display': 'Relapse'}, {'system':                                 │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'remission', 'display': 'Remission'}, {'system':                             │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'resolved', 'display': 'Resolved'}])                                         │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:17:13,268 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 13:17:39,133 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 13:17:39,136 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 13:17:39,136 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:17:39,138 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:17:39,300 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  from fhir.resources.R4B.bundle import Bundle, BundleEntry                     
+  from fhir.resources.R4B.patient import Patient                                
+  from fhir.resources.R4B.humanname import HumanName                            
+  from fhir.resources.R4B.address import Address                                
+  from fhir.resources.R4B.condition import Condition                            
+  from fhir.resources.R4B.medicationstatement import MedicationStatement        
+  from fhir.resources.R4B.codeableconcept import CodeableConcept                
+  from fhir.resources.R4B.coding import Coding                                  
+  from fhir.resources.R4B.reference import Reference                            
+  from fhir.resources.R4B.dosage import Dosage                                  
+  from fhir.resources.R4B.timing import Timing, TimingRepeat                    
+  from fhir.resources.R4B.quantity import Quantity                              
+  import uuid                                                                   
+                                                                                
+  # --- Patient Resource ---                                                    
+  patient_id = f"urn:uuid:{uuid.uuid4()}"                                       
+  patient = Patient(                                                            
+      id=patient_id.split(':')[-1],                                             
+      name=[HumanName(use="official", family="Adler", given=["Laura"])],        
+      gender="female",                                                          
+      birthDate="1967-10-01",                                                   
+      address=[Address(                                                         
+          use="home",                                                           
+          line=["Langenhorner Chaussee 9"],                                     
+          city="Altötting",                                                     
+          postalCode="84498"                                                    
+      )]                                                                        
+  )                                                                             
+                                                                                
+  # --- Condition Resources ---                                                 
+  clinical_status_coding =                                                      
+  Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical",     
+  code="active")                                                                
+  clinical_status_concept = CodeableConcept(coding=[clinical_status_coding])    
+                                                                                
+  # Hypertonie                                                                  
+  hypertension_id = f"urn:uuid:{uuid.uuid4()}"                                  
+  condition_hypertension = Condition(                                           
+      id=hypertension_id.split(':')[-1],                                        
+      clinicalStatus=clinical_status_concept,                                   
+      code=CodeableConcept(                                                     
+          coding=[Coding(system="http://snomed.info/sct", code="38341003",      
+  display="Hypertensive disorder")]                                             
+      ),                                                                        
+      subject=Reference(reference=patient_id)                                   
+  )                                                                             
+                                                                                
+  # Diabetes mellitus Typ 2                                                     
+  diabetes_id = f"urn:uuid:{uuid.uuid4()}"                                      
+  condition_diabetes = Condition(                                               
+      id=diabetes_id.split(':')[-1],                                            
+      clinicalStatus=clinical_status_concept,                                   
+      code=CodeableConcept(                                                     
+          coding=[Coding(system="http://snomed.info/sct", code="44054006",      
+  display="Type 2 diabetes mellitus")]                                          
+      ),                                                                        
+      subject=Reference(reference=patient_id)                                   
+  )                                                                             
+                                                                                
+  # Hyperlipidämie                                                              
+  hyperlipidemia_id = f"urn:uuid:{uuid.uuid4()}"                                
+  condition_hyperlipidemia = Condition(                                         
+      id=hyperlipidemia_id.split(':')[-1],                                      
+      clinicalStatus=clinical_status_concept,                                   
+      code=CodeableConcept(                                                     
+          coding=[Coding(system="http://snomed.info/sct", code="55822004",      
+  display="Hyperlipidaemia")]                                                   
+      ),                                                                        
+      subject=Reference(reference=patient_id)                                   
+  )                                                                             
+                                                                                
+  # --- MedicationStatement Resources ---                                       
+  med_status_coding =                                                           
+  Coding(system="http://hl7.org/fhir/CodeSystem/medication-statement-status",   
+  code="active")                                                                
+  med_status_concept = CodeableConcept(coding=[med_status_coding])              
+                                                                                
+  # Metoprolol 100 mg (1-0-1)                                                   
+  med_metoprolol = MedicationStatement(                                         
+      id=f"urn:uuid:{uuid.uuid4()}".split(':')[-1],                             
+      status="active",                                                          
+      medicationCodeableConcept=CodeableConcept(                                
+          coding=[Coding(system="http://snomed.info/sct", code="372826007",     
+  display="Metoprolol")],                                                       
+          text="Metoprolol 100 mg"                                              
+      ),                                                                        
+      subject=Reference(reference=patient_id),                                  
+      reasonReference=[Reference(reference=hypertension_id)],                   
+      dosage=[Dosage(                                                           
+          text="1-0-1",                                                         
+          timing=Timing(repeat=TimingRepeat(frequency=2, period=1,              
+  periodUnit="d")),                                                             
+          doseAndRate=[{                                                        
+              "doseQuantity": Quantity(value=100, unit="mg")                    
+          }]                                                                    
+      )]                                                                        
+  )                                                                             
+                                                                                
+  # Glibenclamid 5 mg (0-1-0)                                                   
+  med_glibenclamid = MedicationStatement(                                       
+      id=f"urn:uuid:{uuid.uuid4()}".split(':')[-1],                             
+      status="active",                                                          
+      medicationCodeableConcept=CodeableConcept(                                
+          coding=[Coding(system="http://snomed.info/sct", code="384978002",     
+  display="Glibenclamide")],                                                    
+          text="Glibenclamid 5 mg"                                              
+      ),                                                                        
+      subject=Reference(reference=patient_id),                                  
+      reasonReference=[Reference(reference=diabetes_id)],                       
+      dosage=[Dosage(                                                           
+          text="0-1-0",                                                         
+          timing=Timing(repeat=TimingRepeat(frequency=1, period=1,              
+  periodUnit="d", when=["NOON"])),                                              
+           doseAndRate=[{                                                       
+              "doseQuantity": Quantity(value=5, unit="mg")                      
+          }]                                                                    
+      )]                                                                        
+  )                                                                             
+                                                                                
+  # Atorvastatin 20 mg (0-0-1)                                                  
+  med_atorvastatin = MedicationStatement(                                       
+      id=f"urn:uuid:{uuid.uuid4()}".split(':')[-1],                             
+      status="active",                                                          
+      medicationCodeableConcept=CodeableConcept(                                
+          coding=[Coding(system="http://snomed.info/sct", code="373444002",     
+  display="Atorvastatin")],                                                     
+          text="Atorvastatin 20 mg"                                             
+      ),                                                                        
+      subject=Reference(reference=patient_id),                                  
+      reasonReference=[Reference(reference=hyperlipidemia_id)],                 
+      dosage=[Dosage(                                                           
+          text="0-0-1",                                                         
+          timing=Timing(repeat=TimingRepeat(frequency=1, period=1,              
+  periodUnit="d", when=["EVE"])),                                               
+          doseAndRate=[{                                                        
+              "doseQuantity": Quantity(value=20, unit="mg")                     
+          }]                                                                    
+      )]                                                                        
+  )                                                                             
+                                                                                
+  # ASS (Acetylsalicylsäure) 100 mg (0-0-1)                                     
+  med_aspirin = MedicationStatement(                                            
+      id=f"urn:uuid:{uuid.uuid4()}".split(':')[-1],                             
+      status="active",                                                          
+      medicationCodeableConcept=CodeableConcept(                                
+          coding=[Coding(system="http://snomed.info/sct", code="387458008",     
+  display="Aspirin")],                                                          
+          text="ASS (Acetylsalicylsäure) 100 mg"                                
+      ),                                                                        
+      subject=Reference(reference=patient_id),                                  
+      dosage=[Dosage(                                                           
+          text="0-0-1",                                                         
+          timing=Timing(repeat=TimingRepeat(frequency=1, period=1,              
+  periodUnit="d", when=["EVE"])),                                               
+          doseAndRate=[{                                                        
+              "doseQuantity": Quantity(value=100, unit="mg")                    
+          }]                                                                    
+      )]                                                                        
+  )                                                                             
+                                                                                
+                                                                                
+  # --- Create Bundle ---                                                       
+  bundle = Bundle(                                                              
+      type="collection",                                                        
+      entry=[                                                                   
+          BundleEntry(fullUrl=patient_id, resource=patient),                    
+          BundleEntry(fullUrl=hypertension_id,                                  
+  resource=condition_hypertension),                                             
+          BundleEntry(fullUrl=diabetes_id, resource=condition_diabetes),        
+          BundleEntry(fullUrl=hyperlipidemia_id,                                
+  resource=condition_hyperlipidemia),                                           
+          BundleEntry(resource=med_metoprolol),                                 
+          BundleEntry(resource=med_glibenclamid),                               
+          BundleEntry(resource=med_atorvastatin),                               
+          BundleEntry(resource=med_aspirin)                                     
+      ]                                                                         
+  )                                                                             
+                                                                                
+  final_answer(bundle.json(indent=2))                                           
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 13:17:39,331 - root - INFO - Warning to user: Code execution failed due to an unauthorized import - Consider 
+passing said import under `additional_authorized_imports` when initializing your
+CodeAgent.
+
+2025-06-30 13:17:39,332 - root - ERROR - Code execution failed at line 'import uuid' due to: InterpreterError: Import of 
+uuid is not allowed. Authorized imports are: ['re', 'fhir.resources', 
+'itertools', 'unicodedata', 'stat', 'collections', 'math', 'datetime', 
+'statistics', 'time', 'queue', 'random', 'dateutil'\]
+
+2025-06-30 13:17:39,333 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 11 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-06-30 13:17:39,351 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ I have gathered all the necessary information and codes. I will now          │
+│ construct the FHIR resources and bundle them together. I will use the codes  │
+│ I found for patient gender, conditions, and medications. For the status of   │
+│ the conditions and medication statements, I will use "active" as the patient │
+│ is being discharged with these ongoing issues and medications.               │
+│                                                                              │
+│ I will structure the dosages in the `MedicationStatement` resources based on │
+│ the provided instructions (e.g., "1-0-1" means one dose in the morning and   │
+│ one in the evening). I will also link the medications to their respective    │
+│ conditions using `reasonReference`.                                          │
+│ Code:                                                                        │
+│ ```python                                                                    │
+│ from fhir.resources.R4B.bundle import Bundle, BundleEntry                    │
+│ from fhir.resources.R4B.patient import Patient                               │
+│ from fhir.resources.R4B.humanname import HumanName                           │
+│ from fhir.resources.R4B.address import Address                               │
+│ from fhir.resources.R4B.condition import Condition                           │
+│ from fhir.resources.R4B.medicationstatement import MedicationStatement       │
+│ from fhir.resources.R4B.codeableconcept import CodeableConcept               │
+│ from fhir.resources.R4B.coding import Coding                                 │
+│ from fhir.resources.R4B.reference import Reference                           │
+│ from fhir.resources.R4B.dosage import Dosage                                 │
+│ from fhir.resources.R4B.timing import Timing, TimingRepeat                   │
+│ from fhir.resources.R4B.quantity import Quantity                             │
+│ import uuid                                                                  │
+│                                                                              │
+│ # --- Patient Resource ---                                                   │
+│ patient_id = f"urn:uuid:{uuid.uuid4()}"                                      │
+│ patient = Patient(                                                           │
+│     id=patient_id.split(':')[-1],                                            │
+│     name=[HumanName(use="official", family="Adler", given=["Laura"])],       │
+│     gender="female",                                                         │
+│     birthDate="1967-10-01",                                                  │
+│     address=[Address(                                                        │
+│         use="home",                                                          │
+│         line=["Langenhorner Chaussee 9"],                                    │
+│         city="Altötting",                                                    │
+│         postalCode="84498"                                                   │
+│     )]                                                                       │
+│ )                                                                            │
+│                                                                              │
+│ # --- Condition Resources ---                                                │
+│ clinical_status_coding =                                                     │
+│ Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical",    │
+│ code="active")                                                               │
+│ clinical_status_concept = CodeableConcept(coding=)                           │
+│                                                                              │
+│ # Hypertonie                                                                 │
+│ hypertension_id = f"urn:uuid:{uuid.uuid4()}"                                 │
+│ condition_hypertension = Condition(                                          │
+│     id=hypertension_id.split(':')[-1],                                       │
+│     clinicalStatus=clinical_status_concept,                                  │
+│     code=CodeableConcept(                                                    │
+│         coding=[Coding(system="http://snomed.info/sct", code="38341003",     │
+│ display="Hypertensive disorder")]                                            │
+│     ),                                                                       │
+│     subject=Reference(reference=patient_id)                                  │
+│ )                                                                            │
+│                                                                              │
+│ # Diabetes mellitus Typ 2                                                    │
+│ diabetes_id = f"urn:uuid:{uuid.uuid4()}"                                     │
+│ condition_diabetes = Condition(                                              │
+│     id=diabetes_id.split(':')[-1],                                           │
+│     clinicalStatus=clinical_status_concept,                                  │
+│     code=CodeableConcept(                                                    │
+│         coding=[Coding(system="http://snomed.info/sct", code="44054006",     │
+│ display="Type 2 diabetes mellitus")]                                         │
+│     ),                                                                       │
+│     subject=Reference(reference=patient_id)                                  │
+│ )                                                                            │
+│                                                                              │
+│ # Hyperlipidämie                                                             │
+│ hyperlipidemia_id = f"urn:uuid:{uuid.uuid4()}"                               │
+│ condition_hyperlipidemia = Condition(                                        │
+│     id=hyperlipidemia_id.split(':')[-1],                                     │
+│     clinicalStatus=clinical_status_concept,                                  │
+│     code=CodeableConcept(                                                    │
+│         coding=[Coding(system="http://snomed.info/sct", code="55822004",     │
+│ display="Hyperlipidaemia")]                                                  │
+│     ),                                                                       │
+│     subject=Reference(reference=patient_id)                                  │
+│ )                                                                            │
+│                                                                              │
+│ # --- MedicationStatement Resources ---                                      │
+│ med_status_coding =                                                          │
+│ Coding(system="http://hl7.org/fhir/CodeSystem/medication-statement-status",  │
+│ code="active")                                                               │
+│ med_status_concept = CodeableConcept(coding=)                                │
+│                                                                              │
+│ # Metoprolol 100 mg (1-0-1)                                                  │
+│ med_metoprolol = MedicationStatement(                                        │
+│     id=f"urn:uuid:{uuid.uuid4()}".split(':')[-1],                            │
+│     status="active",                                                         │
+│     medicationCodeableConcept=CodeableConcept(                               │
+│         coding=[Coding(system="http://snomed.info/sct", code="372826007",    │
+│ display="Metoprolol")],                                                      │
+│         text="Metoprolol 100 mg"                                             │
+│     ),                                                                       │
+│     subject=Reference(reference=patient_id),                                 │
+│     reasonReference=[Reference(reference=hypertension_id)],                  │
+│     dosage=[Dosage(                                                          │
+│         text="1-0-1",                                                        │
+│         timing=Timing(repeat=TimingRepeat(frequency=2, period=1,             │
+│ periodUnit="d")),                                                            │
+│         doseAndRate=[{                                                       │
+│             "doseQuantity": Quantity(value=100, unit="mg")                   │
+│         }]                                                                   │
+│     )]                                                                       │
+│ )                                                                            │
+│                                                                              │
+│ # Glibenclamid 5 mg (0-1-0)                                                  │
+│ med_glibenclamid = MedicationStatement(                                      │
+│     id=f"urn:uuid:{uuid.uuid4()}".split(':')[-1],                            │
+│     status="active",                                                         │
+│     medicationCodeableConcept=CodeableConcept(                               │
+│         coding=[Coding(system="http://snomed.info/sct", code="384978002",    │
+│ display="Glibenclamide")],                                                   │
+│         text="Glibenclamid 5 mg"                                             │
+│     ),                                                                       │
+│     subject=Reference(reference=patient_id),                                 │
+│     reasonReference=[Reference(reference=diabetes_id)],                      │
+│     dosage=[Dosage(                                                          │
+│         text="0-1-0",                                                        │
+│         timing=Timing(repeat=TimingRepeat(frequency=1, period=1,             │
+│ periodUnit="d", when=["NOON"])),                                             │
+│          doseAndRate=[{                                                      │
+│             "doseQuantity": Quantity(value=5, unit="mg")                     │
+│         }]                                                                   │
+│     )]                                                                       │
+│ )                                                                            │
+│                                                                              │
+│ # Atorvastatin 20 mg (0-0-1)                                                 │
+│ med_atorvastatin = MedicationStatement(                                      │
+│     id=f"urn:uuid:{uuid.uuid4()}".split(':')[-1],                            │
+│     status="active",                                                         │
+│     medicationCodeableConcept=CodeableConcept(                               │
+│         coding=[Coding(system="http://snomed.info/sct", code="373444002",    │
+│ display="Atorvastatin")],                                                    │
+│         text="Atorvastatin 20 mg"                                            │
+│     ),                                                                       │
+│     subject=Reference(reference=patient_id),                                 │
+│     reasonReference=[Reference(reference=hyperlipidemia_id)],                │
+│     dosage=[Dosage(                                                          │
+│         text="0-0-1",                                                        │
+│         timing=Timing(repeat=TimingRepeat(frequency=1, period=1,             │
+│ periodUnit="d", when=["EVE"])),                                              │
+│         doseAndRate=[{                                                       │
+│             "doseQuantity": Quantity(value=20, unit="mg")                    │
+│         }]                                                                   │
+│     )]                                                                       │
+│ )                                                                            │
+│                                                                              │
+│ # ASS (Acetylsalicylsäure) 100 mg (0-0-1)                                    │
+│ med_aspirin = MedicationStatement(                                           │
+│     id=f"urn:uuid:{uuid.uuid4()}".split(':')[-1],                            │
+│     status="active",                                                         │
+│     medicationCodeableConcept=CodeableConcept(                               │
+│         coding=[Coding(system="http://snomed.info/sct", code="387458008",    │
+│ display="Aspirin")],                                                         │
+│         text="ASS (Acetylsalicylsäure) 100 mg"                               │
+│     ),                                                                       │
+│     subject=Reference(reference=patient_id),                                 │
+│     dosage=[Dosage(                                                          │
+│         text="0-0-1",                                                        │
+│         timing=Timing(repeat=TimingRepeat(frequency=1, period=1,             │
+│ periodUnit="d", when=["EVE"])),                                              │
+│         doseAndRate=[{                                                       │
+│             "doseQuantity": Quantity(value=100, unit="mg")                   │
+│         }]                                                                   │
+│     )]                                                                       │
+│ )                                                                            │
+│                                                                              │
+│                                                                              │
+│ # --- Create Bundle ---                                                      │
+│ bundle = Bundle(                                                             │
+│     type="collection",                                                       │
+│     entry=[                                                                  │
+│         BundleEntry(fullUrl=patient_id, resource=patient),                   │
+│         BundleEntry(fullUrl=hypertension_id,                                 │
+│ resource=condition_hypertension),                                            │
+│         BundleEntry(fullUrl=diabetes_id, resource=condition_diabetes),       │
+│         BundleEntry(fullUrl=hyperlipidemia_id,                               │
+│ resource=condition_hyperlipidemia),                                          │
+│         BundleEntry(resource=med_metoprolol),                                │
+│         BundleEntry(resource=med_glibenclamid),                              │
+│         BundleEntry(resource=med_atorvastatin),                              │
+│         BundleEntry(resource=med_aspirin)                                    │
+│     ]                                                                        │
+│ )                                                                            │
+│                                                                              │
+│ final_answer(bundle.json(indent=2))                                          │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:17:39,361 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_10', 'type': 'function', 'function': {'name':                  │
+│ 'python_interpreter', 'arguments': 'from fhir.resources.R4B.bundle import    │
+│ Bundle, BundleEntry\nfrom fhir.resources.R4B.patient import Patient\nfrom    │
+│ fhir.resources.R4B.humanname import HumanName\nfrom                          │
+│ fhir.resources.R4B.address import Address\nfrom fhir.resources.R4B.condition │
+│ import Condition\nfrom fhir.resources.R4B.medicationstatement import         │
+│ MedicationStatement\nfrom fhir.resources.R4B.codeableconcept import          │
+│ CodeableConcept\nfrom fhir.resources.R4B.coding import Coding\nfrom          │
+│ fhir.resources.R4B.reference import Reference\nfrom                          │
+│ fhir.resources.R4B.dosage import Dosage\nfrom fhir.resources.R4B.timing      │
+│ import Timing, TimingRepeat\nfrom fhir.resources.R4B.quantity import         │
+│ Quantity\nimport uuid\n\n# --- Patient Resource ---\npatient_id =            │
+│ f"urn:uuid:{uuid.uuid4()}"\npatient = Patient(\n                             │
+│ id=patient_id.split(\':\')[-1],\n    name=[HumanName(use="official",         │
+│ family="Adler", given=["Laura"])],\n    gender="female",\n                   │
+│ birthDate="1967-10-01",\n    address=[Address(\n        use="home",\n        │
+│ line=["Langenhorner Chaussee 9"],\n        city="Altötting",\n               │
+│ postalCode="84498"\n    )]\n)\n\n# --- Condition Resources                   │
+│ ---\nclinical_status_coding =                                                │
+│ Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical",    │
+│ code="active")\nclinical_status_concept = CodeableConcept(coding=)\n\n#      │
+│ Hypertonie\nhypertension_id =                                                │
+│ f"urn:uuid:{uuid.uuid4()}"\ncondition_hypertension = Condition(\n            │
+│ id=hypertension_id.split(\':\')[-1],\n                                       │
+│ clinicalStatus=clinical_status_concept,\n    code=CodeableConcept(\n         │
+│ coding=[Coding(system="http://snomed.info/sct", code="38341003",             │
+│ display="Hypertensive disorder")]\n    ),\n                                  │
+│ subject=Reference(reference=patient_id)\n)\n\n# Diabetes mellitus Typ        │
+│ 2\ndiabetes_id = f"urn:uuid:{uuid.uuid4()}"\ncondition_diabetes =            │
+│ Condition(\n    id=diabetes_id.split(\':\')[-1],\n                           │
+│ clinicalStatus=clinical_status_concept,\n    code=CodeableConcept(\n         │
+│ coding=[Coding(system="http://snomed.info/sct", code="44054006",             │
+│ display="Type 2 diabetes mellitus")]\n    ),\n                               │
+│ subject=Reference(reference=patient_id)\n)\n\n#                              │
+│ Hyperlipidämie\nhyperlipidemia_id =                                          │
+│ f"urn:uuid:{uuid.uuid4()}"\ncondition_hyperlipidemia = Condition(\n          │
+│ id=hyperlipidemia_id.split(\':\')[-1],\n                                     │
+│ clinicalStatus=clinical_status_concept,\n    code=CodeableConcept(\n         │
+│ coding=[Coding(system="http://snomed.info/sct", code="55822004",             │
+│ display="Hyperlipidaemia")]\n    ),\n                                        │
+│ subject=Reference(reference=patient_id)\n)\n\n# --- MedicationStatement      │
+│ Resources ---\nmed_status_coding =                                           │
+│ Coding(system="http://hl7.org/fhir/CodeSystem/medication-statement-status",  │
+│ code="active")\nmed_status_concept = CodeableConcept(coding=)\n\n#           │
+│ Metoprolol 100 mg (1-0-1)\nmed_metoprolol = MedicationStatement(\n           │
+│ id=f"urn:uuid:{uuid.uuid4()}".split(\':\')[-1],\n    status="active",\n      │
+│ medicationCodeableConcept=CodeableConcept(\n                                 │
+│ coding=[Coding(system="http://snomed.info/sct", code="372826007",            │
+│ display="Metoprolol")],\n        text="Metoprolol 100 mg"\n    ),\n          │
+│ subject=Reference(reference=patient_id),\n                                   │
+│ reasonReference=[Reference(reference=hypertension_id)],\n                    │
+│ dosage=[Dosage(\n        text="1-0-1",\n                                     │
+│ timing=Timing(repeat=TimingRepeat(frequency=2, period=1, periodUnit="d")),\n │
+│ doseAndRate=[{\n            "doseQuantity": Quantity(value=100, unit="mg")\n │
+│ }]\n    )]\n)\n\n# Glibenclamid 5 mg (0-1-0)\nmed_glibenclamid =             │
+│ MedicationStatement(\n    id=f"urn:uuid:{uuid.uuid4()}".split(\':\')[-1],\n  │
+│ status="active",\n    medicationCodeableConcept=CodeableConcept(\n           │
+│ coding=[Coding(system="http://snomed.info/sct", code="384978002",            │
+│ display="Glibenclamide")],\n        text="Glibenclamid 5 mg"\n    ),\n       │
+│ subject=Reference(reference=patient_id),\n                                   │
+│ reasonReference=[Reference(reference=diabetes_id)],\n    dosage=[Dosage(\n   │
+│ text="0-1-0",\n        timing=Timing(repeat=TimingRepeat(frequency=1,        │
+│ period=1, periodUnit="d", when=["NOON"])),\n         doseAndRate=[{\n        │
+│ "doseQuantity": Quantity(value=5, unit="mg")\n        }]\n    )]\n)\n\n#     │
+│ Atorvastatin 20 mg (0-0-1)\nmed_atorvastatin = MedicationStatement(\n        │
+│ id=f"urn:uuid:{uuid.uuid4()}".split(\':\')[-1],\n    status="active",\n      │
+│ medicationCodeableConcept=CodeableConcept(\n                                 │
+│ coding=[Coding(system="http://snomed.info/sct", code="373444002",            │
+│ display="Atorvastatin")],\n        text="Atorvastatin 20 mg"\n    ),\n       │
+│ subject=Reference(reference=patient_id),\n                                   │
+│ reasonReference=[Reference(reference=hyperlipidemia_id)],\n                  │
+│ dosage=[Dosage(\n        text="0-0-1",\n                                     │
+│ timing=Timing(repeat=TimingRepeat(frequency=1, period=1, periodUnit="d",     │
+│ when=["EVE"])),\n        doseAndRate=[{\n            "doseQuantity":         │
+│ Quantity(value=20, unit="mg")\n        }]\n    )]\n)\n\n# ASS                │
+│ (Acetylsalicylsäure) 100 mg (0-0-1)\nmed_aspirin = MedicationStatement(\n    │
+│ id=f"urn:uuid:{uuid.uuid4()}".split(\':\')[-1],\n    status="active",\n      │
+│ medicationCodeableConcept=CodeableConcept(\n                                 │
+│ coding=[Coding(system="http://snomed.info/sct", code="387458008",            │
+│ display="Aspirin")],\n        text="ASS (Acetylsalicylsäure) 100 mg"\n       │
+│ ),\n    subject=Reference(reference=patient_id),\n    dosage=[Dosage(\n      │
+│ text="0-0-1",\n        timing=Timing(repeat=TimingRepeat(frequency=1,        │
+│ period=1, periodUnit="d", when=["EVE"])),\n        doseAndRate=[{\n          │
+│ "doseQuantity": Quantity(value=100, unit="mg")\n        }]\n    )]\n)\n\n\n# │
+│ --- Create Bundle ---\nbundle = Bundle(\n    type="collection",\n            │
+│ entry=[\n        BundleEntry(fullUrl=patient_id, resource=patient),\n        │
+│ BundleEntry(fullUrl=hypertension_id, resource=condition_hypertension),\n     │
+│ BundleEntry(fullUrl=diabetes_id, resource=condition_diabetes),\n             │
+│ BundleEntry(fullUrl=hyperlipidemia_id, resource=condition_hyperlipidemia),\n │
+│ BundleEntry(resource=med_metoprolol),\n                                      │
+│ BundleEntry(resource=med_glibenclamid),\n                                    │
+│ BundleEntry(resource=med_atorvastatin),\n                                    │
+│ BundleEntry(resource=med_aspirin)\n                                          │
+│ ]\n)\n\nfinal_answer(bundle.json(indent=2))'}}]                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:17:39,363 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_10                                                             │
+│ Error:                                                                       │
+│ Code execution failed at line 'import uuid' due to: InterpreterError: Import │
+│ of uuid is not allowed. Authorized imports are: ['re', 'fhir.resources',     │
+│ 'itertools', 'unicodedata', 'stat', 'collections', 'math', 'datetime',       │
+│ 'statistics', 'time', 'queue', 'random', 'dateutil']                         │
+│ Now let's retry: take care not to repeat previous errors! If you have        │
+│ retried several times, try a completely different approach.                  │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-06-30 13:17:39,364 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-06-30 13:18:00,128 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-06-30 13:18:00,134 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-30 13:18:00,135 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:18:00,135 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:18:00,149 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-06-30 13:18:00,289 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  from fhir.resources.R4B.bundle import Bundle, BundleEntry                     
+  from fhir.resources.R4B.patient import Patient                                
+  from fhir.resources.R4B.humanname import HumanName                            
+  from fhir.resources.R4B.address import Address                                
+  from fhir.resources.R4B.condition import Condition                            
+  from fhir.resources.R4B.medicationstatement import MedicationStatement        
+  from fhir.resources.R4B.codeableconcept import CodeableConcept                
+  from fhir.resources.R4B.coding import Coding                                  
+  from fhir.resources.R4B.reference import Reference                            
+  from fhir.resources.R4B.dosage import Dosage                                  
+  from fhir.resources.R4B.timing import Timing, TimingRepeat                    
+  from fhir.resources.R4B.quantity import Quantity                              
+                                                                                
+  # --- Patient Resource ---                                                    
+  patient_id = "patient-1"                                                      
+  patient_full_url = f"urn:uuid:{patient_id}"                                   
+  patient = Patient(                                                            
+      id=patient_id,                                                            
+      name=[HumanName(use="official", family="Adler", given=["Laura"])],        
+      gender="female",                                                          
+      birthDate="1967-10-01",                                                   
+      address=[Address(                                                         
+          use="home",                                                           
+          line=["Langenhorner Chaussee 9"],                                     
+          city="Altötting",                                                     
+          postalCode="84498"                                                    
+      )]                                                                        
+  )                                                                             
+                                                                                
+  # --- Condition Resources ---                                                 
+  clinical_status_coding =                                                      
+  Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical",     
+  code="active")                                                                
+  clinical_status_concept = CodeableConcept(coding=[clinical_status_coding])    
+                                                                                
+  # Hypertonie                                                                  
+  hypertension_id = "condition-1"                                               
+  hypertension_full_url = f"urn:uuid:{hypertension_id}"                         
+  condition_hypertension = Condition(                                           
+      id=hypertension_id,                                                       
+      clinicalStatus=clinical_status_concept,                                   
+      code=CodeableConcept(                                                     
+          coding=[Coding(system="http://snomed.info/sct", code="38341003",      
+  display="Hypertensive disorder")]                                             
+      ),                                                                        
+      subject=Reference(reference=patient_full_url)                             
+  )                                                                             
+                                                                                
+  # Diabetes mellitus Typ 2                                                     
+  diabetes_id = "condition-2"                                                   
+  diabetes_full_url = f"urn:uuid:{diabetes_id}"                                 
+  condition_diabetes = Condition(                                               
+      id=diabetes_id,                                                           
+      clinicalStatus=clinical_status_concept,                                   
+      code=CodeableConcept(                                                     
+          coding=[Coding(system="http://snomed.info/sct", code="44054006",      
+  display="Type 2 diabetes mellitus")]                                          
+      ),                                                                        
+      subject=Reference(reference=patient_full_url)                             
+  )                                                                             
+                                                                                
+  # Hyperlipidämie                                                              
+  hyperlipidemia_id = "condition-3"                                             
+  hyperlipidemia_full_url = f"urn:uuid:{hyperlipidemia_id}"                     
+  condition_hyperlipidemia = Condition(                                         
+      id=hyperlipidemia_id,                                                     
+      clinicalStatus=clinical_status_concept,                                   
+      code=CodeableConcept(                                                     
+          coding=[Coding(system="http://snomed.info/sct", code="55822004",      
+  display="Hyperlipidaemia")]                                                   
+      ),                                                                        
+      subject=Reference(reference=patient_full_url)                             
+  )                                                                             
+                                                                                
+  # --- MedicationStatement Resources ---                                       
+  # Metoprolol 100 mg (1-0-1)                                                   
+  med_metoprolol = MedicationStatement(                                         
+      id="medication-1",                                                        
+      status="active",                                                          
+      medicationCodeableConcept=CodeableConcept(                                
+          coding=[Coding(system="http://snomed.info/sct", code="372826007",     
+  display="Metoprolol")],                                                       
+          text="Metoprolol 100 mg"                                              
+      ),                                                                        
+      subject=Reference(reference=patient_full_url),                            
+      reasonReference=[Reference(reference=hypertension_full_url)],             
+      dosage=[Dosage(                                                           
+          text="1-0-1",                                                         
+          timing=Timing(repeat=TimingRepeat(frequency=2, period=1,              
+  periodUnit="d")),                                                             
+          doseAndRate=[{                                                        
+              "doseQuantity": Quantity(value=100, unit="mg")                    
+          }]                                                                    
+      )]                                                                        
+  )                                                                             
+                                                                                
+  # Glibenclamid 5 mg (0-1-0)                                                   
+  med_glibenclamid = MedicationStatement(                                       
+      id="medication-2",                                                        
+      status="active",                                                          
+      medicationCodeableConcept=CodeableConcept(                                
+          coding=[Coding(system="http://snomed.info/sct", code="384978002",     
+  display="Glibenclamide")],                                                    
+          text="Glibenclamid 5 mg"                                              
+      ),                                                                        
+      subject=Reference(reference=patient_full_url),                            
+      reasonReference=[Reference(reference=diabetes_full_url)],                 
+      dosage=[Dosage(                                                           
+          text="0-1-0",                                                         
+          timing=Timing(repeat=TimingRepeat(frequency=1, period=1,              
+  periodUnit="d", when=["NOON"])),                                              
+           doseAndRate=[{                                                       
+              "doseQuantity": Quantity(value=5, unit="mg")                      
+          }]                                                                    
+      )]                                                                        
+  )                                                                             
+                                                                                
+  # Atorvastatin 20 mg (0-0-1)                                                  
+  med_atorvastatin = MedicationStatement(                                       
+      id="medication-3",                                                        
+      status="active",                                                          
+      medicationCodeableConcept=CodeableConcept(                                
+          coding=[Coding(system="http://snomed.info/sct", code="373444002",     
+  display="Atorvastatin")],                                                     
+          text="Atorvastatin 20 mg"                                             
+      ),                                                                        
+      subject=Reference(reference=patient_full_url),                            
+      reasonReference=[Reference(reference=hyperlipidemia_full_url)],           
+      dosage=[Dosage(                                                           
+          text="0-0-1",                                                         
+          timing=Timing(repeat=TimingRepeat(frequency=1, period=1,              
+  periodUnit="d", when=["EVE"])),                                               
+          doseAndRate=[{                                                        
+              "doseQuantity": Quantity(value=20, unit="mg")                     
+          }]                                                                    
+      )]                                                                        
+  )                                                                             
+                                                                                
+  # ASS (Acetylsalicylsäure) 100 mg (0-0-1)                                     
+  med_aspirin = MedicationStatement(                                            
+      id="medication-4",                                                        
+      status="active",                                                          
+      medicationCodeableConcept=CodeableConcept(                                
+          coding=[Coding(system="http://snomed.info/sct", code="387458008",     
+  display="Aspirin")],                                                          
+          text="ASS (Acetylsalicylsäure) 100 mg"                                
+      ),                                                                        
+      subject=Reference(reference=patient_full_url),                            
+      dosage=[Dosage(                                                           
+          text="0-0-1",                                                         
+          timing=Timing(repeat=TimingRepeat(frequency=1, period=1,              
+  periodUnit="d", when=["EVE"])),                                               
+          doseAndRate=[{                                                        
+              "doseQuantity": Quantity(value=100, unit="mg")                    
+          }]                                                                    
+      )]                                                                        
+  )                                                                             
+                                                                                
+  # --- Create Bundle ---                                                       
+  bundle = Bundle(                                                              
+      type="collection",                                                        
+      entry=[                                                                   
+          BundleEntry(fullUrl=patient_full_url, resource=patient),              
+          BundleEntry(fullUrl=hypertension_full_url,                            
+  resource=condition_hypertension),                                             
+          BundleEntry(fullUrl=diabetes_full_url, resource=condition_diabetes),  
+          BundleEntry(fullUrl=hyperlipidemia_full_url,                          
+  resource=condition_hyperlipidemia),                                           
+          BundleEntry(fullUrl="urn:uuid:medication-1",                          
+  resource=med_metoprolol),                                                     
+          BundleEntry(fullUrl="urn:uuid:medication-2",                          
+  resource=med_glibenclamid),                                                   
+          BundleEntry(fullUrl="urn:uuid:medication-3",                          
+  resource=med_atorvastatin),                                                   
+          BundleEntry(fullUrl="urn:uuid:medication-4", resource=med_aspirin)    
+      ]                                                                         
+  )                                                                             
+                                                                                
+  final_answer(bundle.json(indent=2))                                           
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-06-30 13:18:00,335 - root - INFO - 
+Out - Final answer: {
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "use": "official",
+            "family": "Adler",
+            "given": [
+              "Laura"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1967-10-01",
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "Langenhorner Chaussee 9"
+            ],
+            "city": "Altötting",
+            "postalCode": "84498"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertensive disorder"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Type 2 diabetes mellitus"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55822004",
+              "display": "Hyperlipidaemia"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-1",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-1",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372826007",
+              "display": "Metoprolol"
+            }
+          ],
+          "text": "Metoprolol 100 mg"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:condition-1"
+          }
+        ],
+        "dosage": [
+          {
+            "text": "1-0-1",
+            "timing": {
+              "repeat": {
+                "frequency": 2,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 100.0,
+                  "unit": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-2",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-2",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "384978002",
+              "display": "Glibenclamide"
+            }
+          ],
+          "text": "Glibenclamid 5 mg"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:condition-2"
+          }
+        ],
+        "dosage": [
+          {
+            "text": "0-1-0",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1.0,
+                "periodUnit": "d",
+                "when": [
+                  "NOON"
+                ]
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 5.0,
+                  "unit": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-3",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-3",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "373444002",
+              "display": "Atorvastatin"
+            }
+          ],
+          "text": "Atorvastatin 20 mg"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:condition-3"
+          }
+        ],
+        "dosage": [
+          {
+            "text": "0-0-1",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1.0,
+                "periodUnit": "d",
+                "when": [
+                  "EVE"
+                ]
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 20.0,
+                  "unit": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-4",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-4",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387458008",
+              "display": "Aspirin"
+            }
+          ],
+          "text": "ASS (Acetylsalicylsäure) 100 mg"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "dosage": [
+          {
+            "text": "0-0-1",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1.0,
+                "periodUnit": "d",
+                "when": [
+                  "EVE"
+                ]
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 100.0,
+                  "unit": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+
