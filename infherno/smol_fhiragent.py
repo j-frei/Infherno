@@ -1,4 +1,5 @@
 import os
+import time
 from tqdm import tqdm
 
 from infherno import default_config as config
@@ -72,3 +73,4 @@ for instance_id, instance in enumerate(tqdm(data, total=len(data), desc=f"\nInst
 
     instance_text = instance["text"]
     result = agent.run(f"The input text is as follows:\n```\n{instance_text}\n```")
+    time.sleep(config.API_SLEEP_SECONDS)

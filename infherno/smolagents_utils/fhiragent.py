@@ -1,12 +1,12 @@
 import hashlib
 import httpx
 import json
+import litellm
 import os
 import time
 import types
 import yaml
 from collections import defaultdict
-from rich.console import Group
 from rich.panel import Panel
 from rich.rule import Rule
 from smolagents import AgentLogger
@@ -231,6 +231,7 @@ class FHIRAgent(MultiStepAgent):
         # Add new step in logs
         memory_step.model_input_messages = memory_messages.copy()
 
+        model_output = None
         for attempt in range(1, self.fhir_config.MAX_API_RETRIES + 1):
             try:
                 additional_args = {"grammar": self.grammar} if self.grammar is not None else {}
@@ -250,7 +251,7 @@ class FHIRAgent(MultiStepAgent):
 
                 memory_step.model_output = model_output
                 break
-            except httpx.ConnectError as e:
+            except (httpx.ConnectError, litellm.APIConnectionError) as e:
                 print(f"Attempt {attempt}: Connection error: {e}")
                 if attempt < self.fhir_config.MAX_API_RETRIES:
                     print(f"Sleeping {self.fhir_config.API_SLEEP_SECONDS} seconds before retry...")
@@ -260,13 +261,15 @@ class FHIRAgent(MultiStepAgent):
 
             except Exception as e:
                 self.logger.log(f"Error in generating model output:\n{e}")
-                break
 
-        self.logger.log_markdown(
-            content=model_output,
-            title="Output message of the LLM:",
-            level=LogLevel.DEBUG,
-        )
+        if model_output:
+            self.logger.log_markdown(
+                content=model_output,
+                title="Output message of the LLM:",
+                level=LogLevel.DEBUG,
+            )
+        else:
+            return None
 
         # Parse
         try:
