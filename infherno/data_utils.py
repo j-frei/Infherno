@@ -60,6 +60,14 @@ def apply_partitioning(raw_dataset):
     return new_ds
 
 
+def load_dummy() -> Dataset:
+    dummy_str = ("Magenbeschwerden seit 2 Tagen, Übelkeit, Erbrechen, kein Durchfall.\n"
+                 "Patient hat eine Allergie gegen Penicillin, keine weiteren Allergien bekannt.\n"
+                 "Verschrieben wurde deshalb Pantoprazol 20mg 1-0-1.")
+    dataset = Dataset.from_dict({"text": dummy_str})
+    return dataset
+
+
 def load_cardiode(data_path: str = f"./") -> Dataset:
     raw_dataset = load_dataset("json", data_files=data_path + "CARDIODE400_main@deanonymized_slim.jsonl")["train"]
     return raw_dataset
@@ -73,4 +81,13 @@ def load_n2c2(data_path: str = f"./") -> Dataset:
         with_indices=True,  # pass the example’s integer index into your fn
         batched=False
     )
+    return raw_dataset
+
+
+def load_synthetic(data_path: str = f"./") -> Dataset:
+    raw_dataset = load_dataset(
+        "text",
+        data_files={"train": data_path + 'data/synthetic/*.txt'},
+        sample_by="document",
+    )["train"]
     return raw_dataset

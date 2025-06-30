@@ -51,7 +51,8 @@ def setup_logging(
     model_name = getattr(config, "MODEL_ID", "unknown_model")
     safe_model_name = model_name.replace("/", "_")
     data_name = getattr(config, "TARGET_DATA", "unknown_data")
-    log_filename = f"{log_dir}/{safe_model_name}_{data_name}_{timestamp}.log"
+    data_instance_id = config.INSTANCE_ID
+    log_filename = f"{log_dir}/{safe_model_name}_{data_name}_{data_instance_id}_{timestamp}.log"
 
     # Configure root logger
     logger = logging.getLogger()
@@ -85,6 +86,7 @@ def setup_logging(
     logger.addHandler(console_handler)
 
     # Log config at the beginning of the file
+    logger.info("")
     logger.info("=" * 80)
     logger.info("CONFIGURATION PARAMETERS")
     logger.info("=" * 80)

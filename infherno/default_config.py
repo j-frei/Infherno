@@ -18,10 +18,10 @@ ROOT_FHIR_RESOURCES = [   # TODO: Currently unused
     "Condition",
     "MedicationStatement",
 ]
-APPLY_PARTITIONING = True
+APPLY_PARTITIONING = False
 RANDOMIZE_DATA = False
 SHORTEST_FIRST = False
-TAKE_SUBSAMPLE = True
+TAKE_SUBSAMPLE = False
 SUBSAMPLE_SIZE = 10
 
 

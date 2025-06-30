@@ -1,6 +1,6 @@
-from typing import List, Dict, Tuple
 import json
-from smolagents import CodeAgent, ToolCallingAgent, HfApiModel, TransformersModel, tool
+from smolagents import ToolCallingAgent, tool
+from typing import List, Dict, Tuple
 
 from infherno.tools.fhircodes.instance import GenericSnomedInstance
 from infherno.tools.fhircodes.codings import listSupportedCodings, getValueSet, ValueSetLoader
