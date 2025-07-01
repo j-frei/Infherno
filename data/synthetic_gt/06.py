@@ -137,9 +137,9 @@ medication_antibiotic = MedicationStatement(
         }]
     },
     # or via additionalInstruction -> SNOMEDCT@418577003???
-    dosage={
+    dosage=[{
         "text": "regelmäßig"
-    },
+    }],
     subject={"reference": "Patient/pat-1"}
 )
 
