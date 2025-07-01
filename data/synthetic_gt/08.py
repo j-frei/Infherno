@@ -7,7 +7,7 @@ from fhir.resources.R4B.bundle import Bundle, BundleEntry
 from fhir.resources.R4B.humanname import HumanName
 
 notes = """
-- Frau Uta Herz, geb 09.12.1991
+- Frau Anke Busch, 06.04.1986
 - Anhaltende Kopfschmerzen bei Stirn und Schläfen
 - Schwindelgefühl bei schnellen Kopfbewegungen
 - leichte Übelkeit
