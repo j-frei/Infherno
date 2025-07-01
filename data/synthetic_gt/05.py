@@ -174,6 +174,13 @@ medication_aspirin = MedicationStatement(
             }
         },
         "doseAndRate": [{
+            "type": {
+                "coding": [{
+                    "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                    "code": "ordered",
+                    "display": "Ordered"
+                }]
+            },
             "doseQuantity": {
                 "value": 100,
                 "unit": "mg",
@@ -205,6 +212,13 @@ medication_clopidogrel = MedicationStatement(
             }
         },
         "doseAndRate": [{
+            "type": {
+                "coding": [{
+                    "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                    "code": "ordered",
+                    "display": "Ordered"
+                }]
+            },
             "doseQuantity": {
                 "value": 75,
                 "unit": "mg",
@@ -236,6 +250,13 @@ medication_bisoprolol = MedicationStatement(
             }
         },
         "doseAndRate": [{
+            "type": {
+                "coding": [{
+                    "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                    "code": "ordered",
+                    "display": "Ordered"
+                }]
+            },
             "doseQuantity": {
                 "value": 5,
                 "unit": "mg",
@@ -267,6 +288,13 @@ medication_ramipril = MedicationStatement(
             }
         },
         "doseAndRate": [{
+            "type": {
+                "coding": [{
+                    "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                    "code": "ordered",
+                    "display": "Ordered"
+                }]
+            },
             "doseQuantity": {
                 "value": 2.5,
                 "unit": "mg",
