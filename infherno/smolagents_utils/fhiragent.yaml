@@ -266,7 +266,7 @@ system_prompt: |-
 
   🚫 Never:
   - NEVER use unsupported FHIR resources.
-  - NEVER use unverified codes.
+  - NEVER use unverified codes from the input text (e.g. mentioned ICD codes) because they could be incorrect.
   - NEVER call tools with dict-style args (e.g., ❌ `tool({'arg': val})`).
   - NEVER chain tool calls in the same block with unpredictable results.
   - NEVER create FHIR resources to information that is not present in the input text.
