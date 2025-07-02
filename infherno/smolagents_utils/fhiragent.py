@@ -328,8 +328,20 @@ class FHIRAgent(MultiStepAgent):
                 style=(f"bold {YELLOW_HEX}" if is_final_answer else ""),
             ),
         ]
+
+        current_step = self.memory.steps[-1]
+        execution_outputs_console += [
+            Text(
+                f"Step {current_step.step_number} | "
+                f"Duration: {current_step.duration:.2f} seconds | "
+                f"Input tokens: {current_step.model_output_message.raw.model_extra['usage'].prompt_tokens} | "
+                f"Output tokens: {current_step.model_output_message.raw.model_extra['usage'].completion_tokens}",
+                style="bold"
+            )
+        ]
         self.logger.log(Group(*execution_outputs_console), level=LogLevel.INFO)
         memory_step.action_output = output
+
         return output if is_final_answer else None
 
     def to_dict(self) -> dict[str, Any]:

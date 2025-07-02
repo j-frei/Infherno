@@ -44,7 +44,7 @@ if config.APPLY_PARTITIONING:
     data = apply_partitioning(data)
 
 for instance_id, instance in enumerate(tqdm(data, total=len(data), desc=f"\nInstances {config.TARGET_DATA}")):
-    config.INSTANCE_ID = instance_id
+    config.INSTANCE_ID = str(instance_id + 1).zfill(2)
 
     if any(f"{config.TARGET_DATA}_{instance_id}" in filename for filename in os.listdir(LOGS_PATH)):
         # Skip already processed instances
