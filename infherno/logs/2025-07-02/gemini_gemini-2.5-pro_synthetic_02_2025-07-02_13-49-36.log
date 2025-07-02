@@ -1,101 +1,105 @@
-2025-06-30 13:08:25,660 - root - INFO - 
-2025-06-30 13:08:25,660 - root - INFO - ================================================================================
-2025-06-30 13:08:25,660 - root - INFO - CONFIGURATION PARAMETERS
-2025-06-30 13:08:25,660 - root - INFO - ================================================================================
-2025-06-30 13:08:25,660 - root - INFO - API_SLEEP_SECONDS = 60
-2025-06-30 13:08:25,661 - root - INFO - APPLIED_TESTS = None
-2025-06-30 13:08:25,661 - root - INFO - APPLY_PARTITIONING = False
-2025-06-30 13:08:25,661 - root - INFO - CONTEXT_LENGTH = 131072
-2025-06-30 13:08:25,661 - root - INFO - DATA_DIRECTORY = ../
-2025-06-30 13:08:25,661 - root - INFO - DEVICE_MAP = auto
-2025-06-30 13:08:25,661 - root - INFO - INSTANCE_ID = 7
-2025-06-30 13:08:25,661 - root - INFO - MAX_API_RETRIES = 3
-2025-06-30 13:08:25,661 - root - INFO - MAX_NEW_TOKENS = 32000
-2025-06-30 13:08:25,661 - root - INFO - MODEL_CLASS = LiteLLMModel
-2025-06-30 13:08:25,661 - root - INFO - MODEL_ID = gemini/gemini-2.5-pro
-2025-06-30 13:08:25,661 - root - INFO - RANDOMIZE_DATA = False
-2025-06-30 13:08:25,661 - root - INFO - ROOT_FHIR_RESOURCES = ["Patient", "Condition", "MedicationStatement"]
-2025-06-30 13:08:25,661 - root - INFO - SHORTEST_FIRST = False
-2025-06-30 13:08:25,661 - root - INFO - SUBSAMPLE_SIZE = 10
-2025-06-30 13:08:25,661 - root - INFO - TAKE_SUBSAMPLE = False
-2025-06-30 13:08:25,661 - root - INFO - TARGET_DATA = synthetic
-2025-06-30 13:08:25,661 - root - INFO - ================================================================================
-2025-06-30 13:08:25,661 - root - INFO - ANALYSIS RESULTS
-2025-06-30 13:08:25,661 - root - INFO - ================================================================================
-2025-06-30 13:08:25,661 - root - INFO - Analysis results will be saved to: logs/gemini_gemini-2.5-pro_synthetic_7_2025-06-30_11-08-25.log
-2025-06-30 13:08:26,794 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
-2025-06-30 13:08:27,373 - root - INFO - 
+2025-07-02 15:49:36,791 - root - INFO - 
+2025-07-02 15:49:36,792 - root - INFO - ================================================================================
+2025-07-02 15:49:36,792 - root - INFO - CONFIGURATION PARAMETERS
+2025-07-02 15:49:36,792 - root - INFO - ================================================================================
+2025-07-02 15:49:36,792 - root - INFO - API_SLEEP_SECONDS = 60
+2025-07-02 15:49:36,792 - root - INFO - APPLIED_TESTS = None
+2025-07-02 15:49:36,792 - root - INFO - APPLY_PARTITIONING = False
+2025-07-02 15:49:36,792 - root - INFO - CONTEXT_LENGTH = 131072
+2025-07-02 15:49:36,792 - root - INFO - DATA_DIRECTORY = ../
+2025-07-02 15:49:36,792 - root - INFO - DEVICE_MAP = auto
+2025-07-02 15:49:36,792 - root - INFO - INSTANCE_ID = 02
+2025-07-02 15:49:36,792 - root - INFO - MAX_API_RETRIES = 3
+2025-07-02 15:49:36,792 - root - INFO - MAX_NEW_TOKENS = 32000
+2025-07-02 15:49:36,792 - root - INFO - MODEL_CLASS = LiteLLMModel
+2025-07-02 15:49:36,792 - root - INFO - MODEL_ID = gemini/gemini-2.5-pro
+2025-07-02 15:49:36,792 - root - INFO - RANDOMIZE_DATA = False
+2025-07-02 15:49:36,793 - root - INFO - ROOT_FHIR_RESOURCES = ["Patient", "Condition", "MedicationStatement"]
+2025-07-02 15:49:36,793 - root - INFO - SHORTEST_FIRST = False
+2025-07-02 15:49:36,793 - root - INFO - SUBSAMPLE_SIZE = 10
+2025-07-02 15:49:36,793 - root - INFO - TAKE_SUBSAMPLE = True
+2025-07-02 15:49:36,793 - root - INFO - TARGET_DATA = synthetic
+2025-07-02 15:49:36,793 - root - INFO - ================================================================================
+2025-07-02 15:49:36,793 - root - INFO - ANALYSIS RESULTS
+2025-07-02 15:49:36,793 - root - INFO - ================================================================================
+2025-07-02 15:49:36,793 - root - INFO - Analysis results will be saved to: logs/gemini_gemini-2.5-pro_synthetic_02_2025-07-02_13-49-36.log
+2025-07-02 15:49:36,925 - root - INFO - 
 ╭────────────────────────────────── New run ───────────────────────────────────╮
 │                                                                              │
 │ The input text is as follows:                                                │
 │ ```                                                                          │
-│ Arztpraxis Dr. med. Tom Kunze                                                │
-│ Waldowstr. 73                                                                │
-│ 83681 Tegernsee                                                              │
-│ Tel: 08022 25 10 41                                                          │
-│ Email: info@kune-aazts.de                                                    │
+│ Dr. med. Christian Junker                                                    │
+│ Facharzt für Allgemeinmedizin                                                │
+│ Rosenstrasse 75                                                              │
+│ 81501 München                                                                │
+│ Tel: 04861 60 57 07                                                          │
+│ Email: christian.junker@hausarzt-muenchen.de                                 │
 │                                                                              │
-│ Datum: 28. Juni 2023                                                         │
+│ München, den 28. Juni 2023                                                   │
 │                                                                              │
-│ Betreff: Arztberichtsbrief für Patientin Anke Busch (*06.04.1986)            │
+│ Arztberichtsbrief für:                                                       │
+│ Frau Christine Bürger                                                        │
+│ Geburtsdatum: 12. März 1985                                                  │
 │                                                                              │
-│ Sehr geehrte Herr Vogler,                                                    │
+│ Sehr geehrte Kollegen,                                                       │
 │                                                                              │
-│ hiermit übersende ich Ihnen den Arztbericht zu Ihrer Patientin, Frau Anke    │
-│ Busch, geboren am 06. April 1986. Die Patientin hat sich in unserer Praxis   │
-│ am 22. Juni 2023 vorgestellt, um ihre anhaltenden Beschwerden zu besprechen. │
+│ hiermit möchte ich Ihnen einen kurzen Bericht über die Behandlung von Frau   │
+│ Christine Bürger zukommen lassen:                                            │
 │                                                                              │
 │ Anamnese:                                                                    │
-│ Frau Busch klagte über seit mehreren Wochen andauernde Kopfschmerzen, die    │
-│ insbesondere im Bereich der Stirn und der Schläfen lokalisiert sind. Sie     │
-│ berichtete auch von gelegentlichem Schwindelgefühl, welches vor allem bei    │
-│ schnellen Kopfbewegungen auftritt. Zudem litt sie unter leichter Übelkeit,   │
-│ jedoch verneinte sie jegliche Sehstörungen oder neurologische Ausfälle. Ihre │
-│ bisherige Medikamentenanamnese ergab keine signifikanten Auffälligkeiten.    │
+│ Frau Christine Bürger stellte sich heute in unserer Praxis vor und klagte    │
+│ über seit drei Tagen anhaltende Symptome, darunter Fieber, Halsschmerzen und │
+│ allgemeines Unwohlsein. Sie berichtete, dass sie vor einer Woche aus einem   │
+│ Urlaub in Südamerika zurückgekehrt ist.                                      │
 │                                                                              │
 │ Befund:                                                                      │
-│ Bei der körperlichen Untersuchung zeigten sich keine pathologischen Befunde. │
-│ Die neurologische Untersuchung inklusive Reflexe, Sensibilität und           │
-│ Koordination war ohne Auffälligkeiten. Die Augenuntersuchung mittels         │
-│ Spaltlampe war unauffällig, ebenso wie die Pupillenreaktion auf Licht und    │
-│ Akkommodation.                                                               │
+│ Bei der körperlichen Untersuchung zeigte sich eine leichte Rötung des        │
+│ Rachens und vergrößerte Halslymphknoten. Die Körpertemperatur betrug 38,5°C. │
+│ Ein Abstrich aus dem Rachen wurde entnommen und zur weiteren Untersuchung    │
+│ ins Labor geschickt.                                                         │
 │                                                                              │
 │ Diagnose:                                                                    │
-│ Aufgrund der wiederkehrenden Kopfschmerzen und des Schwindelgefühls haben    │
-│ wir eine Verdachtsdiagnose auf eine migräneartige Zephalalgie gestellt.      │
-│ Dennoch wurde eine weitere Abklärung mittels MRT des Schädels empfohlen, um  │
-│ strukturelle Ursachen auszuschließen.                                        │
+│ Vorläufige Verdachtsdiagnose lautet auf eine virale Pharyngitis oder eine    │
+│ mögliche Infektion mit tropischen Erregern.                                  │
 │                                                                              │
 │ Therapie:                                                                    │
-│ Als Erstmaßnahme haben wir Frau Busch geraten, einen Kopfschmerzkalender zu  │
-│ führen, um potenzielle Auslöser zu identifizieren. Zudem haben wir eine      │
-│ medikamentöse Therapie mit Ibuprofen 400mg bei akuten Kopfschmerzepisoden    │
-│ verordnet. Eine Langzeittherapie mit Migränemitteln wurde vorerst nicht      │
-│ eingeleitet, da wir die Ergebnisse des MRTs abwarten möchten.                │
+│ Frau Christine Bürger wurde zunächst symptomatisch behandelt. Sie erhielt    │
+│ eine Empfehlung zur Schonung, ausreichend Flüssigkeitszufuhr und             │
+│ fiebersenkenden Maßnahmen. Die endgültige Therapie hängt von den Ergebnissen │
+│ des Rachenabstrichs ab.                                                      │
 │                                                                              │
 │ Weiteres Vorgehen:                                                           │
-│ Frau Busch wird zeitnah einen Termin zur MRT-Untersuchung des Schädels       │
-│ erhalten, um strukturelle Ursachen für ihre Beschwerden auszuschließen.      │
-│ Sobald die Ergebnisse vorliegen, wird sie sich erneut in unserer Praxis      │
-│ vorstellen, um die weiteren Schritte zu besprechen.                          │
+│ Nach Erhalt der Laborergebnisse werden wir Frau Christine Bürger zu einem    │
+│ weiteren Termin einbestellen, um die weitere Behandlungsstrategie            │
+│ festzulegen.                                                                 │
 │                                                                              │
-│ Abschließend möchte ich betonen, dass wir den Fall von Frau Busch weiterhin  │
-│ genau verfolgen und sie bei jeglichen Veränderungen oder Verschlechterungen  │
-│ ihrer Symptome umgehend reagieren wird.                                      │
+│ Medikation:                                                                  │
+│                                                                              │
+│     Paracetamol 500mg – Bei Bedarf zur Fiebersenkung, maximal 3x täglich     │
+│     Ibuprofen 400mg – Bei Bedarf zur Schmerzlinderung, maximal 3x täglich    │
+│                                                                              │
+│ Verlaufskontrolle:                                                           │
+│ Eine Kontrolluntersuchung ist für den 5. Juli 2023 vorgesehen, um den        │
+│ Fortschritt der Genesung zu überprüfen und die weiteren Schritte zu          │
+│ besprechen.                                                                  │
+│                                                                              │
+│ Abschließend möchte ich betonen, dass es sich hierbei lediglich um eine      │
+│ vorläufige Einschätzung handelt und weitere Untersuchungen und Befunde       │
+│ notwendig sind, um eine definitive Diagnose zu stellen.                      │
 │                                                                              │
 │ Für Rückfragen stehe ich Ihnen gerne zur Verfügung.                          │
 │                                                                              │
 │ Mit freundlichen Grüßen,                                                     │
 │                                                                              │
-│ Dr. med. Tom Kunze                                                           │
+│ Dr. med. Christian Junker                                                    │
 │ ```                                                                          │
 │                                                                              │
 ╰─ LiteLLMModel - gemini/gemini-2.5-pro ───────────────────────────────────────╯
 
-2025-06-30 13:08:27,376 - root - INFO - 
+2025-07-02 15:49:36,926 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:08:27,428 - root - INFO - 
+2025-07-02 15:49:36,979 - root - INFO - 
 ╭─────────────────────────────────── system ───────────────────────────────────╮
 │ You are a code agent with expertise in Information Extraction of medical     │
 │ information from free text. Your task is to translate clinical information   │
@@ -510,7 +514,8 @@
 │                                                                              │
 │ 🚫 Never:                                                                    │
 │ - NEVER use unsupported FHIR resources.                                      │
-│ - NEVER use unverified codes.                                                │
+│ - NEVER use unverified codes from the input text (e.g. mentioned ICD codes)  │
+│ because they could be incorrect.                                             │
 │ - NEVER call tools with dict-style args (e.g., ❌ `tool({'arg': val})`).     │
 │ - NEVER chain tool calls in the same block with unpredictable results.       │
 │ - NEVER create FHIR resources to information that is not present in the      │
@@ -522,89 +527,91 @@
 │ If you solve the task correctly, you will receive a reward of $1,000,000.    │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:27,434 - root - INFO - 
+2025-07-02 15:49:36,984 - root - INFO - 
 ╭──────────────────────────────────── user ────────────────────────────────────╮
 │ New task:                                                                    │
 │ The input text is as follows:                                                │
 │ ```                                                                          │
-│ Arztpraxis Dr. med. Tom Kunze                                                │
-│ Waldowstr. 73                                                                │
-│ 83681 Tegernsee                                                              │
-│ Tel: 08022 25 10 41                                                          │
-│ Email: info@kune-aazts.de                                                    │
+│ Dr. med. Christian Junker                                                    │
+│ Facharzt für Allgemeinmedizin                                                │
+│ Rosenstrasse 75                                                              │
+│ 81501 München                                                                │
+│ Tel: 04861 60 57 07                                                          │
+│ Email: christian.junker@hausarzt-muenchen.de                                 │
 │                                                                              │
-│ Datum: 28. Juni 2023                                                         │
+│ München, den 28. Juni 2023                                                   │
 │                                                                              │
-│ Betreff: Arztberichtsbrief für Patientin Anke Busch (*06.04.1986)            │
+│ Arztberichtsbrief für:                                                       │
+│ Frau Christine Bürger                                                        │
+│ Geburtsdatum: 12. März 1985                                                  │
 │                                                                              │
-│ Sehr geehrte Herr Vogler,                                                    │
+│ Sehr geehrte Kollegen,                                                       │
 │                                                                              │
-│ hiermit übersende ich Ihnen den Arztbericht zu Ihrer Patientin, Frau Anke    │
-│ Busch, geboren am 06. April 1986. Die Patientin hat sich in unserer Praxis   │
-│ am 22. Juni 2023 vorgestellt, um ihre anhaltenden Beschwerden zu besprechen. │
+│ hiermit möchte ich Ihnen einen kurzen Bericht über die Behandlung von Frau   │
+│ Christine Bürger zukommen lassen:                                            │
 │                                                                              │
 │ Anamnese:                                                                    │
-│ Frau Busch klagte über seit mehreren Wochen andauernde Kopfschmerzen, die    │
-│ insbesondere im Bereich der Stirn und der Schläfen lokalisiert sind. Sie     │
-│ berichtete auch von gelegentlichem Schwindelgefühl, welches vor allem bei    │
-│ schnellen Kopfbewegungen auftritt. Zudem litt sie unter leichter Übelkeit,   │
-│ jedoch verneinte sie jegliche Sehstörungen oder neurologische Ausfälle. Ihre │
-│ bisherige Medikamentenanamnese ergab keine signifikanten Auffälligkeiten.    │
+│ Frau Christine Bürger stellte sich heute in unserer Praxis vor und klagte    │
+│ über seit drei Tagen anhaltende Symptome, darunter Fieber, Halsschmerzen und │
+│ allgemeines Unwohlsein. Sie berichtete, dass sie vor einer Woche aus einem   │
+│ Urlaub in Südamerika zurückgekehrt ist.                                      │
 │                                                                              │
 │ Befund:                                                                      │
-│ Bei der körperlichen Untersuchung zeigten sich keine pathologischen Befunde. │
-│ Die neurologische Untersuchung inklusive Reflexe, Sensibilität und           │
-│ Koordination war ohne Auffälligkeiten. Die Augenuntersuchung mittels         │
-│ Spaltlampe war unauffällig, ebenso wie die Pupillenreaktion auf Licht und    │
-│ Akkommodation.                                                               │
+│ Bei der körperlichen Untersuchung zeigte sich eine leichte Rötung des        │
+│ Rachens und vergrößerte Halslymphknoten. Die Körpertemperatur betrug 38,5°C. │
+│ Ein Abstrich aus dem Rachen wurde entnommen und zur weiteren Untersuchung    │
+│ ins Labor geschickt.                                                         │
 │                                                                              │
 │ Diagnose:                                                                    │
-│ Aufgrund der wiederkehrenden Kopfschmerzen und des Schwindelgefühls haben    │
-│ wir eine Verdachtsdiagnose auf eine migräneartige Zephalalgie gestellt.      │
-│ Dennoch wurde eine weitere Abklärung mittels MRT des Schädels empfohlen, um  │
-│ strukturelle Ursachen auszuschließen.                                        │
+│ Vorläufige Verdachtsdiagnose lautet auf eine virale Pharyngitis oder eine    │
+│ mögliche Infektion mit tropischen Erregern.                                  │
 │                                                                              │
 │ Therapie:                                                                    │
-│ Als Erstmaßnahme haben wir Frau Busch geraten, einen Kopfschmerzkalender zu  │
-│ führen, um potenzielle Auslöser zu identifizieren. Zudem haben wir eine      │
-│ medikamentöse Therapie mit Ibuprofen 400mg bei akuten Kopfschmerzepisoden    │
-│ verordnet. Eine Langzeittherapie mit Migränemitteln wurde vorerst nicht      │
-│ eingeleitet, da wir die Ergebnisse des MRTs abwarten möchten.                │
+│ Frau Christine Bürger wurde zunächst symptomatisch behandelt. Sie erhielt    │
+│ eine Empfehlung zur Schonung, ausreichend Flüssigkeitszufuhr und             │
+│ fiebersenkenden Maßnahmen. Die endgültige Therapie hängt von den Ergebnissen │
+│ des Rachenabstrichs ab.                                                      │
 │                                                                              │
 │ Weiteres Vorgehen:                                                           │
-│ Frau Busch wird zeitnah einen Termin zur MRT-Untersuchung des Schädels       │
-│ erhalten, um strukturelle Ursachen für ihre Beschwerden auszuschließen.      │
-│ Sobald die Ergebnisse vorliegen, wird sie sich erneut in unserer Praxis      │
-│ vorstellen, um die weiteren Schritte zu besprechen.                          │
+│ Nach Erhalt der Laborergebnisse werden wir Frau Christine Bürger zu einem    │
+│ weiteren Termin einbestellen, um die weitere Behandlungsstrategie            │
+│ festzulegen.                                                                 │
 │                                                                              │
-│ Abschließend möchte ich betonen, dass wir den Fall von Frau Busch weiterhin  │
-│ genau verfolgen und sie bei jeglichen Veränderungen oder Verschlechterungen  │
-│ ihrer Symptome umgehend reagieren wird.                                      │
+│ Medikation:                                                                  │
+│                                                                              │
+│     Paracetamol 500mg – Bei Bedarf zur Fiebersenkung, maximal 3x täglich     │
+│     Ibuprofen 400mg – Bei Bedarf zur Schmerzlinderung, maximal 3x täglich    │
+│                                                                              │
+│ Verlaufskontrolle:                                                           │
+│ Eine Kontrolluntersuchung ist für den 5. Juli 2023 vorgesehen, um den        │
+│ Fortschritt der Genesung zu überprüfen und die weiteren Schritte zu          │
+│ besprechen.                                                                  │
+│                                                                              │
+│ Abschließend möchte ich betonen, dass es sich hierbei lediglich um eine      │
+│ vorläufige Einschätzung handelt und weitere Untersuchungen und Befunde       │
+│ notwendig sind, um eine definitive Diagnose zu stellen.                      │
 │                                                                              │
 │ Für Rückfragen stehe ich Ihnen gerne zur Verfügung.                          │
 │                                                                              │
 │ Mit freundlichen Grüßen,                                                     │
 │                                                                              │
-│ Dr. med. Tom Kunze                                                           │
+│ Dr. med. Christian Junker                                                    │
 │ ```                                                                          │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:27,445 - LiteLLM - INFO - 
+2025-07-02 15:49:36,985 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:08:42,037 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:08:42,052 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:08:42,053 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:42,054 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:42,056 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:42,153 - root - INFO - 
+2025-07-02 15:49:46,857 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:49:46,862 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:49:46,863 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:49:46,878 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  search_results =                                                              
-  search_for_code_or_coding(fhir_attribute_path="Patient.gender",               
-  search_term="female")                                                         
-  print(search_results)                                                         
+  print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",         
+  search_term="female"))                                                        
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:08:42,403 - root - INFO - 
+2025-07-02 15:49:46,872 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:49:55,275 - root - INFO - 
 Execution logs:
 ('Found 4 hits for female in Patient.gender', [{'system': 
 'http://hl7.org/fhir/administrative-gender', 'code': 'female', 'display': 
@@ -616,67 +623,32 @@ Execution logs:
 
 Out: None
 
-2025-06-30 13:08:42,404 - root - INFO - 
+2025-07-02 15:49:55,276 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:08:42,409 - root - INFO - 
+2025-07-02 15:49:55,278 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought                                                                      │
-│ I need to extract patient information, conditions, and medication statements │
-│ from the provided medical report and represent them as FHIR R4 resources.    │
-│                                                                              │
-│ Here's my plan:                                                              │
-│ 1.  **Patient:** Extract the patient's name ("Anke Busch"), date of birth    │
-│ ("06.04.1986"), and gender. The text mentions "Frau Anke Busch", so the      │
-│ gender is female.                                                            │
-│ 2.  **Conditions:**                                                          │
-│     *   "Kopfschmerzen" (Headache): This is a primary complaint.             │
-│     *   "Schwindelgefühl" (Dizziness): Another complaint.                    │
-│     *   "leichter Übelkeit" (slight Nausea): A related symptom.              │
-│     *   "migräneartige Zephalalgie" (migraine-like cephalgia): This is the   │
-│ suspected diagnosis. I will treat this as the main condition.                │
-│ 3.  **Medication Statement:**                                                │
-│     *   "Ibuprofen 400mg bei akuten Kopfschmerzepisoden": This is a          │
-│ prescribed medication. I will create a MedicationStatement for this.         │
-│                                                                              │
-│ I'll start by searching for the necessary codes for these entities.          │
-│                                                                              │
-│ **Search Plan:**                                                             │
-│ 1.  `Patient.gender` for "female".                                           │
-│ 2.  `Condition.code` for "Kopfschmerzen" (headache).                         │
-│ 3.  `Condition.code` for "Schwindelgefühl" (dizziness).                      │
-│ 4.  `Condition.code` for "Übelkeit" (nausea).                                │
-│ 5.  `Condition.code` for "migräneartige Zephalalgie" (migraine-like          │
-│ cephalgia). I'll search for "migraine".                                      │
-│ 6.  `Condition.clinicalStatus` for "active" as the conditions are ongoing.   │
-│ 7.  `Condition.verificationStatus` for "provisional" or "unconfirmed" for    │
-│ the migraine diagnosis, as it's a suspected diagnosis ("Verdachtsdiagnose"). │
-│ 8.  `MedicationStatement.medication` for "Ibuprofen".                        │
-│ 9.  `MedicationStatement.status` for "active".                               │
-│ 10. `Dosage.asNeeded` for "as needed".                                       │
-│ 11. `MedicationStatement.reasonCode` for "Kopfschmerz" (headache) as the     │
-│ reason for taking Ibuprofen.                                                 │
-│                                                                              │
-│ Let's start searching.                                                       │
-│ Code:                                                                        │
+│ Thought:                                                                     │
+│ Okay, I will start by extracting the patient's information. The patient is   │
+│ "Frau Christine Bürger", born on "12. März 1985". "Frau" indicates the       │
+│ gender is female. I will search for the corresponding code for               │
+│ `Patient.gender`.Code:                                                       │
 │ ```python                                                                    │
-│ search_results =                                                             │
-│ search_for_code_or_coding(fhir_attribute_path="Patient.gender",              │
-│ search_term="female")                                                        │
-│ print(search_results)                                                        │
+│ print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",        │
+│ search_term="female"))                                                       │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:42,410 - root - INFO - 
+2025-07-02 15:49:55,279 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_1', 'type': 'function', 'function': {'name':                   │
-│ 'python_interpreter', 'arguments': 'search_results =                         │
-│ search_for_code_or_coding(fhir_attribute_path="Patient.gender",              │
-│ search_term="female")\nprint(search_results)'}}]                             │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",       │
+│ search_term="female"))'}}]                                                   │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:42,411 - root - INFO - 
+2025-07-02 15:49:55,280 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_1                                                              │
 │ Observation:                                                                 │
@@ -692,542 +664,427 @@ Out: None
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:42,412 - LiteLLM - INFO - 
+2025-07-02 15:49:55,281 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:08:44,908 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:08:44,910 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:08:44,910 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:44,917 - root - INFO - 
+2025-07-02 15:50:00,664 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:50:00,669 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:50:00,670 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:00,670 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:00,687 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  search_results =                                                              
-  search_for_code_or_coding(fhir_attribute_path="Condition.code",               
-  search_term="headache")                                                       
-  print(search_results)                                                         
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
+  search_term="Fever"))                                                         
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:08:44,918 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:45,438 - root - INFO - 
+2025-07-02 15:50:00,688 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:09,509 - root - INFO - 
 Execution logs:
-('Found 112 hits for headache in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '25064002', 'display': 'Headache'}, {'system':
-'http://snomed.info/sct', 'code': '193028008', 'display': 'Sick headache'}, 
-{'system': 'http://snomed.info/sct', 'code': '56097005', 'display': 'Migraine 
-without aura'}, {'system': 'http://snomed.info/sct', 'code': '38823002', 
-'display': 'Aural headache'}, {'system': 'http://snomed.info/sct', 'code': 
-'44538002', 'display': 'Nasal headache'}, {'system': 'http://snomed.info/sct', 
-'code': '4969004', 'display': 'Sinus headache'}, {'system': 
-'http://snomed.info/sct', 'code': '571000119103', 'display': 'Daily headache'}, 
-{'system': 'http://snomed.info/sct', 'code': '735938006', 'display': 'Acute 
-headache'}, {'system': 'http://snomed.info/sct', 'code': '162211001', 'display':
-'Viral headache'}, {'system': 'http://snomed.info/sct', 'code': '86925001', 
-'display': 'Ocular headache'}])
+('Found 326 hits for Fever in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '386661006', 'display': 'Fever'}, {'system': 
+'http://snomed.info/sct', 'code': '186788009', 'display': 'Q fever'}, {'system':
+'http://snomed.info/sct', 'code': '77377001', 'display': 'Leptospirosis'}, 
+{'system': 'http://snomed.info/sct', 'code': '21719001', 'display': 'Allergic 
+rhinitis caused by pollen'}, {'system': 'http://snomed.info/sct', 'code': 
+'89805002', 'display': 'Catu virus disease'}, {'system': 
+'http://snomed.info/sct', 'code': '81472005', 'display': 'Ossa virus disease'}, 
+{'system': 'http://snomed.info/sct', 'code': '25897000', 'display': 
+"Malt-workers' lung"}, {'system': 'http://snomed.info/sct', 'code': '41348000', 
+'display': 'Piry virus disease'}, {'system': 'http://snomed.info/sct', 'code': 
+'3928002', 'display': 'Zika virus disease'}, {'system': 
+'http://snomed.info/sct', 'code': '75702008', 'display': 'Brucellosis'}])
 
 Out: None
 
-2025-06-30 13:08:45,439 - root - INFO - 
+2025-07-02 15:50:09,511 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:08:45,441 - root - INFO - 
+2025-07-02 15:50:09,513 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought                                                                      │
-│ I have the code for `Patient.gender`. Now I will search for the condition    │
-│ codes. I will start with "headache".Thought                                  │
-│ I have successfully retrieved the code for `Patient.gender`. Next, I need to │
-│ find the codes for the conditions mentioned in the text. I will start by     │
-│ searching for "headache".                                                    │
-│ Code:                                                                        │
+│ Thought:                                                                     │
+│ I have found the code for female gender. Now I will extract the conditions.  │
+│ The text mentions "Fieber" (fever), "Halsschmerzen" (sore throat),           │
+│ "allgemeines Unwohlsein" (general malaise), and a provisional diagnosis of   │
+│ "virale Pharyngitis" (viral pharyngitis). I will search for the codes for    │
+│ these conditions. I will start with "Fieber" (fever).Code:                   │
 │ ```python                                                                    │
-│ search_results =                                                             │
-│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="headache")                                                      │
-│ print(search_results)                                                        │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
+│ search_term="Fever"))                                                        │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:45,442 - root - INFO - 
+2025-07-02 15:50:09,514 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_2', 'type': 'function', 'function': {'name':                   │
-│ 'python_interpreter', 'arguments': 'search_results =                         │
-│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="headache")\nprint(search_results)'}}]                           │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
+│ search_term="Fever"))'}}]                                                    │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:45,444 - root - INFO - 
+2025-07-02 15:50:09,517 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_2                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 112 hits for headache in Condition.code', [{'system':                │
-│ 'http://snomed.info/sct', 'code': '25064002', 'display': 'Headache'},        │
-│ {'system': 'http://snomed.info/sct', 'code': '193028008', 'display': 'Sick   │
-│ headache'}, {'system': 'http://snomed.info/sct', 'code': '56097005',         │
-│ 'display': 'Migraine without aura'}, {'system': 'http://snomed.info/sct',    │
-│ 'code': '38823002', 'display': 'Aural headache'}, {'system':                 │
-│ 'http://snomed.info/sct', 'code': '44538002', 'display': 'Nasal headache'},  │
-│ {'system': 'http://snomed.info/sct', 'code': '4969004', 'display': 'Sinus    │
-│ headache'}, {'system': 'http://snomed.info/sct', 'code': '571000119103',     │
-│ 'display': 'Daily headache'}, {'system': 'http://snomed.info/sct', 'code':   │
-│ '735938006', 'display': 'Acute headache'}, {'system':                        │
-│ 'http://snomed.info/sct', 'code': '162211001', 'display': 'Viral headache'}, │
-│ {'system': 'http://snomed.info/sct', 'code': '86925001', 'display': 'Ocular  │
-│ headache'}])                                                                 │
+│ ('Found 326 hits for Fever in Condition.code', [{'system':                   │
+│ 'http://snomed.info/sct', 'code': '386661006', 'display': 'Fever'},          │
+│ {'system': 'http://snomed.info/sct', 'code': '186788009', 'display': 'Q      │
+│ fever'}, {'system': 'http://snomed.info/sct', 'code': '77377001', 'display': │
+│ 'Leptospirosis'}, {'system': 'http://snomed.info/sct', 'code': '21719001',   │
+│ 'display': 'Allergic rhinitis caused by pollen'}, {'system':                 │
+│ 'http://snomed.info/sct', 'code': '89805002', 'display': 'Catu virus         │
+│ disease'}, {'system': 'http://snomed.info/sct', 'code': '81472005',          │
+│ 'display': 'Ossa virus disease'}, {'system': 'http://snomed.info/sct',       │
+│ 'code': '25897000', 'display': "Malt-workers' lung"}, {'system':             │
+│ 'http://snomed.info/sct', 'code': '41348000', 'display': 'Piry virus         │
+│ disease'}, {'system': 'http://snomed.info/sct', 'code': '3928002',           │
+│ 'display': 'Zika virus disease'}, {'system': 'http://snomed.info/sct',       │
+│ 'code': '75702008', 'display': 'Brucellosis'}])                              │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:45,444 - LiteLLM - INFO - 
+2025-07-02 15:50:09,519 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:08:48,187 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:08:48,191 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:08:48,192 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:48,192 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:48,202 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:48,219 - root - INFO - 
+2025-07-02 15:50:14,691 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:50:14,694 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:50:14,694 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:14,702 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  search_results =                                                              
-  search_for_code_or_coding(fhir_attribute_path="Condition.code",               
-  search_term="dizziness")                                                      
-  print(search_results)                                                         
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
+  search_term="sore throat"))                                                   
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:08:48,744 - root - INFO - 
+2025-07-02 15:50:14,703 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:23,297 - root - INFO - 
 Execution logs:
-('Found 14 hits for dizziness in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '404640003', 'display': 'Dizziness'}, 
-{'system': 'http://snomed.info/sct', 'code': '271789005', 'display': 'Dizziness 
-and giddiness'}, {'system': 'http://snomed.info/sct', 'code': '103017008', 
-'display': 'Postural dizziness'}, {'system': 'http://snomed.info/sct', 'code': 
-'103018003', 'display': 'Exertional dizziness'}, {'system': 
-'http://snomed.info/sct', 'code': '7956006', 'display': 'Psychogenic vertigo'}, 
-{'system': 'http://snomed.info/sct', 'code': '473188002', 'display': 'Dizziness 
-caused by drug'}, {'system': 'http://snomed.info/sct', 'code': '232289002', 
-'display': 'Multisensory dizziness'}, {'system': 'http://snomed.info/sct', 
-'code': '103286000', 'display': 'Horizontal vertigo'}, {'system': 
-'http://snomed.info/sct', 'code': '386705008', 'display': 'Lightheadedness'}, 
-{'system': 'http://snomed.info/sct', 'code': '407645004', 'display': 'Dizziness 
-on standing up'}])
+('Found 7 hits for sore throat in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '267102003', 'display': 'Sore throat'}, 
+{'system': 'http://snomed.info/sct', 'code': '162397003', 'display': 'Pain in 
+throat'}, {'system': 'http://snomed.info/sct', 'code': '43878008', 'display': 
+'Streptococcal sore throat'}, {'system': 'http://snomed.info/sct', 'code': 
+'140004', 'display': 'Chronic pharyngitis'}, {'system': 
+'http://snomed.info/sct', 'code': '275488008', 'display': 'Chronic sore 
+throat'}, {'system': 'http://snomed.info/sct', 'code': '1296672005', 'display': 
+'Acute streptococcal pharyngitis'}, {'system': 'http://snomed.info/sct', 'code':
+'186357007', 'display': 'Streptococcal sore throat with scarlatina'}])
 
 Out: None
 
-2025-06-30 13:08:48,746 - root - INFO - 
+2025-07-02 15:50:23,298 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:08:48,750 - root - INFO - 
+2025-07-02 15:50:23,299 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought                                                                      │
-│ I have found several codes for "headache". `25064002` seems like a good      │
-│ general code. I will use this for the `reasonCode` of the                    │
-│ `MedicationStatement`.                                                       │
-│                                                                              │
-│ Next, I'll search for "dizziness".Thought                                    │
-│ I've selected `25064002` for "headache" as the `reasonCode`. Now, I'll       │
-│ search for a code for "dizziness".                                           │
-│ Code:                                                                        │
+│ Thought:                                                                     │
+│ I have found the code for "Fever". Now I will search for "Halsschmerzen"     │
+│ (sore throat).Code:                                                          │
 │ ```python                                                                    │
-│ search_results =                                                             │
-│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="dizziness")                                                     │
-│ print(search_results)                                                        │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
+│ search_term="sore throat"))                                                  │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:48,752 - root - INFO - 
+2025-07-02 15:50:23,300 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_3', 'type': 'function', 'function': {'name':                   │
-│ 'python_interpreter', 'arguments': 'search_results =                         │
-│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="dizziness")\nprint(search_results)'}}]                          │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
+│ search_term="sore throat"))'}}]                                              │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:48,756 - root - INFO - 
+2025-07-02 15:50:23,302 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_3                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 14 hits for dizziness in Condition.code', [{'system':                │
-│ 'http://snomed.info/sct', 'code': '404640003', 'display': 'Dizziness'},      │
-│ {'system': 'http://snomed.info/sct', 'code': '271789005', 'display':         │
-│ 'Dizziness and giddiness'}, {'system': 'http://snomed.info/sct', 'code':     │
-│ '103017008', 'display': 'Postural dizziness'}, {'system':                    │
-│ 'http://snomed.info/sct', 'code': '103018003', 'display': 'Exertional        │
-│ dizziness'}, {'system': 'http://snomed.info/sct', 'code': '7956006',         │
-│ 'display': 'Psychogenic vertigo'}, {'system': 'http://snomed.info/sct',      │
-│ 'code': '473188002', 'display': 'Dizziness caused by drug'}, {'system':      │
-│ 'http://snomed.info/sct', 'code': '232289002', 'display': 'Multisensory      │
-│ dizziness'}, {'system': 'http://snomed.info/sct', 'code': '103286000',       │
-│ 'display': 'Horizontal vertigo'}, {'system': 'http://snomed.info/sct',       │
-│ 'code': '386705008', 'display': 'Lightheadedness'}, {'system':               │
-│ 'http://snomed.info/sct', 'code': '407645004', 'display': 'Dizziness on      │
-│ standing up'}])                                                              │
+│ ('Found 7 hits for sore throat in Condition.code', [{'system':               │
+│ 'http://snomed.info/sct', 'code': '267102003', 'display': 'Sore throat'},    │
+│ {'system': 'http://snomed.info/sct', 'code': '162397003', 'display': 'Pain   │
+│ in throat'}, {'system': 'http://snomed.info/sct', 'code': '43878008',        │
+│ 'display': 'Streptococcal sore throat'}, {'system':                          │
+│ 'http://snomed.info/sct', 'code': '140004', 'display': 'Chronic              │
+│ pharyngitis'}, {'system': 'http://snomed.info/sct', 'code': '275488008',     │
+│ 'display': 'Chronic sore throat'}, {'system': 'http://snomed.info/sct',      │
+│ 'code': '1296672005', 'display': 'Acute streptococcal pharyngitis'},         │
+│ {'system': 'http://snomed.info/sct', 'code': '186357007', 'display':         │
+│ 'Streptococcal sore throat with scarlatina'}])                               │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:48,758 - LiteLLM - INFO - 
+2025-07-02 15:50:23,303 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:08:51,576 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:08:51,581 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:08:51,582 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:51,582 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:51,605 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:51,606 - root - INFO - 
+2025-07-02 15:50:27,286 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:50:27,290 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:50:27,290 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:27,291 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:27,304 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  search_results =                                                              
-  search_for_code_or_coding(fhir_attribute_path="Condition.code",               
-  search_term="nausea")                                                         
-  print(search_results)                                                         
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
+  search_term="general malaise"))                                               
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:08:52,129 - root - INFO - 
+2025-07-02 15:50:27,304 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:35,838 - root - INFO - 
 Execution logs:
-('Found 18 hits for nausea in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '422587007', 'display': 'Nausea'}, {'system': 
-'http://snomed.info/sct', 'code': '51885006', 'display': 'Morning sickness'}, 
-{'system': 'http://snomed.info/sct', 'code': '762279002', 'display': 'Functional
-nausea'}, {'system': 'http://snomed.info/sct', 'code': '16932000', 'display': 
-'Nausea and vomiting'}, {'system': 'http://snomed.info/sct', 'code': '64581007',
-'display': 'Postoperative nausea'}, {'system': 'http://snomed.info/sct', 'code':
-'146291000119108', 'display': 'Vomiting without nausea'}, {'system': 
-'http://snomed.info/sct', 'code': '415709002', 'display': 'Tendency to nausea 
-and vomiting'}, {'system': 'http://snomed.info/sct', 'code': '33841007', 
-'display': 'Decreased nausea and vomiting'}, {'system': 
-'http://snomed.info/sct', 'code': '2919008', 'display': 'Nausea, vomiting and 
-diarrhea'}, {'system': 'http://snomed.info/sct', 'code': '73335002', 'display': 
-'Increased nausea and vomiting'}])
+('No hits found for general malaise in Condition.code', [])
 
 Out: None
 
-2025-06-30 13:08:52,132 - root - INFO - 
+2025-07-02 15:50:35,841 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 5 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:08:52,138 - root - INFO - 
+2025-07-02 15:50:35,844 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought                                                                      │
-│ I have found a code for "dizziness". `404640003` seems appropriate.          │
-│                                                                              │
-│ Now I will search for "nausea".Thought                                       │
-│ Okay, `404640003` for dizziness. Now, search for "nausea".                   │
-│ Code:                                                                        │
+│ Thought:                                                                     │
+│ I have found the code for "sore throat". Now I will search for "allgemeines  │
+│ Unwohlsein" (general malaise).Code:                                          │
 │ ```python                                                                    │
-│ search_results =                                                             │
-│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="nausea")                                                        │
-│ print(search_results)                                                        │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
+│ search_term="general malaise"))                                              │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:52,141 - root - INFO - 
+2025-07-02 15:50:35,846 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_4', 'type': 'function', 'function': {'name':                   │
-│ 'python_interpreter', 'arguments': 'search_results =                         │
-│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="nausea")\nprint(search_results)'}}]                             │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
+│ search_term="general malaise"))'}}]                                          │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:52,147 - root - INFO - 
-╭─────────────────────────────── tool-response ────────────────────────────────╮
-│ Call id: call_4                                                              │
-│ Observation:                                                                 │
-│ Execution logs:                                                              │
-│ ('Found 18 hits for nausea in Condition.code', [{'system':                   │
-│ 'http://snomed.info/sct', 'code': '422587007', 'display': 'Nausea'},         │
-│ {'system': 'http://snomed.info/sct', 'code': '51885006', 'display': 'Morning │
-│ sickness'}, {'system': 'http://snomed.info/sct', 'code': '762279002',        │
-│ 'display': 'Functional nausea'}, {'system': 'http://snomed.info/sct',        │
-│ 'code': '16932000', 'display': 'Nausea and vomiting'}, {'system':            │
-│ 'http://snomed.info/sct', 'code': '64581007', 'display': 'Postoperative      │
-│ nausea'}, {'system': 'http://snomed.info/sct', 'code': '146291000119108',    │
-│ 'display': 'Vomiting without nausea'}, {'system': 'http://snomed.info/sct',  │
-│ 'code': '415709002', 'display': 'Tendency to nausea and vomiting'},          │
-│ {'system': 'http://snomed.info/sct', 'code': '33841007', 'display':          │
-│ 'Decreased nausea and vomiting'}, {'system': 'http://snomed.info/sct',       │
-│ 'code': '2919008', 'display': 'Nausea, vomiting and diarrhea'}, {'system':   │
-│ 'http://snomed.info/sct', 'code': '73335002', 'display': 'Increased nausea   │
-│ and vomiting'}])                                                             │
-│ Last output from code snippet:                                               │
-│ None                                                                         │
-╰──────────────────────────────────────────────────────────────────────────────╯
+2025-07-02 15:50:35,848 - root - INFO - 
+╭─────────────────────── tool-response ───────────────────────╮
+│ Call id: call_4                                             │
+│ Observation:                                                │
+│ Execution logs:                                             │
+│ ('No hits found for general malaise in Condition.code', []) │
+│ Last output from code snippet:                              │
+│ None                                                        │
+╰─────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:52,150 - LiteLLM - INFO - 
+2025-07-02 15:50:35,851 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:08:55,452 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:08:55,456 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:08:55,457 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:55,458 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:55,472 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:55,485 - root - INFO - 
+2025-07-02 15:50:38,404 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:50:38,406 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:50:38,406 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:38,406 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:38,413 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  search_results =                                                              
-  search_for_code_or_coding(fhir_attribute_path="Condition.code",               
-  search_term="migraine")                                                       
-  print(search_results)                                                         
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
+  search_term="Malaise"))                                                       
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:08:55,979 - root - INFO - 
+2025-07-02 15:50:38,414 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:47,156 - root - INFO - 
 Execution logs:
-('Found 42 hits for migraine in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '37796009', 'display': 'Migraine'}, {'system':
-'http://snomed.info/sct', 'code': '95655001', 'display': 'Ophthalmic migraine'},
-{'system': 'http://snomed.info/sct', 'code': '56097005', 'display': 'Migraine 
-without aura'}, {'system': 'http://snomed.info/sct', 'code': '83351003', 
-'display': 'Basilar migraine'}, {'system': 'http://snomed.info/sct', 'code': 
-'79267007', 'display': 'Retinal migraine'}, {'system': 'http://snomed.info/sct',
-'code': '193039006', 'display': 'Complicated migraine'}, {'system': 
-'http://snomed.info/sct', 'code': '427419006', 'display': 'Transformed 
-migraine'}, {'system': 'http://snomed.info/sct', 'code': '193030005', 'display':
-'Migraine variants'}, {'system': 'http://snomed.info/sct', 'code': 
-'145611000119107', 'display': 'Allergic migraine'}, {'system': 
-'http://snomed.info/sct', 'code': '471651000124106', 'display': 'Episodic 
-migraine'}])
+('Found 3 hits for Malaise in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '367391008', 'display': 'Malaise'}, {'system':
+'http://snomed.info/sct', 'code': '271795006', 'display': 'Malaise and 
+fatigue'}, {'system': 'http://snomed.info/sct', 'code': '420801006', 'display': 
+'Malaise with AIDS (acquired immunodeficiency syndrome)'}])
 
 Out: None
 
-2025-06-30 13:08:55,981 - root - INFO - 
+2025-07-02 15:50:47,158 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 6 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:08:55,983 - root - INFO - 
+2025-07-02 15:50:47,161 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought                                                                      │
-│ I have found a code for "nausea", `422587007` is a good choice.              │
-│                                                                              │
-│ Now, I will search for the diagnosis "migraine-like cephalgia". I'll search  │
-│ for "migraine".Thought                                                       │
-│ Okay, nausea is coded as `422587007`. Next, I'm searching for "migraine" to  │
-│ code the diagnosis "migraine-like cephalgia".                                │
-│ Code:                                                                        │
+│ Thought:                                                                     │
+│ "General malaise" did not return any results. I will try "Malaise".Code:     │
 │ ```python                                                                    │
-│ search_results =                                                             │
-│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="migraine")                                                      │
-│ print(search_results)                                                        │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
+│ search_term="Malaise"))                                                      │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:55,985 - root - INFO - 
+2025-07-02 15:50:47,163 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_5', 'type': 'function', 'function': {'name':                   │
-│ 'python_interpreter', 'arguments': 'search_results =                         │
-│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="migraine")\nprint(search_results)'}}]                           │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
+│ search_term="Malaise"))'}}]                                                  │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:55,988 - root - INFO - 
+2025-07-02 15:50:47,166 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_5                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 42 hits for migraine in Condition.code', [{'system':                 │
-│ 'http://snomed.info/sct', 'code': '37796009', 'display': 'Migraine'},        │
-│ {'system': 'http://snomed.info/sct', 'code': '95655001', 'display':          │
-│ 'Ophthalmic migraine'}, {'system': 'http://snomed.info/sct', 'code':         │
-│ '56097005', 'display': 'Migraine without aura'}, {'system':                  │
-│ 'http://snomed.info/sct', 'code': '83351003', 'display': 'Basilar            │
-│ migraine'}, {'system': 'http://snomed.info/sct', 'code': '79267007',         │
-│ 'display': 'Retinal migraine'}, {'system': 'http://snomed.info/sct', 'code': │
-│ '193039006', 'display': 'Complicated migraine'}, {'system':                  │
-│ 'http://snomed.info/sct', 'code': '427419006', 'display': 'Transformed       │
-│ migraine'}, {'system': 'http://snomed.info/sct', 'code': '193030005',        │
-│ 'display': 'Migraine variants'}, {'system': 'http://snomed.info/sct',        │
-│ 'code': '145611000119107', 'display': 'Allergic migraine'}, {'system':       │
-│ 'http://snomed.info/sct', 'code': '471651000124106', 'display': 'Episodic    │
-│ migraine'}])                                                                 │
+│ ('Found 3 hits for Malaise in Condition.code', [{'system':                   │
+│ 'http://snomed.info/sct', 'code': '367391008', 'display': 'Malaise'},        │
+│ {'system': 'http://snomed.info/sct', 'code': '271795006', 'display':         │
+│ 'Malaise and fatigue'}, {'system': 'http://snomed.info/sct', 'code':         │
+│ '420801006', 'display': 'Malaise with AIDS (acquired immunodeficiency        │
+│ syndrome)'}])                                                                │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:55,989 - LiteLLM - INFO - 
+2025-07-02 15:50:47,168 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:08:59,349 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:08:59,354 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:08:59,355 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:59,356 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:59,378 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:08:59,388 - root - INFO - 
+2025-07-02 15:50:49,735 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:50:49,739 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:50:49,739 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:49,740 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:49,750 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:50:49,754 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  search_results =                                                              
-  search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatus",     
-  search_term="active")                                                         
-  print(search_results)                                                         
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
+  search_term="viral pharyngitis"))                                             
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:08:59,656 - root - INFO - 
+2025-07-02 15:50:58,361 - root - INFO - 
 Execution logs:
-('Found 6 hits for active in Condition.clinicalStatus', [{'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'active', 
-'display': 'Active'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'inactive', 
-'display': 'Inactive'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 
-'recurrence', 'display': 'Recurrence'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'relapse', 
-'display': 'Relapse'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'remission',
-'display': 'Remission'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'resolved', 
-'display': 'Resolved'}])
+('Found 2 hits for viral pharyngitis in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '1532007', 'display': 'Viral pharyngitis'}, 
+{'system': 'http://snomed.info/sct', 'code': '195662009', 'display': 'Acute 
+viral pharyngitis'}])
 
 Out: None
 
-2025-06-30 13:08:59,656 - root - INFO - 
+2025-07-02 15:50:58,364 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 7 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:08:59,658 - root - INFO - 
+2025-07-02 15:50:58,367 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought                                                                      │
-│ I found a code for "migraine", `37796009`. This seems appropriate for        │
-│ "migräneartige Zephalalgie". I will use this for the main diagnosis.         │
-│                                                                              │
-│ Now I need to find the codes for `clinicalStatus` and `verificationStatus`.  │
-│ I'll start with `clinicalStatus`. The condition is ongoing, so I'll search   │
-│ for "active".Thought                                                         │
-│ Okay, "migraine" is `37796009`. I'll now find codes for `clinicalStatus`,    │
-│ searching for "active" since the condition is ongoing, and then I'll find    │
-│ the `verificationStatus` code.                                               │
-│ Code:                                                                        │
+│ Thought:                                                                     │
+│ I have found a code for "Malaise". Now I will search for the diagnosis       │
+│ "virale Pharyngitis" (viral pharyngitis).Code:                               │
 │ ```python                                                                    │
-│ search_results =                                                             │
-│ search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatus",    │
-│ search_term="active")                                                        │
-│ print(search_results)                                                        │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
+│ search_term="viral pharyngitis"))                                            │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:59,659 - root - INFO - 
+2025-07-02 15:50:58,370 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_6', 'type': 'function', 'function': {'name':                   │
-│ 'python_interpreter', 'arguments': 'search_results =                         │
-│ search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatus",    │
-│ search_term="active")\nprint(search_results)'}}]                             │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
+│ search_term="viral pharyngitis"))'}}]                                        │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:59,661 - root - INFO - 
+2025-07-02 15:50:58,372 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_6                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 6 hits for active in Condition.clinicalStatus', [{'system':          │
-│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
-│ 'active', 'display': 'Active'}, {'system':                                   │
-│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
-│ 'inactive', 'display': 'Inactive'}, {'system':                               │
-│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
-│ 'recurrence', 'display': 'Recurrence'}, {'system':                           │
-│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
-│ 'relapse', 'display': 'Relapse'}, {'system':                                 │
-│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
-│ 'remission', 'display': 'Remission'}, {'system':                             │
-│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
-│ 'resolved', 'display': 'Resolved'}])                                         │
+│ ('Found 2 hits for viral pharyngitis in Condition.code', [{'system':         │
+│ 'http://snomed.info/sct', 'code': '1532007', 'display': 'Viral               │
+│ pharyngitis'}, {'system': 'http://snomed.info/sct', 'code': '195662009',     │
+│ 'display': 'Acute viral pharyngitis'}])                                      │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:08:59,662 - LiteLLM - INFO - 
+2025-07-02 15:50:58,375 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:09:03,958 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:09:03,965 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:09:03,966 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:03,967 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:03,983 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:03,996 - root - INFO - 
+2025-07-02 15:51:03,434 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:51:03,438 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:51:03,439 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:03,439 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:03,454 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  search_results =                                                              
-  search_for_code_or_coding(fhir_attribute_path="Condition.verificationStatus"  
-  , search_term="unconfirmed")                                                  
-  print(search_results)                                                         
+  print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med  
+  ication[x]", search_term="Paracetamol"))                                      
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:09:04,248 - root - INFO - 
+2025-07-02 15:51:03,455 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:12,328 - root - INFO - 
 Execution logs:
-('Found 6 hits for unconfirmed in Condition.verificationStatus', [{'system': 
-'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
-'confirmed', 'display': 'Confirmed'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
-'differential', 'display': 'Differential'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
-'entered-in-error', 'display': 'Entered in Error'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
-'provisional', 'display': 'Provisional'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 'refuted',
-'display': 'Refuted'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
-'unconfirmed', 'display': 'Unconfirmed'}])
+('Found 382 hits for Paracetamol in MedicationStatement.medication[x]', 
+[{'system': 'http://snomed.info/sct', 'code': '90332006', 'display': 
+'Paracetamol-containing product'}, {'system': 'http://snomed.info/sct', 'code': 
+'387517004', 'display': 'Paracetamol'}, {'system': 'http://snomed.info/sct', 
+'code': '424102008', 'display': 'Aspirin- and paracetamol-containing product'}, 
+{'system': 'http://snomed.info/sct', 'code': '350309002', 'display': 'Caffeine- 
+and paracetamol-containing product'}, {'system': 'http://snomed.info/sct', 
+'code': '412556009', 'display': 'Codeine- and paracetamol-containing product'}, 
+{'system': 'http://snomed.info/sct', 'code': '437876006', 'display': 
+'Acetaminophen-containing product in oral dose form'}, {'system': 
+'http://snomed.info/sct', 'code': '413396001', 'display': 'Acetaminophen- and 
+tramadol-containing product'}, {'system': 'http://snomed.info/sct', 'code': 
+'398918002', 'display': 'Methionine- and paracetamol-containing product'}, 
+{'system': 'http://snomed.info/sct', 'code': '437858004', 'display': 
+'Paracetamol-containing product in rectal dose form'}, {'system': 
+'http://snomed.info/sct', 'code': '777067000', 'display': 'Acetaminophen only 
+product'}])
 
 Out: None
 
-2025-06-30 13:09:04,250 - root - INFO - 
+2025-07-02 15:51:12,330 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 8 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:09:04,253 - root - INFO - 
+2025-07-02 15:51:12,335 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought                                                                      │
-│ I have the code for `clinicalStatus` as "active". Now for                    │
-│ `verificationStatus`. The diagnosis is a suspected one                       │
-│ ("Verdachtsdiagnose"), so I will search for "unconfirmed" or "provisional".  │
-│ I will try "unconfirmed".Thought                                             │
-│ Okay, `clinicalStatus` is "active". The diagnosis is suspected, so I'll set  │
-│ `verificationStatus` to "unconfirmed".                                       │
-│ Code:                                                                        │
+│ Thought:                                                                     │
+│ I have found the codes for the conditions. Now I will extract the            │
+│ medications. The text mentions "Paracetamol 500mg" and "Ibuprofen 400mg". I  │
+│ will search for the codes for these medications. I'll start with             │
+│ "Paracetamol".Code:                                                          │
 │ ```python                                                                    │
-│ search_results =                                                             │
-│ search_for_code_or_coding(fhir_attribute_path="Condition.verificationStatus" │
-│ , search_term="unconfirmed")                                                 │
-│ print(search_results)                                                        │
+│ print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med │
+│ ication", search_term="Paracetamol"))                                        │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:09:04,255 - root - INFO - 
+2025-07-02 15:51:12,337 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_7', 'type': 'function', 'function': {'name':                   │
-│ 'python_interpreter', 'arguments': 'search_results =                         │
-│ search_for_code_or_coding(fhir_attribute_path="Condition.verificationStatus" │
-│ , search_term="unconfirmed")\nprint(search_results)'}}]                      │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.me │
+│ dication", search_term="Paracetamol"))'}}]                                   │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:09:04,258 - root - INFO - 
+2025-07-02 15:51:12,343 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_7                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 6 hits for unconfirmed in Condition.verificationStatus', [{'system': │
-│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
-│ 'confirmed', 'display': 'Confirmed'}, {'system':                             │
-│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
-│ 'differential', 'display': 'Differential'}, {'system':                       │
-│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
-│ 'entered-in-error', 'display': 'Entered in Error'}, {'system':               │
-│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
-│ 'provisional', 'display': 'Provisional'}, {'system':                         │
-│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
-│ 'refuted', 'display': 'Refuted'}, {'system':                                 │
-│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
-│ 'unconfirmed', 'display': 'Unconfirmed'}])                                   │
+│ ('Found 382 hits for Paracetamol in MedicationStatement.medication',         │
+│ [{'system': 'http://snomed.info/sct', 'code': '90332006', 'display':         │
+│ 'Paracetamol-containing product'}, {'system': 'http://snomed.info/sct',      │
+│ 'code': '387517004', 'display': 'Paracetamol'}, {'system':                   │
+│ 'http://snomed.info/sct', 'code': '424102008', 'display': 'Aspirin- and      │
+│ paracetamol-containing product'}, {'system': 'http://snomed.info/sct',       │
+│ 'code': '350309002', 'display': 'Caffeine- and paracetamol-containing        │
+│ product'}, {'system': 'http://snomed.info/sct', 'code': '412556009',         │
+│ 'display': 'Codeine- and paracetamol-containing product'}, {'system':        │
+│ 'http://snomed.info/sct', 'code': '437876006', 'display':                    │
+│ 'Acetaminophen-containing product in oral dose form'}, {'system':            │
+│ 'http://snomed.info/sct', 'code': '413396001', 'display': 'Acetaminophen-    │
+│ and tramadol-containing product'}, {'system': 'http://snomed.info/sct',      │
+│ 'code': '398918002', 'display': 'Methionine- and paracetamol-containing      │
+│ product'}, {'system': 'http://snomed.info/sct', 'code': '437858004',         │
+│ 'display': 'Paracetamol-containing product in rectal dose form'}, {'system': │
+│ 'http://snomed.info/sct', 'code': '777067000', 'display': 'Acetaminophen     │
+│ only product'}])                                                             │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:09:04,261 - LiteLLM - INFO - 
+2025-07-02 15:51:12,345 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:09:08,258 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:09:08,264 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:09:08,265 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:08,266 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:08,282 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:08,295 - root - INFO - 
+2025-07-02 15:51:16,033 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:51:16,038 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:51:16,039 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:16,039 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:16,050 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  search_results =                                                              
-  search_for_code_or_coding(fhir_attribute_path="MedicationStatement.medicatio  
-  n[x]", search_term="Ibuprofen")                                               
-  print(search_results)                                                         
+  print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med  
+  ication[x]", search_term="Ibuprofen"))                                        
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:09:08,848 - root - INFO - 
+2025-07-02 15:51:16,051 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:24,743 - root - INFO - 
 Execution logs:
 ('Found 92 hits for Ibuprofen in MedicationStatement.medication[x]', [{'system':
 'http://snomed.info/sct', 'code': '38268001', 'display': 'Ibuprofen-containing 
@@ -1247,39 +1104,30 @@ cutaneous cream'}])
 
 Out: None
 
-2025-06-30 13:09:08,852 - root - INFO - 
+2025-07-02 15:51:24,746 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:09:08,860 - root - INFO - 
+2025-07-02 15:51:24,750 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought                                                                      │
-│ I have found the code for `verificationStatus`. Both "provisional" and       │
-│ "unconfirmed" are good options. I will use "unconfirmed" as it is a direct   │
-│ match to my search term.                                                     │
-│                                                                              │
-│ Now I will move on to the `MedicationStatement`. I need to search for        │
-│ "Ibuprofen".Thought                                                          │
-│ "Unconfirmed" works for `verificationStatus`. Now, find "Ibuprofen" for the  │
-│ `MedicationStatement`.                                                       │
-│ Code:                                                                        │
+│ Thought:                                                                     │
+│ I have found the code for "Paracetamol". Now I will search for               │
+│ "Ibuprofen".Code:                                                            │
 │ ```python                                                                    │
-│ search_results =                                                             │
-│ search_for_code_or_coding(fhir_attribute_path="MedicationStatement.medicatio │
-│ n", search_term="Ibuprofen")                                                 │
-│ print(search_results)                                                        │
+│ print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med │
+│ ication", search_term="Ibuprofen"))                                          │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:09:08,864 - root - INFO - 
+2025-07-02 15:51:24,753 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_8', 'type': 'function', 'function': {'name':                   │
-│ 'python_interpreter', 'arguments': 'search_results =                         │
-│ search_for_code_or_coding(fhir_attribute_path="MedicationStatement.medicatio │
-│ n", search_term="Ibuprofen")\nprint(search_results)'}}]                      │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.me │
+│ dication", search_term="Ibuprofen"))'}}]                                     │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:09:08,871 - root - INFO - 
+2025-07-02 15:51:24,760 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_8                                                              │
 │ Observation:                                                                 │
@@ -1304,155 +1152,52 @@ Out: None
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:09:08,875 - LiteLLM - INFO - 
+2025-07-02 15:51:24,764 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:09:13,072 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:09:13,079 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:09:13,080 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:13,081 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:13,104 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:13,109 - root - INFO - 
+2025-07-02 15:51:29,138 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:51:29,143 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:51:29,144 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:29,145 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:29,160 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:29,167 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  search_results =                                                              
-  search_for_code_or_coding(fhir_attribute_path="MedicationStatement.status",   
-  search_term="active")                                                         
-  print(search_results)                                                         
+  print(search_for_code_or_coding(fhir_attribute_path="Dosage.asNeeded[x]",     
+  search_term="as needed"))                                                     
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:09:13,383 - root - INFO - 
-Execution logs:
-('Found 8 hits for active in MedicationStatement.status', [{'system': 
-'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 'active', 
-'display': 'Active'}, {'system': 
-'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 
-'completed', 'display': 'Completed'}, {'system': 
-'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 
-'entered-in-error', 'display': 'Entered in Error'}, {'system': 
-'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 
-'intended', 'display': 'Intended'}, {'system': 
-'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 
-'not-taken', 'display': 'Not Taken'}, {'system': 
-'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 'on-hold',
-'display': 'On Hold'}, {'system': 
-'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 'stopped',
-'display': 'Stopped'}, {'system': 
-'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code': 'unknown',
-'display': 'Unknown'}])
-
-Out: None
-
-2025-06-30 13:09:13,385 - root - INFO - 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-2025-06-30 13:09:13,388 - root - INFO - 
-╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought                                                                      │
-│ I have found several codes for "Ibuprofen". I will use `387207008` as it     │
-│ represents the substance itself.                                             │
-│                                                                              │
-│ Next, I need to find a code for the `MedicationStatement.status`. The        │
-│ medication is prescribed, so I'll search for "active".Thought                │
-│ Okay, I'll use `387207008` for Ibuprofen. Now, I need to find a code for the │
-│ medication status. Since it's prescribed, I'll search for "active".          │
-│ Code:                                                                        │
-│ ```python                                                                    │
-│ search_results =                                                             │
-│ search_for_code_or_coding(fhir_attribute_path="MedicationStatement.status",  │
-│ search_term="active")                                                        │
-│ print(search_results)                                                        │
-│ ```<end_code>                                                                │
-╰──────────────────────────────────────────────────────────────────────────────╯
-
-2025-06-30 13:09:13,389 - root - INFO - 
-╭───────────────────────────────── tool-call ──────────────────────────────────╮
-│ Calling tools:                                                               │
-│ [{'id': 'call_9', 'type': 'function', 'function': {'name':                   │
-│ 'python_interpreter', 'arguments': 'search_results =                         │
-│ search_for_code_or_coding(fhir_attribute_path="MedicationStatement.status",  │
-│ search_term="active")\nprint(search_results)'}}]                             │
-╰──────────────────────────────────────────────────────────────────────────────╯
-
-2025-06-30 13:09:13,393 - root - INFO - 
-╭─────────────────────────────── tool-response ────────────────────────────────╮
-│ Call id: call_9                                                              │
-│ Observation:                                                                 │
-│ Execution logs:                                                              │
-│ ('Found 8 hits for active in MedicationStatement.status', [{'system':        │
-│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
-│ 'active', 'display': 'Active'}, {'system':                                   │
-│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
-│ 'completed', 'display': 'Completed'}, {'system':                             │
-│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
-│ 'entered-in-error', 'display': 'Entered in Error'}, {'system':               │
-│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
-│ 'intended', 'display': 'Intended'}, {'system':                               │
-│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
-│ 'not-taken', 'display': 'Not Taken'}, {'system':                             │
-│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
-│ 'on-hold', 'display': 'On Hold'}, {'system':                                 │
-│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
-│ 'stopped', 'display': 'Stopped'}, {'system':                                 │
-│ 'http://hl7.org/fhir/CodeSystem/medication-statement-status', 'code':        │
-│ 'unknown', 'display': 'Unknown'}])                                           │
-│ Last output from code snippet:                                               │
-│ None                                                                         │
-╰──────────────────────────────────────────────────────────────────────────────╯
-
-2025-06-30 13:09:13,395 - LiteLLM - INFO - 
-LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:09:16,860 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:09:16,867 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:09:16,868 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:16,869 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:16,895 - root - INFO - 
- ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  search_results =                                                              
-  search_for_code_or_coding(fhir_attribute_path="Dosage.asNeeded[x]",           
-  search_term="as needed")                                                      
-  print(search_results)                                                         
- ────────────────────────────────────────────────────────────────────────────── 
-
-2025-06-30 13:09:16,896 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:17,305 - root - INFO - 
+2025-07-02 15:51:37,790 - root - INFO - 
 Execution logs:
 ('No hits found for as needed in Dosage.asNeeded[x]', [])
 
 Out: None
 
-2025-06-30 13:09:17,307 - root - INFO - 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 11 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2025-07-02 15:51:37,793 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:09:17,312 - root - INFO - 
+2025-07-02 15:51:37,799 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought                                                                      │
-│ I have the code for `MedicationStatement.status` as "active".                │
-│                                                                              │
-│ The medication is to be taken "bei akuten Kopfschmerzepisoden", which means  │
-│ "as needed". I will search for a code for `Dosage.asNeeded`. I will search   │
-│ for "as needed".Thought                                                      │
-│ Okay, `MedicationStatement.status` is "active". The prescription is "as      │
-│ needed," so I'll search for the `Dosage.asNeeded` code for that.             │
-│ Code:                                                                        │
+│ Thought:                                                                     │
+│ I have found the codes for the medications. The dosage for both medications  │
+│ is "Bei Bedarf" (as needed) and "maximal 3x täglich" (maximum 3 times a      │
+│ day). I will search for the code for "as needed".Code:                       │
 │ ```python                                                                    │
-│ search_results =                                                             │
-│ search_for_code_or_coding(fhir_attribute_path="Dosage.asNeeded",             │
-│ search_term="as needed")                                                     │
-│ print(search_results)                                                        │
+│ print(search_for_code_or_coding(fhir_attribute_path="Dosage.asNeeded",       │
+│ search_term="as needed"))                                                    │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:09:17,314 - root - INFO - 
+2025-07-02 15:51:37,802 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
-│ [{'id': 'call_10', 'type': 'function', 'function': {'name':                  │
-│ 'python_interpreter', 'arguments': 'search_results =                         │
-│ search_for_code_or_coding(fhir_attribute_path="Dosage.asNeeded",             │
-│ search_term="as needed")\nprint(search_results)'}}]                          │
+│ [{'id': 'call_9', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Dosage.asNeeded",      │
+│ search_term="as needed"))'}}]                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:09:17,316 - root - INFO - 
+2025-07-02 15:51:37,806 - root - INFO - 
 ╭──────────────────── tool-response ─────────────────────╮
-│ Call id: call_10                                       │
+│ Call id: call_9                                        │
 │ Observation:                                           │
 │ Execution logs:                                        │
 │ ('No hits found for as needed in Dosage.asNeeded', []) │
@@ -1460,203 +1205,610 @@ Out: None
 │ None                                                   │
 ╰────────────────────────────────────────────────────────╯
 
-2025-06-30 13:09:17,320 - LiteLLM - INFO - 
+2025-07-02 15:51:37,811 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:09:44,743 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:09:44,750 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:09:44,751 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:44,751 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:44,767 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:09:44,932 - root - INFO - 
+2025-07-02 15:51:41,633 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:51:41,637 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:51:41,637 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:41,638 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:41,661 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.verificationS  
+  tatus", search_term="provisional"))                                           
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-07-02 15:51:41,661 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:50,058 - root - INFO - 
+Execution logs:
+('Found 6 hits for provisional in Condition.verificationStatus', [{'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'confirmed', 'display': 'Confirmed'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'differential', 'display': 'Differential'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'entered-in-error', 'display': 'Entered in Error'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'provisional', 'display': 'Provisional'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 'refuted',
+'display': 'Refuted'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'unconfirmed', 'display': 'Unconfirmed'}])
+
+Out: None
+
+2025-07-02 15:51:50,060 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 11 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-07-02 15:51:50,067 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ The search for "as needed" returned no results. This is likely because       │
+│ `asNeeded` can be a boolean or a CodeableConcept. In this case, I will use   │
+│ `asNeededBoolean=True`.                                                      │
+│                                                                              │
+│ The text also mentions "virale Pharyngitis" is a "vorläufige                 │
+│ Verdachtsdiagnose" (provisional suspected diagnosis). I need to find a code  │
+│ for the `Condition.verificationStatus` to represent this. I will search for  │
+│ "provisional".Code:                                                          │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.verificationS │
+│ tatus", search_term="provisional"))                                          │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:51:50,069 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_10', 'type': 'function', 'function': {'name':                  │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.verification │
+│ Status", search_term="provisional"))'}}]                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:51:50,075 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_10                                                             │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 6 hits for provisional in Condition.verificationStatus', [{'system': │
+│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
+│ 'confirmed', 'display': 'Confirmed'}, {'system':                             │
+│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
+│ 'differential', 'display': 'Differential'}, {'system':                       │
+│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
+│ 'entered-in-error', 'display': 'Entered in Error'}, {'system':               │
+│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
+│ 'provisional', 'display': 'Provisional'}, {'system':                         │
+│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
+│ 'refuted', 'display': 'Refuted'}, {'system':                                 │
+│ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
+│ 'unconfirmed', 'display': 'Unconfirmed'}])                                   │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:51:50,080 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-07-02 15:51:54,124 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:51:54,133 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:51:54,135 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:54,143 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:51:54,154 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.category",     
+  search_term="symptom"))                                                       
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-07-02 15:52:02,561 - root - INFO - 
+Execution logs:
+('Found 2 hits for symptom in Condition.category', [{'system': 
+'http://terminology.hl7.org/CodeSystem/condition-category', 'code': 
+'encounter-diagnosis', 'display': 'Encounter Diagnosis'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-category', 'code': 
+'problem-list-item', 'display': 'Problem List Item'}])
+
+Out: None
+
+2025-07-02 15:52:02,563 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 12 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-07-02 15:52:02,567 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ I have found the code for "provisional" for `Condition.verificationStatus`.  │
+│                                                                              │
+│ The conditions mentioned are "Fieber", "Halsschmerzen", and "allgemeines     │
+│ Unwohlsein". The text describes these as "Symptome" (symptoms). I should     │
+│ categorize them as such. I will search for a `Condition.category` code for   │
+│ "symptom".Code:                                                              │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.category",    │
+│ search_term="symptom"))                                                      │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:52:02,569 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_11', 'type': 'function', 'function': {'name':                  │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.category",   │
+│ search_term="symptom"))'}}]                                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:52:02,572 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_11                                                             │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 2 hits for symptom in Condition.category', [{'system':               │
+│ 'http://terminology.hl7.org/CodeSystem/condition-category', 'code':          │
+│ 'encounter-diagnosis', 'display': 'Encounter Diagnosis'}, {'system':         │
+│ 'http://terminology.hl7.org/CodeSystem/condition-category', 'code':          │
+│ 'problem-list-item', 'display': 'Problem List Item'}])                       │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:52:02,575 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-07-02 15:52:06,120 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:52:06,124 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:52:06,124 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:52:06,125 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:52:06,139 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:52:06,152 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.category",     
+  search_term="complaint"))                                                     
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-07-02 15:52:14,563 - root - INFO - 
+Execution logs:
+('Found 2 hits for complaint in Condition.category', [{'system': 
+'http://terminology.hl7.org/CodeSystem/condition-category', 'code': 
+'encounter-diagnosis', 'display': 'Encounter Diagnosis'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-category', 'code': 
+'problem-list-item', 'display': 'Problem List Item'}])
+
+Out: None
+
+2025-07-02 15:52:14,568 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 13 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-07-02 15:52:14,576 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ The search for "symptom" in `Condition.category` did not return a direct     │
+│ match. The available options are "Encounter Diagnosis" and "Problem List     │
+│ Item". Since the symptoms are presented during the encounter, I will use     │
+│ "encounter-diagnosis". However, the primary diagnosis is "virale             │
+│ Pharyngitis", which is an "encounter-diagnosis". The other conditions are    │
+│ symptoms of this diagnosis. Let's see if I can find a better category. The   │
+│ text says "klagte über ... Symptome". Let's try to search for                │
+│ "complaint".Code:                                                            │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.category",    │
+│ search_term="complaint"))                                                    │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:52:14,578 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_12', 'type': 'function', 'function': {'name':                  │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.category",   │
+│ search_term="complaint"))'}}]                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:52:14,581 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_12                                                             │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 2 hits for complaint in Condition.category', [{'system':             │
+│ 'http://terminology.hl7.org/CodeSystem/condition-category', 'code':          │
+│ 'encounter-diagnosis', 'display': 'Encounter Diagnosis'}, {'system':         │
+│ 'http://terminology.hl7.org/CodeSystem/condition-category', 'code':          │
+│ 'problem-list-item', 'display': 'Problem List Item'}])                       │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:52:14,586 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-07-02 15:52:17,677 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:52:17,682 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:52:17,683 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:52:17,683 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:52:17,699 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:52:17,711 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatu  
+  s", search_term="active"))                                                    
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-07-02 15:52:26,144 - root - INFO - 
+Execution logs:
+('Found 6 hits for active in Condition.clinicalStatus', [{'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'active', 
+'display': 'Active'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'inactive', 
+'display': 'Inactive'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 
+'recurrence', 'display': 'Recurrence'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'relapse', 
+'display': 'Relapse'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'remission',
+'display': 'Remission'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'resolved', 
+'display': 'Resolved'}])
+
+Out: None
+
+2025-07-02 15:52:26,148 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 14 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-07-02 15:52:26,154 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought:                                                                     │
+│ The search for "complaint" also returned "Encounter Diagnosis" and "Problem  │
+│ List Item". I will use "encounter-diagnosis" for all conditions, as they     │
+│ were all identified during the encounter. The distinction between symptom    │
+│ and diagnosis can be made by the nature of the code itself.                  │
+│                                                                              │
+│ The `Condition.clinicalStatus` for all conditions is active, as the patient  │
+│ is currently experiencing them. I'll search for the code for "active".Code:  │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatu │
+│ s", search_term="active"))                                                   │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:52:26,157 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_13', 'type': 'function', 'function': {'name':                  │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStat │
+│ us", search_term="active"))'}}]                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:52:26,162 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_13                                                             │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 6 hits for active in Condition.clinicalStatus', [{'system':          │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'active', 'display': 'Active'}, {'system':                                   │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'inactive', 'display': 'Inactive'}, {'system':                               │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'recurrence', 'display': 'Recurrence'}, {'system':                           │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'relapse', 'display': 'Relapse'}, {'system':                                 │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'remission', 'display': 'Remission'}, {'system':                             │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'resolved', 'display': 'Resolved'}])                                         │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:52:26,167 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-07-02 15:52:42,604 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:52:42,611 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:52:42,612 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:52:42,612 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:52:42,634 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:52:42,751 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   from fhir.resources.R4B.bundle import Bundle, BundleEntry                     
   from fhir.resources.R4B.patient import Patient                                
-  from fhir.resources.R4B.condition import Condition, ConditionEvidence         
+  from fhir.resources.R4B.condition import Condition                            
+  from fhir.resources.R4B.medicationstatement import MedicationStatement        
   from fhir.resources.R4B.humanname import HumanName                            
   from fhir.resources.R4B.codeableconcept import CodeableConcept                
   from fhir.resources.R4B.coding import Coding                                  
   from fhir.resources.R4B.reference import Reference                            
-  from fhir.resources.R4B.medicationstatement import MedicationStatement        
-  from fhir.resources.R4B.dosage import Dosage                                  
+  from fhir.resources.R4B.dosage import Dosage, DosageDoseAndRate               
+  from fhir.resources.R4B.timing import Timing, TimingRepeat                    
   from fhir.resources.R4B.quantity import Quantity                              
                                                                                 
   # Patient                                                                     
-  patient_name = HumanName(use="official", family="Busch", given=["Anke"])      
+  patient_name = HumanName(use="official", family="Bürger",                     
+  given=["Christine"])                                                          
   patient = Patient(                                                            
-      id="patient-anke-busch",                                                  
+      id="patient-1",                                                           
       name=[patient_name],                                                      
       gender="female",                                                          
-      birthDate="1986-04-06"                                                    
+      birthDate="1985-03-12"                                                    
   )                                                                             
                                                                                 
-  # Condition: Migraine (main diagnosis)                                        
-  migraine_code = CodeableConcept(                                              
-      coding=[                                                                  
-          Coding(system="http://snomed.info/sct", code="37796009",              
-  display="Migraine")                                                           
-      ],                                                                        
-      text="migräneartige Zephalalgie"                                          
-  )                                                                             
-  clinical_status_active = CodeableConcept(                                     
-      coding=[                                                                  
-          Coding(system="http://terminology.hl7.org/CodeSystem/condition-clini  
-  cal", code="active", display="Active")                                        
-      ]                                                                         
-  )                                                                             
-  verification_status_unconfirmed = CodeableConcept(                            
-      coding=[                                                                  
-          Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-s  
-  tatus", code="unconfirmed", display="Unconfirmed")                            
-      ]                                                                         
-  )                                                                             
-  condition_migraine = Condition(                                               
-      id="condition-migraine",                                                  
-      subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=migraine_code,                                                       
-      clinicalStatus=clinical_status_active,                                    
-      verificationStatus=verification_status_unconfirmed                        
+  # Condition clinicalStatus                                                    
+  clinical_status_coding =                                                      
+  Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical",     
+  code="active", display="Active")                                              
+  clinical_status_codeableconcept =                                             
+  CodeableConcept(coding=[clinical_status_coding])                              
+                                                                                
+  # Condition category                                                          
+  condition_category_coding =                                                   
+  Coding(system="http://terminology.hl7.org/CodeSystem/condition-category",     
+  code="encounter-diagnosis", display="Encounter Diagnosis")                    
+  condition_category_codeableconcept =                                          
+  CodeableConcept(coding=[condition_category_coding])                           
+                                                                                
+  # Condition: Fever                                                            
+  fever_coding = Coding(system="http://snomed.info/sct", code="386661006",      
+  display="Fever")                                                              
+  fever_codeableconcept = CodeableConcept(coding=[fever_coding])                
+  condition_fever = Condition(                                                  
+      id="condition-fever",                                                     
+      clinicalStatus=clinical_status_codeableconcept,                           
+      category=[condition_category_codeableconcept],                            
+      code=fever_codeableconcept,                                               
+      subject=Reference(reference="Patient/patient-1")                          
   )                                                                             
                                                                                 
-  # Condition: Headache (symptom and reason for medication)                     
-  headache_code = CodeableConcept(                                              
-      coding=[                                                                  
-          Coding(system="http://snomed.info/sct", code="25064002",              
-  display="Headache")                                                           
-      ],                                                                        
-      text="Kopfschmerzen"                                                      
-  )                                                                             
-  condition_headache = Condition(                                               
-      id="condition-headache",                                                  
-      subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=headache_code,                                                       
-      clinicalStatus=clinical_status_active,                                    
-      category=[CodeableConcept(coding=[Coding(system="http://terminology.hl7.  
-  org/CodeSystem/condition-category", code="symptom", display="Symptom")])]     
+  # Condition: Sore throat                                                      
+  sore_throat_coding = Coding(system="http://snomed.info/sct",                  
+  code="162397003", display="Pain in throat")                                   
+  sore_throat_codeableconcept = CodeableConcept(coding=[sore_throat_coding])    
+  condition_sore_throat = Condition(                                            
+      id="condition-sore-throat",                                               
+      clinicalStatus=clinical_status_codeableconcept,                           
+      category=[condition_category_codeableconcept],                            
+      code=sore_throat_codeableconcept,                                         
+      subject=Reference(reference="Patient/patient-1")                          
   )                                                                             
                                                                                 
-                                                                                
-  # Condition: Dizziness (symptom)                                              
-  dizziness_code = CodeableConcept(                                             
-      coding=[                                                                  
-          Coding(system="http://snomed.info/sct", code="404640003",             
-  display="Dizziness")                                                          
-      ],                                                                        
-      text="Schwindelgefühl"                                                    
-  )                                                                             
-  condition_dizziness = Condition(                                              
-      id="condition-dizziness",                                                 
-      subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=dizziness_code,                                                      
-      clinicalStatus=clinical_status_active,                                    
-      category=[CodeableConcept(coding=[Coding(system="http://terminology.hl7.  
-  org/CodeSystem/condition-category", code="symptom", display="Symptom")])]     
+  # Condition: Malaise                                                          
+  malaise_coding = Coding(system="http://snomed.info/sct", code="367391008",    
+  display="Malaise")                                                            
+  malaise_codeableconcept = CodeableConcept(coding=[malaise_coding])            
+  condition_malaise = Condition(                                                
+      id="condition-malaise",                                                   
+      clinicalStatus=clinical_status_codeableconcept,                           
+      category=[condition_category_codeableconcept],                            
+      code=malaise_codeableconcept,                                             
+      subject=Reference(reference="Patient/patient-1")                          
   )                                                                             
                                                                                 
-  # Condition: Nausea (symptom)                                                 
-  nausea_code = CodeableConcept(                                                
-      coding=[                                                                  
-          Coding(system="http://snomed.info/sct", code="422587007",             
-  display="Nausea")                                                             
-      ],                                                                        
-      text="leichte Übelkeit"                                                   
-  )                                                                             
-  condition_nausea = Condition(                                                 
-      id="condition-nausea",                                                    
-      subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=nausea_code,                                                         
-      clinicalStatus=clinical_status_active,                                    
-      category=[CodeableConcept(coding=[Coding(system="http://terminology.hl7.  
-  org/CodeSystem/condition-category", code="symptom", display="Symptom")])]     
+  # Condition: Viral Pharyngitis                                                
+  viral_pharyngitis_coding = Coding(system="http://snomed.info/sct",            
+  code="1532007", display="Viral pharyngitis")                                  
+  viral_pharyngitis_codeableconcept =                                           
+  CodeableConcept(coding=[viral_pharyngitis_coding])                            
+  verification_status_coding =                                                  
+  Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-status",   
+  code="provisional", display="Provisional")                                    
+  verification_status_codeableconcept =                                         
+  CodeableConcept(coding=[verification_status_coding])                          
+  condition_viral_pharyngitis = Condition(                                      
+      id="condition-viral-pharyngitis",                                         
+      clinicalStatus=clinical_status_codeableconcept,                           
+      verificationStatus=verification_status_codeableconcept,                   
+      category=[condition_category_codeableconcept],                            
+      code=viral_pharyngitis_codeableconcept,                                   
+      subject=Reference(reference="Patient/patient-1")                          
   )                                                                             
                                                                                 
-  # Link symptoms to the main diagnosis                                         
-  condition_migraine.evidence = [                                               
-      ConditionEvidence(detail=[Reference(reference=f"Condition/{condition_hea  
-  dache.id}")]),                                                                
-      ConditionEvidence(detail=[Reference(reference=f"Condition/{condition_diz  
-  ziness.id}")]),                                                               
-      ConditionEvidence(detail=[Reference(reference=f"Condition/{condition_nau  
-  sea.id}")]),                                                                  
-  ]                                                                             
-                                                                                
-                                                                                
-  # MedicationStatement for Ibuprofen                                           
-  medication_ibuprofen_code = CodeableConcept(                                  
-      coding=[                                                                  
-          Coding(system="http://snomed.info/sct", code="387207008",             
-  display="Ibuprofen")                                                          
-      ],                                                                        
-      text="Ibuprofen 400mg"                                                    
-  )                                                                             
-  dosage = Dosage(                                                              
-      text="Ibuprofen 400mg bei akuten Kopfschmerzepisoden",                    
+  # Medication: Paracetamol                                                     
+  paracetamol_coding = Coding(system="http://snomed.info/sct",                  
+  code="387517004", display="Paracetamol")                                      
+  paracetamol_codeableconcept = CodeableConcept(coding=[paracetamol_coding],    
+  text="Paracetamol 500mg")                                                     
+  paracetamol_dosage = Dosage(                                                  
       asNeededBoolean=True,                                                     
-      doseAndRate=[{                                                            
-          "doseQuantity": Quantity(value=400, unit="mg",                        
-  system="http://unitsofmeasure.org", code="mg")                                
-      }]                                                                        
+      text="Bei Bedarf zur Fiebersenkung, maximal 3x täglich",                  
+      timing=Timing(repeat=TimingRepeat(frequency=3, period=1,                  
+  periodUnit="d"))                                                              
   )                                                                             
-                                                                                
-  medication_statement = MedicationStatement(                                   
-      id="medicationstatement-ibuprofen",                                       
+  med_statement_paracetamol = MedicationStatement(                              
+      id="med-stat-paracetamol",                                                
       status="active",                                                          
-      medicationCodeableConcept=medication_ibuprofen_code,                      
-      subject=Reference(reference=f"Patient/{patient.id}"),                     
-      reasonReference=[Reference(reference=f"Condition/{condition_headache.id}  
-  ")],                                                                          
-      dosage=[dosage]                                                           
+      medicationCodeableConcept=paracetamol_codeableconcept,                    
+      subject=Reference(reference="Patient/patient-1"),                         
+      dosage=[paracetamol_dosage]                                               
   )                                                                             
                                                                                 
+  # Medication: Ibuprofen                                                       
+  ibuprofen_coding = Coding(system="http://snomed.info/sct", code="387207008",  
+  display="Ibuprofen")                                                          
+  ibuprofen_codeableconcept = CodeableConcept(coding=[ibuprofen_coding],        
+  text="Ibuprofen 400mg")                                                       
+  ibuprofen_dosage = Dosage(                                                    
+      asNeededBoolean=True,                                                     
+      text="Bei Bedarf zur Schmerzlinderung, maximal 3x täglich",               
+      timing=Timing(repeat=TimingRepeat(frequency=3, period=1,                  
+  periodUnit="d"))                                                              
+  )                                                                             
+  med_statement_ibuprofen = MedicationStatement(                                
+      id="med-stat-ibuprofen",                                                  
+      status="active",                                                          
+      medicationCodeableConcept=ibuprofen_codeableconcept,                      
+      subject=Reference(reference="Patient/patient-1"),                         
+      dosage=[ibuprofen_dosage]                                                 
+  )                                                                             
                                                                                 
-  # Create Bundle                                                               
+  # Bundle                                                                      
   bundle = Bundle(                                                              
       type="collection",                                                        
       entry=[                                                                   
-          BundleEntry(fullUrl=f"Patient/{patient.id}", resource=patient),       
-          BundleEntry(fullUrl=f"Condition/{condition_migraine.id}",             
-  resource=condition_migraine),                                                 
-          BundleEntry(fullUrl=f"Condition/{condition_headache.id}",             
-  resource=condition_headache),                                                 
-          BundleEntry(fullUrl=f"Condition/{condition_dizziness.id}",            
-  resource=condition_dizziness),                                                
-          BundleEntry(fullUrl=f"Condition/{condition_nausea.id}",               
-  resource=condition_nausea),                                                   
-          BundleEntry(fullUrl=f"MedicationStatement/{medication_statement.id}"  
-  , resource=medication_statement),                                             
+          BundleEntry(resource=patient, fullUrl="Patient/patient-1"),           
+          BundleEntry(resource=condition_fever,                                 
+  fullUrl="Condition/condition-fever"),                                         
+          BundleEntry(resource=condition_sore_throat,                           
+  fullUrl="Condition/condition-sore-throat"),                                   
+          BundleEntry(resource=condition_malaise,                               
+  fullUrl="Condition/condition-malaise"),                                       
+          BundleEntry(resource=condition_viral_pharyngitis,                     
+  fullUrl="Condition/condition-viral-pharyngitis"),                             
+          BundleEntry(resource=med_statement_paracetamol,                       
+  fullUrl="MedicationStatement/med-stat-paracetamol"),                          
+          BundleEntry(resource=med_statement_ibuprofen,                         
+  fullUrl="MedicationStatement/med-stat-ibuprofen"),                            
       ]                                                                         
   )                                                                             
                                                                                 
   final_answer(bundle.json(indent=2))                                           
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:09:45,181 - root - INFO - 
+2025-07-02 15:52:42,808 - root - INFO - 
 Out - Final answer: {
   "resourceType": "Bundle",
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "Patient/patient-anke-busch",
+      "fullUrl": "Patient/patient-1",
       "resource": {
         "resourceType": "Patient",
-        "id": "patient-anke-busch",
+        "id": "patient-1",
         "name": [
           {
             "use": "official",
-            "family": "Busch",
+            "family": "Bürger",
             "given": [
-              "Anke"
+              "Christine"
             ]
           }
         ],
         "gender": "female",
-        "birthDate": "1986-04-06"
+        "birthDate": "1985-03-12"
       }
     },
     {
-      "fullUrl": "Condition/condition-migraine",
+      "fullUrl": "Condition/condition-fever",
       "resource": {
         "resourceType": "Condition",
-        "id": "condition-migraine",
+        "id": "condition-fever",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386661006",
+              "display": "Fever"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/condition-sore-throat",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-sore-throat",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "162397003",
+              "display": "Pain in throat"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/condition-malaise",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-malaise",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "367391008",
+              "display": "Malaise"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/condition-viral-pharyngitis",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-viral-pharyngitis",
         "clinicalStatus": {
           "coding": [
             {
@@ -1672,180 +1824,76 @@ Out - Final answer: {
             {
               "system": 
 "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "unconfirmed",
-              "display": "Unconfirmed"
+              "code": "provisional",
+              "display": "Provisional"
             }
           ]
         },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
         "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "37796009",
-              "display": "Migraine"
+              "code": "1532007",
+              "display": "Viral pharyngitis"
             }
-          ],
-          "text": "migräneartige Zephalalgie"
+          ]
         },
         "subject": {
-          "reference": "Patient/patient-anke-busch"
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-stat-paracetamol",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-stat-paracetamol",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387517004",
+              "display": "Paracetamol"
+            }
+          ],
+          "text": "Paracetamol 500mg"
         },
-        "evidence": [
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosage": [
           {
-            "detail": [
-              {
-                "reference": "Condition/condition-headache"
+            "text": "Bei Bedarf zur Fiebersenkung, maximal 3x täglich",
+            "timing": {
+              "repeat": {
+                "frequency": 3,
+                "period": 1.0,
+                "periodUnit": "d"
               }
-            ]
-          },
-          {
-            "detail": [
-              {
-                "reference": "Condition/condition-dizziness"
-              }
-            ]
-          },
-          {
-            "detail": [
-              {
-                "reference": "Condition/condition-nausea"
-              }
-            ]
+            },
+            "asNeededBoolean": true
           }
         ]
       }
     },
     {
-      "fullUrl": "Condition/condition-headache",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "condition-headache",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
-            }
-          ]
-        },
-        "category": [
-          {
-            "coding": [
-              {
-                "system": 
-"http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "symptom",
-                "display": "Symptom"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "25064002",
-              "display": "Headache"
-            }
-          ],
-          "text": "Kopfschmerzen"
-        },
-        "subject": {
-          "reference": "Patient/patient-anke-busch"
-        }
-      }
-    },
-    {
-      "fullUrl": "Condition/condition-dizziness",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "condition-dizziness",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
-            }
-          ]
-        },
-        "category": [
-          {
-            "coding": [
-              {
-                "system": 
-"http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "symptom",
-                "display": "Symptom"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "404640003",
-              "display": "Dizziness"
-            }
-          ],
-          "text": "Schwindelgefühl"
-        },
-        "subject": {
-          "reference": "Patient/patient-anke-busch"
-        }
-      }
-    },
-    {
-      "fullUrl": "Condition/condition-nausea",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "condition-nausea",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
-            }
-          ]
-        },
-        "category": [
-          {
-            "coding": [
-              {
-                "system": 
-"http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "symptom",
-                "display": "Symptom"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "422587007",
-              "display": "Nausea"
-            }
-          ],
-          "text": "leichte Übelkeit"
-        },
-        "subject": {
-          "reference": "Patient/patient-anke-busch"
-        }
-      }
-    },
-    {
-      "fullUrl": "MedicationStatement/medicationstatement-ibuprofen",
+      "fullUrl": "MedicationStatement/med-stat-ibuprofen",
       "resource": {
         "resourceType": "MedicationStatement",
-        "id": "medicationstatement-ibuprofen",
+        "id": "med-stat-ibuprofen",
         "status": "active",
         "medicationCodeableConcept": {
           "coding": [
@@ -1858,27 +1906,19 @@ Out - Final answer: {
           "text": "Ibuprofen 400mg"
         },
         "subject": {
-          "reference": "Patient/patient-anke-busch"
+          "reference": "Patient/patient-1"
         },
-        "reasonReference": [
-          {
-            "reference": "Condition/condition-headache"
-          }
-        ],
         "dosage": [
           {
-            "text": "Ibuprofen 400mg bei akuten Kopfschmerzepisoden",
-            "asNeededBoolean": true,
-            "doseAndRate": [
-              {
-                "doseQuantity": {
-                  "value": 400.0,
-                  "unit": "mg",
-                  "system": "http://unitsofmeasure.org",
-                  "code": "mg"
-                }
+            "text": "Bei Bedarf zur Schmerzlinderung, maximal 3x täglich",
+            "timing": {
+              "repeat": {
+                "frequency": 3,
+                "period": 1.0,
+                "periodUnit": "d"
               }
-            ]
+            },
+            "asNeededBoolean": true
           }
         ]
       }

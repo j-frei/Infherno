@@ -1,27 +1,29 @@
-2025-06-30 11:17:05,006 - root - INFO - 
-2025-06-30 11:17:05,006 - root - INFO - ================================================================================
-2025-06-30 11:17:05,007 - root - INFO - CONFIGURATION PARAMETERS
-2025-06-30 11:17:05,007 - root - INFO - ================================================================================
-2025-06-30 11:17:05,007 - root - INFO - APPLIED_TESTS = None
-2025-06-30 11:17:05,007 - root - INFO - APPLY_PARTITIONING = False
-2025-06-30 11:17:05,007 - root - INFO - CONTEXT_LENGTH = 131072
-2025-06-30 11:17:05,007 - root - INFO - DATA_DIRECTORY = ../
-2025-06-30 11:17:05,007 - root - INFO - DEVICE_MAP = auto
-2025-06-30 11:17:05,007 - root - INFO - INSTANCE_ID = 5
-2025-06-30 11:17:05,007 - root - INFO - MAX_NEW_TOKENS = 32000
-2025-06-30 11:17:05,007 - root - INFO - MODEL_CLASS = LiteLLMModel
-2025-06-30 11:17:05,007 - root - INFO - MODEL_ID = gemini/gemini-2.5-pro
-2025-06-30 11:17:05,007 - root - INFO - RANDOMIZE_DATA = False
-2025-06-30 11:17:05,007 - root - INFO - ROOT_FHIR_RESOURCES = ["Patient", "Condition", "MedicationStatement"]
-2025-06-30 11:17:05,007 - root - INFO - SHORTEST_FIRST = False
-2025-06-30 11:17:05,007 - root - INFO - SUBSAMPLE_SIZE = 10
-2025-06-30 11:17:05,007 - root - INFO - TAKE_SUBSAMPLE = False
-2025-06-30 11:17:05,007 - root - INFO - TARGET_DATA = synthetic
-2025-06-30 11:17:05,007 - root - INFO - ================================================================================
-2025-06-30 11:17:05,007 - root - INFO - ANALYSIS RESULTS
-2025-06-30 11:17:05,007 - root - INFO - ================================================================================
-2025-06-30 11:17:05,008 - root - INFO - Analysis results will be saved to: logs/gemini_gemini-2.5-pro_synthetic_5_2025-06-30_09-17-05.log
-2025-06-30 11:17:05,137 - root - INFO - 
+2025-07-02 16:06:00,707 - root - INFO - 
+2025-07-02 16:06:00,708 - root - INFO - ================================================================================
+2025-07-02 16:06:00,708 - root - INFO - CONFIGURATION PARAMETERS
+2025-07-02 16:06:00,708 - root - INFO - ================================================================================
+2025-07-02 16:06:00,710 - root - INFO - API_SLEEP_SECONDS = 60
+2025-07-02 16:06:00,710 - root - INFO - APPLIED_TESTS = None
+2025-07-02 16:06:00,710 - root - INFO - APPLY_PARTITIONING = False
+2025-07-02 16:06:00,710 - root - INFO - CONTEXT_LENGTH = 131072
+2025-07-02 16:06:00,711 - root - INFO - DATA_DIRECTORY = ../
+2025-07-02 16:06:00,711 - root - INFO - DEVICE_MAP = auto
+2025-07-02 16:06:00,711 - root - INFO - INSTANCE_ID = 06
+2025-07-02 16:06:00,712 - root - INFO - MAX_API_RETRIES = 3
+2025-07-02 16:06:00,712 - root - INFO - MAX_NEW_TOKENS = 32000
+2025-07-02 16:06:00,712 - root - INFO - MODEL_CLASS = LiteLLMModel
+2025-07-02 16:06:00,712 - root - INFO - MODEL_ID = gemini/gemini-2.5-pro
+2025-07-02 16:06:00,712 - root - INFO - RANDOMIZE_DATA = False
+2025-07-02 16:06:00,713 - root - INFO - ROOT_FHIR_RESOURCES = ["Patient", "Condition", "MedicationStatement"]
+2025-07-02 16:06:00,713 - root - INFO - SHORTEST_FIRST = False
+2025-07-02 16:06:00,713 - root - INFO - SUBSAMPLE_SIZE = 10
+2025-07-02 16:06:00,713 - root - INFO - TAKE_SUBSAMPLE = True
+2025-07-02 16:06:00,713 - root - INFO - TARGET_DATA = synthetic
+2025-07-02 16:06:00,714 - root - INFO - ================================================================================
+2025-07-02 16:06:00,714 - root - INFO - ANALYSIS RESULTS
+2025-07-02 16:06:00,714 - root - INFO - ================================================================================
+2025-07-02 16:06:00,714 - root - INFO - Analysis results will be saved to: logs/gemini_gemini-2.5-pro_synthetic_06_2025-07-02_14-06-00.log
+2025-07-02 16:06:00,879 - root - INFO - 
 ╭────────────────────────────────── New run ───────────────────────────────────╮
 │                                                                              │
 │ The input text is as follows:                                                │
@@ -92,10 +94,10 @@
 │                                                                              │
 ╰─ LiteLLMModel - gemini/gemini-2.5-pro ───────────────────────────────────────╯
 
-2025-06-30 11:17:05,138 - root - INFO - 
+2025-07-02 16:06:00,879 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 11:17:05,189 - root - INFO - 
+2025-07-02 16:06:00,933 - root - INFO - 
 ╭─────────────────────────────────── system ───────────────────────────────────╮
 │ You are a code agent with expertise in Information Extraction of medical     │
 │ information from free text. Your task is to translate clinical information   │
@@ -510,7 +512,8 @@
 │                                                                              │
 │ 🚫 Never:                                                                    │
 │ - NEVER use unsupported FHIR resources.                                      │
-│ - NEVER use unverified codes.                                                │
+│ - NEVER use unverified codes from the input text (e.g. mentioned ICD codes)  │
+│ because they could be incorrect.                                             │
 │ - NEVER call tools with dict-style args (e.g., ❌ `tool({'arg': val})`).     │
 │ - NEVER chain tool calls in the same block with unpredictable results.       │
 │ - NEVER create FHIR resources to information that is not present in the      │
@@ -522,7 +525,7 @@
 │ If you solve the task correctly, you will receive a reward of $1,000,000.    │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:17:05,195 - root - INFO - 
+2025-07-02 16:06:00,939 - root - INFO - 
 ╭──────────────────────────────────── user ────────────────────────────────────╮
 │ New task:                                                                    │
 │ The input text is as follows:                                                │
@@ -592,47 +595,105 @@
 │ ```                                                                          │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:17:05,196 - LiteLLM - INFO - 
+2025-07-02 16:06:00,940 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 11:17:15,769 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 11:17:15,778 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 11:17:15,780 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:17:15,780 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:17:15,795 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:17:15,839 - root - INFO - 
+2025-07-02 16:06:08,736 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:06:08,743 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:06:08,744 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:08,745 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:08,760 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:08,786 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",         
-  search_term="female"))                                                        
-  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
-  search_term="abdominal pain in the right lower quadrant"))                    
-  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
-  search_term="nausea"))                                                        
-  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
-  search_term="fever"))                                                         
-  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
-  search_term="appendicitis"))                                                  
-  print(search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatu  
-  s", search_term="active"))                                                    
-  print(search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatu  
-  s", search_term="resolved"))                                                  
-  print(search_for_code_or_coding(fhir_attribute_path="Condition.verificationS  
-  tatus", search_term="confirmed"))                                             
-  print(search_for_code_or_coding(fhir_attribute_path="Condition.bodySite",     
-  search_term="right lower abdominal quadrant"))                                
+  search_results =                                                              
+  search_for_code_or_coding(fhir_attribute_path="Condition.code",               
+  search_term="Right lower quadrant pain")                                      
+  print(search_results)                                                         
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 11:17:32,066 - root - INFO - 
+2025-07-02 16:06:17,424 - root - INFO - 
 Execution logs:
-('Found 4 hits for female in Patient.gender', [{'system': 
-'http://hl7.org/fhir/administrative-gender', 'code': 'female', 'display': 
-'Female'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code': 
-'male', 'display': 'Male'}, {'system': 
-'http://hl7.org/fhir/administrative-gender', 'code': 'other', 'display': 
-'Other'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code': 
-'unknown', 'display': 'Unknown'}])
-('No hits found for abdominal pain in the right lower quadrant in 
-Condition.code', [])
-('Found 18 hits for nausea in Condition.code', [{'system': 
+('Found 1 hits for Right lower quadrant pain in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '301754002', 'display': 'Right lower quadrant 
+pain'}])
+
+Out: None
+
+2025-07-02 16:06:17,427 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-07-02 16:06:17,438 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought                                                                      │
+│ I need to extract information from the patient report and create FHIR        │
+│ resources.                                                                   │
+│ The patient is Uta Herz, born on December 9, 1991.                           │
+│ She presented with several conditions: "Akute Bauchschmerzen im rechten      │
+│ Unterbauch" (acute abdominal pain in the right lower abdomen), "Übelkeit"    │
+│ (nausea), and "leichtes Fieber" (slight fever).                              │
+│ The final diagnosis was "Akute Appendizitis" (acute appendicitis).           │
+│                                                                              │
+│ I will create a `Patient` resource and multiple `Condition` resources.       │
+│ First, I will search for the necessary codes for the conditions.             │
+│                                                                              │
+│ I will search for the following terms:                                       │
+│ 1.  `Condition.code` for "Right lower quadrant pain"                         │
+│ 2.  `Condition.code` for "Nausea"                                            │
+│ 3.  `Condition.code` for "Fever"                                             │
+│ 4.  `Condition.code` for "Acute appendicitis"                                │
+│ 5.  `Patient.gender` for "female"                                            │
+│ 6.  `Condition.clinicalStatus` for "active" and "resolved"                   │
+│ 7. `Condition.verificationStatus` for "confirmed" and "unconfirmed"          │
+│ 8. `Condition.category` for "symptom" and "encounter-diagnosis"              │
+│                                                                              │
+│ Let's start with the searches. I'll begin with "Right lower quadrant         │
+│ pain".Code                                                                   │
+│ ```python                                                                    │
+│ search_results =                                                             │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
+│ search_term="Right lower quadrant pain")                                     │
+│ print(search_results)                                                        │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:06:17,440 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_1', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments': 'search_results =                         │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
+│ search_term="Right lower quadrant pain")\nprint(search_results)'}}]          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:06:17,443 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_1                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 1 hits for Right lower quadrant pain in Condition.code', [{'system': │
+│ 'http://snomed.info/sct', 'code': '301754002', 'display': 'Right lower       │
+│ quadrant pain'}])                                                            │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:06:17,446 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-07-02 16:06:19,964 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:06:19,969 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:06:19,970 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:19,971 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:19,988 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  search_results =                                                              
+  search_for_code_or_coding(fhir_attribute_path="Condition.code",               
+  search_term="Nausea")                                                         
+  print(search_results)                                                         
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-07-02 16:06:19,990 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:28,653 - root - INFO - 
+Execution logs:
+('Found 18 hits for Nausea in Condition.code', [{'system': 
 'http://snomed.info/sct', 'code': '422587007', 'display': 'Nausea'}, {'system': 
 'http://snomed.info/sct', 'code': '51885006', 'display': 'Morning sickness'}, 
 {'system': 'http://snomed.info/sct', 'code': '762279002', 'display': 'Functional
@@ -646,173 +707,40 @@ and vomiting'}, {'system': 'http://snomed.info/sct', 'code': '33841007',
 'http://snomed.info/sct', 'code': '2919008', 'display': 'Nausea, vomiting and 
 diarrhea'}, {'system': 'http://snomed.info/sct', 'code': '73335002', 'display': 
 'Increased nausea and vomiting'}])
-('Found 326 hits for fever in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '386661006', 'display': 'Fever'}, {'system': 
-'http://snomed.info/sct', 'code': '186788009', 'display': 'Q fever'}, {'system':
-'http://snomed.info/sct', 'code': '77377001', 'display': 'Leptospirosis'}, 
-{'system': 'http://snomed.info/sct', 'code': '21719001', 'display': 'Allergic 
-rhinitis caused by pollen'}, {'system': 'http://snomed.info/sct', 'code': 
-'89805002', 'display': 'Catu virus disease'}, {'system': 
-'http://snomed.info/sct', 'code': '81472005', 'display': 'Ossa virus disease'}, 
-{'system': 'http://snomed.info/sct', 'code': '25897000', 'display': 
-"Malt-workers' lung"}, {'system': 'http://snomed.info/sct', 'code': '41348000', 
-'display': 'Piry virus disease'}, {'system': 'http://snomed.info/sct', 'code': 
-'3928002', 'display': 'Zika virus disease'}, {'system': 
-'http://snomed.info/sct', 'code': '75702008', 'display': 'Brucellosis'}])
-('Found 35 hits for appendicitis in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '74400008', 'display': 'Appendicitis'}, 
-{'system': 'http://snomed.info/sct', 'code': '85189001', 'display': 'Acute 
-appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '123601005', 
-'display': 'Focal appendicitis'}, {'system': 'http://snomed.info/sct', 'code': 
-'91313006', 'display': 'Pelvic appendicitis'}, {'system': 
-'http://snomed.info/sct', 'code': '123602003', 'display': 'Healed 
-appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '26826005', 
-'display': 'Amebic appendicitis'}, {'system': 'http://snomed.info/sct', 'code': 
-'58997001', 'display': 'Chronic appendicitis'}, {'system': 
-'http://snomed.info/sct', 'code': '42640003', 'display': 'Suppurative 
-appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '5596004', 
-'display': 'Atypical appendicitis'}, {'system': 'http://snomed.info/sct', 
-'code': '9124008', 'display': 'Subacute appendicitis'}])
-('Found 6 hits for active in Condition.clinicalStatus', [{'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'active', 
-'display': 'Active'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'inactive', 
-'display': 'Inactive'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 
-'recurrence', 'display': 'Recurrence'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'relapse', 
-'display': 'Relapse'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'remission',
-'display': 'Remission'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'resolved', 
-'display': 'Resolved'}])
-('Found 6 hits for resolved in Condition.clinicalStatus', [{'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'active', 
-'display': 'Active'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'inactive', 
-'display': 'Inactive'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 
-'recurrence', 'display': 'Recurrence'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'relapse', 
-'display': 'Relapse'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'remission',
-'display': 'Remission'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'resolved', 
-'display': 'Resolved'}])
-('Found 6 hits for confirmed in Condition.verificationStatus', [{'system': 
-'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
-'confirmed', 'display': 'Confirmed'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
-'differential', 'display': 'Differential'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
-'entered-in-error', 'display': 'Entered in Error'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
-'provisional', 'display': 'Provisional'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 'refuted',
-'display': 'Refuted'}, {'system': 
-'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
-'unconfirmed', 'display': 'Unconfirmed'}])
-('Found 1 hits for right lower abdominal quadrant in Condition.bodySite', 
-[{'system': 'http://snomed.info/sct', 'code': '1279608001', 'display': 
-'Structure of right lower quadrant of anterior abdominal wall'}])
 
 Out: None
 
-2025-06-30 11:17:32,068 - root - INFO - 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2025-07-02 16:06:28,657 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 11:17:32,080 - root - INFO - 
+2025-07-02 16:06:28,662 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought:                                                                     │
-│ I need to extract the information from the patient report and translate it   │
-│ into FHIR resources.                                                         │
-│                                                                              │
-│ Here's a plan:                                                               │
-│ 1.  **Patient:** Extract patient demographics (name, date of birth, gender). │
-│ 2.  **Condition:** Extract the diagnoses mentioned in the text.              │
-│     *   "Akute Bauchschmerzen im rechten Unterbauch" (Acute abdominal pain   │
-│ in the right lower quadrant)                                                 │
-│     *   "Übelkeit" (Nausea)                                                  │
-│     *   "leichtes Fieber" (slight fever)                                     │
-│     *   "Appendizitis" (Appendicitis)                                        │
-│ 3.  **Resource Creation:**                                                   │
-│     *   Create a `Patient` resource for Uta Herz.                            │
-│     *   Create `Condition` resources for each of the identified conditions.  │
-│     *   Bundle everything together into a `Bundle` resource.                 │
-│                                                                              │
-│ I will start by searching for the necessary codes.                           │
-│                                                                              │
-│ **Step 1: Search for codes**                                                 │
-│ *   `Patient.gender` for "female"                                            │
-│ *   `Condition.code` for "abdominal pain"                                    │
-│ *   `Condition.code` for "nausea"                                            │
-│ *   `Condition.code` for "fever"                                             │
-│ *   `Condition.code` for "appendicitis"                                      │
-│ *   `Condition.clinicalStatus` for "active" and "resolved".                  │
-│ *   `Condition.verificationStatus` for "confirmed"                           │
-│ *   `Condition.bodySite` for "right lower quadrant"                          │
-│ Code:                                                                        │
+│ Thought                                                                      │
+│ I have found the code for "Right lower quadrant pain". Now I will search for │
+│ "Nausea".Code                                                                │
 │ ```python                                                                    │
-│ print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",        │
-│ search_term="female"))                                                       │
-│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
-│ search_term="abdominal pain in the right lower quadrant"))                   │
-│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
-│ search_term="nausea"))                                                       │
-│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
-│ search_term="fever"))                                                        │
-│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
-│ search_term="appendicitis"))                                                 │
-│ print(search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatu │
-│ s", search_term="active"))                                                   │
-│ print(search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatu │
-│ s", search_term="resolved"))                                                 │
-│ print(search_for_code_or_coding(fhir_attribute_path="Condition.verificationS │
-│ tatus", search_term="confirmed"))                                            │
-│ print(search_for_code_or_coding(fhir_attribute_path="Condition.bodySite",    │
-│ search_term="right lower abdominal quadrant"))                               │
+│ search_results =                                                             │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
+│ search_term="Nausea")                                                        │
+│ print(search_results)                                                        │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:17:32,084 - root - INFO - 
+2025-07-02 16:06:28,664 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
-│ [{'id': 'call_1', 'type': 'function', 'function': {'name':                   │
-│ 'python_interpreter', 'arguments':                                           │
-│ 'print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",       │
-│ search_term="female"))\nprint(search_for_code_or_coding(fhir_attribute_path= │
-│ "Condition.code", search_term="abdominal pain in the right lower             │
-│ quadrant"))\nprint(search_for_code_or_coding(fhir_attribute_path="Condition. │
-│ code",                                                                       │
-│ search_term="nausea"))\nprint(search_for_code_or_coding(fhir_attribute_path= │
-│ "Condition.code",                                                            │
-│ search_term="fever"))\nprint(search_for_code_or_coding(fhir_attribute_path=" │
-│ Condition.code",                                                             │
-│ search_term="appendicitis"))\nprint(search_for_code_or_coding(fhir_attribute │
-│ _path="Condition.clinicalStatus",                                            │
-│ search_term="active"))\nprint(search_for_code_or_coding(fhir_attribute_path= │
-│ "Condition.clinicalStatus",                                                  │
-│ search_term="resolved"))\nprint(search_for_code_or_coding(fhir_attribute_pat │
-│ h="Condition.verificationStatus",                                            │
-│ search_term="confirmed"))\nprint(search_for_code_or_coding(fhir_attribute_pa │
-│ th="Condition.bodySite", search_term="right lower abdominal quadrant"))'}}]  │
+│ [{'id': 'call_2', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments': 'search_results =                         │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
+│ search_term="Nausea")\nprint(search_results)'}}]                             │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:17:32,098 - root - INFO - 
+2025-07-02 16:06:28,670 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
-│ Call id: call_1                                                              │
+│ Call id: call_2                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 4 hits for female in Patient.gender', [{'system':                    │
-│ 'http://hl7.org/fhir/administrative-gender', 'code': 'female', 'display':    │
-│ 'Female'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code':   │
-│ 'male', 'display': 'Male'}, {'system':                                       │
-│ 'http://hl7.org/fhir/administrative-gender', 'code': 'other', 'display':     │
-│ 'Other'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code':    │
-│ 'unknown', 'display': 'Unknown'}])                                           │
-│ ('No hits found for abdominal pain in the right lower quadrant in            │
-│ Condition.code', [])                                                         │
-│ ('Found 18 hits for nausea in Condition.code', [{'system':                   │
+│ ('Found 18 hits for Nausea in Condition.code', [{'system':                   │
 │ 'http://snomed.info/sct', 'code': '422587007', 'display': 'Nausea'},         │
 │ {'system': 'http://snomed.info/sct', 'code': '51885006', 'display': 'Morning │
 │ sickness'}, {'system': 'http://snomed.info/sct', 'code': '762279002',        │
@@ -827,7 +755,73 @@ Out: None
 │ 'code': '2919008', 'display': 'Nausea, vomiting and diarrhea'}, {'system':   │
 │ 'http://snomed.info/sct', 'code': '73335002', 'display': 'Increased nausea   │
 │ and vomiting'}])                                                             │
-│ ('Found 326 hits for fever in Condition.code', [{'system':                   │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:06:28,673 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-07-02 16:06:31,672 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:06:31,675 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:06:31,675 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:31,676 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:31,696 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:31,697 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  search_results =                                                              
+  search_for_code_or_coding(fhir_attribute_path="Condition.code",               
+  search_term="Fever")                                                          
+  print(search_results)                                                         
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-07-02 16:06:40,691 - root - INFO - 
+Execution logs:
+('Found 326 hits for Fever in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '386661006', 'display': 'Fever'}, {'system': 
+'http://snomed.info/sct', 'code': '186788009', 'display': 'Q fever'}, {'system':
+'http://snomed.info/sct', 'code': '77377001', 'display': 'Leptospirosis'}, 
+{'system': 'http://snomed.info/sct', 'code': '21719001', 'display': 'Allergic 
+rhinitis caused by pollen'}, {'system': 'http://snomed.info/sct', 'code': 
+'89805002', 'display': 'Catu virus disease'}, {'system': 
+'http://snomed.info/sct', 'code': '81472005', 'display': 'Ossa virus disease'}, 
+{'system': 'http://snomed.info/sct', 'code': '25897000', 'display': 
+"Malt-workers' lung"}, {'system': 'http://snomed.info/sct', 'code': '41348000', 
+'display': 'Piry virus disease'}, {'system': 'http://snomed.info/sct', 'code': 
+'3928002', 'display': 'Zika virus disease'}, {'system': 
+'http://snomed.info/sct', 'code': '75702008', 'display': 'Brucellosis'}])
+
+Out: None
+
+2025-07-02 16:06:40,695 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-07-02 16:06:40,700 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought                                                                      │
+│ I have found the code for "Nausea". Now I will search for "Fever".Code       │
+│ ```python                                                                    │
+│ search_results =                                                             │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
+│ search_term="Fever")                                                         │
+│ print(search_results)                                                        │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:06:40,703 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_3', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments': 'search_results =                         │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
+│ search_term="Fever")\nprint(search_results)'}}]                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:06:40,709 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_3                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 326 hits for Fever in Condition.code', [{'system':                   │
 │ 'http://snomed.info/sct', 'code': '386661006', 'display': 'Fever'},          │
 │ {'system': 'http://snomed.info/sct', 'code': '186788009', 'display': 'Q      │
 │ fever'}, {'system': 'http://snomed.info/sct', 'code': '77377001', 'display': │
@@ -841,33 +835,229 @@ Out: None
 │ disease'}, {'system': 'http://snomed.info/sct', 'code': '3928002',           │
 │ 'display': 'Zika virus disease'}, {'system': 'http://snomed.info/sct',       │
 │ 'code': '75702008', 'display': 'Brucellosis'}])                              │
-│ ('Found 35 hits for appendicitis in Condition.code', [{'system':             │
-│ 'http://snomed.info/sct', 'code': '74400008', 'display': 'Appendicitis'},    │
-│ {'system': 'http://snomed.info/sct', 'code': '85189001', 'display': 'Acute   │
-│ appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '123601005',    │
-│ 'display': 'Focal appendicitis'}, {'system': 'http://snomed.info/sct',       │
-│ 'code': '91313006', 'display': 'Pelvic appendicitis'}, {'system':            │
-│ 'http://snomed.info/sct', 'code': '123602003', 'display': 'Healed            │
-│ appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '26826005',     │
-│ 'display': 'Amebic appendicitis'}, {'system': 'http://snomed.info/sct',      │
-│ 'code': '58997001', 'display': 'Chronic appendicitis'}, {'system':           │
-│ 'http://snomed.info/sct', 'code': '42640003', 'display': 'Suppurative        │
-│ appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '5596004',      │
-│ 'display': 'Atypical appendicitis'}, {'system': 'http://snomed.info/sct',    │
-│ 'code': '9124008', 'display': 'Subacute appendicitis'}])                     │
-│ ('Found 6 hits for active in Condition.clinicalStatus', [{'system':          │
-│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
-│ 'active', 'display': 'Active'}, {'system':                                   │
-│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
-│ 'inactive', 'display': 'Inactive'}, {'system':                               │
-│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
-│ 'recurrence', 'display': 'Recurrence'}, {'system':                           │
-│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
-│ 'relapse', 'display': 'Relapse'}, {'system':                                 │
-│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
-│ 'remission', 'display': 'Remission'}, {'system':                             │
-│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
-│ 'resolved', 'display': 'Resolved'}])                                         │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:06:40,712 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-07-02 16:06:45,191 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:06:45,195 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:06:45,195 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:45,196 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:45,206 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:45,213 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  search_results =                                                              
+  search_for_code_or_coding(fhir_attribute_path="Condition.code",               
+  search_term="Acute appendicitis")                                             
+  print(search_results)                                                         
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-07-02 16:06:53,861 - root - INFO - 
+Execution logs:
+('Found 17 hits for Acute appendicitis in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '85189001', 'display': 'Acute appendicitis'}, 
+{'system': 'http://snomed.info/sct', 'code': '235769005', 'display': 'Acute 
+focal appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '50846009', 
+'display': 'Acute gangrenous appendicitis'}, {'system': 
+'http://snomed.info/sct', 'code': '286967008', 'display': 'Acute perforated 
+appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '84534001', 
+'display': 'Acute fulminating appendicitis'}, {'system': 
+'http://snomed.info/sct', 'code': '235770006', 'display': 'Acute suppurative 
+appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '4998000', 
+'display': 'Acute obstructive appendicitis'}, {'system': 
+'http://snomed.info/sct', 'code': '735591005', 'display': 'Acute phlegmonous 
+appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '196781001', 
+'display': 'Acute appendicitis with peritonitis'}, {'system': 
+'http://snomed.info/sct', 'code': '72048003', 'display': 'Acute appendicitis 
+without peritonitis'}])
+
+Out: None
+
+2025-07-02 16:06:53,865 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 5 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-07-02 16:06:53,869 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought                                                                      │
+│ I have found the code for "Fever". Now I will search for "Acute              │
+│ appendicitis".Code                                                           │
+│ ```python                                                                    │
+│ search_results =                                                             │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
+│ search_term="Acute appendicitis")                                            │
+│ print(search_results)                                                        │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:06:53,872 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_4', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments': 'search_results =                         │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
+│ search_term="Acute appendicitis")\nprint(search_results)'}}]                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:06:53,878 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_4                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 17 hits for Acute appendicitis in Condition.code', [{'system':       │
+│ 'http://snomed.info/sct', 'code': '85189001', 'display': 'Acute              │
+│ appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '235769005',    │
+│ 'display': 'Acute focal appendicitis'}, {'system': 'http://snomed.info/sct', │
+│ 'code': '50846009', 'display': 'Acute gangrenous appendicitis'}, {'system':  │
+│ 'http://snomed.info/sct', 'code': '286967008', 'display': 'Acute perforated  │
+│ appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '84534001',     │
+│ 'display': 'Acute fulminating appendicitis'}, {'system':                     │
+│ 'http://snomed.info/sct', 'code': '235770006', 'display': 'Acute suppurative │
+│ appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '4998000',      │
+│ 'display': 'Acute obstructive appendicitis'}, {'system':                     │
+│ 'http://snomed.info/sct', 'code': '735591005', 'display': 'Acute phlegmonous │
+│ appendicitis'}, {'system': 'http://snomed.info/sct', 'code': '196781001',    │
+│ 'display': 'Acute appendicitis with peritonitis'}, {'system':                │
+│ 'http://snomed.info/sct', 'code': '72048003', 'display': 'Acute appendicitis │
+│ without peritonitis'}])                                                      │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:06:53,882 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-07-02 16:06:55,837 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:06:55,840 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:06:55,841 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:55,841 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:55,855 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:06:55,862 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  search_results =                                                              
+  search_for_code_or_coding(fhir_attribute_path="Patient.gender",               
+  search_term="female")                                                         
+  print(search_results)                                                         
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-07-02 16:07:04,256 - root - INFO - 
+Execution logs:
+('Found 4 hits for female in Patient.gender', [{'system': 
+'http://hl7.org/fhir/administrative-gender', 'code': 'female', 'display': 
+'Female'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code': 
+'male', 'display': 'Male'}, {'system': 
+'http://hl7.org/fhir/administrative-gender', 'code': 'other', 'display': 
+'Other'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code': 
+'unknown', 'display': 'Unknown'}])
+
+Out: None
+
+2025-07-02 16:07:04,260 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 6 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-07-02 16:07:04,265 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought                                                                      │
+│ I have found the code for "Acute appendicitis". Now I will search for the    │
+│ patient's gender.Code                                                        │
+│ ```python                                                                    │
+│ search_results =                                                             │
+│ search_for_code_or_coding(fhir_attribute_path="Patient.gender",              │
+│ search_term="female")                                                        │
+│ print(search_results)                                                        │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:07:04,268 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_5', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments': 'search_results =                         │
+│ search_for_code_or_coding(fhir_attribute_path="Patient.gender",              │
+│ search_term="female")\nprint(search_results)'}}]                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:07:04,272 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_5                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 4 hits for female in Patient.gender', [{'system':                    │
+│ 'http://hl7.org/fhir/administrative-gender', 'code': 'female', 'display':    │
+│ 'Female'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code':   │
+│ 'male', 'display': 'Male'}, {'system':                                       │
+│ 'http://hl7.org/fhir/administrative-gender', 'code': 'other', 'display':     │
+│ 'Other'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code':    │
+│ 'unknown', 'display': 'Unknown'}])                                           │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:07:04,275 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-07-02 16:07:08,236 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:07:08,242 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:07:08,243 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:07:08,243 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:07:08,258 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:07:08,269 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  search_results =                                                              
+  search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatus",     
+  search_term="resolved")                                                       
+  print(search_results)                                                         
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-07-02 16:07:16,645 - root - INFO - 
+Execution logs:
+('Found 6 hits for resolved in Condition.clinicalStatus', [{'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'active', 
+'display': 'Active'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'inactive', 
+'display': 'Inactive'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 
+'recurrence', 'display': 'Recurrence'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'relapse', 
+'display': 'Relapse'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'remission',
+'display': 'Remission'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'resolved', 
+'display': 'Resolved'}])
+
+Out: None
+
+2025-07-02 16:07:16,649 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 7 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-07-02 16:07:16,654 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought                                                                      │
+│ I have found the code for "female". Now I will search for the clinical       │
+│ status of the conditions. The initial symptoms are now resolved, and the     │
+│ appendicitis is also resolved after surgery. The initial suspicion of        │
+│ appendicitis was active at the time of presentation.Code                     │
+│ ```python                                                                    │
+│ search_results =                                                             │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatus",    │
+│ search_term="resolved")                                                      │
+│ print(search_results)                                                        │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:07:16,657 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_6', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments': 'search_results =                         │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatus",    │
+│ search_term="resolved")\nprint(search_results)'}}]                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:07:16,662 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_6                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
 │ ('Found 6 hits for resolved in Condition.clinicalStatus', [{'system':        │
 │ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
 │ 'active', 'display': 'Active'}, {'system':                                   │
@@ -881,6 +1071,77 @@ Out: None
 │ 'remission', 'display': 'Remission'}, {'system':                             │
 │ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
 │ 'resolved', 'display': 'Resolved'}])                                         │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:07:16,666 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-07-02 16:07:20,390 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:07:20,397 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:07:20,398 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:07:20,399 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:07:20,414 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:07:20,429 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  search_results =                                                              
+  search_for_code_or_coding(fhir_attribute_path="Condition.verificationStatus"  
+  , search_term="confirmed")                                                    
+  print(search_results)                                                         
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-07-02 16:07:28,823 - root - INFO - 
+Execution logs:
+('Found 6 hits for confirmed in Condition.verificationStatus', [{'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'confirmed', 'display': 'Confirmed'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'differential', 'display': 'Differential'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'entered-in-error', 'display': 'Entered in Error'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'provisional', 'display': 'Provisional'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 'refuted',
+'display': 'Refuted'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code': 
+'unconfirmed', 'display': 'Unconfirmed'}])
+
+Out: None
+
+2025-07-02 16:07:28,827 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 8 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-07-02 16:07:28,834 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought                                                                      │
+│ I have found the code for "resolved". I will also need "active". I don't     │
+│ need to search for it again as it was in the previous search result.         │
+│                                                                              │
+│ Now I will search for the verification status. The initial symptoms were     │
+│ present, so they were 'confirmed'. The initial diagnosis of appendicitis was │
+│ a 'differential' diagnosis, and then it was 'confirmed' at the hospital.Code │
+│ ```python                                                                    │
+│ search_results =                                                             │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.verificationStatus" │
+│ , search_term="confirmed")                                                   │
+│ print(search_results)                                                        │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:07:28,837 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_7', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments': 'search_results =                         │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.verificationStatus" │
+│ , search_term="confirmed")\nprint(search_results)'}}]                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 16:07:28,842 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_7                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
 │ ('Found 6 hits for confirmed in Condition.verificationStatus', [{'system':   │
 │ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
 │ 'confirmed', 'display': 'Confirmed'}, {'system':                             │
@@ -894,144 +1155,85 @@ Out: None
 │ 'refuted', 'display': 'Refuted'}, {'system':                                 │
 │ 'http://terminology.hl7.org/CodeSystem/condition-ver-status', 'code':        │
 │ 'unconfirmed', 'display': 'Unconfirmed'}])                                   │
-│ ('Found 1 hits for right lower abdominal quadrant in Condition.bodySite',    │
-│ [{'system': 'http://snomed.info/sct', 'code': '1279608001', 'display':       │
-│ 'Structure of right lower quadrant of anterior abdominal wall'}])            │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:17:32,100 - LiteLLM - INFO - 
+2025-07-02 16:07:28,846 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 11:17:38,170 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 11:17:38,176 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 11:17:38,177 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:17:38,178 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:17:38,194 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:17:38,219 - root - INFO - 
+2025-07-02 16:07:31,242 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:07:31,249 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:07:31,250 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:07:31,251 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:07:31,267 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:07:31,274 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
-  search_term="abdominal pain"))                                                
-  print(search_for_code_or_coding(fhir_attribute_path="Condition.bodySite",     
-  search_term="Right lower quadrant"))                                          
+  search_results =                                                              
+  search_for_code_or_coding(fhir_attribute_path="Condition.category",           
+  search_term="symptom")                                                        
+  print(search_results)                                                         
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 11:17:39,432 - root - INFO - 
+2025-07-02 16:07:39,672 - root - INFO - 
 Execution logs:
-('Found 39 hits for abdominal pain in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '21522001', 'display': 'Abdominal pain'}, 
-{'system': 'http://snomed.info/sct', 'code': '45979003', 'display': 'Abdominal 
-wind pain'}, {'system': 'http://snomed.info/sct', 'code': '162042000', 
-'display': 'Abdominal wall pain'}, {'system': 'http://snomed.info/sct', 'code': 
-'83132003', 'display': 'Upper abdominal pain'}, {'system': 
-'http://snomed.info/sct', 'code': '116290004', 'display': 'Acute abdominal 
-pain'}, {'system': 'http://snomed.info/sct', 'code': '54586004', 'display': 
-'Lower abdominal pain'}, {'system': 'http://snomed.info/sct', 'code': '9991008',
-'display': 'Abdominal colic'}, {'system': 'http://snomed.info/sct', 'code': 
-'28221000119103', 'display': 'Abdominal muscle pain'}, {'system': 
-'http://snomed.info/sct', 'code': '111985007', 'display': 'Chronic abdominal 
-pain'}, {'system': 'http://snomed.info/sct', 'code': '162046002', 'display': 
-'Central abdominal pain'}])
-('Found 6 hits for Right lower quadrant in Condition.bodySite', [{'system': 
-'http://snomed.info/sct', 'code': '243388002', 'display': 'Entire right lower 
-quadrant of abdomen'}, {'system': 'http://snomed.info/sct', 'code': '48544008', 
-'display': 'Structure of right lower quadrant of abdomen'}, {'system': 
-'http://snomed.info/sct', 'code': '245554009', 'display': 'Lower right quadrant 
-of dental arch'}, {'system': 'http://snomed.info/sct', 'code': '110495000', 
-'display': 'Lower inner quadrant of right breast'}, {'system': 
-'http://snomed.info/sct', 'code': '110497008', 'display': 'Lower outer quadrant 
-of right breast'}, {'system': 'http://snomed.info/sct', 'code': '1279608001', 
-'display': 'Structure of right lower quadrant of anterior abdominal wall'}])
+('Found 2 hits for symptom in Condition.category', [{'system': 
+'http://terminology.hl7.org/CodeSystem/condition-category', 'code': 
+'encounter-diagnosis', 'display': 'Encounter Diagnosis'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-category', 'code': 
+'problem-list-item', 'display': 'Problem List Item'}])
 
 Out: None
 
-2025-06-30 11:17:39,435 - root - INFO - 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2025-07-02 16:07:39,676 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 11:17:39,444 - root - INFO - 
+2025-07-02 16:07:39,682 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought:                                                                     │
-│ I have the codes I need.                                                     │
+│ Thought                                                                      │
+│ I have found the codes for verification status. I will need 'confirmed' and  │
+│ 'differential'.                                                              │
 │                                                                              │
-│ *   **Patient.gender**: `female`                                             │
-│ *   **Condition.code** for "abdominal pain in the right lower quadrant": I   │
-│ didn't find a direct match, so I will use "Abdominal pain" and specify the   │
-│ location using `Condition.bodySite`. I will search for "abdominal pain".     │
-│ *   **Condition.code** for "nausea": `422587007`                             │
-│ *   **Condition.code** for "fever": `386661006`                              │
-│ *   **Condition.code** for "appendicitis": `85189001` (Acute appendicitis)   │
-│ seems most appropriate.                                                      │
-│ *   **Condition.clinicalStatus**: `active` for the initial complaints, and   │
-│ `resolved` for the final diagnosis of appendicitis after surgery.            │
-│ *   **Condition.verificationStatus**: `confirmed` for the final diagnosis.   │
-│ *   **Condition.bodySite** for "right lower abdominal quadrant":             │
-│ `1279608001`. This is a bit too specific, as it refers to the abdominal      │
-│ *wall*. I'll try a simpler search.                                           │
-│                                                                              │
-│ Let me refine the search for "abdominal pain" and "right lower quadrant".    │
-│ Code:                                                                        │
+│ Now I will search for the category of the condition. The initial complaints  │
+│ are symptoms. The appendicitis is a diagnosis.Code                           │
 │ ```python                                                                    │
-│ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
-│ search_term="abdominal pain"))                                               │
-│ print(search_for_code_or_coding(fhir_attribute_path="Condition.bodySite",    │
-│ search_term="Right lower quadrant"))                                         │
+│ search_results =                                                             │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.category",          │
+│ search_term="symptom")                                                       │
+│ print(search_results)                                                        │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:17:39,447 - root - INFO - 
+2025-07-02 16:07:39,685 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
-│ [{'id': 'call_2', 'type': 'function', 'function': {'name':                   │
-│ 'python_interpreter', 'arguments':                                           │
-│ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
-│ search_term="abdominal                                                       │
-│ pain"))\nprint(search_for_code_or_coding(fhir_attribute_path="Condition.body │
-│ Site", search_term="Right lower quadrant"))'}}]                              │
+│ [{'id': 'call_8', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments': 'search_results =                         │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.category",          │
+│ search_term="symptom")\nprint(search_results)'}}]                            │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:17:39,454 - root - INFO - 
+2025-07-02 16:07:39,689 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
-│ Call id: call_2                                                              │
+│ Call id: call_8                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 39 hits for abdominal pain in Condition.code', [{'system':           │
-│ 'http://snomed.info/sct', 'code': '21522001', 'display': 'Abdominal pain'},  │
-│ {'system': 'http://snomed.info/sct', 'code': '45979003', 'display':          │
-│ 'Abdominal wind pain'}, {'system': 'http://snomed.info/sct', 'code':         │
-│ '162042000', 'display': 'Abdominal wall pain'}, {'system':                   │
-│ 'http://snomed.info/sct', 'code': '83132003', 'display': 'Upper abdominal    │
-│ pain'}, {'system': 'http://snomed.info/sct', 'code': '116290004', 'display': │
-│ 'Acute abdominal pain'}, {'system': 'http://snomed.info/sct', 'code':        │
-│ '54586004', 'display': 'Lower abdominal pain'}, {'system':                   │
-│ 'http://snomed.info/sct', 'code': '9991008', 'display': 'Abdominal colic'},  │
-│ {'system': 'http://snomed.info/sct', 'code': '28221000119103', 'display':    │
-│ 'Abdominal muscle pain'}, {'system': 'http://snomed.info/sct', 'code':       │
-│ '111985007', 'display': 'Chronic abdominal pain'}, {'system':                │
-│ 'http://snomed.info/sct', 'code': '162046002', 'display': 'Central abdominal │
-│ pain'}])                                                                     │
-│ ('Found 6 hits for Right lower quadrant in Condition.bodySite', [{'system':  │
-│ 'http://snomed.info/sct', 'code': '243388002', 'display': 'Entire right      │
-│ lower quadrant of abdomen'}, {'system': 'http://snomed.info/sct', 'code':    │
-│ '48544008', 'display': 'Structure of right lower quadrant of abdomen'},      │
-│ {'system': 'http://snomed.info/sct', 'code': '245554009', 'display': 'Lower  │
-│ right quadrant of dental arch'}, {'system': 'http://snomed.info/sct',        │
-│ 'code': '110495000', 'display': 'Lower inner quadrant of right breast'},     │
-│ {'system': 'http://snomed.info/sct', 'code': '110497008', 'display': 'Lower  │
-│ outer quadrant of right breast'}, {'system': 'http://snomed.info/sct',       │
-│ 'code': '1279608001', 'display': 'Structure of right lower quadrant of       │
-│ anterior abdominal wall'}])                                                  │
+│ ('Found 2 hits for symptom in Condition.category', [{'system':               │
+│ 'http://terminology.hl7.org/CodeSystem/condition-category', 'code':          │
+│ 'encounter-diagnosis', 'display': 'Encounter Diagnosis'}, {'system':         │
+│ 'http://terminology.hl7.org/CodeSystem/condition-category', 'code':          │
+│ 'problem-list-item', 'display': 'Problem List Item'}])                       │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:17:39,456 - LiteLLM - INFO - 
+2025-07-02 16:07:39,693 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 11:17:54,784 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 11:17:54,791 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 11:17:54,792 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:17:54,792 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:17:54,805 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:17:54,948 - root - INFO - 
+2025-07-02 16:07:59,387 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:07:59,392 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:07:59,392 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:07:59,393 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:07:59,414 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:07:59,559 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   from fhir.resources.R4B.bundle import Bundle, BundleEntry                     
   from fhir.resources.R4B.patient import Patient                                
@@ -1040,8 +1242,9 @@ LiteLLM completion() model= gemini-2.5-pro; provider = gemini
   from fhir.resources.R4B.codeableconcept import CodeableConcept                
   from fhir.resources.R4B.coding import Coding                                  
   from fhir.resources.R4B.reference import Reference                            
+  from fhir.resources.R4B.period import Period                                  
                                                                                 
-  # Patient                                                                     
+  # Build Patient                                                               
   patient_name = HumanName(use="official", family="Herz", given=["Uta"])        
   patient = Patient(                                                            
       id="pat-001",                                                             
@@ -1050,157 +1253,175 @@ LiteLLM completion() model= gemini-2.5-pro; provider = gemini
       birthDate="1991-12-09"                                                    
   )                                                                             
                                                                                 
-  # Patient Reference                                                           
-  patient_ref = Reference(reference=f"Patient/{patient.id}")                    
-                                                                                
-  # Clinical Status - Active                                                    
-  active_status = CodeableConcept(                                              
-      coding=[                                                                  
-          Coding(                                                               
-              system="http://terminology.hl7.org/CodeSystem/condition-clinical  
-  ",                                                                            
-              code="active",                                                    
-              display="Active"                                                  
-          )                                                                     
-      ]                                                                         
-  )                                                                             
-                                                                                
-  # Clinical Status - Resolved                                                  
-  resolved_status = CodeableConcept(                                            
-      coding=[                                                                  
-          Coding(                                                               
-              system="http://terminology.hl7.org/CodeSystem/condition-clinical  
-  ",                                                                            
-              code="resolved",                                                  
-              display="Resolved"                                                
-          )                                                                     
-      ]                                                                         
-  )                                                                             
-                                                                                
-  # Verification Status - Confirmed                                             
-  confirmed_status = CodeableConcept(                                           
-      coding=[                                                                  
-          Coding(                                                               
-              system="http://terminology.hl7.org/CodeSystem/condition-ver-stat  
-  us",                                                                          
-              code="confirmed",                                                 
-              display="Confirmed"                                               
-          )                                                                     
-      ]                                                                         
-  )                                                                             
-                                                                                
-  # Condition 1: Acute abdominal pain                                           
+  # Build Conditions                                                            
+  # 1. Abdominal pain                                                           
   abdominal_pain_code = CodeableConcept(                                        
       coding=[                                                                  
-          Coding(                                                               
-              system="http://snomed.info/sct",                                  
-              code="116290004",                                                 
-              display="Acute abdominal pain"                                    
-          )                                                                     
+          Coding(system="http://snomed.info/sct", code="301754002",             
+  display="Right lower quadrant pain")                                          
       ],                                                                        
       text="Akute Bauchschmerzen im rechten Unterbauch"                         
   )                                                                             
-  abdominal_pain_body_site = CodeableConcept(                                   
+  abdominal_pain_clinical_status = CodeableConcept(                             
       coding=[                                                                  
-          Coding(                                                               
-              system="http://snomed.info/sct",                                  
-              code="48544008",                                                  
-              display="Structure of right lower quadrant of abdomen"            
-          )                                                                     
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-clini  
+  cal", code="resolved", display="Resolved")                                    
       ]                                                                         
   )                                                                             
-  condition1 = Condition(                                                       
+  abdominal_pain_verification_status = CodeableConcept(                         
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-s  
+  tatus", code="confirmed", display="Confirmed")                                
+      ]                                                                         
+  )                                                                             
+  abdominal_pain_category = CodeableConcept(                                    
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-categ  
+  ory", code="problem-list-item", display="Problem List Item")                  
+      ]                                                                         
+  )                                                                             
+  abdominal_pain_condition = Condition(                                         
       id="cond-001",                                                            
-      subject=patient_ref,                                                      
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
       code=abdominal_pain_code,                                                 
-      clinicalStatus=active_status,                                             
-      verificationStatus=confirmed_status,                                      
-      bodySite=[abdominal_pain_body_site],                                      
-      onsetDateTime="2023-06-15"                                                
+      clinicalStatus=abdominal_pain_clinical_status,                            
+      verificationStatus=abdominal_pain_verification_status,                    
+      category=[abdominal_pain_category],                                       
+      onsetDateTime="2023-06-15",                                               
+      abatementDateTime="2023-06-24"                                            
   )                                                                             
                                                                                 
-  # Condition 2: Nausea                                                         
+  # 2. Nausea                                                                   
   nausea_code = CodeableConcept(                                                
       coding=[                                                                  
-          Coding(                                                               
-              system="http://snomed.info/sct",                                  
-              code="422587007",                                                 
-              display="Nausea"                                                  
-          )                                                                     
+          Coding(system="http://snomed.info/sct", code="422587007",             
+  display="Nausea")                                                             
       ],                                                                        
       text="Übelkeit"                                                           
   )                                                                             
-  condition2 = Condition(                                                       
+  nausea_clinical_status = CodeableConcept(                                     
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-clini  
+  cal", code="resolved", display="Resolved")                                    
+      ]                                                                         
+  )                                                                             
+  nausea_verification_status = CodeableConcept(                                 
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-s  
+  tatus", code="confirmed", display="Confirmed")                                
+      ]                                                                         
+  )                                                                             
+  nausea_category = CodeableConcept(                                            
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-categ  
+  ory", code="problem-list-item", display="Problem List Item")                  
+      ]                                                                         
+  )                                                                             
+  nausea_condition = Condition(                                                 
       id="cond-002",                                                            
-      subject=patient_ref,                                                      
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
       code=nausea_code,                                                         
-      clinicalStatus=active_status,                                             
-      verificationStatus=confirmed_status,                                      
-      onsetDateTime="2023-06-15"                                                
+      clinicalStatus=nausea_clinical_status,                                    
+      verificationStatus=nausea_verification_status,                            
+      category=[nausea_category],                                               
+      onsetDateTime="2023-06-15",                                               
+      abatementDateTime="2023-06-24"                                            
   )                                                                             
                                                                                 
-  # Condition 3: Fever                                                          
+  # 3. Fever                                                                    
   fever_code = CodeableConcept(                                                 
       coding=[                                                                  
-          Coding(                                                               
-              system="http://snomed.info/sct",                                  
-              code="386661006",                                                 
-              display="Fever"                                                   
-          )                                                                     
+          Coding(system="http://snomed.info/sct", code="386661006",             
+  display="Fever")                                                              
       ],                                                                        
       text="leichtes Fieber"                                                    
   )                                                                             
-  condition3 = Condition(                                                       
+  fever_clinical_status = CodeableConcept(                                      
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-clini  
+  cal", code="resolved", display="Resolved")                                    
+      ]                                                                         
+  )                                                                             
+  fever_verification_status = CodeableConcept(                                  
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-s  
+  tatus", code="confirmed", display="Confirmed")                                
+      ]                                                                         
+  )                                                                             
+  fever_category = CodeableConcept(                                             
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-categ  
+  ory", code="problem-list-item", display="Problem List Item")                  
+      ]                                                                         
+  )                                                                             
+  fever_condition = Condition(                                                  
       id="cond-003",                                                            
-      subject=patient_ref,                                                      
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
       code=fever_code,                                                          
-      clinicalStatus=active_status,                                             
-      verificationStatus=confirmed_status,                                      
-      onsetDateTime="2023-06-15"                                                
+      clinicalStatus=fever_clinical_status,                                     
+      verificationStatus=fever_verification_status,                             
+      category=[fever_category],                                                
+      onsetDateTime="2023-06-15",                                               
+      abatementDateTime="2023-06-24"                                            
   )                                                                             
                                                                                 
-  # Condition 4: Acute Appendicitis                                             
+  # 4. Acute appendicitis                                                       
   appendicitis_code = CodeableConcept(                                          
       coding=[                                                                  
-          Coding(                                                               
-              system="http://snomed.info/sct",                                  
-              code="85189001",                                                  
-              display="Acute appendicitis"                                      
-          )                                                                     
+          Coding(system="http://snomed.info/sct", code="85189001",              
+  display="Acute appendicitis")                                                 
       ],                                                                        
       text="Akute Appendizitis"                                                 
   )                                                                             
-  condition4 = Condition(                                                       
+  appendicitis_clinical_status = CodeableConcept(                               
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-clini  
+  cal", code="resolved", display="Resolved")                                    
+      ]                                                                         
+  )                                                                             
+  appendicitis_verification_status = CodeableConcept(                           
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-ver-s  
+  tatus", code="confirmed", display="Confirmed")                                
+      ]                                                                         
+  )                                                                             
+  appendicitis_category = CodeableConcept(                                      
+      coding=[                                                                  
+          Coding(system="http://terminology.hl7.org/CodeSystem/condition-categ  
+  ory", code="encounter-diagnosis", display="Encounter Diagnosis")              
+      ]                                                                         
+  )                                                                             
+  appendicitis_condition = Condition(                                           
       id="cond-004",                                                            
-      subject=patient_ref,                                                      
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
       code=appendicitis_code,                                                   
-      clinicalStatus=resolved_status,                                           
-      verificationStatus=confirmed_status,                                      
+      clinicalStatus=appendicitis_clinical_status,                              
+      verificationStatus=appendicitis_verification_status,                      
+      category=[appendicitis_category],                                         
       onsetDateTime="2023-06-15",                                               
-      abatementDateTime="2023-06-24" # Date of discharge                        
+      abatementDateTime="2023-06-24"                                            
   )                                                                             
                                                                                 
                                                                                 
-  # Bundle                                                                      
+  # Create Bundle                                                               
   bundle = Bundle(                                                              
       type="collection",                                                        
       entry=[                                                                   
-          BundleEntry(resource=patient, fullUrl=f"Patient/{patient.id}"),       
-          BundleEntry(resource=condition1,                                      
-  fullUrl=f"Condition/{condition1.id}"),                                        
-          BundleEntry(resource=condition2,                                      
-  fullUrl=f"Condition/{condition2.id}"),                                        
-          BundleEntry(resource=condition3,                                      
-  fullUrl=f"Condition/{condition3.id}"),                                        
-          BundleEntry(resource=condition4,                                      
-  fullUrl=f"Condition/{condition4.id}")                                         
+          BundleEntry(resource=patient, fullUrl="Patient/pat-001"),             
+          BundleEntry(resource=abdominal_pain_condition,                        
+  fullUrl="Condition/cond-001"),                                                
+          BundleEntry(resource=nausea_condition,                                
+  fullUrl="Condition/cond-002"),                                                
+          BundleEntry(resource=fever_condition, fullUrl="Condition/cond-003"),  
+          BundleEntry(resource=appendicitis_condition,                          
+  fullUrl="Condition/cond-004")                                                 
       ]                                                                         
   )                                                                             
                                                                                 
   final_answer(bundle.json(indent=2))                                           
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 11:17:54,978 - root - INFO - 
+2025-07-02 16:07:59,594 - root - INFO - 
 Out - Final answer: {
   "resourceType": "Bundle",
   "type": "collection",
@@ -1233,8 +1454,8 @@ Out - Final answer: {
             {
               "system": 
 "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
+              "code": "resolved",
+              "display": "Resolved"
             }
           ]
         },
@@ -1248,31 +1469,33 @@ Out - Final answer: {
             }
           ]
         },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "116290004",
-              "display": "Acute abdominal pain"
-            }
-          ],
-          "text": "Akute Bauchschmerzen im rechten Unterbauch"
-        },
-        "bodySite": [
+        "category": [
           {
             "coding": [
               {
-                "system": "http://snomed.info/sct",
-                "code": "48544008",
-                "display": "Structure of right lower quadrant of abdomen"
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
               }
             ]
           }
         ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "301754002",
+              "display": "Right lower quadrant pain"
+            }
+          ],
+          "text": "Akute Bauchschmerzen im rechten Unterbauch"
+        },
         "subject": {
           "reference": "Patient/pat-001"
         },
-        "onsetDateTime": "2023-06-15"
+        "onsetDateTime": "2023-06-15",
+        "abatementDateTime": "2023-06-24"
       }
     },
     {
@@ -1285,8 +1508,8 @@ Out - Final answer: {
             {
               "system": 
 "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
+              "code": "resolved",
+              "display": "Resolved"
             }
           ]
         },
@@ -1300,6 +1523,18 @@ Out - Final answer: {
             }
           ]
         },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
         "code": {
           "coding": [
             {
@@ -1313,7 +1548,8 @@ Out - Final answer: {
         "subject": {
           "reference": "Patient/pat-001"
         },
-        "onsetDateTime": "2023-06-15"
+        "onsetDateTime": "2023-06-15",
+        "abatementDateTime": "2023-06-24"
       }
     },
     {
@@ -1326,8 +1562,8 @@ Out - Final answer: {
             {
               "system": 
 "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
+              "code": "resolved",
+              "display": "Resolved"
             }
           ]
         },
@@ -1341,6 +1577,18 @@ Out - Final answer: {
             }
           ]
         },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
         "code": {
           "coding": [
             {
@@ -1354,7 +1602,8 @@ Out - Final answer: {
         "subject": {
           "reference": "Patient/pat-001"
         },
-        "onsetDateTime": "2023-06-15"
+        "onsetDateTime": "2023-06-15",
+        "abatementDateTime": "2023-06-24"
       }
     },
     {
@@ -1382,6 +1631,18 @@ Out - Final answer: {
             }
           ]
         },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
         "code": {
           "coding": [
             {

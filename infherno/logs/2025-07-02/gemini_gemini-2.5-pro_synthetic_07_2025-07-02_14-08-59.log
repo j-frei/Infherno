@@ -1,123 +1,107 @@
-2025-06-30 11:14:47,049 - root - INFO - 
-2025-06-30 11:14:47,049 - root - INFO - ================================================================================
-2025-06-30 11:14:47,049 - root - INFO - CONFIGURATION PARAMETERS
-2025-06-30 11:14:47,049 - root - INFO - ================================================================================
-2025-06-30 11:14:47,049 - root - INFO - APPLIED_TESTS = None
-2025-06-30 11:14:47,049 - root - INFO - APPLY_PARTITIONING = False
-2025-06-30 11:14:47,050 - root - INFO - CONTEXT_LENGTH = 131072
-2025-06-30 11:14:47,050 - root - INFO - DATA_DIRECTORY = ../
-2025-06-30 11:14:47,050 - root - INFO - DEVICE_MAP = auto
-2025-06-30 11:14:47,050 - root - INFO - INSTANCE_ID = 3
-2025-06-30 11:14:47,050 - root - INFO - MAX_NEW_TOKENS = 32000
-2025-06-30 11:14:47,050 - root - INFO - MODEL_CLASS = LiteLLMModel
-2025-06-30 11:14:47,050 - root - INFO - MODEL_ID = gemini/gemini-2.5-pro
-2025-06-30 11:14:47,050 - root - INFO - RANDOMIZE_DATA = False
-2025-06-30 11:14:47,050 - root - INFO - ROOT_FHIR_RESOURCES = ["Patient", "Condition", "MedicationStatement"]
-2025-06-30 11:14:47,050 - root - INFO - SHORTEST_FIRST = False
-2025-06-30 11:14:47,050 - root - INFO - SUBSAMPLE_SIZE = 10
-2025-06-30 11:14:47,050 - root - INFO - TAKE_SUBSAMPLE = False
-2025-06-30 11:14:47,050 - root - INFO - TARGET_DATA = synthetic
-2025-06-30 11:14:47,050 - root - INFO - ================================================================================
-2025-06-30 11:14:47,050 - root - INFO - ANALYSIS RESULTS
-2025-06-30 11:14:47,050 - root - INFO - ================================================================================
-2025-06-30 11:14:47,050 - root - INFO - Analysis results will be saved to: logs/gemini_gemini-2.5-pro_synthetic_3_2025-06-30_09-14-47.log
-2025-06-30 11:14:47,183 - root - INFO - 
+2025-07-02 16:08:59,605 - root - INFO - 
+2025-07-02 16:08:59,606 - root - INFO - ================================================================================
+2025-07-02 16:08:59,606 - root - INFO - CONFIGURATION PARAMETERS
+2025-07-02 16:08:59,606 - root - INFO - ================================================================================
+2025-07-02 16:08:59,608 - root - INFO - API_SLEEP_SECONDS = 60
+2025-07-02 16:08:59,608 - root - INFO - APPLIED_TESTS = None
+2025-07-02 16:08:59,609 - root - INFO - APPLY_PARTITIONING = False
+2025-07-02 16:08:59,609 - root - INFO - CONTEXT_LENGTH = 131072
+2025-07-02 16:08:59,609 - root - INFO - DATA_DIRECTORY = ../
+2025-07-02 16:08:59,609 - root - INFO - DEVICE_MAP = auto
+2025-07-02 16:08:59,610 - root - INFO - INSTANCE_ID = 07
+2025-07-02 16:08:59,610 - root - INFO - MAX_API_RETRIES = 3
+2025-07-02 16:08:59,610 - root - INFO - MAX_NEW_TOKENS = 32000
+2025-07-02 16:08:59,610 - root - INFO - MODEL_CLASS = LiteLLMModel
+2025-07-02 16:08:59,611 - root - INFO - MODEL_ID = gemini/gemini-2.5-pro
+2025-07-02 16:08:59,611 - root - INFO - RANDOMIZE_DATA = False
+2025-07-02 16:08:59,611 - root - INFO - ROOT_FHIR_RESOURCES = ["Patient", "Condition", "MedicationStatement"]
+2025-07-02 16:08:59,611 - root - INFO - SHORTEST_FIRST = False
+2025-07-02 16:08:59,611 - root - INFO - SUBSAMPLE_SIZE = 10
+2025-07-02 16:08:59,612 - root - INFO - TAKE_SUBSAMPLE = True
+2025-07-02 16:08:59,612 - root - INFO - TARGET_DATA = synthetic
+2025-07-02 16:08:59,612 - root - INFO - ================================================================================
+2025-07-02 16:08:59,612 - root - INFO - ANALYSIS RESULTS
+2025-07-02 16:08:59,612 - root - INFO - ================================================================================
+2025-07-02 16:08:59,613 - root - INFO - Analysis results will be saved to: logs/gemini_gemini-2.5-pro_synthetic_07_2025-07-02_14-08-59.log
+2025-07-02 16:08:59,781 - root - INFO - 
 ╭────────────────────────────────── New run ───────────────────────────────────╮
 │                                                                              │
 │ The input text is as follows:                                                │
 │ ```                                                                          │
-│ Praxis Dr. med. Ute Pfeifer                                                  │
-│ Fachärztin für Allgemeinmedizin                                              │
-│ Los-Angeles-Platz 47                                                         │
-│ 22043 Hamburg Tonndorf                                                       │
-│ Tel.: 040 31 42 09                                                           │
-│ Email: info@praxis-pfeifer.de                                                │
-│ Datum: 28. Juni 2023                                                         │
+│ Dr. Lukas Lang                                                               │
+│ Heiligengeistbrücke 27                                                       │
+│ 91604 Flachslanden                                                           │
 │                                                                              │
-│ An:                                                                          │
+│ Betreff: Berichtsbrief für Frau Susanne Scholz, 05.03.1983                   │
 │                                                                              │
-│ Klinikum Musterstadt                                                         │
-│ Station: Innere Medizin                                                      │
-│ z. Hd. Chefärztin Dr. med. Sara Kuefer                                       │
-│ Hoheluftchaussee 57                                                          │
-│ 01734 Karsdorf                                                               │
+│ Sehr geehrter Kollege Dr. Bosch,                                             │
 │                                                                              │
-│ Betreff: Patientenbericht für Herrn Alexander Wechsler                       │
+│ ich möchte Ihnen hiermit den aktuellen Bericht über den Gesundheitszustand   │
+│ von Frau Susanne Scholz zukommen lassen. Die Patientin wurde uns zur         │
+│ weiteren Abklärung und Behandlung ihrer gesundheitlichen Beschwerden         │
+│ überwiesen.                                                                  │
 │                                                                              │
-│ Sehr geehrter Frau Doktor,                                                   │
+│ Frau Susanne Scholz (Alter: 40 Jahre), die mit folgenden Beschwerden in      │
+│ unsere Praxis kam:                                                           │
 │                                                                              │
-│ ich möchte Ihnen den aktuellen Gesundheitszustand und die Behandlung von     │
-│ Herrn Alexander Wechsler vorstellen. Herr Wechsler, geboren am 24.06.1960,   │
-│ wurde am 15. Juni 2023 in meine Praxis überwiesen, da er über anhaltende     │
-│ Beschwerden im Bereich des Herzens klagte.                                   │
+│     Anhaltende Kopfschmerzen:                                                │
+│     Frau Scholz klagte über seit etwa einem Monat anhaltende Kopfschmerzen,  │
+│ die sie als dumpf und drückend beschreibt. Die Schmerzen treten vorwiegend   │
+│ im Bereich der Stirn und der Schläfen auf und zeigen keine eindeutige        │
+│ Seitenlokalisation. Es bestehen keine Auffälligkeiten wie Sehstörungen oder  │
+│ neurologische Ausfälle. Eine Migräneanamnese wurde von der Patientin         │
+│ verneint.                                                                    │
 │                                                                              │
-│ Anamnese:                                                                    │
-│ Herr Wechsler berichtete über wiederkehrende Schmerzen im Brustbereich, die  │
-│ sich in den letzten Wochen verschlimmerten. Er litt außerdem unter Atemnot   │
-│ und Müdigkeit, besonders bei körperlicher Belastung. In seiner               │
-│ Krankengeschichte sind eine koronare Herzerkrankung und eine Hypertonie      │
-│ bekannt. Herr Wechsler ist Raucher und führt einen sitzenden Lebensstil.     │
+│     Schlafstörungen:                                                         │
+│     Die Patientin berichtet über zunehmende Schlafstörungen, die sich in     │
+│ Schwierigkeiten beim Ein- und Durchschlafen äußern. Sie gibt an, dass sie    │
+│ sich tagsüber oft müde und erschöpft fühlt.                                  │
 │                                                                              │
-│ Klinische Untersuchung:                                                      │
-│ Die körperliche Untersuchung ergab einen leicht erhöhten Blutdruck von       │
-│ 140/90 mmHg, eine verminderte Atemgeräuschkulisse bei auskultatorischer      │
-│ Untersuchung der Lunge und eindeutige Herzgeräusche. Ein EKG zeigte          │
-│ Anzeichen einer linksventrikulären Hypertrophie.                             │
+│     Allgemeine Erschöpfung und Antriebslosigkeit:                            │
+│     Frau Scholz fühlt sich seit einigen Wochen allgemein erschöpft und       │
+│ antriebslos. Sie bemerkt eine reduzierte Belastbarkeit und geringe           │
+│ Motivation für gewohnte Aktivitäten.                                         │
 │                                                                              │
-│ Diagnose:                                                                    │
-│ Basierend auf den Symptomen, der Anamnese und den Untersuchungsergebnissen   │
-│ wurde bei Herrn Wechsler eine stabile Angina pectoris, eine Hypertonie sowie │
-│ eine linksventrikuläre Hypertrophie diagnostiziert.                          │
+│ Medikamentöse Vorgeschichte:                                                 │
+│ Frau Scholz nimmt keine regelmäßigen Medikamente ein und gibt an, keine      │
+│ bekannten Allergien gegen Medikamente zu haben.                              │
 │                                                                              │
-│ Therapie:                                                                    │
-│ Herr Wechsler wurde eine umfassende Behandlung empfohlen. Die Therapie       │
-│ beinhaltet:                                                                  │
+│ Diagnostik und Untersuchungen:                                               │
+│ Zur weiteren Abklärung ihrer Beschwerden haben wir eine ausführliche         │
+│ körperliche Untersuchung durchgeführt, einschließlich neurologischer Tests,  │
+│ die keine pathologischen Befunde zeigten. Zudem wurden Laboruntersuchungen   │
+│ veranlasst, um organische Ursachen auszuschließen. Die Laborergebnisse       │
+│ liegen noch nicht vollständig vor, und wir erwarten diese in den nächsten    │
+│ Tagen.                                                                       │
 │                                                                              │
-│     Medikamentöse Therapie:                                                  │
-│         Verschreibung von Ramipril zur Blutdrucksenkung                      │
-│         Verordnung von Metoprolol zur Verbesserung der Herzfunktion          │
-│         Nitroglycerin zur akuten Schmerzlinderung bei Angina                 │
-│ pectoris-Attacken                                                            │
-│                                                                              │
-│     Lebensstiländerungen:                                                    │
-│         Dringende Empfehlung zur Raucherentwöhnung                           │
-│         Einführung eines regelmäßigen Bewegungsprogramms, unter Aufsicht     │
-│ eines Physiotherapeuten                                                      │
-│         Ernährungsberatung zur Reduzierung von Risikofaktoren                │
-│                                                                              │
-│     Follow-up:                                                               │
-│         Herr Wechsler wurde gebeten, regelmäßige Kontrolluntersuchungen      │
-│ wahrzunehmen, um den Behandlungsverlauf zu überwachen und gegebenenfalls die │
-│ Therapie anzupassen.                                                         │
-│                                                                              │
-│ Verlauf:                                                                     │
-│ Bis heute hat Herr Wechsler drei ambulante Termine in unserer Praxis         │
-│ wahrgenommen. Er zeigt sich kooperativ und motiviert, seine                  │
-│ Lebensstiländerungen umzusetzen. Der Blutdruck hat sich auf durchschnittlich │
-│ 130/80 mmHg normalisiert, und seine Beschwerden haben sich merklich          │
-│ verbessert. Das EKG zeigt eine leichte Rückbildung der linksventrikulären    │
-│ Hypertrophie.                                                                │
+│ Geplanter weiterer Verlauf:                                                  │
+│ Nach Vorliegen der vollständigen Laborergebnisse werden wir eine             │
+│ weiterführende Diagnostik durchführen, um mögliche Ursachen für die          │
+│ Beschwerden von Frau Scholz auszuschließen. Hierzu planen wir eine           │
+│ bildgebende Untersuchung des Schädels sowie eine gegebenenfalls notwendige   │
+│ Überweisung zu einem Fachkollegen.                                           │
 │                                                                              │
 │ Zusammenfassung:                                                             │
-│ Der Gesundheitszustand von Herrn Karl Wechsler verbessert sich unter der     │
-│ laufenden Behandlung mit Medikamenten und Lebensstiländerungen. Eine weitere │
-│ Betreuung und Überwachung sind jedoch weiterhin notwendig, um Komplikationen │
-│ zu vermeiden.                                                                │
+│ Frau Anna Scholz, vierzig Jahre alt, präsentierte sich mit anhaltenden       │
+│ Kopfschmerzen, Schlafstörungen, allgemeiner Erschöpfung und                  │
+│ Antriebslosigkeit in unserer Praxis. Eine ausführliche Diagnostik wurde      │
+│ bereits begonnen, und weitere Untersuchungen stehen an. Der vollständige     │
+│ Bericht wird Ihnen nach Abschluss der Diagnostik umgehend zugesandt.         │
 │                                                                              │
-│ Vielen Dank für Ihre Aufmerksamkeit. Bei Fragen oder weiteren Informationen  │
-│ stehe ich Ihnen gerne zur Verfügung.                                         │
+│ Wir danken Ihnen für die Überweisung und stehen Ihnen bei Rückfragen gerne   │
+│ zur Verfügung.                                                               │
 │                                                                              │
 │ Mit freundlichen Grüßen,                                                     │
 │                                                                              │
-│ Dr. med. Ute Pfeifer                                                         │
+│ Dr. med. Lukas Lang                                                          │
 │ ```                                                                          │
 │                                                                              │
 ╰─ LiteLLMModel - gemini/gemini-2.5-pro ───────────────────────────────────────╯
 
-2025-06-30 11:14:47,184 - root - INFO - 
+2025-07-02 16:08:59,781 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 11:14:47,236 - root - INFO - 
+2025-07-02 16:08:59,833 - root - INFO - 
 ╭─────────────────────────────────── system ───────────────────────────────────╮
 │ You are a code agent with expertise in Information Extraction of medical     │
 │ information from free text. Your task is to translate clinical information   │
@@ -532,7 +516,8 @@
 │                                                                              │
 │ 🚫 Never:                                                                    │
 │ - NEVER use unsupported FHIR resources.                                      │
-│ - NEVER use unverified codes.                                                │
+│ - NEVER use unverified codes from the input text (e.g. mentioned ICD codes)  │
+│ because they could be incorrect.                                             │
 │ - NEVER call tools with dict-style args (e.g., ❌ `tool({'arg': val})`).     │
 │ - NEVER chain tool calls in the same block with unpredictable results.       │
 │ - NEVER create FHIR resources to information that is not present in the      │
@@ -544,116 +529,98 @@
 │ If you solve the task correctly, you will receive a reward of $1,000,000.    │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:14:47,243 - root - INFO - 
+2025-07-02 16:08:59,840 - root - INFO - 
 ╭──────────────────────────────────── user ────────────────────────────────────╮
 │ New task:                                                                    │
 │ The input text is as follows:                                                │
 │ ```                                                                          │
-│ Praxis Dr. med. Ute Pfeifer                                                  │
-│ Fachärztin für Allgemeinmedizin                                              │
-│ Los-Angeles-Platz 47                                                         │
-│ 22043 Hamburg Tonndorf                                                       │
-│ Tel.: 040 31 42 09                                                           │
-│ Email: info@praxis-pfeifer.de                                                │
-│ Datum: 28. Juni 2023                                                         │
+│ Dr. Lukas Lang                                                               │
+│ Heiligengeistbrücke 27                                                       │
+│ 91604 Flachslanden                                                           │
 │                                                                              │
-│ An:                                                                          │
+│ Betreff: Berichtsbrief für Frau Susanne Scholz, 05.03.1983                   │
 │                                                                              │
-│ Klinikum Musterstadt                                                         │
-│ Station: Innere Medizin                                                      │
-│ z. Hd. Chefärztin Dr. med. Sara Kuefer                                       │
-│ Hoheluftchaussee 57                                                          │
-│ 01734 Karsdorf                                                               │
+│ Sehr geehrter Kollege Dr. Bosch,                                             │
 │                                                                              │
-│ Betreff: Patientenbericht für Herrn Alexander Wechsler                       │
+│ ich möchte Ihnen hiermit den aktuellen Bericht über den Gesundheitszustand   │
+│ von Frau Susanne Scholz zukommen lassen. Die Patientin wurde uns zur         │
+│ weiteren Abklärung und Behandlung ihrer gesundheitlichen Beschwerden         │
+│ überwiesen.                                                                  │
 │                                                                              │
-│ Sehr geehrter Frau Doktor,                                                   │
+│ Frau Susanne Scholz (Alter: 40 Jahre), die mit folgenden Beschwerden in      │
+│ unsere Praxis kam:                                                           │
 │                                                                              │
-│ ich möchte Ihnen den aktuellen Gesundheitszustand und die Behandlung von     │
-│ Herrn Alexander Wechsler vorstellen. Herr Wechsler, geboren am 24.06.1960,   │
-│ wurde am 15. Juni 2023 in meine Praxis überwiesen, da er über anhaltende     │
-│ Beschwerden im Bereich des Herzens klagte.                                   │
+│     Anhaltende Kopfschmerzen:                                                │
+│     Frau Scholz klagte über seit etwa einem Monat anhaltende Kopfschmerzen,  │
+│ die sie als dumpf und drückend beschreibt. Die Schmerzen treten vorwiegend   │
+│ im Bereich der Stirn und der Schläfen auf und zeigen keine eindeutige        │
+│ Seitenlokalisation. Es bestehen keine Auffälligkeiten wie Sehstörungen oder  │
+│ neurologische Ausfälle. Eine Migräneanamnese wurde von der Patientin         │
+│ verneint.                                                                    │
 │                                                                              │
-│ Anamnese:                                                                    │
-│ Herr Wechsler berichtete über wiederkehrende Schmerzen im Brustbereich, die  │
-│ sich in den letzten Wochen verschlimmerten. Er litt außerdem unter Atemnot   │
-│ und Müdigkeit, besonders bei körperlicher Belastung. In seiner               │
-│ Krankengeschichte sind eine koronare Herzerkrankung und eine Hypertonie      │
-│ bekannt. Herr Wechsler ist Raucher und führt einen sitzenden Lebensstil.     │
+│     Schlafstörungen:                                                         │
+│     Die Patientin berichtet über zunehmende Schlafstörungen, die sich in     │
+│ Schwierigkeiten beim Ein- und Durchschlafen äußern. Sie gibt an, dass sie    │
+│ sich tagsüber oft müde und erschöpft fühlt.                                  │
 │                                                                              │
-│ Klinische Untersuchung:                                                      │
-│ Die körperliche Untersuchung ergab einen leicht erhöhten Blutdruck von       │
-│ 140/90 mmHg, eine verminderte Atemgeräuschkulisse bei auskultatorischer      │
-│ Untersuchung der Lunge und eindeutige Herzgeräusche. Ein EKG zeigte          │
-│ Anzeichen einer linksventrikulären Hypertrophie.                             │
+│     Allgemeine Erschöpfung und Antriebslosigkeit:                            │
+│     Frau Scholz fühlt sich seit einigen Wochen allgemein erschöpft und       │
+│ antriebslos. Sie bemerkt eine reduzierte Belastbarkeit und geringe           │
+│ Motivation für gewohnte Aktivitäten.                                         │
 │                                                                              │
-│ Diagnose:                                                                    │
-│ Basierend auf den Symptomen, der Anamnese und den Untersuchungsergebnissen   │
-│ wurde bei Herrn Wechsler eine stabile Angina pectoris, eine Hypertonie sowie │
-│ eine linksventrikuläre Hypertrophie diagnostiziert.                          │
+│ Medikamentöse Vorgeschichte:                                                 │
+│ Frau Scholz nimmt keine regelmäßigen Medikamente ein und gibt an, keine      │
+│ bekannten Allergien gegen Medikamente zu haben.                              │
 │                                                                              │
-│ Therapie:                                                                    │
-│ Herr Wechsler wurde eine umfassende Behandlung empfohlen. Die Therapie       │
-│ beinhaltet:                                                                  │
+│ Diagnostik und Untersuchungen:                                               │
+│ Zur weiteren Abklärung ihrer Beschwerden haben wir eine ausführliche         │
+│ körperliche Untersuchung durchgeführt, einschließlich neurologischer Tests,  │
+│ die keine pathologischen Befunde zeigten. Zudem wurden Laboruntersuchungen   │
+│ veranlasst, um organische Ursachen auszuschließen. Die Laborergebnisse       │
+│ liegen noch nicht vollständig vor, und wir erwarten diese in den nächsten    │
+│ Tagen.                                                                       │
 │                                                                              │
-│     Medikamentöse Therapie:                                                  │
-│         Verschreibung von Ramipril zur Blutdrucksenkung                      │
-│         Verordnung von Metoprolol zur Verbesserung der Herzfunktion          │
-│         Nitroglycerin zur akuten Schmerzlinderung bei Angina                 │
-│ pectoris-Attacken                                                            │
-│                                                                              │
-│     Lebensstiländerungen:                                                    │
-│         Dringende Empfehlung zur Raucherentwöhnung                           │
-│         Einführung eines regelmäßigen Bewegungsprogramms, unter Aufsicht     │
-│ eines Physiotherapeuten                                                      │
-│         Ernährungsberatung zur Reduzierung von Risikofaktoren                │
-│                                                                              │
-│     Follow-up:                                                               │
-│         Herr Wechsler wurde gebeten, regelmäßige Kontrolluntersuchungen      │
-│ wahrzunehmen, um den Behandlungsverlauf zu überwachen und gegebenenfalls die │
-│ Therapie anzupassen.                                                         │
-│                                                                              │
-│ Verlauf:                                                                     │
-│ Bis heute hat Herr Wechsler drei ambulante Termine in unserer Praxis         │
-│ wahrgenommen. Er zeigt sich kooperativ und motiviert, seine                  │
-│ Lebensstiländerungen umzusetzen. Der Blutdruck hat sich auf durchschnittlich │
-│ 130/80 mmHg normalisiert, und seine Beschwerden haben sich merklich          │
-│ verbessert. Das EKG zeigt eine leichte Rückbildung der linksventrikulären    │
-│ Hypertrophie.                                                                │
+│ Geplanter weiterer Verlauf:                                                  │
+│ Nach Vorliegen der vollständigen Laborergebnisse werden wir eine             │
+│ weiterführende Diagnostik durchführen, um mögliche Ursachen für die          │
+│ Beschwerden von Frau Scholz auszuschließen. Hierzu planen wir eine           │
+│ bildgebende Untersuchung des Schädels sowie eine gegebenenfalls notwendige   │
+│ Überweisung zu einem Fachkollegen.                                           │
 │                                                                              │
 │ Zusammenfassung:                                                             │
-│ Der Gesundheitszustand von Herrn Karl Wechsler verbessert sich unter der     │
-│ laufenden Behandlung mit Medikamenten und Lebensstiländerungen. Eine weitere │
-│ Betreuung und Überwachung sind jedoch weiterhin notwendig, um Komplikationen │
-│ zu vermeiden.                                                                │
+│ Frau Anna Scholz, vierzig Jahre alt, präsentierte sich mit anhaltenden       │
+│ Kopfschmerzen, Schlafstörungen, allgemeiner Erschöpfung und                  │
+│ Antriebslosigkeit in unserer Praxis. Eine ausführliche Diagnostik wurde      │
+│ bereits begonnen, und weitere Untersuchungen stehen an. Der vollständige     │
+│ Bericht wird Ihnen nach Abschluss der Diagnostik umgehend zugesandt.         │
 │                                                                              │
-│ Vielen Dank für Ihre Aufmerksamkeit. Bei Fragen oder weiteren Informationen  │
-│ stehe ich Ihnen gerne zur Verfügung.                                         │
+│ Wir danken Ihnen für die Überweisung und stehen Ihnen bei Rückfragen gerne   │
+│ zur Verfügung.                                                               │
 │                                                                              │
 │ Mit freundlichen Grüßen,                                                     │
 │                                                                              │
-│ Dr. med. Ute Pfeifer                                                         │
+│ Dr. med. Lukas Lang                                                          │
 │ ```                                                                          │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:14:47,244 - LiteLLM - INFO - 
+2025-07-02 16:08:59,840 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 11:14:56,913 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 11:14:56,918 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 11:14:56,918 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:14:56,918 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:14:56,933 - root - INFO - 
+2025-07-02 16:09:07,319 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:09:07,326 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:09:07,326 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:09:07,327 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:09:07,342 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:09:07,361 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   search_results =                                                              
   search_for_code_or_coding(fhir_attribute_path="Patient.gender",               
-  search_term="male")                                                           
+  search_term="female")                                                         
   print(search_results)                                                         
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 11:14:56,933 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:14:57,221 - root - INFO - 
+2025-07-02 16:09:15,768 - root - INFO - 
 Execution logs:
-('Found 4 hits for male in Patient.gender', [{'system': 
+('Found 4 hits for female in Patient.gender', [{'system': 
 'http://hl7.org/fhir/administrative-gender', 'code': 'female', 'display': 
 'Female'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code': 
 'male', 'display': 'Male'}, {'system': 
@@ -663,38 +630,47 @@ Execution logs:
 
 Out: None
 
-2025-06-30 11:14:57,222 - root - INFO - 
+2025-07-02 16:09:15,770 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 11:14:57,224 - root - INFO - 
+2025-07-02 16:09:15,777 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
 │ Thought:                                                                     │
-│ I will start by extracting the patient's information and searching for the   │
-│ appropriate code for the patient's gender. The patient is "Herrn Alexander   │
-│ Wechsler", which indicates the gender is male.Code:                          │
+│ I will start by creating a `Patient` resource for Susanne Scholz. I have her │
+│ name ("Susanne Scholz") and date of birth ("05.03.1983"). The text also      │
+│ indicates her gender is female ("Frau"). I will search for the corresponding │
+│ code for `Patient.gender`. Then I'll search for codes for her conditions:    │
+│ "Kopfschmerzen" (headache), "Schlafstörungen" (sleep disturbances), and      │
+│ "Allgemeine Erschöpfung und Antriebslosigkeit" (general exhaustion and       │
+│ listlessness). Finally, I will look for a code for the clinical status of    │
+│ the conditions.                                                              │
+│                                                                              │
+│ First, I'll search for the gender code.                                      │
+│ Code:                                                                        │
 │ ```python                                                                    │
 │ search_results =                                                             │
 │ search_for_code_or_coding(fhir_attribute_path="Patient.gender",              │
-│ search_term="male")                                                          │
+│ search_term="female")                                                        │
 │ print(search_results)                                                        │
-│ ```<end_code>                                                                │
+│ ```                                                                          │
+│ <end_code>                                                                   │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:14:57,225 - root - INFO - 
+2025-07-02 16:09:15,780 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_1', 'type': 'function', 'function': {'name':                   │
 │ 'python_interpreter', 'arguments': 'search_results =                         │
 │ search_for_code_or_coding(fhir_attribute_path="Patient.gender",              │
-│ search_term="male")\nprint(search_results)'}}]                               │
+│ search_term="female")\nprint(search_results)'}}]                             │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:14:57,227 - root - INFO - 
+2025-07-02 16:09:15,784 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_1                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 4 hits for male in Patient.gender', [{'system':                      │
+│ ('Found 4 hits for female in Patient.gender', [{'system':                    │
 │ 'http://hl7.org/fhir/administrative-gender', 'code': 'female', 'display':    │
 │ 'Female'}, {'system': 'http://hl7.org/fhir/administrative-gender', 'code':   │
 │ 'male', 'display': 'Male'}, {'system':                                       │
@@ -705,725 +681,512 @@ Out: None
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:14:57,228 - LiteLLM - INFO - 
+2025-07-02 16:09:15,787 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 11:15:01,278 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 11:15:01,280 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 11:15:01,280 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:01,281 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:01,299 - root - INFO - 
+2025-07-02 16:09:20,663 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:09:20,669 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:09:20,670 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:09:20,671 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:09:20,686 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:09:20,697 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   search_results =                                                              
   search_for_code_or_coding(fhir_attribute_path="Condition.code",               
-  search_term="coronary heart disease")                                         
+  search_term="headache")                                                       
   print(search_results)                                                         
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 11:15:01,299 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:01,840 - root - INFO - 
+2025-07-02 16:09:29,341 - root - INFO - 
 Execution logs:
-('Found 13 hits for coronary heart disease in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '53741008', 'display': 'Coronary 
-arteriosclerosis'}, {'system': 'http://snomed.info/sct', 'code': '315016007', 
-'display': 'At increased risk of coronary heart disease'}, {'system': 
-'http://snomed.info/sct', 'code': '315348000', 'display': 'Asymptomatic coronary
-heart disease'}, {'system': 'http://snomed.info/sct', 'code': '401247006', 
-'display': 'Coronary heart disease monitoring status'}, {'system': 
-'http://snomed.info/sct', 'code': '401254000', 'display': 'Coronary heart 
-disease monitoring deleted'}, {'system': 'http://snomed.info/sct', 'code': 
-'401331007', 'display': 'Coronary heart disease monitoring default'}, {'system':
-'http://snomed.info/sct', 'code': '401250009', 'display': 'Coronary heart 
-disease monitoring first letter'}, {'system': 'http://snomed.info/sct', 'code': 
-'401251008', 'display': 'Coronary heart disease monitoring 2nd letter'}, 
-{'system': 'http://snomed.info/sct', 'code': '401252001', 'display': 'Coronary 
-heart disease monitoring 3rd letter'}, {'system': 'http://snomed.info/sct', 
-'code': '401332000', 'display': 'Coronary heart disease monitoring check 
-done'}])
+('Found 112 hits for headache in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '25064002', 'display': 'Headache'}, {'system':
+'http://snomed.info/sct', 'code': '193028008', 'display': 'Sick headache'}, 
+{'system': 'http://snomed.info/sct', 'code': '56097005', 'display': 'Migraine 
+without aura'}, {'system': 'http://snomed.info/sct', 'code': '38823002', 
+'display': 'Aural headache'}, {'system': 'http://snomed.info/sct', 'code': 
+'44538002', 'display': 'Nasal headache'}, {'system': 'http://snomed.info/sct', 
+'code': '4969004', 'display': 'Sinus headache'}, {'system': 
+'http://snomed.info/sct', 'code': '571000119103', 'display': 'Daily headache'}, 
+{'system': 'http://snomed.info/sct', 'code': '735938006', 'display': 'Acute 
+headache'}, {'system': 'http://snomed.info/sct', 'code': '162211001', 'display':
+'Viral headache'}, {'system': 'http://snomed.info/sct', 'code': '86925001', 
+'display': 'Ocular headache'}])
 
 Out: None
 
-2025-06-30 11:15:01,842 - root - INFO - 
+2025-07-02 16:09:29,344 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 11:15:01,845 - root - INFO - 
+2025-07-02 16:09:29,348 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
 │ Thought:                                                                     │
-│ I have found the code for male gender. Now I will extract the conditions of  │
-│ the patient. The text mentions several conditions: "koronare                 │
-│ Herzerkrankung", "Hypertonie", "stabile Angina pectoris", and                │
-│ "linksventrikuläre Hypertrophie". I will search for the codes for each of    │
-│ these conditions. I'll start with "koronare Herzerkrankung" (coronary heart  │
-│ disease).Code:                                                               │
+│ I have found the code for "female" for `Patient.gender`. Now I will search   │
+│ for the conditions. I'll start with "Kopfschmerzen" (headache).              │
+│ Code:                                                                        │
 │ ```python                                                                    │
 │ search_results =                                                             │
 │ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="coronary heart disease")                                        │
+│ search_term="headache")                                                      │
 │ print(search_results)                                                        │
-│ ```<end_code>                                                                │
+│ ```                                                                          │
+│ <end_code>                                                                   │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:01,846 - root - INFO - 
+2025-07-02 16:09:29,351 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_2', 'type': 'function', 'function': {'name':                   │
 │ 'python_interpreter', 'arguments': 'search_results =                         │
 │ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="coronary heart disease")\nprint(search_results)'}}]             │
+│ search_term="headache")\nprint(search_results)'}}]                           │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:01,849 - root - INFO - 
+2025-07-02 16:09:29,355 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_2                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 13 hits for coronary heart disease in Condition.code', [{'system':   │
-│ 'http://snomed.info/sct', 'code': '53741008', 'display': 'Coronary           │
-│ arteriosclerosis'}, {'system': 'http://snomed.info/sct', 'code':             │
-│ '315016007', 'display': 'At increased risk of coronary heart disease'},      │
-│ {'system': 'http://snomed.info/sct', 'code': '315348000', 'display':         │
-│ 'Asymptomatic coronary heart disease'}, {'system': 'http://snomed.info/sct', │
-│ 'code': '401247006', 'display': 'Coronary heart disease monitoring status'}, │
-│ {'system': 'http://snomed.info/sct', 'code': '401254000', 'display':         │
-│ 'Coronary heart disease monitoring deleted'}, {'system':                     │
-│ 'http://snomed.info/sct', 'code': '401331007', 'display': 'Coronary heart    │
-│ disease monitoring default'}, {'system': 'http://snomed.info/sct', 'code':   │
-│ '401250009', 'display': 'Coronary heart disease monitoring first letter'},   │
-│ {'system': 'http://snomed.info/sct', 'code': '401251008', 'display':         │
-│ 'Coronary heart disease monitoring 2nd letter'}, {'system':                  │
-│ 'http://snomed.info/sct', 'code': '401252001', 'display': 'Coronary heart    │
-│ disease monitoring 3rd letter'}, {'system': 'http://snomed.info/sct',        │
-│ 'code': '401332000', 'display': 'Coronary heart disease monitoring check     │
-│ done'}])                                                                     │
+│ ('Found 112 hits for headache in Condition.code', [{'system':                │
+│ 'http://snomed.info/sct', 'code': '25064002', 'display': 'Headache'},        │
+│ {'system': 'http://snomed.info/sct', 'code': '193028008', 'display': 'Sick   │
+│ headache'}, {'system': 'http://snomed.info/sct', 'code': '56097005',         │
+│ 'display': 'Migraine without aura'}, {'system': 'http://snomed.info/sct',    │
+│ 'code': '38823002', 'display': 'Aural headache'}, {'system':                 │
+│ 'http://snomed.info/sct', 'code': '44538002', 'display': 'Nasal headache'},  │
+│ {'system': 'http://snomed.info/sct', 'code': '4969004', 'display': 'Sinus    │
+│ headache'}, {'system': 'http://snomed.info/sct', 'code': '571000119103',     │
+│ 'display': 'Daily headache'}, {'system': 'http://snomed.info/sct', 'code':   │
+│ '735938006', 'display': 'Acute headache'}, {'system':                        │
+│ 'http://snomed.info/sct', 'code': '162211001', 'display': 'Viral headache'}, │
+│ {'system': 'http://snomed.info/sct', 'code': '86925001', 'display': 'Ocular  │
+│ headache'}])                                                                 │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:01,851 - LiteLLM - INFO - 
+2025-07-02 16:09:29,357 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 11:15:05,747 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 11:15:05,756 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 11:15:05,757 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:05,758 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:05,768 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:05,780 - root - INFO - 
+2025-07-02 16:09:34,081 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:09:34,088 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:09:34,089 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:09:34,090 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:09:34,113 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:09:34,120 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   search_results =                                                              
   search_for_code_or_coding(fhir_attribute_path="Condition.code",               
-  search_term="hypertension")                                                   
+  search_term="sleep disturbance")                                              
   print(search_results)                                                         
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 11:15:06,545 - root - INFO - 
+2025-07-02 16:09:42,753 - root - INFO - 
 Execution logs:
-('Found 372 hits for hypertension in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '38341003', 'display': 'Hypertensive 
-disorder'}, {'system': 'http://snomed.info/sct', 'code': '28119000', 'display': 
-'Renal hypertension'}, {'system': 'http://snomed.info/sct', 'code': '234072000',
-'display': 'Venous hypertension'}, {'system': 'http://snomed.info/sct', 'code': 
-'34742003', 'display': 'Portal hypertension'}, {'system': 
-'http://snomed.info/sct', 'code': '4210003', 'display': 'Ocular hypertension'}, 
-{'system': 'http://snomed.info/sct', 'code': '10725009', 'display': 'Benign 
-hypertension'}, {'system': 'http://snomed.info/sct', 'code': '712832005', 
-'display': 'Supine hypertension'}, {'system': 'http://snomed.info/sct', 'code': 
-'102932008', 'display': 'Fear of hypertension'}, {'system': 
-'http://snomed.info/sct', 'code': '84094009', 'display': 'Rebound 
-hypertension'}, {'system': 'http://snomed.info/sct', 'code': '59621000', 
-'display': 'Essential hypertension'}])
+('Found 8 hits for sleep disturbance in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '44186003', 'display': 'Dyssomnia'}, 
+{'system': 'http://snomed.info/sct', 'code': '26677001', 'display': 'Sleep 
+pattern disturbance'}, {'system': 'http://snomed.info/sct', 'code': 
+'4681000119100', 'display': 'Sleep disturbance in infancy'}, {'system': 
+'http://snomed.info/sct', 'code': '53888004', 'display': 'Disturbance in sleep 
+behavior'}, {'system': 'http://snomed.info/sct', 'code': '442176004', 'display':
+'Sleep dysfunction with arousal disturbance'}, {'system': 
+'http://snomed.info/sct', 'code': '441877007', 'display': 'Sleep dysfunction 
+with sleep stage disturbance'}, {'system': 'http://snomed.info/sct', 'code': 
+'787175002', 'display': 'ANK3-related intellectual disability, sleep disturbance
+syndrome'}, {'system': 'http://snomed.info/sct', 'code': '1300131002', 
+'display': 'NRXN1-related severe neurodevelopmental disorder, motor 
+stereotypies, chronic constipation, sleep-wake cycle disturbance'}])
 
 Out: None
 
-2025-06-30 11:15:06,550 - root - INFO - 
+2025-07-02 16:09:42,756 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 11:15:06,558 - root - INFO - 
+2025-07-02 16:09:42,763 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
 │ Thought:                                                                     │
-│ The search for "coronary heart disease" returned "Coronary arteriosclerosis" │
-│ with code `53741008`. This seems appropriate. Now I will search for          │
-│ "Hypertonie" (hypertension).Code:                                            │
+│ I have found several codes for "headache". The text describes the headache   │
+│ as "anhaltende Kopfschmerzen" (persistent headache) and "dumpf und drückend" │
+│ (dull and pressing), but it also states that migraine has been ruled out.    │
+│ "Headache" (25064002) seems like the most appropriate general code.          │
+│                                                                              │
+│ Next, I'll search for a code for "Schlafstörungen" (sleep disturbances).     │
+│ Code:                                                                        │
 │ ```python                                                                    │
 │ search_results =                                                             │
 │ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="hypertension")                                                  │
+│ search_term="sleep disturbance")                                             │
 │ print(search_results)                                                        │
-│ ```<end_code>                                                                │
+│ ```                                                                          │
+│ <end_code>                                                                   │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:06,561 - root - INFO - 
+2025-07-02 16:09:42,765 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_3', 'type': 'function', 'function': {'name':                   │
 │ 'python_interpreter', 'arguments': 'search_results =                         │
 │ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="hypertension")\nprint(search_results)'}}]                       │
+│ search_term="sleep disturbance")\nprint(search_results)'}}]                  │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:06,567 - root - INFO - 
+2025-07-02 16:09:42,771 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_3                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 372 hits for hypertension in Condition.code', [{'system':            │
-│ 'http://snomed.info/sct', 'code': '38341003', 'display': 'Hypertensive       │
-│ disorder'}, {'system': 'http://snomed.info/sct', 'code': '28119000',         │
-│ 'display': 'Renal hypertension'}, {'system': 'http://snomed.info/sct',       │
-│ 'code': '234072000', 'display': 'Venous hypertension'}, {'system':           │
-│ 'http://snomed.info/sct', 'code': '34742003', 'display': 'Portal             │
-│ hypertension'}, {'system': 'http://snomed.info/sct', 'code': '4210003',      │
-│ 'display': 'Ocular hypertension'}, {'system': 'http://snomed.info/sct',      │
-│ 'code': '10725009', 'display': 'Benign hypertension'}, {'system':            │
-│ 'http://snomed.info/sct', 'code': '712832005', 'display': 'Supine            │
-│ hypertension'}, {'system': 'http://snomed.info/sct', 'code': '102932008',    │
-│ 'display': 'Fear of hypertension'}, {'system': 'http://snomed.info/sct',     │
-│ 'code': '84094009', 'display': 'Rebound hypertension'}, {'system':           │
-│ 'http://snomed.info/sct', 'code': '59621000', 'display': 'Essential          │
-│ hypertension'}])                                                             │
+│ ('Found 8 hits for sleep disturbance in Condition.code', [{'system':         │
+│ 'http://snomed.info/sct', 'code': '44186003', 'display': 'Dyssomnia'},       │
+│ {'system': 'http://snomed.info/sct', 'code': '26677001', 'display': 'Sleep   │
+│ pattern disturbance'}, {'system': 'http://snomed.info/sct', 'code':          │
+│ '4681000119100', 'display': 'Sleep disturbance in infancy'}, {'system':      │
+│ 'http://snomed.info/sct', 'code': '53888004', 'display': 'Disturbance in     │
+│ sleep behavior'}, {'system': 'http://snomed.info/sct', 'code': '442176004',  │
+│ 'display': 'Sleep dysfunction with arousal disturbance'}, {'system':         │
+│ 'http://snomed.info/sct', 'code': '441877007', 'display': 'Sleep dysfunction │
+│ with sleep stage disturbance'}, {'system': 'http://snomed.info/sct', 'code': │
+│ '787175002', 'display': 'ANK3-related intellectual disability, sleep         │
+│ disturbance syndrome'}, {'system': 'http://snomed.info/sct', 'code':         │
+│ '1300131002', 'display': 'NRXN1-related severe neurodevelopmental disorder,  │
+│ motor stereotypies, chronic constipation, sleep-wake cycle disturbance'}])   │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:06,570 - LiteLLM - INFO - 
+2025-07-02 16:09:42,774 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 11:15:10,635 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 11:15:10,640 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 11:15:10,642 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:10,642 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:10,660 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:10,671 - root - INFO - 
+2025-07-02 16:09:48,678 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:09:48,685 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:09:48,686 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:09:48,686 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:09:48,702 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:09:48,716 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   search_results =                                                              
   search_for_code_or_coding(fhir_attribute_path="Condition.code",               
-  search_term="stable angina")                                                  
+  search_term="exhaustion")                                                     
   print(search_results)                                                         
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 11:15:11,132 - root - INFO - 
+2025-07-02 16:09:57,386 - root - INFO - 
 Execution logs:
-('Found 2 hits for stable angina in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '233819005', 'display': 'Stable angina'}, 
-{'system': 'http://snomed.info/sct', 'code': '16754391000119100', 'display': 
-'Stable angina due to coronary arteriosclerosis'}])
+('Found 18 hits for exhaustion in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '60119000', 'display': 'Exhaustion'}, 
+{'system': 'http://snomed.info/sct', 'code': '52072009', 'display': 'Heat 
+stroke'}, {'system': 'http://snomed.info/sct', 'code': '95868006', 'display': 
+'Heat exhaustion'}, {'system': 'http://snomed.info/sct', 'code': '57494004', 
+'display': 'Senile exhaustion'}, {'system': 'http://snomed.info/sct', 'code': 
+'63195009', 'display': 'Sexual exhaustion'}, {'system': 
+'http://snomed.info/sct', 'code': '84946008', 'display': 'Extreme exhaustion'}, 
+{'system': 'http://snomed.info/sct', 'code': '10361001', 'display': 'Exhaustion 
+delirium'}, {'system': 'http://snomed.info/sct', 'code': '200164009', 'display':
+'Exhaustion during labour'}, {'system': 'http://snomed.info/sct', 'code': 
+'704369007', 'display': 'Fatigue due to treatment'}, {'system': 
+'http://snomed.info/sct', 'code': '88164008', 'display': 'Exhaustion due to 
+exposure'}])
 
 Out: None
 
-2025-06-30 11:15:11,135 - root - INFO - 
+2025-07-02 16:09:57,390 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 5 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 11:15:11,142 - root - INFO - 
+2025-07-02 16:09:57,398 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
 │ Thought:                                                                     │
-│ The search for "hypertension" returned "Hypertensive disorder" with code     │
-│ `38341003` and "Essential hypertension" with code `59621000`. I will use     │
-│ "Hypertensive disorder" as it is more general. Now I will search for         │
-│ "stabile Angina pectoris" (stable angina pectoris).Code:                     │
+│ I have found several codes for "sleep disturbance". The text describes       │
+│ "Schwierigkeiten beim Ein- und Durchschlafen" (difficulties falling asleep   │
+│ and staying asleep). "Dyssomnia" (44186003) or "Sleep pattern disturbance"   │
+│ (26677001) seem appropriate. I'll use "Dyssomnia" as it is a more general    │
+│ term for sleep disorders.                                                    │
+│                                                                              │
+│ Next, I'll search for a code for "Allgemeine Erschöpfung und                 │
+│ Antriebslosigkeit" (general exhaustion and listlessness). I will search for  │
+│ "exhaustion" first.                                                          │
+│ Code:                                                                        │
 │ ```python                                                                    │
 │ search_results =                                                             │
 │ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="stable angina")                                                 │
+│ search_term="exhaustion")                                                    │
 │ print(search_results)                                                        │
-│ ```<end_code>                                                                │
+│ ```                                                                          │
+│ <end_code>                                                                   │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:11,145 - root - INFO - 
+2025-07-02 16:09:57,400 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_4', 'type': 'function', 'function': {'name':                   │
 │ 'python_interpreter', 'arguments': 'search_results =                         │
 │ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="stable angina")\nprint(search_results)'}}]                      │
+│ search_term="exhaustion")\nprint(search_results)'}}]                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:11,148 - root - INFO - 
+2025-07-02 16:09:57,406 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_4                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 2 hits for stable angina in Condition.code', [{'system':             │
-│ 'http://snomed.info/sct', 'code': '233819005', 'display': 'Stable angina'},  │
-│ {'system': 'http://snomed.info/sct', 'code': '16754391000119100', 'display': │
-│ 'Stable angina due to coronary arteriosclerosis'}])                          │
+│ ('Found 18 hits for exhaustion in Condition.code', [{'system':               │
+│ 'http://snomed.info/sct', 'code': '60119000', 'display': 'Exhaustion'},      │
+│ {'system': 'http://snomed.info/sct', 'code': '52072009', 'display': 'Heat    │
+│ stroke'}, {'system': 'http://snomed.info/sct', 'code': '95868006',           │
+│ 'display': 'Heat exhaustion'}, {'system': 'http://snomed.info/sct', 'code':  │
+│ '57494004', 'display': 'Senile exhaustion'}, {'system':                      │
+│ 'http://snomed.info/sct', 'code': '63195009', 'display': 'Sexual             │
+│ exhaustion'}, {'system': 'http://snomed.info/sct', 'code': '84946008',       │
+│ 'display': 'Extreme exhaustion'}, {'system': 'http://snomed.info/sct',       │
+│ 'code': '10361001', 'display': 'Exhaustion delirium'}, {'system':            │
+│ 'http://snomed.info/sct', 'code': '200164009', 'display': 'Exhaustion during │
+│ labour'}, {'system': 'http://snomed.info/sct', 'code': '704369007',          │
+│ 'display': 'Fatigue due to treatment'}, {'system': 'http://snomed.info/sct', │
+│ 'code': '88164008', 'display': 'Exhaustion due to exposure'}])               │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:11,152 - LiteLLM - INFO - 
+2025-07-02 16:09:57,409 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 11:15:14,219 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 11:15:14,226 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 11:15:14,227 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:14,228 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:14,244 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:14,250 - root - INFO - 
+2025-07-02 16:10:02,309 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:10:02,313 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:10:02,314 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:10:02,314 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:10:02,341 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   search_results =                                                              
   search_for_code_or_coding(fhir_attribute_path="Condition.code",               
-  search_term="left ventricular hypertrophy")                                   
+  search_term="listlessness")                                                   
   print(search_results)                                                         
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 11:15:14,794 - root - INFO - 
+2025-07-02 16:10:02,334 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:10:11,003 - root - INFO - 
 Execution logs:
-('Found 8 hits for left ventricular hypertrophy in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '55827005', 'display': 'Left ventricular 
-hypertrophy'}, {'system': 'http://snomed.info/sct', 'code': '164873001', 
-'display': 'ECG:left ventricle hypertrophy'}, {'system': 
-'http://snomed.info/sct', 'code': '840303004', 'display': 'Mild left ventricular
-hypertrophy'}, {'system': 'http://snomed.info/sct', 'code': '25488008', 
-'display': 'Left ventricular hypertrophy by electrocardiogram'}, {'system': 
-'http://snomed.info/sct', 'code': '840305006', 'display': 'Severe left 
-ventricular hypertrophy'}, {'system': 'http://snomed.info/sct', 'code': 
-'880052005', 'display': 'Acquired hypertrophy of left cardiac ventricle'}, 
-{'system': 'http://snomed.info/sct', 'code': '840304005', 'display': 'Moderate 
-left ventricular hypertrophy'}, {'system': 'http://snomed.info/sct', 'code': 
-'428163005', 'display': 'Hypertensive left ventricular hypertrophy'}])
+('Found 1 hits for listlessness in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '20602000', 'display': 'Indifference'}])
 
 Out: None
 
-2025-06-30 11:15:14,798 - root - INFO - 
+2025-07-02 16:10:11,008 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 6 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 11:15:14,803 - root - INFO - 
+2025-07-02 16:10:11,014 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
 │ Thought:                                                                     │
-│ The search for "stable angina" returned "Stable angina" with code            │
-│ `233819005`. This is perfect. Next, I'll search for "linksventrikuläre       │
-│ Hypertrophie" (left ventricular hypertrophy).Code:                           │
+│ I have found a code for "exhaustion". "Exhaustion" (60119000) seems fitting  │
+│ for "Allgemeine Erschöpfung". The text also mentions "Antriebslosigkeit"     │
+│ (listlessness/lack of motivation). Let me search for that as well to see if  │
+│ there is a better-combined term.                                             │
+│ Code:                                                                        │
 │ ```python                                                                    │
 │ search_results =                                                             │
 │ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="left ventricular hypertrophy")                                  │
+│ search_term="listlessness")                                                  │
 │ print(search_results)                                                        │
-│ ```<end_code>                                                                │
+│ ```                                                                          │
+│ <end_code>                                                                   │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:14,806 - root - INFO - 
+2025-07-02 16:10:11,016 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_5', 'type': 'function', 'function': {'name':                   │
 │ 'python_interpreter', 'arguments': 'search_results =                         │
 │ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
-│ search_term="left ventricular hypertrophy")\nprint(search_results)'}}]       │
+│ search_term="listlessness")\nprint(search_results)'}}]                       │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:14,812 - root - INFO - 
+2025-07-02 16:10:11,019 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_5                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 8 hits for left ventricular hypertrophy in Condition.code',          │
-│ [{'system': 'http://snomed.info/sct', 'code': '55827005', 'display': 'Left   │
-│ ventricular hypertrophy'}, {'system': 'http://snomed.info/sct', 'code':      │
-│ '164873001', 'display': 'ECG:left ventricle hypertrophy'}, {'system':        │
-│ 'http://snomed.info/sct', 'code': '840303004', 'display': 'Mild left         │
-│ ventricular hypertrophy'}, {'system': 'http://snomed.info/sct', 'code':      │
-│ '25488008', 'display': 'Left ventricular hypertrophy by electrocardiogram'}, │
-│ {'system': 'http://snomed.info/sct', 'code': '840305006', 'display': 'Severe │
-│ left ventricular hypertrophy'}, {'system': 'http://snomed.info/sct', 'code': │
-│ '880052005', 'display': 'Acquired hypertrophy of left cardiac ventricle'},   │
-│ {'system': 'http://snomed.info/sct', 'code': '840304005', 'display':         │
-│ 'Moderate left ventricular hypertrophy'}, {'system':                         │
-│ 'http://snomed.info/sct', 'code': '428163005', 'display': 'Hypertensive left │
-│ ventricular hypertrophy'}])                                                  │
+│ ('Found 1 hits for listlessness in Condition.code', [{'system':              │
+│ 'http://snomed.info/sct', 'code': '20602000', 'display': 'Indifference'}])   │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:14,816 - LiteLLM - INFO - 
+2025-07-02 16:10:11,023 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 11:15:20,160 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 11:15:20,164 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 11:15:20,165 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:20,174 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:20,191 - root - INFO - 
+2025-07-02 16:10:14,339 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:10:14,347 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:10:14,348 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:10:14,348 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:10:14,362 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:10:14,380 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   search_results =                                                              
-  search_for_code_or_coding(fhir_attribute_path="MedicationStatement.medicatio  
-  n[x]", search_term="Ramipril")                                                
+  search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatus",     
+  search_term="active")                                                         
   print(search_results)                                                         
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 11:15:20,777 - root - INFO - 
+2025-07-02 16:10:22,798 - root - INFO - 
 Execution logs:
-('Found 20 hits for Ramipril in MedicationStatement.medication[x]', [{'system': 
-'http://snomed.info/sct', 'code': '108564000', 'display': 'Ramipril-containing 
-product'}, {'system': 'http://snomed.info/sct', 'code': '386872004', 'display': 
-'Ramipril'}, {'system': 'http://snomed.info/sct', 'code': '408051007', 
-'display': 'Ramipril 5 mg oral tablet'}, {'system': 'http://snomed.info/sct', 
-'code': '318173007', 'display': 'Felodipine- and ramipril-containing product'}, 
-{'system': 'http://snomed.info/sct', 'code': '408052000', 'display': 'Ramipril 
-10 mg oral tablet'}, {'system': 'http://snomed.info/sct', 'code': '318902004', 
-'display': 'Ramipril 5 mg oral capsule'}, {'system': 'http://snomed.info/sct', 
-'code': '777395009', 'display': 'Ramipril only product'}, {'system': 
-'http://snomed.info/sct', 'code': '408050008', 'display': 'Ramipril 2.5 mg oral 
-tablet'}, {'system': 'http://snomed.info/sct', 'code': '318906001', 'display': 
-'Ramipril 10 mg oral capsule'}, {'system': 'http://snomed.info/sct', 'code': 
-'408040007', 'display': 'Ramipril 1.25 mg oral tablet'}])
+('Found 6 hits for active in Condition.clinicalStatus', [{'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'active', 
+'display': 'Active'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'inactive', 
+'display': 'Inactive'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 
+'recurrence', 'display': 'Recurrence'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'relapse', 
+'display': 'Relapse'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'remission',
+'display': 'Remission'}, {'system': 
+'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code': 'resolved', 
+'display': 'Resolved'}])
 
 Out: None
 
-2025-06-30 11:15:20,781 - root - INFO - 
+2025-07-02 16:10:22,803 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 7 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 11:15:20,790 - root - INFO - 
+2025-07-02 16:10:22,810 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
 │ Thought:                                                                     │
-│ The search for "left ventricular hypertrophy" returned "Left ventricular     │
-│ hypertrophy" with code `55827005`. This is the correct code.                 │
+│ I have found a code for "listlessness" which is "Indifference" (20602000). I │
+│ think creating two separate conditions for "Exhaustion" and "Indifference"   │
+│ is the best approach here as there is no single code that covers both        │
+│ aspects perfectly.                                                           │
 │                                                                              │
-│ Now I will move to the medications. The text mentions "Ramipril",            │
-│ "Metoprolol", and "Nitroglycerin". I will search for the codes for these     │
-│ medications. I'll start with "Ramipril".Code:                                │
+│ Finally, I need to determine the clinical status of these conditions. The    │
+│ text suggests they are all ongoing issues, so I'll search for the code for   │
+│ "active".                                                                    │
+│ Code:                                                                        │
 │ ```python                                                                    │
 │ search_results =                                                             │
-│ search_for_code_or_coding(fhir_attribute_path="MedicationStatement.medicatio │
-│ n", search_term="Ramipril")                                                  │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatus",    │
+│ search_term="active")                                                        │
 │ print(search_results)                                                        │
-│ ```<end_code>                                                                │
+│ ```                                                                          │
+│ <end_code>                                                                   │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:20,793 - root - INFO - 
+2025-07-02 16:10:22,812 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_6', 'type': 'function', 'function': {'name':                   │
 │ 'python_interpreter', 'arguments': 'search_results =                         │
-│ search_for_code_or_coding(fhir_attribute_path="MedicationStatement.medicatio │
-│ n", search_term="Ramipril")\nprint(search_results)'}}]                       │
+│ search_for_code_or_coding(fhir_attribute_path="Condition.clinicalStatus",    │
+│ search_term="active")\nprint(search_results)'}}]                             │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:20,801 - root - INFO - 
+2025-07-02 16:10:22,817 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_6                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 20 hits for Ramipril in MedicationStatement.medication', [{'system': │
-│ 'http://snomed.info/sct', 'code': '108564000', 'display':                    │
-│ 'Ramipril-containing product'}, {'system': 'http://snomed.info/sct', 'code': │
-│ '386872004', 'display': 'Ramipril'}, {'system': 'http://snomed.info/sct',    │
-│ 'code': '408051007', 'display': 'Ramipril 5 mg oral tablet'}, {'system':     │
-│ 'http://snomed.info/sct', 'code': '318173007', 'display': 'Felodipine- and   │
-│ ramipril-containing product'}, {'system': 'http://snomed.info/sct', 'code':  │
-│ '408052000', 'display': 'Ramipril 10 mg oral tablet'}, {'system':            │
-│ 'http://snomed.info/sct', 'code': '318902004', 'display': 'Ramipril 5 mg     │
-│ oral capsule'}, {'system': 'http://snomed.info/sct', 'code': '777395009',    │
-│ 'display': 'Ramipril only product'}, {'system': 'http://snomed.info/sct',    │
-│ 'code': '408050008', 'display': 'Ramipril 2.5 mg oral tablet'}, {'system':   │
-│ 'http://snomed.info/sct', 'code': '318906001', 'display': 'Ramipril 10 mg    │
-│ oral capsule'}, {'system': 'http://snomed.info/sct', 'code': '408040007',    │
-│ 'display': 'Ramipril 1.25 mg oral tablet'}])                                 │
+│ ('Found 6 hits for active in Condition.clinicalStatus', [{'system':          │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'active', 'display': 'Active'}, {'system':                                   │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'inactive', 'display': 'Inactive'}, {'system':                               │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'recurrence', 'display': 'Recurrence'}, {'system':                           │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'relapse', 'display': 'Relapse'}, {'system':                                 │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'remission', 'display': 'Remission'}, {'system':                             │
+│ 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code':          │
+│ 'resolved', 'display': 'Resolved'}])                                         │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 11:15:20,805 - LiteLLM - INFO - 
+2025-07-02 16:10:22,820 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 11:15:23,130 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 11:15:23,136 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 11:15:23,137 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:23,137 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:23,153 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:23,159 - root - INFO - 
- ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  search_results =                                                              
-  search_for_code_or_coding(fhir_attribute_path="MedicationStatement.medicatio  
-  n[x]", search_term="Metoprolol")                                              
-  print(search_results)                                                         
- ────────────────────────────────────────────────────────────────────────────── 
-
-2025-06-30 11:15:23,700 - root - INFO - 
-Execution logs:
-('Found 50 hits for Metoprolol in MedicationStatement.medication[x]', 
-[{'system': 'http://snomed.info/sct', 'code': '7092007', 'display': 
-'Metoprolol-containing product'}, {'system': 'http://snomed.info/sct', 'code': 
-'372826007', 'display': 'Metoprolol'}, {'system': 'http://snomed.info/sct', 
-'code': '1240343008', 'display': '(S)-metoprolol'}, {'system': 
-'http://snomed.info/sct', 'code': '395483007', 'display': 'Metoprolol-containing
-product in oral dose form'}, {'system': 'http://snomed.info/sct', 'code': 
-'72770009', 'display': 'Metoprolol tartrate'}, {'system': 
-'http://snomed.info/sct', 'code': '412432007', 'display': 'Metoprolol 
-succinate'}, {'system': 'http://snomed.info/sct', 'code': '395484001', 
-'display': 'Metoprolol-containing product in parenteral dose form'}, {'system': 
-'http://snomed.info/sct', 'code': '776770001', 'display': 'Metoprolol only 
-product'}, {'system': 'http://snomed.info/sct', 'code': '1240361004', 'display':
-'(S)-metoprolol tartrate'}, {'system': 'http://snomed.info/sct', 'code': 
-'1240360003', 'display': '(S)-metoprolol succinate'}])
-
-Out: None
-
-2025-06-30 11:15:23,704 - root - INFO - 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 8 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-2025-06-30 11:15:23,709 - root - INFO - 
-╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought:                                                                     │
-│ The search for "Ramipril" returned "Ramipril" with code `386872004`. I will  │
-│ use this. Now I will search for "Metoprolol".Code:                           │
-│ ```python                                                                    │
-│ search_results =                                                             │
-│ search_for_code_or_coding(fhir_attribute_path="MedicationStatement.medicatio │
-│ n", search_term="Metoprolol")                                                │
-│ print(search_results)                                                        │
-│ ```<end_code>                                                                │
-╰──────────────────────────────────────────────────────────────────────────────╯
-
-2025-06-30 11:15:23,712 - root - INFO - 
-╭───────────────────────────────── tool-call ──────────────────────────────────╮
-│ Calling tools:                                                               │
-│ [{'id': 'call_7', 'type': 'function', 'function': {'name':                   │
-│ 'python_interpreter', 'arguments': 'search_results =                         │
-│ search_for_code_or_coding(fhir_attribute_path="MedicationStatement.medicatio │
-│ n", search_term="Metoprolol")\nprint(search_results)'}}]                     │
-╰──────────────────────────────────────────────────────────────────────────────╯
-
-2025-06-30 11:15:23,720 - root - INFO - 
-╭─────────────────────────────── tool-response ────────────────────────────────╮
-│ Call id: call_7                                                              │
-│ Observation:                                                                 │
-│ Execution logs:                                                              │
-│ ('Found 50 hits for Metoprolol in MedicationStatement.medication',           │
-│ [{'system': 'http://snomed.info/sct', 'code': '7092007', 'display':          │
-│ 'Metoprolol-containing product'}, {'system': 'http://snomed.info/sct',       │
-│ 'code': '372826007', 'display': 'Metoprolol'}, {'system':                    │
-│ 'http://snomed.info/sct', 'code': '1240343008', 'display':                   │
-│ '(S)-metoprolol'}, {'system': 'http://snomed.info/sct', 'code': '395483007', │
-│ 'display': 'Metoprolol-containing product in oral dose form'}, {'system':    │
-│ 'http://snomed.info/sct', 'code': '72770009', 'display': 'Metoprolol         │
-│ tartrate'}, {'system': 'http://snomed.info/sct', 'code': '412432007',        │
-│ 'display': 'Metoprolol succinate'}, {'system': 'http://snomed.info/sct',     │
-│ 'code': '395484001', 'display': 'Metoprolol-containing product in parenteral │
-│ dose form'}, {'system': 'http://snomed.info/sct', 'code': '776770001',       │
-│ 'display': 'Metoprolol only product'}, {'system': 'http://snomed.info/sct',  │
-│ 'code': '1240361004', 'display': '(S)-metoprolol tartrate'}, {'system':      │
-│ 'http://snomed.info/sct', 'code': '1240360003', 'display': '(S)-metoprolol   │
-│ succinate'}])                                                                │
-│ Last output from code snippet:                                               │
-│ None                                                                         │
-╰──────────────────────────────────────────────────────────────────────────────╯
-
-2025-06-30 11:15:23,724 - LiteLLM - INFO - 
-LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 11:15:27,522 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 11:15:27,529 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 11:15:27,530 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:27,530 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:27,551 - root - INFO - 
- ─ Executing parsed code: ───────────────────────────────────────────────────── 
-  search_results =                                                              
-  search_for_code_or_coding(fhir_attribute_path="MedicationStatement.medicatio  
-  n[x]", search_term="Nitroglycerin")                                           
-  print(search_results)                                                         
- ────────────────────────────────────────────────────────────────────────────── 
-
-2025-06-30 11:15:27,552 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:28,256 - root - INFO - 
-Execution logs:
-('Found 43 hits for Nitroglycerin in MedicationStatement.medication[x]', 
-[{'system': 'http://snomed.info/sct', 'code': '71759000', 'display': 
-'Nitroglycerin-containing product'}, {'system': 'http://snomed.info/sct', 
-'code': '387404004', 'display': 'Nitroglycerin'}, {'system': 
-'http://snomed.info/sct', 'code': '376625006', 'display': 'Nitroglycerin 300 
-microgram/hour prolonged-release transdermal patch'}, {'system': 
-'http://snomed.info/sct', 'code': '374316006', 'display': 'Nitroglycerin 2 mg 
-prolonged-release buccal tablet'}, {'system': 'http://snomed.info/sct', 'code': 
-'374787007', 'display': 'Glyceryl trinitrate 1 mg prolonged-release buccal 
-tablet'}, {'system': 'http://snomed.info/sct', 'code': '374788002', 'display': 
-'Nitroglycerin 3 mg prolonged-release buccal tablet'}, {'system': 
-'http://snomed.info/sct', 'code': '374789005', 'display': 'Glyceryl trinitrate 5
-mg prolonged-release buccal tablet'}, {'system': 'http://snomed.info/sct', 
-'code': '317730008', 'display': 'Nitroglycerin-containing product in rectal dose
-form'}, {'system': 'http://snomed.info/sct', 'code': '374414005', 'display': 
-'Nitroglycerin 9 mg oral capsule'}, {'system': 'http://snomed.info/sct', 'code':
-'346462009', 'display': 'Glyceryl trinitrate-containing product in transdermal 
-dose form'}])
-
-Out: None
-
-2025-06-30 11:15:28,260 - root - INFO - 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-2025-06-30 11:15:28,266 - root - INFO - 
-╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought:                                                                     │
-│ The search for "Metoprolol" returned "Metoprolol" with code `372826007`. I   │
-│ will use this. Now I will search for "Nitroglycerin".Code:                   │
-│ ```python                                                                    │
-│ search_results =                                                             │
-│ search_for_code_or_coding(fhir_attribute_path="MedicationStatement.medicatio │
-│ n", search_term="Nitroglycerin")                                             │
-│ print(search_results)                                                        │
-│ ```<end_code>                                                                │
-╰──────────────────────────────────────────────────────────────────────────────╯
-
-2025-06-30 11:15:28,269 - root - INFO - 
-╭───────────────────────────────── tool-call ──────────────────────────────────╮
-│ Calling tools:                                                               │
-│ [{'id': 'call_8', 'type': 'function', 'function': {'name':                   │
-│ 'python_interpreter', 'arguments': 'search_results =                         │
-│ search_for_code_or_coding(fhir_attribute_path="MedicationStatement.medicatio │
-│ n", search_term="Nitroglycerin")\nprint(search_results)'}}]                  │
-╰──────────────────────────────────────────────────────────────────────────────╯
-
-2025-06-30 11:15:28,277 - root - INFO - 
-╭─────────────────────────────── tool-response ────────────────────────────────╮
-│ Call id: call_8                                                              │
-│ Observation:                                                                 │
-│ Execution logs:                                                              │
-│ ('Found 43 hits for Nitroglycerin in MedicationStatement.medication',        │
-│ [{'system': 'http://snomed.info/sct', 'code': '71759000', 'display':         │
-│ 'Nitroglycerin-containing product'}, {'system': 'http://snomed.info/sct',    │
-│ 'code': '387404004', 'display': 'Nitroglycerin'}, {'system':                 │
-│ 'http://snomed.info/sct', 'code': '376625006', 'display': 'Nitroglycerin 300 │
-│ microgram/hour prolonged-release transdermal patch'}, {'system':             │
-│ 'http://snomed.info/sct', 'code': '374316006', 'display': 'Nitroglycerin 2   │
-│ mg prolonged-release buccal tablet'}, {'system': 'http://snomed.info/sct',   │
-│ 'code': '374787007', 'display': 'Glyceryl trinitrate 1 mg prolonged-release  │
-│ buccal tablet'}, {'system': 'http://snomed.info/sct', 'code': '374788002',   │
-│ 'display': 'Nitroglycerin 3 mg prolonged-release buccal tablet'}, {'system': │
-│ 'http://snomed.info/sct', 'code': '374789005', 'display': 'Glyceryl          │
-│ trinitrate 5 mg prolonged-release buccal tablet'}, {'system':                │
-│ 'http://snomed.info/sct', 'code': '317730008', 'display':                    │
-│ 'Nitroglycerin-containing product in rectal dose form'}, {'system':          │
-│ 'http://snomed.info/sct', 'code': '374414005', 'display': 'Nitroglycerin 9   │
-│ mg oral capsule'}, {'system': 'http://snomed.info/sct', 'code': '346462009', │
-│ 'display': 'Glyceryl trinitrate-containing product in transdermal dose       │
-│ form'}])                                                                     │
-│ Last output from code snippet:                                               │
-│ None                                                                         │
-╰──────────────────────────────────────────────────────────────────────────────╯
-
-2025-06-30 11:15:28,280 - LiteLLM - INFO - 
-LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 11:15:46,842 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 11:15:46,850 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 11:15:46,851 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:46,851 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:46,861 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 11:15:47,002 - root - INFO - 
+2025-07-02 16:10:35,552 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 16:10:35,559 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 16:10:35,560 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:10:35,561 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:10:35,664 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 16:10:35,752 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   from fhir.resources.R4B.bundle import Bundle, BundleEntry                     
   from fhir.resources.R4B.patient import Patient                                
   from fhir.resources.R4B.condition import Condition                            
-  from fhir.resources.R4B.medicationstatement import MedicationStatement        
   from fhir.resources.R4B.humanname import HumanName                            
   from fhir.resources.R4B.codeableconcept import CodeableConcept                
   from fhir.resources.R4B.coding import Coding                                  
   from fhir.resources.R4B.reference import Reference                            
-  from fhir.resources.R4B.identifier import Identifier                          
+  import datetime                                                               
                                                                                 
   # Build Patient                                                               
-  patient_name = HumanName(use="official", family="Wechsler",                   
-  given=["Alexander"])                                                          
+  patient_name = HumanName(use="official", family="Scholz", given=["Susanne"])  
   patient = Patient(                                                            
       id="pat-001",                                                             
-      identifier=[Identifier(value="wechsler-alexander-19600624")],             
       name=[patient_name],                                                      
-      gender="male",                                                            
-      birthDate="1960-06-24"                                                    
+      gender="female",                                                          
+      birthDate=datetime.date(1983, 3, 5).isoformat()                           
   )                                                                             
                                                                                 
-  # Build Conditions                                                            
-  # Coronary Heart Disease                                                      
-  condition_chd_coding = Coding(system="http://snomed.info/sct",                
-  code="53741008", display="Coronary arteriosclerosis")                         
-  condition_chd_code = CodeableConcept(coding=[condition_chd_coding],           
-  text="Koronare Herzerkrankung")                                               
-  condition_chd = Condition(                                                    
+  # Active clinical status coding                                               
+  active_status_coding = Coding(                                                
+      system="http://terminology.hl7.org/CodeSystem/condition-clinical",        
+      code="active",                                                            
+      display="Active"                                                          
+  )                                                                             
+  active_status_codeableconcept =                                               
+  CodeableConcept(coding=[active_status_coding])                                
+                                                                                
+  # Build Condition 1: Headache                                                 
+  headache_coding = Coding(                                                     
+      system="http://snomed.info/sct",                                          
+      code="25064002",                                                          
+      display="Headache"                                                        
+  )                                                                             
+  headache_codeableconcept = CodeableConcept(coding=[headache_coding])          
+                                                                                
+  condition1 = Condition(                                                       
       id="cond-001",                                                            
       subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=condition_chd_code,                                                  
-      clinicalStatus=CodeableConcept(coding=[Coding(system="http://terminology  
-  .hl7.org/CodeSystem/condition-clinical", code="active")]),                    
-      verificationStatus=CodeableConcept(coding=[Coding(system="http://termino  
-  logy.hl7.org/CodeSystem/condition-ver-status", code="confirmed")]),           
-      category=[CodeableConcept(coding=[Coding(system="http://terminology.hl7.  
-  org/CodeSystem/condition-category", code="problem-list-item")])]              
+      code=headache_codeableconcept,                                            
+      clinicalStatus=active_status_codeableconcept                              
   )                                                                             
                                                                                 
-  # Hypertension                                                                
-  condition_htn_coding = Coding(system="http://snomed.info/sct",                
-  code="38341003", display="Hypertensive disorder")                             
-  condition_htn_code = CodeableConcept(coding=[condition_htn_coding],           
-  text="Hypertonie")                                                            
-  condition_htn = Condition(                                                    
+  # Build Condition 2: Dyssomnia                                                
+  dyssomnia_coding = Coding(                                                    
+      system="http://snomed.info/sct",                                          
+      code="44186003",                                                          
+      display="Dyssomnia"                                                       
+  )                                                                             
+  dyssomnia_codeableconcept = CodeableConcept(coding=[dyssomnia_coding])        
+                                                                                
+  condition2 = Condition(                                                       
       id="cond-002",                                                            
       subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=condition_htn_code,                                                  
-      clinicalStatus=CodeableConcept(coding=[Coding(system="http://terminology  
-  .hl7.org/CodeSystem/condition-clinical", code="active")]),                    
-      verificationStatus=CodeableConcept(coding=[Coding(system="http://termino  
-  logy.hl7.org/CodeSystem/condition-ver-status", code="confirmed")]),           
-      category=[CodeableConcept(coding=[Coding(system="http://terminology.hl7.  
-  org/CodeSystem/condition-category", code="problem-list-item")])]              
+      code=dyssomnia_codeableconcept,                                           
+      clinicalStatus=active_status_codeableconcept                              
   )                                                                             
                                                                                 
-  # Stable Angina Pectoris                                                      
-  condition_sap_coding = Coding(system="http://snomed.info/sct",                
-  code="233819005", display="Stable angina")                                    
-  condition_sap_code = CodeableConcept(coding=[condition_sap_coding],           
-  text="Stabile Angina pectoris")                                               
-  condition_sap = Condition(                                                    
+  # Build Condition 3: Exhaustion                                               
+  exhaustion_coding = Coding(                                                   
+      system="http://snomed.info/sct",                                          
+      code="60119000",                                                          
+      display="Exhaustion"                                                      
+  )                                                                             
+  exhaustion_codeableconcept = CodeableConcept(coding=[exhaustion_coding])      
+                                                                                
+  condition3 = Condition(                                                       
       id="cond-003",                                                            
       subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=condition_sap_code,                                                  
-      clinicalStatus=CodeableConcept(coding=[Coding(system="http://terminology  
-  .hl7.org/CodeSystem/condition-clinical", code="active")]),                    
-      verificationStatus=CodeableConcept(coding=[Coding(system="http://termino  
-  logy.hl7.org/CodeSystem/condition-ver-status", code="confirmed")]),           
-      category=[CodeableConcept(coding=[Coding(system="http://terminology.hl7.  
-  org/CodeSystem/condition-category", code="problem-list-item")])]              
+      code=exhaustion_codeableconcept,                                          
+      clinicalStatus=active_status_codeableconcept                              
   )                                                                             
                                                                                 
-  # Left Ventricular Hypertrophy                                                
-  condition_lvh_coding = Coding(system="http://snomed.info/sct",                
-  code="55827005", display="Left ventricular hypertrophy")                      
-  condition_lvh_code = CodeableConcept(coding=[condition_lvh_coding],           
-  text="Linksventrikuläre Hypertrophie")                                        
-  condition_lvh = Condition(                                                    
+  # Build Condition 4: Indifference                                             
+  indifference_coding = Coding(                                                 
+      system="http://snomed.info/sct",                                          
+      code="20602000",                                                          
+      display="Indifference"                                                    
+  )                                                                             
+  indifference_codeableconcept = CodeableConcept(coding=[indifference_coding])  
+                                                                                
+  condition4 = Condition(                                                       
       id="cond-004",                                                            
       subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=condition_lvh_code,                                                  
-      clinicalStatus=CodeableConcept(coding=[Coding(system="http://terminology  
-  .hl7.org/CodeSystem/condition-clinical", code="active")]),                    
-      verificationStatus=CodeableConcept(coding=[Coding(system="http://termino  
-  logy.hl7.org/CodeSystem/condition-ver-status", code="confirmed")]),           
-      category=[CodeableConcept(coding=[Coding(system="http://terminology.hl7.  
-  org/CodeSystem/condition-category", code="problem-list-item")])]              
-  )                                                                             
-                                                                                
-  # Build MedicationStatements                                                  
-  # Ramipril                                                                    
-  med_ramipril_coding = Coding(system="http://snomed.info/sct",                 
-  code="386872004", display="Ramipril")                                         
-  med_ramipril_code = CodeableConcept(coding=[med_ramipril_coding],             
-  text="Ramipril")                                                              
-  med_statement_ramipril = MedicationStatement(                                 
-      id="med-stat-001",                                                        
-      status="active",                                                          
-      medicationCodeableConcept=med_ramipril_code,                              
-      subject=Reference(reference=f"Patient/{patient.id}")                      
-  )                                                                             
-                                                                                
-  # Metoprolol                                                                  
-  med_metoprolol_coding = Coding(system="http://snomed.info/sct",               
-  code="372826007", display="Metoprolol")                                       
-  med_metoprolol_code = CodeableConcept(coding=[med_metoprolol_coding],         
-  text="Metoprolol")                                                            
-  med_statement_metoprolol = MedicationStatement(                               
-      id="med-stat-002",                                                        
-      status="active",                                                          
-      medicationCodeableConcept=med_metoprolol_code,                            
-      subject=Reference(reference=f"Patient/{patient.id}")                      
-  )                                                                             
-                                                                                
-  # Nitroglycerin                                                               
-  med_nitroglycerin_coding = Coding(system="http://snomed.info/sct",            
-  code="387404004", display="Nitroglycerin")                                    
-  med_nitroglycerin_code = CodeableConcept(coding=[med_nitroglycerin_coding],   
-  text="Nitroglycerin")                                                         
-  med_statement_nitroglycerin = MedicationStatement(                            
-      id="med-stat-003",                                                        
-      status="active",                                                          
-      medicationCodeableConcept=med_nitroglycerin_code,                         
-      subject=Reference(reference=f"Patient/{patient.id}")                      
+      code=indifference_codeableconcept,                                        
+      clinicalStatus=active_status_codeableconcept                              
   )                                                                             
                                                                                 
                                                                                 
@@ -1432,27 +1195,21 @@ LiteLLM completion() model= gemini-2.5-pro; provider = gemini
       type="collection",                                                        
       entry=[                                                                   
           BundleEntry(resource=patient, fullUrl=f"Patient/{patient.id}"),       
-          BundleEntry(resource=condition_chd,                                   
-  fullUrl=f"Condition/{condition_chd.id}"),                                     
-          BundleEntry(resource=condition_htn,                                   
-  fullUrl=f"Condition/{condition_htn.id}"),                                     
-          BundleEntry(resource=condition_sap,                                   
-  fullUrl=f"Condition/{condition_sap.id}"),                                     
-          BundleEntry(resource=condition_lvh,                                   
-  fullUrl=f"Condition/{condition_lvh.id}"),                                     
-          BundleEntry(resource=med_statement_ramipril,                          
-  fullUrl=f"MedicationStatement/{med_statement_ramipril.id}"),                  
-          BundleEntry(resource=med_statement_metoprolol,                        
-  fullUrl=f"MedicationStatement/{med_statement_metoprolol.id}"),                
-          BundleEntry(resource=med_statement_nitroglycerin,                     
-  fullUrl=f"MedicationStatement/{med_statement_nitroglycerin.id}")              
+          BundleEntry(resource=condition1,                                      
+  fullUrl=f"Condition/{condition1.id}"),                                        
+          BundleEntry(resource=condition2,                                      
+  fullUrl=f"Condition/{condition2.id}"),                                        
+          BundleEntry(resource=condition3,                                      
+  fullUrl=f"Condition/{condition3.id}"),                                        
+          BundleEntry(resource=condition4,                                      
+  fullUrl=f"Condition/{condition4.id}")                                         
       ]                                                                         
   )                                                                             
                                                                                 
   final_answer(bundle.json(indent=2))                                           
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 11:15:47,046 - root - INFO - 
+2025-07-02 16:10:35,783 - root - INFO - 
 Out - Final answer: {
   "resourceType": "Bundle",
   "type": "collection",
@@ -1462,22 +1219,17 @@ Out - Final answer: {
       "resource": {
         "resourceType": "Patient",
         "id": "pat-001",
-        "identifier": [
-          {
-            "value": "wechsler-alexander-19600624"
-          }
-        ],
         "name": [
           {
             "use": "official",
-            "family": "Wechsler",
+            "family": "Scholz",
             "given": [
-              "Alexander"
+              "Susanne"
             ]
           }
         ],
-        "gender": "male",
-        "birthDate": "1960-06-24"
+        "gender": "female",
+        "birthDate": "1983-03-05"
       }
     },
     {
@@ -1490,39 +1242,19 @@ Out - Final answer: {
             {
               "system": 
 "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
+              "code": "active",
+              "display": "Active"
             }
           ]
         },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed"
-            }
-          ]
-        },
-        "category": [
-          {
-            "coding": [
-              {
-                "system": 
-"http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "problem-list-item"
-              }
-            ]
-          }
-        ],
         "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "53741008",
-              "display": "Coronary arteriosclerosis"
+              "code": "25064002",
+              "display": "Headache"
             }
-          ],
-          "text": "Koronare Herzerkrankung"
+          ]
         },
         "subject": {
           "reference": "Patient/pat-001"
@@ -1539,39 +1271,19 @@ Out - Final answer: {
             {
               "system": 
 "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
+              "code": "active",
+              "display": "Active"
             }
           ]
         },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed"
-            }
-          ]
-        },
-        "category": [
-          {
-            "coding": [
-              {
-                "system": 
-"http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "problem-list-item"
-              }
-            ]
-          }
-        ],
         "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "38341003",
-              "display": "Hypertensive disorder"
+              "code": "44186003",
+              "display": "Dyssomnia"
             }
-          ],
-          "text": "Hypertonie"
+          ]
         },
         "subject": {
           "reference": "Patient/pat-001"
@@ -1588,39 +1300,19 @@ Out - Final answer: {
             {
               "system": 
 "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
+              "code": "active",
+              "display": "Active"
             }
           ]
         },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed"
-            }
-          ]
-        },
-        "category": [
-          {
-            "coding": [
-              {
-                "system": 
-"http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "problem-list-item"
-              }
-            ]
-          }
-        ],
         "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "233819005",
-              "display": "Stable angina"
+              "code": "60119000",
+              "display": "Exhaustion"
             }
-          ],
-          "text": "Stabile Angina pectoris"
+          ]
         },
         "subject": {
           "reference": "Patient/pat-001"
@@ -1637,102 +1329,19 @@ Out - Final answer: {
             {
               "system": 
 "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
+              "code": "active",
+              "display": "Active"
             }
           ]
         },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed"
-            }
-          ]
-        },
-        "category": [
-          {
-            "coding": [
-              {
-                "system": 
-"http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "problem-list-item"
-              }
-            ]
-          }
-        ],
         "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "55827005",
-              "display": "Left ventricular hypertrophy"
+              "code": "20602000",
+              "display": "Indifference"
             }
-          ],
-          "text": "Linksventrikuläre Hypertrophie"
-        },
-        "subject": {
-          "reference": "Patient/pat-001"
-        }
-      }
-    },
-    {
-      "fullUrl": "MedicationStatement/med-stat-001",
-      "resource": {
-        "resourceType": "MedicationStatement",
-        "id": "med-stat-001",
-        "status": "active",
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "386872004",
-              "display": "Ramipril"
-            }
-          ],
-          "text": "Ramipril"
-        },
-        "subject": {
-          "reference": "Patient/pat-001"
-        }
-      }
-    },
-    {
-      "fullUrl": "MedicationStatement/med-stat-002",
-      "resource": {
-        "resourceType": "MedicationStatement",
-        "id": "med-stat-002",
-        "status": "active",
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "372826007",
-              "display": "Metoprolol"
-            }
-          ],
-          "text": "Metoprolol"
-        },
-        "subject": {
-          "reference": "Patient/pat-001"
-        }
-      }
-    },
-    {
-      "fullUrl": "MedicationStatement/med-stat-003",
-      "resource": {
-        "resourceType": "MedicationStatement",
-        "id": "med-stat-003",
-        "status": "active",
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "387404004",
-              "display": "Nitroglycerin"
-            }
-          ],
-          "text": "Nitroglycerin"
+          ]
         },
         "subject": {
           "reference": "Patient/pat-001"

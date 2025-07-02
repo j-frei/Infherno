@@ -1,102 +1,105 @@
-2025-06-30 13:13:22,498 - root - INFO - 
-2025-06-30 13:13:22,498 - root - INFO - ================================================================================
-2025-06-30 13:13:22,498 - root - INFO - CONFIGURATION PARAMETERS
-2025-06-30 13:13:22,498 - root - INFO - ================================================================================
-2025-06-30 13:13:22,498 - root - INFO - API_SLEEP_SECONDS = 60
-2025-06-30 13:13:22,498 - root - INFO - APPLIED_TESTS = None
-2025-06-30 13:13:22,498 - root - INFO - APPLY_PARTITIONING = False
-2025-06-30 13:13:22,498 - root - INFO - CONTEXT_LENGTH = 131072
-2025-06-30 13:13:22,498 - root - INFO - DATA_DIRECTORY = ../
-2025-06-30 13:13:22,498 - root - INFO - DEVICE_MAP = auto
-2025-06-30 13:13:22,498 - root - INFO - INSTANCE_ID = 12
-2025-06-30 13:13:22,498 - root - INFO - MAX_API_RETRIES = 3
-2025-06-30 13:13:22,498 - root - INFO - MAX_NEW_TOKENS = 32000
-2025-06-30 13:13:22,498 - root - INFO - MODEL_CLASS = LiteLLMModel
-2025-06-30 13:13:22,498 - root - INFO - MODEL_ID = gemini/gemini-2.5-pro
-2025-06-30 13:13:22,498 - root - INFO - RANDOMIZE_DATA = False
-2025-06-30 13:13:22,498 - root - INFO - ROOT_FHIR_RESOURCES = ["Patient", "Condition", "MedicationStatement"]
-2025-06-30 13:13:22,498 - root - INFO - SHORTEST_FIRST = False
-2025-06-30 13:13:22,498 - root - INFO - SUBSAMPLE_SIZE = 10
-2025-06-30 13:13:22,498 - root - INFO - TAKE_SUBSAMPLE = False
-2025-06-30 13:13:22,499 - root - INFO - TARGET_DATA = synthetic
-2025-06-30 13:13:22,499 - root - INFO - ================================================================================
-2025-06-30 13:13:22,499 - root - INFO - ANALYSIS RESULTS
-2025-06-30 13:13:22,499 - root - INFO - ================================================================================
-2025-06-30 13:13:22,499 - root - INFO - Analysis results will be saved to: logs/gemini_gemini-2.5-pro_synthetic_12_2025-06-30_11-13-22.log
-2025-06-30 13:13:22,629 - root - INFO - 
+2025-07-02 15:46:19,954 - root - INFO - 
+2025-07-02 15:46:19,954 - root - INFO - ================================================================================
+2025-07-02 15:46:19,954 - root - INFO - CONFIGURATION PARAMETERS
+2025-07-02 15:46:19,954 - root - INFO - ================================================================================
+2025-07-02 15:46:19,954 - root - INFO - API_SLEEP_SECONDS = 60
+2025-07-02 15:46:19,954 - root - INFO - APPLIED_TESTS = None
+2025-07-02 15:46:19,955 - root - INFO - APPLY_PARTITIONING = False
+2025-07-02 15:46:19,955 - root - INFO - CONTEXT_LENGTH = 131072
+2025-07-02 15:46:19,955 - root - INFO - DATA_DIRECTORY = ../
+2025-07-02 15:46:19,955 - root - INFO - DEVICE_MAP = auto
+2025-07-02 15:46:19,955 - root - INFO - INSTANCE_ID = 01
+2025-07-02 15:46:19,955 - root - INFO - MAX_API_RETRIES = 3
+2025-07-02 15:46:19,955 - root - INFO - MAX_NEW_TOKENS = 32000
+2025-07-02 15:46:19,955 - root - INFO - MODEL_CLASS = LiteLLMModel
+2025-07-02 15:46:19,955 - root - INFO - MODEL_ID = gemini/gemini-2.5-pro
+2025-07-02 15:46:19,955 - root - INFO - RANDOMIZE_DATA = False
+2025-07-02 15:46:19,955 - root - INFO - ROOT_FHIR_RESOURCES = ["Patient", "Condition", "MedicationStatement"]
+2025-07-02 15:46:19,955 - root - INFO - SHORTEST_FIRST = False
+2025-07-02 15:46:19,955 - root - INFO - SUBSAMPLE_SIZE = 10
+2025-07-02 15:46:19,955 - root - INFO - TAKE_SUBSAMPLE = True
+2025-07-02 15:46:19,955 - root - INFO - TARGET_DATA = synthetic
+2025-07-02 15:46:19,955 - root - INFO - ================================================================================
+2025-07-02 15:46:19,955 - root - INFO - ANALYSIS RESULTS
+2025-07-02 15:46:19,955 - root - INFO - ================================================================================
+2025-07-02 15:46:19,955 - root - INFO - Analysis results will be saved to: logs/gemini_gemini-2.5-pro_synthetic_01_2025-07-02_13-46-19.log
+2025-07-02 15:46:20,098 - root - INFO - 
 ╭────────────────────────────────── New run ───────────────────────────────────╮
 │                                                                              │
 │ The input text is as follows:                                                │
 │ ```                                                                          │
-│ Patienteninformationen:                                                      │
-│ Name: Bernd Brauer                                                           │
-│ Geburtsdatum: 11.März 1978                                                   │
-│ Adresse: Fontenay 66, 95614 Marktredwitz                                     │
-│ Aufnahme-Datum: 10. Juni 2023                                                │
-│ Entlassungs-Datum: 28. Juni 2023                                             │
+│ Betreff: Arztberichtsbrief - Patienteninformationen                          │
 │                                                                              │
-│ Sehr geehrter Hr. Dr. med. Reiniger,                                         │
+│ Sehr geehrter Dr. Peters,                                                    │
 │                                                                              │
-│ ich möchte Sie über den aktuellen Gesundheitszustand Ihres Patienten Bernd   │
-│ Brauer informieren, der sich vom 10. Juni 2023 bis zum 28. Juni 2023 in      │
-│ unserer Klinik in Behandlung befand.                                         │
+│ hiermit möchte ich Ihnen einen aktuellen Bericht über den Gesundheitszustand │
+│ von Herrn Uwe Jaeger, geboren am 10. Februar 1975, vorlegen. Herr Jaeger     │
+│ wurde am 20. Juni 2023 in unserer Klinik, dem St. Ursula Krankenhaus, zur    │
+│ weiteren Untersuchung und Behandlung aufgenommen.                            │
 │                                                                              │
-│ Aufnahmediagnose:                                                            │
-│ Hypertensive Krise (ICD-10: I10.0)                                           │
-│ Koronare Herzkrankheit (ICD-10: I25.10)                                      │
-│ Hyperlipidämie (ICD-10: E78.5)                                               │
-│ Adipositas (ICD-10: E66.01)                                                  │
-│ Nicht näher bezeichnete Diabetes mellitus (ICD-10: E11.9)                    │
+│ Anamnese:                                                                    │
+│ Herr Jaeger suchte unsere Notaufnahme mit anhaltenden Beschwerden im         │
+│ Magen-Darm-Bereich auf. Er berichtete über starke Bauchschmerzen, Übelkeit,  │
+│ Erbrechen und Gewichtsverlust in den letzten vier Wochen. Er verneinte       │
+│ jegliche vorherige Operationen oder relevante Vorerkrankungen. Herr Jaeger   │
+│ ist Nichtraucher und konsumiert keinen Alkohol.                              │
 │                                                                              │
-│ Verlauf und Therapie:                                                        │
-│ Herr Brauer wurde bei Aufnahme in unserer Notaufnahme aufgrund einer         │
-│ hypertensiven Krise mit deutlich erhöhtem Blutdruck, begleitender Angina     │
-│ pectoris und Atemnot vorgestellt. Nach umgehender Diagnostik und             │
-│ Stabilisierung wurde eine medikamentöse Therapie eingeleitet, um den         │
-│ Blutdruck zu kontrollieren und die Symptome der koronaren Herzkrankheit zu   │
-│ behandeln. Zudem wurde eine Diätberatung sowie eine Schulung zur             │
-│ Blutzuckerkontrolle bei der diagnostizierten Diabetes mellitus Typ 2         │
-│ durchgeführt.                                                                │
+│ Klinischer Befund:                                                           │
+│ Bei der körperlichen Untersuchung zeigten sich eine allgemeine Schwäche und  │
+│ ein mäßig abgeschwächter Allgemeinzustand. Der Bauch war diffus              │
+│ druckempfindlich, ohne spürbare Vergrößerungen der Organe. Keine Zeichen     │
+│ einer Peritonitis waren erkennbar. Die übrige körperliche Untersuchung ergab │
+│ keine auffälligen Befunde.                                                   │
 │                                                                              │
-│ Während seines Aufenthalts zeigte Herr Brauer eine positive Resonanz auf die │
-│ Behandlung, und sein Zustand stabilisierte sich allmählich. Er reagierte gut │
-│ auf die verordneten Medikamente und konnte seine Blutzuckerwerte unter       │
-│ Kontrolle halten. Wir haben ihn intensiv darüber aufgeklärt, wie er seine    │
-│ Lebensgewohnheiten verbessern kann, um langfristige gesundheitliche Vorteile │
-│ zu erzielen, insbesondere hinsichtlich seiner Adipositas und Hyperlipidämie. │
+│ Diagnostische Maßnahmen:                                                     │
+│ Um die Ursache der Beschwerden zu ermitteln, wurden bei Herrn Jaeger         │
+│ verschiedene diagnostische Tests durchgeführt. Eine Blutuntersuchung ergab   │
+│ eine erhöhte Anzahl weißer Blutkörperchen und eine leichte Anämie. Der       │
+│ Leberfunktionstest zeigte normale Werte. Ein abdominales Ultraschall wurde   │
+│ durchgeführt, das keine strukturellen Abnormalitäten zeigte. Eine Endoskopie │
+│ des oberen Verdauungstrakts wurde ebenfalls durchgeführt, bei der eine       │
+│ erosive Gastritis festgestellt wurde.                                        │
 │                                                                              │
-│ Entlassungsdiagnose:                                                         │
-│ Stabile Hypertonie (ICD-10: I10)                                             │
-│ Koronare Herzkrankheit (ICD-10: I25.10)                                      │
-│ Hyperlipidämie (ICD-10: E78.5)                                               │
-│ Adipositas (ICD-10: E66.01)                                                  │
-│ Diabetes mellitus Typ 2 (ICD-10: E11)                                        │
+│ Diagnose:                                                                    │
+│ Basierend auf den klinischen Symptomen, den Laborergebnissen und der         │
+│ Endoskopie wurde bei Herrn Jaeger die Diagnose einer erosiven Gastritis      │
+│ gestellt.                                                                    │
 │                                                                              │
-│ Empfehlungen:                                                                │
-│ Wir empfehlen, dass Herr Brauer regelmäßige Kontrolluntersuchungen bei       │
-│ Ihnen, seinem Hausarzt, durchführt, um seinen Gesundheitszustand zu          │
-│ überwachen und gegebenenfalls seine Medikation anzupassen. Es ist wichtig,   │
-│ dass er weiterhin seine verschriebenen Medikamente gemäß den Anweisungen     │
-│ einnimmt und seinen Lebensstil entsprechend den Ratschlägen der Fachleute    │
-│ anpasst, um seine Gesundheit zu fördern.                                     │
+│ Therapie:                                                                    │
+│ Um die Symptome zu lindern und die Schleimhaut im Magen zu heilen, wurde     │
+│ Herr Jaeger eine Kombinationstherapie verschrieben. Er erhält eine           │
+│ Protonenpumpenhemmer (PPI) für acht Wochen, um die Magensäureproduktion zu   │
+│ reduzieren. Zusätzlich wurde ihm ein Antazidum verschrieben, um den          │
+│ sofortigen Effekt einer schnellen Symptomlinderung zu erzielen. Er erhielt   │
+│ auch Anweisungen zur Vermeidung von auslösenden Nahrungsmitteln, wie scharfe │
+│ und säurehaltige Lebensmittel.                                               │
 │                                                                              │
-│ Abschließend möchten wir Ihnen für Ihr Vertrauen in unsere Klinik und unser  │
-│ medizinisches Team danken. Sollten Sie weitere Informationen benötigen,      │
-│ zögern Sie bitte nicht, uns zu kontaktieren.                                 │
+│ Verlauf und Prognose:                                                        │
+│ Herr Jaeger hat die empfohlene Therapie begonnen und wurde über mögliche     │
+│ Nebenwirkungen und Maßnahmen zur Verbesserung seines Gesundheitszustands     │
+│ aufgeklärt. Wir werden ihn in regelmäßigen Abständen zu Follow-up-Terminen   │
+│ einladen, um den Verlauf seiner Symptome zu überwachen und gegebenenfalls    │
+│ weitere Untersuchungen durchzuführen.                                        │
+│                                                                              │
+│ Abschließend möchte ich Ihnen versichern, dass wir die bestmögliche          │
+│ Versorgung für Herrn Jaeger sicherstellen und eng mit ihm zusammenarbeiten   │
+│ werden, um eine schnelle Genesung zu erreichen.                              │
+│                                                                              │
+│ Bei weiteren Fragen stehe ich Ihnen gerne zur Verfügung.                     │
 │                                                                              │
 │ Mit freundlichen Grüßen,                                                     │
 │                                                                              │
-│ Dr. med. Paula Wurfel                                                        │
+│ Dr. Anna Karolin Vogel                                                       │
 │ Fachärztin für Innere Medizin                                                │
-│ Klinik Eckersdorf                                                            │
+│ St. Ursula Krankenhaus                                                       │
 │ ```                                                                          │
 │                                                                              │
 ╰─ LiteLLMModel - gemini/gemini-2.5-pro ───────────────────────────────────────╯
 
-2025-06-30 13:13:22,630 - root - INFO - 
+2025-07-02 15:46:20,102 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:13:22,681 - root - INFO - 
+2025-07-02 15:46:20,156 - root - INFO - 
 ╭─────────────────────────────────── system ───────────────────────────────────╮
 │ You are a code agent with expertise in Information Extraction of medical     │
 │ information from free text. Your task is to translate clinical information   │
@@ -511,7 +514,8 @@
 │                                                                              │
 │ 🚫 Never:                                                                    │
 │ - NEVER use unsupported FHIR resources.                                      │
-│ - NEVER use unverified codes.                                                │
+│ - NEVER use unverified codes from the input text (e.g. mentioned ICD codes)  │
+│ because they could be incorrect.                                             │
 │ - NEVER call tools with dict-style args (e.g., ❌ `tool({'arg': val})`).     │
 │ - NEVER chain tool calls in the same block with unpredictable results.       │
 │ - NEVER create FHIR resources to information that is not present in the      │
@@ -523,89 +527,92 @@
 │ If you solve the task correctly, you will receive a reward of $1,000,000.    │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:22,686 - root - INFO - 
+2025-07-02 15:46:20,163 - root - INFO - 
 ╭──────────────────────────────────── user ────────────────────────────────────╮
 │ New task:                                                                    │
 │ The input text is as follows:                                                │
 │ ```                                                                          │
-│ Patienteninformationen:                                                      │
-│ Name: Bernd Brauer                                                           │
-│ Geburtsdatum: 11.März 1978                                                   │
-│ Adresse: Fontenay 66, 95614 Marktredwitz                                     │
-│ Aufnahme-Datum: 10. Juni 2023                                                │
-│ Entlassungs-Datum: 28. Juni 2023                                             │
+│ Betreff: Arztberichtsbrief - Patienteninformationen                          │
 │                                                                              │
-│ Sehr geehrter Hr. Dr. med. Reiniger,                                         │
+│ Sehr geehrter Dr. Peters,                                                    │
 │                                                                              │
-│ ich möchte Sie über den aktuellen Gesundheitszustand Ihres Patienten Bernd   │
-│ Brauer informieren, der sich vom 10. Juni 2023 bis zum 28. Juni 2023 in      │
-│ unserer Klinik in Behandlung befand.                                         │
+│ hiermit möchte ich Ihnen einen aktuellen Bericht über den Gesundheitszustand │
+│ von Herrn Uwe Jaeger, geboren am 10. Februar 1975, vorlegen. Herr Jaeger     │
+│ wurde am 20. Juni 2023 in unserer Klinik, dem St. Ursula Krankenhaus, zur    │
+│ weiteren Untersuchung und Behandlung aufgenommen.                            │
 │                                                                              │
-│ Aufnahmediagnose:                                                            │
-│ Hypertensive Krise (ICD-10: I10.0)                                           │
-│ Koronare Herzkrankheit (ICD-10: I25.10)                                      │
-│ Hyperlipidämie (ICD-10: E78.5)                                               │
-│ Adipositas (ICD-10: E66.01)                                                  │
-│ Nicht näher bezeichnete Diabetes mellitus (ICD-10: E11.9)                    │
+│ Anamnese:                                                                    │
+│ Herr Jaeger suchte unsere Notaufnahme mit anhaltenden Beschwerden im         │
+│ Magen-Darm-Bereich auf. Er berichtete über starke Bauchschmerzen, Übelkeit,  │
+│ Erbrechen und Gewichtsverlust in den letzten vier Wochen. Er verneinte       │
+│ jegliche vorherige Operationen oder relevante Vorerkrankungen. Herr Jaeger   │
+│ ist Nichtraucher und konsumiert keinen Alkohol.                              │
 │                                                                              │
-│ Verlauf und Therapie:                                                        │
-│ Herr Brauer wurde bei Aufnahme in unserer Notaufnahme aufgrund einer         │
-│ hypertensiven Krise mit deutlich erhöhtem Blutdruck, begleitender Angina     │
-│ pectoris und Atemnot vorgestellt. Nach umgehender Diagnostik und             │
-│ Stabilisierung wurde eine medikamentöse Therapie eingeleitet, um den         │
-│ Blutdruck zu kontrollieren und die Symptome der koronaren Herzkrankheit zu   │
-│ behandeln. Zudem wurde eine Diätberatung sowie eine Schulung zur             │
-│ Blutzuckerkontrolle bei der diagnostizierten Diabetes mellitus Typ 2         │
-│ durchgeführt.                                                                │
+│ Klinischer Befund:                                                           │
+│ Bei der körperlichen Untersuchung zeigten sich eine allgemeine Schwäche und  │
+│ ein mäßig abgeschwächter Allgemeinzustand. Der Bauch war diffus              │
+│ druckempfindlich, ohne spürbare Vergrößerungen der Organe. Keine Zeichen     │
+│ einer Peritonitis waren erkennbar. Die übrige körperliche Untersuchung ergab │
+│ keine auffälligen Befunde.                                                   │
 │                                                                              │
-│ Während seines Aufenthalts zeigte Herr Brauer eine positive Resonanz auf die │
-│ Behandlung, und sein Zustand stabilisierte sich allmählich. Er reagierte gut │
-│ auf die verordneten Medikamente und konnte seine Blutzuckerwerte unter       │
-│ Kontrolle halten. Wir haben ihn intensiv darüber aufgeklärt, wie er seine    │
-│ Lebensgewohnheiten verbessern kann, um langfristige gesundheitliche Vorteile │
-│ zu erzielen, insbesondere hinsichtlich seiner Adipositas und Hyperlipidämie. │
+│ Diagnostische Maßnahmen:                                                     │
+│ Um die Ursache der Beschwerden zu ermitteln, wurden bei Herrn Jaeger         │
+│ verschiedene diagnostische Tests durchgeführt. Eine Blutuntersuchung ergab   │
+│ eine erhöhte Anzahl weißer Blutkörperchen und eine leichte Anämie. Der       │
+│ Leberfunktionstest zeigte normale Werte. Ein abdominales Ultraschall wurde   │
+│ durchgeführt, das keine strukturellen Abnormalitäten zeigte. Eine Endoskopie │
+│ des oberen Verdauungstrakts wurde ebenfalls durchgeführt, bei der eine       │
+│ erosive Gastritis festgestellt wurde.                                        │
 │                                                                              │
-│ Entlassungsdiagnose:                                                         │
-│ Stabile Hypertonie (ICD-10: I10)                                             │
-│ Koronare Herzkrankheit (ICD-10: I25.10)                                      │
-│ Hyperlipidämie (ICD-10: E78.5)                                               │
-│ Adipositas (ICD-10: E66.01)                                                  │
-│ Diabetes mellitus Typ 2 (ICD-10: E11)                                        │
+│ Diagnose:                                                                    │
+│ Basierend auf den klinischen Symptomen, den Laborergebnissen und der         │
+│ Endoskopie wurde bei Herrn Jaeger die Diagnose einer erosiven Gastritis      │
+│ gestellt.                                                                    │
 │                                                                              │
-│ Empfehlungen:                                                                │
-│ Wir empfehlen, dass Herr Brauer regelmäßige Kontrolluntersuchungen bei       │
-│ Ihnen, seinem Hausarzt, durchführt, um seinen Gesundheitszustand zu          │
-│ überwachen und gegebenenfalls seine Medikation anzupassen. Es ist wichtig,   │
-│ dass er weiterhin seine verschriebenen Medikamente gemäß den Anweisungen     │
-│ einnimmt und seinen Lebensstil entsprechend den Ratschlägen der Fachleute    │
-│ anpasst, um seine Gesundheit zu fördern.                                     │
+│ Therapie:                                                                    │
+│ Um die Symptome zu lindern und die Schleimhaut im Magen zu heilen, wurde     │
+│ Herr Jaeger eine Kombinationstherapie verschrieben. Er erhält eine           │
+│ Protonenpumpenhemmer (PPI) für acht Wochen, um die Magensäureproduktion zu   │
+│ reduzieren. Zusätzlich wurde ihm ein Antazidum verschrieben, um den          │
+│ sofortigen Effekt einer schnellen Symptomlinderung zu erzielen. Er erhielt   │
+│ auch Anweisungen zur Vermeidung von auslösenden Nahrungsmitteln, wie scharfe │
+│ und säurehaltige Lebensmittel.                                               │
 │                                                                              │
-│ Abschließend möchten wir Ihnen für Ihr Vertrauen in unsere Klinik und unser  │
-│ medizinisches Team danken. Sollten Sie weitere Informationen benötigen,      │
-│ zögern Sie bitte nicht, uns zu kontaktieren.                                 │
+│ Verlauf und Prognose:                                                        │
+│ Herr Jaeger hat die empfohlene Therapie begonnen und wurde über mögliche     │
+│ Nebenwirkungen und Maßnahmen zur Verbesserung seines Gesundheitszustands     │
+│ aufgeklärt. Wir werden ihn in regelmäßigen Abständen zu Follow-up-Terminen   │
+│ einladen, um den Verlauf seiner Symptome zu überwachen und gegebenenfalls    │
+│ weitere Untersuchungen durchzuführen.                                        │
+│                                                                              │
+│ Abschließend möchte ich Ihnen versichern, dass wir die bestmögliche          │
+│ Versorgung für Herrn Jaeger sicherstellen und eng mit ihm zusammenarbeiten   │
+│ werden, um eine schnelle Genesung zu erreichen.                              │
+│                                                                              │
+│ Bei weiteren Fragen stehe ich Ihnen gerne zur Verfügung.                     │
 │                                                                              │
 │ Mit freundlichen Grüßen,                                                     │
 │                                                                              │
-│ Dr. med. Paula Wurfel                                                        │
+│ Dr. Anna Karolin Vogel                                                       │
 │ Fachärztin für Innere Medizin                                                │
-│ Klinik Eckersdorf                                                            │
+│ St. Ursula Krankenhaus                                                       │
 │ ```                                                                          │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:22,687 - LiteLLM - INFO - 
+2025-07-02 15:46:20,179 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:13:33,422 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:13:33,430 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:13:33,431 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:33,432 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:33,454 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:33,471 - root - INFO - 
+2025-07-02 15:46:30,129 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:46:30,136 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:46:30,137 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:46:30,137 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:46:30,138 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:46:30,292 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",         
   search_term="male"))                                                          
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:13:33,736 - root - INFO - 
+2025-07-02 15:46:38,712 - root - INFO - 
 Execution logs:
 ('Found 4 hits for male in Patient.gender', [{'system': 
 'http://hl7.org/fhir/administrative-gender', 'code': 'female', 'display': 
@@ -617,37 +624,41 @@ Execution logs:
 
 Out: None
 
-2025-06-30 13:13:33,739 - root - INFO - 
+2025-07-02 15:46:38,713 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:13:33,745 - root - INFO - 
+2025-07-02 15:46:38,717 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought:                                                                     │
-│ I need to extract patient information, conditions, and potentially           │
-│ medications from the provided text and represent them as FHIR R4 resources.  │
+│ Thought                                                                      │
+│ I need to extract patient information, conditions, and medication statements │
+│ from the provided medical report.                                            │
 │                                                                              │
-│ My plan is as follows:                                                       │
-│ 1.  **Patient Resource:** I will create a `Patient` resource for Bernd       │
-│ Brauer, including his name, birthdate, and address. I will infer his gender  │
-│ as male.                                                                     │
-│ 2.  **Condition Resources:** I will create `Condition` resources for each    │
-│ diagnosis mentioned in the "Aufnahmediagnose" and "Entlassungsdiagnose"      │
-│ sections. The text provides ICD-10 codes, which is helpful. I will use the   │
-│ `search_for_code_or_coding` tool to find the corresponding SNOMED CT codes   │
-│ to ensure interoperability. I will also determine the clinical status for    │
-│ each condition (e.g., active, resolved).                                     │
-│ 3.  **Bundle:** Finally, I will assemble all the created resources into a    │
-│ `Bundle` of type "collection".                                               │
+│ Here's my plan:                                                              │
+│ 1.  **Patient:** Extract the patient's name ("Uwe Jaeger"), date of birth    │
+│ ("10. Februar 1975"), and gender. The text mentions "Herr", which is German  │
+│ for "Mr.", so the gender is male.                                            │
+│ 2.  **Conditions:** Extract the diagnoses and symptoms. The main diagnosis   │
+│ is "erosive Gastritis". The symptoms leading to this are "starke             │
+│ Bauchschmerzen" (severe abdominal pain), "Übelkeit" (nausea), "Erbrechen"    │
+│ (vomiting), and "Gewichtsverlust" (weight loss). There's also a finding of   │
+│ "leichte Anämie" (slight anemia). I will create `Condition` resources for    │
+│ each of these.                                                               │
+│ 3.  **MedicationStatement:** Extract the prescribed medications. The patient │
+│ was prescribed a "Protonenpumpenhemmer (PPI)" (proton pump inhibitor) for    │
+│ eight weeks and an "Antazidum" (antacid). I will create                      │
+│ `MedicationStatement` resources for these.                                   │
 │                                                                              │
-│ I will start by searching for the necessary codes for the FHIR resources.    │
-│ I'll begin with the patient's gender.Code:                                   │
-│ ```py                                                                        │
+│ To create the FHIR resources, I will first search for the appropriate codes  │
+│ for all the clinical information using the `search_for_code_or_coding` tool. │
+│                                                                              │
+│ First, I'll search for the patient's gender.Code:                            │
+│ ```python                                                                    │
 │ print(search_for_code_or_coding(fhir_attribute_path="Patient.gender",        │
 │ search_term="male"))                                                         │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:33,747 - root - INFO - 
+2025-07-02 15:46:38,719 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_1', 'type': 'function', 'function': {'name':                   │
@@ -656,7 +667,7 @@ Out: None
 │ search_term="male"))'}}]                                                     │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:33,750 - root - INFO - 
+2025-07-02 15:46:38,720 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_1                                                              │
 │ Observation:                                                                 │
@@ -672,629 +683,747 @@ Out: None
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:33,751 - LiteLLM - INFO - 
+2025-07-02 15:46:38,722 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:13:37,980 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:13:37,989 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:13:37,991 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:37,991 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:38,015 - root - INFO - 
+2025-07-02 15:46:41,187 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:46:41,193 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:46:41,194 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:46:41,200 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:46:41,203 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
-  search_term="Hypertensive crisis"))                                           
+  search_term="erosive gastritis"))                                             
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:13:38,016 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:38,525 - root - INFO - 
+2025-07-02 15:46:49,895 - root - INFO - 
 Execution logs:
-('Found 2 hits for Hypertensive crisis in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '50490005', 'display': 'Hypertensive 
-encephalopathy'}, {'system': 'http://snomed.info/sct', 'code': '706882009', 
-'display': 'Hypertensive crisis'}])
+('Found 7 hits for erosive gastritis in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '1086791000119100', 'display': 'Erosive 
+gastritis'}, {'system': 'http://snomed.info/sct', 'code': '18665000', 'display':
+'Acute gastric mucosal erosion'}, {'system': 'http://snomed.info/sct', 'code': 
+'2367005', 'display': 'Acute hemorrhagic gastritis'}, {'system': 
+'http://snomed.info/sct', 'code': '444926003', 'display': 'Acute erosive 
+gastritis'}, {'system': 'http://snomed.info/sct', 'code': '63137003', 'display':
+'Chronic erosive gastritis'}, {'system': 'http://snomed.info/sct', 'code': 
+'7071000119102', 'display': 'Gastric hemorrhage due to erosive gastritis'}, 
+{'system': 'http://snomed.info/sct', 'code': '218541000119109', 'display': 
+'Gastric hemorrhage due to idiopathic erosive gastritis'}])
 
 Out: None
 
-2025-06-30 13:13:38,529 - root - INFO - 
+2025-07-02 15:46:49,899 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:13:38,535 - root - INFO - 
+2025-07-02 15:46:49,905 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought:                                                                     │
-│ I have found the code for "male" for the `Patient.gender` attribute. Next, I │
-│ will search for the codes for the conditions mentioned in the text. I'll     │
-│ start with "Hypertensive crisis". Even though the text provides ICD-10       │
-│ codes, I will search for SNOMED-CT codes to follow best practices.Code:      │
-│ ```py                                                                        │
+│ Thought                                                                      │
+│ Now I will search for the codes for the conditions mentioned in the text.    │
+│ I'll start with "erosive gastritis".Code:                                    │
+│ ```python                                                                    │
 │ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
-│ search_term="Hypertensive crisis"))                                          │
+│ search_term="erosive gastritis"))                                            │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:38,538 - root - INFO - 
+2025-07-02 15:46:49,908 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_2', 'type': 'function', 'function': {'name':                   │
 │ 'python_interpreter', 'arguments':                                           │
 │ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
-│ search_term="Hypertensive crisis"))'}}]                                      │
+│ search_term="erosive gastritis"))'}}]                                        │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:38,541 - root - INFO - 
+2025-07-02 15:46:49,914 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_2                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 2 hits for Hypertensive crisis in Condition.code', [{'system':       │
-│ 'http://snomed.info/sct', 'code': '50490005', 'display': 'Hypertensive       │
-│ encephalopathy'}, {'system': 'http://snomed.info/sct', 'code': '706882009',  │
-│ 'display': 'Hypertensive crisis'}])                                          │
+│ ('Found 7 hits for erosive gastritis in Condition.code', [{'system':         │
+│ 'http://snomed.info/sct', 'code': '1086791000119100', 'display': 'Erosive    │
+│ gastritis'}, {'system': 'http://snomed.info/sct', 'code': '18665000',        │
+│ 'display': 'Acute gastric mucosal erosion'}, {'system':                      │
+│ 'http://snomed.info/sct', 'code': '2367005', 'display': 'Acute hemorrhagic   │
+│ gastritis'}, {'system': 'http://snomed.info/sct', 'code': '444926003',       │
+│ 'display': 'Acute erosive gastritis'}, {'system': 'http://snomed.info/sct',  │
+│ 'code': '63137003', 'display': 'Chronic erosive gastritis'}, {'system':      │
+│ 'http://snomed.info/sct', 'code': '7071000119102', 'display': 'Gastric       │
+│ hemorrhage due to erosive gastritis'}, {'system': 'http://snomed.info/sct',  │
+│ 'code': '218541000119109', 'display': 'Gastric hemorrhage due to idiopathic  │
+│ erosive gastritis'}])                                                        │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:38,544 - LiteLLM - INFO - 
+2025-07-02 15:46:49,917 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:13:41,666 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:13:41,673 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:13:41,674 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:41,674 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:41,692 - root - INFO - 
+2025-07-02 15:46:53,168 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:46:53,174 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:46:53,175 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:46:53,176 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:46:53,188 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:46:53,194 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
-  search_term="Coronary heart disease"))                                        
+  search_term="abdominal pain"))                                                
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:13:41,693 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:42,217 - root - INFO - 
+2025-07-02 15:47:01,841 - root - INFO - 
 Execution logs:
-('Found 13 hits for Coronary heart disease in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '53741008', 'display': 'Coronary 
-arteriosclerosis'}, {'system': 'http://snomed.info/sct', 'code': '315016007', 
-'display': 'At increased risk of coronary heart disease'}, {'system': 
-'http://snomed.info/sct', 'code': '315348000', 'display': 'Asymptomatic coronary
-heart disease'}, {'system': 'http://snomed.info/sct', 'code': '401247006', 
-'display': 'Coronary heart disease monitoring status'}, {'system': 
-'http://snomed.info/sct', 'code': '401254000', 'display': 'Coronary heart 
-disease monitoring deleted'}, {'system': 'http://snomed.info/sct', 'code': 
-'401331007', 'display': 'Coronary heart disease monitoring default'}, {'system':
-'http://snomed.info/sct', 'code': '401250009', 'display': 'Coronary heart 
-disease monitoring first letter'}, {'system': 'http://snomed.info/sct', 'code': 
-'401251008', 'display': 'Coronary heart disease monitoring 2nd letter'}, 
-{'system': 'http://snomed.info/sct', 'code': '401252001', 'display': 'Coronary 
-heart disease monitoring 3rd letter'}, {'system': 'http://snomed.info/sct', 
-'code': '401332000', 'display': 'Coronary heart disease monitoring check 
-done'}])
+('Found 39 hits for abdominal pain in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '21522001', 'display': 'Abdominal pain'}, 
+{'system': 'http://snomed.info/sct', 'code': '45979003', 'display': 'Abdominal 
+wind pain'}, {'system': 'http://snomed.info/sct', 'code': '162042000', 
+'display': 'Abdominal wall pain'}, {'system': 'http://snomed.info/sct', 'code': 
+'83132003', 'display': 'Upper abdominal pain'}, {'system': 
+'http://snomed.info/sct', 'code': '116290004', 'display': 'Acute abdominal 
+pain'}, {'system': 'http://snomed.info/sct', 'code': '54586004', 'display': 
+'Lower abdominal pain'}, {'system': 'http://snomed.info/sct', 'code': '9991008',
+'display': 'Abdominal colic'}, {'system': 'http://snomed.info/sct', 'code': 
+'28221000119103', 'display': 'Abdominal muscle pain'}, {'system': 
+'http://snomed.info/sct', 'code': '111985007', 'display': 'Chronic abdominal 
+pain'}, {'system': 'http://snomed.info/sct', 'code': '162046002', 'display': 
+'Central abdominal pain'}])
 
 Out: None
 
-2025-06-30 13:13:42,221 - root - INFO - 
+2025-07-02 15:47:01,843 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:13:42,225 - root - INFO - 
+2025-07-02 15:47:01,846 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought:                                                                     │
-│ I have found the SNOMED CT code for "Hypertensive crisis". Now I will search │
-│ for "Coronary heart disease".Code:                                           │
-│ ```py                                                                        │
+│ Thought                                                                      │
+│ Next, I'll search for the code for "abdominal pain".Code:                    │
+│ ```python                                                                    │
 │ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
-│ search_term="Coronary heart disease"))                                       │
+│ search_term="abdominal pain"))                                               │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:42,228 - root - INFO - 
+2025-07-02 15:47:01,849 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_3', 'type': 'function', 'function': {'name':                   │
 │ 'python_interpreter', 'arguments':                                           │
 │ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
-│ search_term="Coronary heart disease"))'}}]                                   │
+│ search_term="abdominal pain"))'}}]                                           │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:42,236 - root - INFO - 
+2025-07-02 15:47:01,854 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_3                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 13 hits for Coronary heart disease in Condition.code', [{'system':   │
-│ 'http://snomed.info/sct', 'code': '53741008', 'display': 'Coronary           │
-│ arteriosclerosis'}, {'system': 'http://snomed.info/sct', 'code':             │
-│ '315016007', 'display': 'At increased risk of coronary heart disease'},      │
-│ {'system': 'http://snomed.info/sct', 'code': '315348000', 'display':         │
-│ 'Asymptomatic coronary heart disease'}, {'system': 'http://snomed.info/sct', │
-│ 'code': '401247006', 'display': 'Coronary heart disease monitoring status'}, │
-│ {'system': 'http://snomed.info/sct', 'code': '401254000', 'display':         │
-│ 'Coronary heart disease monitoring deleted'}, {'system':                     │
-│ 'http://snomed.info/sct', 'code': '401331007', 'display': 'Coronary heart    │
-│ disease monitoring default'}, {'system': 'http://snomed.info/sct', 'code':   │
-│ '401250009', 'display': 'Coronary heart disease monitoring first letter'},   │
-│ {'system': 'http://snomed.info/sct', 'code': '401251008', 'display':         │
-│ 'Coronary heart disease monitoring 2nd letter'}, {'system':                  │
-│ 'http://snomed.info/sct', 'code': '401252001', 'display': 'Coronary heart    │
-│ disease monitoring 3rd letter'}, {'system': 'http://snomed.info/sct',        │
-│ 'code': '401332000', 'display': 'Coronary heart disease monitoring check     │
-│ done'}])                                                                     │
+│ ('Found 39 hits for abdominal pain in Condition.code', [{'system':           │
+│ 'http://snomed.info/sct', 'code': '21522001', 'display': 'Abdominal pain'},  │
+│ {'system': 'http://snomed.info/sct', 'code': '45979003', 'display':          │
+│ 'Abdominal wind pain'}, {'system': 'http://snomed.info/sct', 'code':         │
+│ '162042000', 'display': 'Abdominal wall pain'}, {'system':                   │
+│ 'http://snomed.info/sct', 'code': '83132003', 'display': 'Upper abdominal    │
+│ pain'}, {'system': 'http://snomed.info/sct', 'code': '116290004', 'display': │
+│ 'Acute abdominal pain'}, {'system': 'http://snomed.info/sct', 'code':        │
+│ '54586004', 'display': 'Lower abdominal pain'}, {'system':                   │
+│ 'http://snomed.info/sct', 'code': '9991008', 'display': 'Abdominal colic'},  │
+│ {'system': 'http://snomed.info/sct', 'code': '28221000119103', 'display':    │
+│ 'Abdominal muscle pain'}, {'system': 'http://snomed.info/sct', 'code':       │
+│ '111985007', 'display': 'Chronic abdominal pain'}, {'system':                │
+│ 'http://snomed.info/sct', 'code': '162046002', 'display': 'Central abdominal │
+│ pain'}])                                                                     │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:42,240 - LiteLLM - INFO - 
+2025-07-02 15:47:01,858 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:13:44,924 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:13:44,926 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:13:44,926 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:44,933 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:44,936 - root - INFO - 
+2025-07-02 15:47:06,377 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:47:06,381 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:47:06,381 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:47:06,382 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:47:06,393 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
-  search_term="Hyperlipidemia"))                                                
+  search_term="nausea"))                                                        
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:13:45,564 - root - INFO - 
+2025-07-02 15:47:06,394 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:47:15,026 - root - INFO - 
 Execution logs:
-('Found 27 hits for Hyperlipidemia in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '55822004', 'display': 'Hyperlipidaemia'}, 
-{'system': 'http://snomed.info/sct', 'code': '267434003', 'display': 'Mixed 
-hyperlipidemia'}, {'system': 'http://snomed.info/sct', 'code': '398796005', 
-'display': 'Familial type 3 hyperlipoproteinemia'}, {'system': 
-'http://snomed.info/sct', 'code': '190774002', 'display': 'Hyperlipidemia, group
-A'}, {'system': 'http://snomed.info/sct', 'code': '402727002', 'display': 
-'Secondary hyperlipidaemia'}, {'system': 'http://snomed.info/sct', 'code': 
-'129590000', 'display': 'Exogenous hyperlipidemia'}, {'system': 
-'http://snomed.info/sct', 'code': '129589009', 'display': 'Endogenous 
-hyperlipidaemia'}, {'system': 'http://snomed.info/sct', 'code': '238088006', 
-'display': 'Primary combined hyperlipidemia'}, {'system': 
-'http://snomed.info/sct', 'code': '445261005', 'display': 'Posttransplant 
-hyperlipidemia'}, {'system': 'http://snomed.info/sct', 'code': '238089003', 
-'display': 'Secondary combined hyperlipidemia'}])
+('Found 18 hits for nausea in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '422587007', 'display': 'Nausea'}, {'system': 
+'http://snomed.info/sct', 'code': '51885006', 'display': 'Morning sickness'}, 
+{'system': 'http://snomed.info/sct', 'code': '762279002', 'display': 'Functional
+nausea'}, {'system': 'http://snomed.info/sct', 'code': '16932000', 'display': 
+'Nausea and vomiting'}, {'system': 'http://snomed.info/sct', 'code': '64581007',
+'display': 'Postoperative nausea'}, {'system': 'http://snomed.info/sct', 'code':
+'146291000119108', 'display': 'Vomiting without nausea'}, {'system': 
+'http://snomed.info/sct', 'code': '415709002', 'display': 'Tendency to nausea 
+and vomiting'}, {'system': 'http://snomed.info/sct', 'code': '33841007', 
+'display': 'Decreased nausea and vomiting'}, {'system': 
+'http://snomed.info/sct', 'code': '2919008', 'display': 'Nausea, vomiting and 
+diarrhea'}, {'system': 'http://snomed.info/sct', 'code': '73335002', 'display': 
+'Increased nausea and vomiting'}])
 
 Out: None
 
-2025-06-30 13:13:45,567 - root - INFO - 
+2025-07-02 15:47:15,030 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 5 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:13:45,572 - root - INFO - 
+2025-07-02 15:47:15,034 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought:                                                                     │
-│ The search for "Coronary heart disease" returned "Coronary arteriosclerosis" │
-│ as the first result which seems appropriate. I'll use that. Next, I'll       │
-│ search for "Hyperlipidemia".Code:                                            │
-│ ```py                                                                        │
+│ Thought                                                                      │
+│ Next, I'll search for the code for "nausea".Code:                            │
+│ ```python                                                                    │
 │ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
-│ search_term="Hyperlipidemia"))                                               │
+│ search_term="nausea"))                                                       │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:45,575 - root - INFO - 
+2025-07-02 15:47:15,036 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_4', 'type': 'function', 'function': {'name':                   │
 │ 'python_interpreter', 'arguments':                                           │
 │ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
-│ search_term="Hyperlipidemia"))'}}]                                           │
+│ search_term="nausea"))'}}]                                                   │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:45,581 - root - INFO - 
+2025-07-02 15:47:15,042 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_4                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 27 hits for Hyperlipidemia in Condition.code', [{'system':           │
-│ 'http://snomed.info/sct', 'code': '55822004', 'display': 'Hyperlipidaemia'}, │
-│ {'system': 'http://snomed.info/sct', 'code': '267434003', 'display': 'Mixed  │
-│ hyperlipidemia'}, {'system': 'http://snomed.info/sct', 'code': '398796005',  │
-│ 'display': 'Familial type 3 hyperlipoproteinemia'}, {'system':               │
-│ 'http://snomed.info/sct', 'code': '190774002', 'display': 'Hyperlipidemia,   │
-│ group A'}, {'system': 'http://snomed.info/sct', 'code': '402727002',         │
-│ 'display': 'Secondary hyperlipidaemia'}, {'system':                          │
-│ 'http://snomed.info/sct', 'code': '129590000', 'display': 'Exogenous         │
-│ hyperlipidemia'}, {'system': 'http://snomed.info/sct', 'code': '129589009',  │
-│ 'display': 'Endogenous hyperlipidaemia'}, {'system':                         │
-│ 'http://snomed.info/sct', 'code': '238088006', 'display': 'Primary combined  │
-│ hyperlipidemia'}, {'system': 'http://snomed.info/sct', 'code': '445261005',  │
-│ 'display': 'Posttransplant hyperlipidemia'}, {'system':                      │
-│ 'http://snomed.info/sct', 'code': '238089003', 'display': 'Secondary         │
-│ combined hyperlipidemia'}])                                                  │
+│ ('Found 18 hits for nausea in Condition.code', [{'system':                   │
+│ 'http://snomed.info/sct', 'code': '422587007', 'display': 'Nausea'},         │
+│ {'system': 'http://snomed.info/sct', 'code': '51885006', 'display': 'Morning │
+│ sickness'}, {'system': 'http://snomed.info/sct', 'code': '762279002',        │
+│ 'display': 'Functional nausea'}, {'system': 'http://snomed.info/sct',        │
+│ 'code': '16932000', 'display': 'Nausea and vomiting'}, {'system':            │
+│ 'http://snomed.info/sct', 'code': '64581007', 'display': 'Postoperative      │
+│ nausea'}, {'system': 'http://snomed.info/sct', 'code': '146291000119108',    │
+│ 'display': 'Vomiting without nausea'}, {'system': 'http://snomed.info/sct',  │
+│ 'code': '415709002', 'display': 'Tendency to nausea and vomiting'},          │
+│ {'system': 'http://snomed.info/sct', 'code': '33841007', 'display':          │
+│ 'Decreased nausea and vomiting'}, {'system': 'http://snomed.info/sct',       │
+│ 'code': '2919008', 'display': 'Nausea, vomiting and diarrhea'}, {'system':   │
+│ 'http://snomed.info/sct', 'code': '73335002', 'display': 'Increased nausea   │
+│ and vomiting'}])                                                             │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:45,584 - LiteLLM - INFO - 
+2025-07-02 15:47:15,045 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:13:47,912 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:13:47,919 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:13:47,920 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:47,920 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:47,938 - root - INFO - 
+2025-07-02 15:47:17,868 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:47:17,875 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:47:17,875 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:47:17,884 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:47:17,893 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
-  search_term="Obesity"))                                                       
+  search_term="vomiting"))                                                      
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:13:47,939 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:48,532 - root - INFO - 
+2025-07-02 15:47:26,565 - root - INFO - 
 Execution logs:
-('Found 94 hits for Obesity in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '414916001', 'display': 'Obesity'}, {'system':
-'http://snomed.info/sct', 'code': '238136002', 'display': 'Morbid obesity'}, 
-{'system': 'http://snomed.info/sct', 'code': '83911000119104', 'display': 
-'Severe obesity'}, {'system': 'http://snomed.info/sct', 'code': '415530009', 
-'display': 'Simple obesity'}, {'system': 'http://snomed.info/sct', 'code': 
-'247824007', 'display': 'Fear of becoming fat'}, {'system': 
-'http://snomed.info/sct', 'code': '238132000', 'display': 'Android obesity'}, 
-{'system': 'http://snomed.info/sct', 'code': '248311001', 'display': 'Central 
-obesity'}, {'system': 'http://snomed.info/sct', 'code': '360566006', 'display': 
-'Buffalo obesity'}, {'system': 'http://snomed.info/sct', 'code': '238133005', 
-'display': 'Gynaecoid obesity'}, {'system': 'http://snomed.info/sct', 'code': 
-'294493008', 'display': 'Lifelong obesity'}])
+('Found 66 hits for vomiting in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '422400008', 'display': 'Vomiting'}, 
+{'system': 'http://snomed.info/sct', 'code': '225586007', 'display': 'Vomiting 
+food'}, {'system': 'http://snomed.info/sct', 'code': '71419002', 'display': 
+'Bilious vomiting'}, {'system': 'http://snomed.info/sct', 'code': '8765009', 
+'display': 'Hematemesis'}, {'system': 'http://snomed.info/sct', 'code': 
+'111843007', 'display': 'Viral gastroenteritis'}, {'system': 
+'http://snomed.info/sct', 'code': '23971007', 'display': 'Acute vomiting'}, 
+{'system': 'http://snomed.info/sct', 'code': '49206006', 'display': 'Habit 
+vomiting'}, {'system': 'http://snomed.info/sct', 'code': '45994004', 'display': 
+'Erotic vomiting'}, {'system': 'http://snomed.info/sct', 'code': '63722008', 
+'display': 'Chronic vomiting'}, {'system': 'http://snomed.info/sct', 'code': 
+'249497008', 'display': 'Vomiting symptom'}])
 
 Out: None
 
-2025-06-30 13:13:48,535 - root - INFO - 
+2025-07-02 15:47:26,568 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 6 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:13:48,540 - root - INFO - 
+2025-07-02 15:47:26,572 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought:                                                                     │
-│ I have found the code for "Hyperlipidemia". The first result,                │
-│ "Hyperlipidaemia" with code `55822004`, is a good match. Next, I will search │
-│ for "Obesity".Code:                                                          │
-│ ```py                                                                        │
+│ Thought                                                                      │
+│ Next, I'll search for the code for "vomiting".Code:                          │
+│ ```python                                                                    │
 │ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
-│ search_term="Obesity"))                                                      │
+│ search_term="vomiting"))                                                     │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:48,542 - root - INFO - 
+2025-07-02 15:47:26,575 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_5', 'type': 'function', 'function': {'name':                   │
 │ 'python_interpreter', 'arguments':                                           │
 │ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
-│ search_term="Obesity"))'}}]                                                  │
+│ search_term="vomiting"))'}}]                                                 │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:48,548 - root - INFO - 
+2025-07-02 15:47:26,580 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_5                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 94 hits for Obesity in Condition.code', [{'system':                  │
-│ 'http://snomed.info/sct', 'code': '414916001', 'display': 'Obesity'},        │
-│ {'system': 'http://snomed.info/sct', 'code': '238136002', 'display': 'Morbid │
-│ obesity'}, {'system': 'http://snomed.info/sct', 'code': '83911000119104',    │
-│ 'display': 'Severe obesity'}, {'system': 'http://snomed.info/sct', 'code':   │
-│ '415530009', 'display': 'Simple obesity'}, {'system':                        │
-│ 'http://snomed.info/sct', 'code': '247824007', 'display': 'Fear of becoming  │
-│ fat'}, {'system': 'http://snomed.info/sct', 'code': '238132000', 'display':  │
-│ 'Android obesity'}, {'system': 'http://snomed.info/sct', 'code':             │
-│ '248311001', 'display': 'Central obesity'}, {'system':                       │
-│ 'http://snomed.info/sct', 'code': '360566006', 'display': 'Buffalo           │
-│ obesity'}, {'system': 'http://snomed.info/sct', 'code': '238133005',         │
-│ 'display': 'Gynaecoid obesity'}, {'system': 'http://snomed.info/sct',        │
-│ 'code': '294493008', 'display': 'Lifelong obesity'}])                        │
+│ ('Found 66 hits for vomiting in Condition.code', [{'system':                 │
+│ 'http://snomed.info/sct', 'code': '422400008', 'display': 'Vomiting'},       │
+│ {'system': 'http://snomed.info/sct', 'code': '225586007', 'display':         │
+│ 'Vomiting food'}, {'system': 'http://snomed.info/sct', 'code': '71419002',   │
+│ 'display': 'Bilious vomiting'}, {'system': 'http://snomed.info/sct', 'code': │
+│ '8765009', 'display': 'Hematemesis'}, {'system': 'http://snomed.info/sct',   │
+│ 'code': '111843007', 'display': 'Viral gastroenteritis'}, {'system':         │
+│ 'http://snomed.info/sct', 'code': '23971007', 'display': 'Acute vomiting'},  │
+│ {'system': 'http://snomed.info/sct', 'code': '49206006', 'display': 'Habit   │
+│ vomiting'}, {'system': 'http://snomed.info/sct', 'code': '45994004',         │
+│ 'display': 'Erotic vomiting'}, {'system': 'http://snomed.info/sct', 'code':  │
+│ '63722008', 'display': 'Chronic vomiting'}, {'system':                       │
+│ 'http://snomed.info/sct', 'code': '249497008', 'display': 'Vomiting          │
+│ symptom'}])                                                                  │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:48,551 - LiteLLM - INFO - 
+2025-07-02 15:47:26,584 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:13:50,934 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:13:50,942 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:13:50,943 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:50,943 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:50,960 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:50,970 - root - INFO - 
+2025-07-02 15:47:30,134 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:47:30,140 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:47:30,141 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:47:30,141 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:47:30,152 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:47:30,157 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
-  search_term="Diabetes mellitus"))                                             
+  search_term="weight loss"))                                                   
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:13:51,849 - root - INFO - 
+2025-07-02 15:47:38,844 - root - INFO - 
 Execution logs:
-('Found 561 hits for Diabetes mellitus in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '73211009', 'display': 'Diabetes mellitus'}, 
-{'system': 'http://snomed.info/sct', 'code': '46635009', 'display': 'Type 1 
-diabetes mellitus'}, {'system': 'http://snomed.info/sct', 'code': '44054006', 
-'display': 'Type 2 diabetes mellitus'}, {'system': 'http://snomed.info/sct', 
-'code': '11530004', 'display': 'Brittle diabetes mellitus'}, {'system': 
-'http://snomed.info/sct', 'code': '49817004', 'display': 'Neonatal diabetes 
-mellitus'}, {'system': 'http://snomed.info/sct', 'code': '530558861000132104', 
-'display': 'Atypical diabetes mellitus'}, {'system': 'http://snomed.info/sct', 
-'code': '8801005', 'display': 'Secondary diabetes mellitus'}, {'system': 
-'http://snomed.info/sct', 'code': '161641009', 'display': 'At increased risk of 
-diabetes mellitus'}, {'system': 'http://snomed.info/sct', 'code': '11687002', 
-'display': 'Gestational diabetes mellitus'}, {'system': 
-'http://snomed.info/sct', 'code': '420662003', 'display': 'Coma due to diabetes 
-mellitus'}])
+('Found 12 hits for weight loss in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '89362005', 'display': 'Weight loss'}, 
+{'system': 'http://snomed.info/sct', 'code': '359649009', 'display': 'Weight 
+reduction diet'}, {'system': 'http://snomed.info/sct', 'code': '426977000', 
+'display': 'Recent weight loss'}, {'system': 'http://snomed.info/sct', 'code': 
+'267024001', 'display': 'Abnormal weight loss'}, {'system': 
+'http://snomed.info/sct', 'code': '309257005', 'display': 'Excessive weight 
+loss'}, {'system': 'http://snomed.info/sct', 'code': '448765001', 'display': 
+'Unintentional weight loss'}, {'system': 'http://snomed.info/sct', 'code': 
+'416528001', 'display': 'Intentional weight loss'}, {'system': 
+'http://snomed.info/sct', 'code': '422868009', 'display': 'Unexplained weight 
+loss'}, {'system': 'http://snomed.info/sct', 'code': '161832001', 'display': 
+'Weight decreasing'}, {'system': 'http://snomed.info/sct', 'code': '430237002', 
+'display': 'Abnormal intentional weight loss'}])
 
 Out: None
 
-2025-06-30 13:13:51,852 - root - INFO - 
+2025-07-02 15:47:38,848 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 7 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:13:51,859 - root - INFO - 
+2025-07-02 15:47:38,853 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought:                                                                     │
-│ I have found the code for "Obesity". The first result, "Obesity" with code   │
-│ `414916001`, is perfect. Now, I'll search for "Diabetes mellitus". The text  │
-│ specifies "Nicht näher bezeichnete Diabetes mellitus" and "Diabetes mellitus │
-│ Typ 2". I will search for the general term "Diabetes mellitus" and then pick │
-│ the most appropriate codes.Code:                                             │
-│ ```py                                                                        │
+│ Thought                                                                      │
+│ Next, I'll search for the code for "weight loss".Code:                       │
+│ ```python                                                                    │
 │ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
-│ search_term="Diabetes mellitus"))                                            │
+│ search_term="weight loss"))                                                  │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:51,861 - root - INFO - 
+2025-07-02 15:47:38,856 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_6', 'type': 'function', 'function': {'name':                   │
 │ 'python_interpreter', 'arguments':                                           │
 │ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
-│ search_term="Diabetes mellitus"))'}}]                                        │
+│ search_term="weight loss"))'}}]                                              │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:51,868 - root - INFO - 
+2025-07-02 15:47:38,862 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_6                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 561 hits for Diabetes mellitus in Condition.code', [{'system':       │
-│ 'http://snomed.info/sct', 'code': '73211009', 'display': 'Diabetes           │
-│ mellitus'}, {'system': 'http://snomed.info/sct', 'code': '46635009',         │
-│ 'display': 'Type 1 diabetes mellitus'}, {'system': 'http://snomed.info/sct', │
-│ 'code': '44054006', 'display': 'Type 2 diabetes mellitus'}, {'system':       │
-│ 'http://snomed.info/sct', 'code': '11530004', 'display': 'Brittle diabetes   │
-│ mellitus'}, {'system': 'http://snomed.info/sct', 'code': '49817004',         │
-│ 'display': 'Neonatal diabetes mellitus'}, {'system':                         │
-│ 'http://snomed.info/sct', 'code': '530558861000132104', 'display': 'Atypical │
-│ diabetes mellitus'}, {'system': 'http://snomed.info/sct', 'code': '8801005', │
-│ 'display': 'Secondary diabetes mellitus'}, {'system':                        │
-│ 'http://snomed.info/sct', 'code': '161641009', 'display': 'At increased risk │
-│ of diabetes mellitus'}, {'system': 'http://snomed.info/sct', 'code':         │
-│ '11687002', 'display': 'Gestational diabetes mellitus'}, {'system':          │
-│ 'http://snomed.info/sct', 'code': '420662003', 'display': 'Coma due to       │
-│ diabetes mellitus'}])                                                        │
+│ ('Found 12 hits for weight loss in Condition.code', [{'system':              │
+│ 'http://snomed.info/sct', 'code': '89362005', 'display': 'Weight loss'},     │
+│ {'system': 'http://snomed.info/sct', 'code': '359649009', 'display': 'Weight │
+│ reduction diet'}, {'system': 'http://snomed.info/sct', 'code': '426977000',  │
+│ 'display': 'Recent weight loss'}, {'system': 'http://snomed.info/sct',       │
+│ 'code': '267024001', 'display': 'Abnormal weight loss'}, {'system':          │
+│ 'http://snomed.info/sct', 'code': '309257005', 'display': 'Excessive weight  │
+│ loss'}, {'system': 'http://snomed.info/sct', 'code': '448765001', 'display': │
+│ 'Unintentional weight loss'}, {'system': 'http://snomed.info/sct', 'code':   │
+│ '416528001', 'display': 'Intentional weight loss'}, {'system':               │
+│ 'http://snomed.info/sct', 'code': '422868009', 'display': 'Unexplained       │
+│ weight loss'}, {'system': 'http://snomed.info/sct', 'code': '161832001',     │
+│ 'display': 'Weight decreasing'}, {'system': 'http://snomed.info/sct',        │
+│ 'code': '430237002', 'display': 'Abnormal intentional weight loss'}])        │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:51,873 - LiteLLM - INFO - 
+2025-07-02 15:47:38,866 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:13:55,697 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:13:55,703 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:13:55,704 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:55,704 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:55,726 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:13:55,735 - root - INFO - 
+2025-07-02 15:47:42,424 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:47:42,431 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:47:42,432 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:47:42,432 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:47:42,448 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   print(search_for_code_or_coding(fhir_attribute_path="Condition.code",         
-  search_term="Hypertension"))                                                  
+  search_term="anemia"))                                                        
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:13:56,520 - root - INFO - 
+2025-07-02 15:47:42,449 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:47:51,354 - root - INFO - 
 Execution logs:
-('Found 372 hits for Hypertension in Condition.code', [{'system': 
-'http://snomed.info/sct', 'code': '38341003', 'display': 'Hypertensive 
-disorder'}, {'system': 'http://snomed.info/sct', 'code': '28119000', 'display': 
-'Renal hypertension'}, {'system': 'http://snomed.info/sct', 'code': '234072000',
-'display': 'Venous hypertension'}, {'system': 'http://snomed.info/sct', 'code': 
-'34742003', 'display': 'Portal hypertension'}, {'system': 
-'http://snomed.info/sct', 'code': '4210003', 'display': 'Ocular hypertension'}, 
-{'system': 'http://snomed.info/sct', 'code': '10725009', 'display': 'Benign 
-hypertension'}, {'system': 'http://snomed.info/sct', 'code': '712832005', 
-'display': 'Supine hypertension'}, {'system': 'http://snomed.info/sct', 'code': 
-'102932008', 'display': 'Fear of hypertension'}, {'system': 
-'http://snomed.info/sct', 'code': '84094009', 'display': 'Rebound 
-hypertension'}, {'system': 'http://snomed.info/sct', 'code': '59621000', 
-'display': 'Essential hypertension'}])
+('Found 396 hits for anemia in Condition.code', [{'system': 
+'http://snomed.info/sct', 'code': '271737000', 'display': 'Anaemia'}, {'system':
+'http://snomed.info/sct', 'code': '462166006', 'display': 'Fetal anemia'}, 
+{'system': 'http://snomed.info/sct', 'code': '234360003', 'display': "Vegan's 
+anaemia"}, {'system': 'http://snomed.info/sct', 'code': '387745008', 'display': 
+'Sports anemia'}, {'system': 'http://snomed.info/sct', 'code': '191268006', 
+'display': 'Chronic anemia'}, {'system': 'http://snomed.info/sct', 'code': 
+'78997000', 'display': 'Megaloblastic anaemia due to vegetarianism'}, {'system':
+'http://snomed.info/sct', 'code': '80875006', 'display': 'Achlorhydric 
+anaemia'}, {'system': 'http://snomed.info/sct', 'code': '30575002', 'display': 
+"Fanconi's anemia"}, {'system': 'http://snomed.info/sct', 'code': '234350007', 
+'display': 'Neonatal anaemia'}, {'system': 'http://snomed.info/sct', 'code': 
+'26682008', 'display': 'Homozygous beta thalassemia'}])
 
 Out: None
 
-2025-06-30 13:13:56,524 - root - INFO - 
+2025-07-02 15:47:51,359 - root - INFO - 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 8 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-2025-06-30 13:13:56,531 - root - INFO - 
+2025-07-02 15:47:51,363 - root - INFO - 
 ╭───────────────────────────────── assistant ──────────────────────────────────╮
-│ Thought:                                                                     │
-│ I have found the codes for "Diabetes mellitus". The search results provide   │
-│ codes for "Diabetes mellitus" (`73211009`), "Type 1 diabetes mellitus"       │
-│ (`46635009`), and "Type 2 diabetes mellitus" (`44054006`). The admission     │
-│ diagnosis mentions "Nicht näher bezeichnete Diabetes mellitus" (unspecified  │
-│ diabetes mellitus), and the discharge diagnosis specifies "Diabetes mellitus │
-│ Typ 2". I will use the general code for the admission diagnosis and the Type │
-│ 2 code for the discharge diagnosis.                                          │
-│                                                                              │
-│ Next, I need a code for "Hypertension" for the discharge diagnosis "Stabile  │
-│ Hypertonie".Code:                                                            │
-│ ```py                                                                        │
+│ Thought                                                                      │
+│ Next, I'll search for the code for "anemia".Code:                            │
+│ ```python                                                                    │
 │ print(search_for_code_or_coding(fhir_attribute_path="Condition.code",        │
-│ search_term="Hypertension"))                                                 │
+│ search_term="anemia"))                                                       │
 │ ```<end_code>                                                                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:56,534 - root - INFO - 
+2025-07-02 15:47:51,366 - root - INFO - 
 ╭───────────────────────────────── tool-call ──────────────────────────────────╮
 │ Calling tools:                                                               │
 │ [{'id': 'call_7', 'type': 'function', 'function': {'name':                   │
 │ 'python_interpreter', 'arguments':                                           │
 │ 'print(search_for_code_or_coding(fhir_attribute_path="Condition.code",       │
-│ search_term="Hypertension"))'}}]                                             │
+│ search_term="anemia"))'}}]                                                   │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:56,540 - root - INFO - 
+2025-07-02 15:47:51,372 - root - INFO - 
 ╭─────────────────────────────── tool-response ────────────────────────────────╮
 │ Call id: call_7                                                              │
 │ Observation:                                                                 │
 │ Execution logs:                                                              │
-│ ('Found 372 hits for Hypertension in Condition.code', [{'system':            │
-│ 'http://snomed.info/sct', 'code': '38341003', 'display': 'Hypertensive       │
-│ disorder'}, {'system': 'http://snomed.info/sct', 'code': '28119000',         │
-│ 'display': 'Renal hypertension'}, {'system': 'http://snomed.info/sct',       │
-│ 'code': '234072000', 'display': 'Venous hypertension'}, {'system':           │
-│ 'http://snomed.info/sct', 'code': '34742003', 'display': 'Portal             │
-│ hypertension'}, {'system': 'http://snomed.info/sct', 'code': '4210003',      │
-│ 'display': 'Ocular hypertension'}, {'system': 'http://snomed.info/sct',      │
-│ 'code': '10725009', 'display': 'Benign hypertension'}, {'system':            │
-│ 'http://snomed.info/sct', 'code': '712832005', 'display': 'Supine            │
-│ hypertension'}, {'system': 'http://snomed.info/sct', 'code': '102932008',    │
-│ 'display': 'Fear of hypertension'}, {'system': 'http://snomed.info/sct',     │
-│ 'code': '84094009', 'display': 'Rebound hypertension'}, {'system':           │
-│ 'http://snomed.info/sct', 'code': '59621000', 'display': 'Essential          │
-│ hypertension'}])                                                             │
+│ ('Found 396 hits for anemia in Condition.code', [{'system':                  │
+│ 'http://snomed.info/sct', 'code': '271737000', 'display': 'Anaemia'},        │
+│ {'system': 'http://snomed.info/sct', 'code': '462166006', 'display': 'Fetal  │
+│ anemia'}, {'system': 'http://snomed.info/sct', 'code': '234360003',          │
+│ 'display': "Vegan's anaemia"}, {'system': 'http://snomed.info/sct', 'code':  │
+│ '387745008', 'display': 'Sports anemia'}, {'system':                         │
+│ 'http://snomed.info/sct', 'code': '191268006', 'display': 'Chronic anemia'}, │
+│ {'system': 'http://snomed.info/sct', 'code': '78997000', 'display':          │
+│ 'Megaloblastic anaemia due to vegetarianism'}, {'system':                    │
+│ 'http://snomed.info/sct', 'code': '80875006', 'display': 'Achlorhydric       │
+│ anaemia'}, {'system': 'http://snomed.info/sct', 'code': '30575002',          │
+│ 'display': "Fanconi's anemia"}, {'system': 'http://snomed.info/sct', 'code': │
+│ '234350007', 'display': 'Neonatal anaemia'}, {'system':                      │
+│ 'http://snomed.info/sct', 'code': '26682008', 'display': 'Homozygous beta    │
+│ thalassemia'}])                                                              │
 │ Last output from code snippet:                                               │
 │ None                                                                         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
-2025-06-30 13:13:56,543 - LiteLLM - INFO - 
+2025-07-02 15:47:51,376 - LiteLLM - INFO - 
 LiteLLM completion() model= gemini-2.5-pro; provider = gemini
-2025-06-30 13:14:14,307 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
-2025-06-30 13:14:14,316 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-2025-06-30 13:14:14,317 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:14:14,318 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:14:14,339 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
-2025-06-30 13:14:14,468 - root - INFO - 
+2025-07-02 15:47:54,711 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:47:54,717 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:47:54,718 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:47:54,719 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:47:54,737 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med  
+  ication[x]", search_term="proton pump inhibitor"))                            
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-07-02 15:47:54,738 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:48:03,517 - root - INFO - 
+Execution logs:
+('Found 2 hits for proton pump inhibitor in MedicationStatement.medication[x]', 
+[{'system': 'http://snomed.info/sct', 'code': '108665006', 'display': 'Proton 
+pump inhibitor-containing product'}, {'system': 'http://snomed.info/sct', 
+'code': '372525000', 'display': 'Proton pump inhibitor'}])
+
+Out: None
+
+2025-07-02 15:48:03,518 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-07-02 15:48:03,519 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought                                                                      │
+│ Now I will search for the medication "proton pump inhibitor".Code:           │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med │
+│ ication", search_term="proton pump inhibitor"))                              │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:48:03,520 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_8', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.me │
+│ dication", search_term="proton pump inhibitor"))'}}]                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:48:03,521 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_8                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 2 hits for proton pump inhibitor in MedicationStatement.medication', │
+│ [{'system': 'http://snomed.info/sct', 'code': '108665006', 'display':        │
+│ 'Proton pump inhibitor-containing product'}, {'system':                      │
+│ 'http://snomed.info/sct', 'code': '372525000', 'display': 'Proton pump       │
+│ inhibitor'}])                                                                │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:48:03,523 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-07-02 15:48:06,897 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:48:06,903 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:48:06,904 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:48:06,904 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:48:06,915 - root - INFO - 
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med  
+  ication[x]", search_term="antacid"))                                          
+ ────────────────────────────────────────────────────────────────────────────── 
+
+2025-07-02 15:48:06,916 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:48:15,522 - root - INFO - 
+Execution logs:
+('Found 1 hits for antacid in MedicationStatement.medication[x]', [{'system': 
+'http://snomed.info/sct', 'code': '372794006', 'display': 'Antacid'}])
+
+Out: None
+
+2025-07-02 15:48:15,524 - root - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2025-07-02 15:48:15,528 - root - INFO - 
+╭───────────────────────────────── assistant ──────────────────────────────────╮
+│ Thought                                                                      │
+│ Now I will search for the medication "antacid".Code:                         │
+│ ```python                                                                    │
+│ print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.med │
+│ ication", search_term="antacid"))                                            │
+│ ```<end_code>                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:48:15,530 - root - INFO - 
+╭───────────────────────────────── tool-call ──────────────────────────────────╮
+│ Calling tools:                                                               │
+│ [{'id': 'call_9', 'type': 'function', 'function': {'name':                   │
+│ 'python_interpreter', 'arguments':                                           │
+│ 'print(search_for_code_or_coding(fhir_attribute_path="MedicationStatement.me │
+│ dication", search_term="antacid"))'}}]                                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:48:15,533 - root - INFO - 
+╭─────────────────────────────── tool-response ────────────────────────────────╮
+│ Call id: call_9                                                              │
+│ Observation:                                                                 │
+│ Execution logs:                                                              │
+│ ('Found 1 hits for antacid in MedicationStatement.medication', [{'system':   │
+│ 'http://snomed.info/sct', 'code': '372794006', 'display': 'Antacid'}])       │
+│ Last output from code snippet:                                               │
+│ None                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2025-07-02 15:48:15,536 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.5-pro; provider = gemini
+2025-07-02 15:48:36,412 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=REDACTED "HTTP/1.1 200 OK"
+2025-07-02 15:48:36,417 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-07-02 15:48:36,418 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:48:36,418 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:48:36,432 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.5-pro
+2025-07-02 15:48:36,579 - root - INFO - 
  ─ Executing parsed code: ───────────────────────────────────────────────────── 
   from fhir.resources.R4B.bundle import Bundle, BundleEntry                     
   from fhir.resources.R4B.patient import Patient                                
   from fhir.resources.R4B.condition import Condition                            
+  from fhir.resources.R4B.medicationstatement import MedicationStatement        
   from fhir.resources.R4B.humanname import HumanName                            
-  from fhir.resources.R4B.address import Address                                
   from fhir.resources.R4B.codeableconcept import CodeableConcept                
   from fhir.resources.R4B.coding import Coding                                  
   from fhir.resources.R4B.reference import Reference                            
-  from fhir.resources.R4B.meta import Meta                                      
+  from fhir.resources.R4B.period import Period                                  
+  from fhir.resources.R4B.duration import Duration                              
                                                                                 
-  # Build Patient                                                               
-  patient_name = HumanName(use="official", family="Brauer", given=["Bernd"])    
-  patient_address = Address(                                                    
-      use="home",                                                               
-      line=["Fontenay 66"],                                                     
-      city="Marktredwitz",                                                      
-      postalCode="95614",                                                       
-      country="DE" # Assuming Germany based on the city                         
-  )                                                                             
+  # Patient                                                                     
+  patient_name = HumanName(use="official", family="Jaeger", given=["Uwe"])      
   patient = Patient(                                                            
-      id="pat-bernd-brauer",                                                    
+      id="pat-uwe-jaeger",                                                      
       name=[patient_name],                                                      
       gender="male",                                                            
-      birthDate="1978-03-11",                                                   
-      address=[patient_address]                                                 
+      birthDate="1975-02-10"                                                    
   )                                                                             
                                                                                 
-  # Active clinical status                                                      
-  active_status =                                                               
+  # Condition clinicalStatus and verificationStatus                             
+  clinical_status_active =                                                      
   CodeableConcept(coding=[Coding(system="http://terminology.hl7.org/CodeSystem  
   /condition-clinical", code="active")])                                        
+  verification_status_confirmed =                                               
+  CodeableConcept(coding=[Coding(system="http://terminology.hl7.org/CodeSystem  
+  /condition-ver-status", code="confirmed")])                                   
                                                                                 
-  # Admission Diagnoses                                                         
-  # 1. Hypertensive Crisis                                                      
-  cond1_code = CodeableConcept(coding=[Coding(system="http://snomed.info/sct",  
-  code="706882009", display="Hypertensive crisis")])                            
-  cond1 = Condition(                                                            
-      id="cond-hypertensive-crisis",                                            
+  # Erosive Gastritis Condition                                                 
+  erosive_gastritis_code = CodeableConcept(                                     
+      coding=[Coding(system="http://snomed.info/sct", code="1086791000119100",  
+  display="Erosive gastritis")]                                                 
+  )                                                                             
+  condition_gastritis = Condition(                                              
+      id="cond-gastritis",                                                      
       subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=cond1_code,                                                          
-      clinicalStatus=active_status,                                             
-      recordedDate="2023-06-10"                                                 
+      code=erosive_gastritis_code,                                              
+      clinicalStatus=clinical_status_active,                                    
+      verificationStatus=verification_status_confirmed,                         
+      category=[CodeableConcept(coding=[Coding(system="http://terminology.hl7.  
+  org/CodeSystem/condition-category", code="encounter-diagnosis",               
+  display="Encounter Diagnosis")])]                                             
   )                                                                             
                                                                                 
-  # 2. Coronary Heart Disease                                                   
-  cond2_code = CodeableConcept(coding=[Coding(system="http://snomed.info/sct",  
-  code="53741008", display="Coronary arteriosclerosis")])                       
-  cond2 = Condition(                                                            
-      id="cond-chd",                                                            
+  # Abdominal Pain Condition                                                    
+  abdominal_pain_code = CodeableConcept(                                        
+      coding=[Coding(system="http://snomed.info/sct", code="21522001",          
+  display="Abdominal pain")]                                                    
+  )                                                                             
+  condition_pain = Condition(                                                   
+      id="cond-pain",                                                           
       subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=cond2_code,                                                          
-      clinicalStatus=active_status,                                             
-      recordedDate="2023-06-10"                                                 
+      code=abdominal_pain_code,                                                 
+      clinicalStatus=clinical_status_active,                                    
+      verificationStatus=verification_status_confirmed,                         
+      category=[CodeableConcept(coding=[Coding(system="http://terminology.hl7.  
+  org/CodeSystem/condition-category", code="symptom", display="Symptom")])]     
   )                                                                             
                                                                                 
-  # 3. Hyperlipidemia                                                           
-  cond3_code = CodeableConcept(coding=[Coding(system="http://snomed.info/sct",  
-  code="55822004", display="Hyperlipidaemia")])                                 
-  cond3 = Condition(                                                            
-      id="cond-hyperlipidemia",                                                 
+  # Nausea Condition                                                            
+  nausea_code = CodeableConcept(                                                
+      coding=[Coding(system="http://snomed.info/sct", code="422587007",         
+  display="Nausea")]                                                            
+  )                                                                             
+  condition_nausea = Condition(                                                 
+      id="cond-nausea",                                                         
       subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=cond3_code,                                                          
-      clinicalStatus=active_status,                                             
-      recordedDate="2023-06-10"                                                 
+      code=nausea_code,                                                         
+      clinicalStatus=clinical_status_active,                                    
+      verificationStatus=verification_status_confirmed,                         
+      category=[CodeableConcept(coding=[Coding(system="http://terminology.hl7.  
+  org/CodeSystem/condition-category", code="symptom", display="Symptom")])]     
   )                                                                             
                                                                                 
-  # 4. Obesity                                                                  
-  cond4_code = CodeableConcept(coding=[Coding(system="http://snomed.info/sct",  
-  code="414916001", display="Obesity")])                                        
-  cond4 = Condition(                                                            
-      id="cond-obesity",                                                        
+  # Vomiting Condition                                                          
+  vomiting_code = CodeableConcept(                                              
+      coding=[Coding(system="http://snomed.info/sct", code="422400008",         
+  display="Vomiting")]                                                          
+  )                                                                             
+  condition_vomiting = Condition(                                               
+      id="cond-vomiting",                                                       
       subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=cond4_code,                                                          
-      clinicalStatus=active_status,                                             
-      recordedDate="2023-06-10"                                                 
+      code=vomiting_code,                                                       
+      clinicalStatus=clinical_status_active,                                    
+      verificationStatus=verification_status_confirmed,                         
+      category=[CodeableConcept(coding=[Coding(system="http://terminology.hl7.  
+  org/CodeSystem/condition-category", code="symptom", display="Symptom")])]     
   )                                                                             
                                                                                 
-  # 5. Unspecified Diabetes Mellitus                                            
-  cond5_code = CodeableConcept(coding=[Coding(system="http://snomed.info/sct",  
-  code="73211009", display="Diabetes mellitus")])                               
-  cond5 = Condition(                                                            
-      id="cond-diabetes-unspecified",                                           
+  # Weight Loss Condition                                                       
+  weight_loss_code = CodeableConcept(                                           
+      coding=[Coding(system="http://snomed.info/sct", code="89362005",          
+  display="Weight loss")]                                                       
+  )                                                                             
+  condition_weight_loss = Condition(                                            
+      id="cond-weight-loss",                                                    
       subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=cond5_code,                                                          
-      clinicalStatus=active_status,                                             
-      recordedDate="2023-06-10"                                                 
+      code=weight_loss_code,                                                    
+      clinicalStatus=clinical_status_active,                                    
+      verificationStatus=verification_status_confirmed,                         
+      category=[CodeableConcept(coding=[Coding(system="http://terminology.hl7.  
+  org/CodeSystem/condition-category", code="symptom", display="Symptom")])]     
+  )                                                                             
+                                                                                
+  # Anemia Condition                                                            
+  anemia_code = CodeableConcept(                                                
+      coding=[Coding(system="http://snomed.info/sct", code="271737000",         
+  display="Anaemia")]                                                           
+  )                                                                             
+  condition_anemia = Condition(                                                 
+      id="cond-anemia",                                                         
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
+      code=anemia_code,                                                         
+      clinicalStatus=clinical_status_active,                                    
+      verificationStatus=verification_status_confirmed,                         
+      category=[CodeableConcept(coding=[Coding(system="http://terminology.hl7.  
+  org/CodeSystem/condition-category", code="problem-list-item",                 
+  display="Problem List Item")])]                                               
   )                                                                             
                                                                                 
                                                                                 
-  # Discharge Diagnoses                                                         
-  # 1. Stable Hypertension                                                      
-  cond6_code = CodeableConcept(coding=[Coding(system="http://snomed.info/sct",  
-  code="38341003", display="Hypertensive disorder")])                           
-  cond6 = Condition(                                                            
-      id="cond-hypertension",                                                   
-      subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=cond6_code,                                                          
-      clinicalStatus=active_status,                                             
-      recordedDate="2023-06-28"                                                 
+  # Proton Pump Inhibitor MedicationStatement                                   
+  ppi_medication_code = CodeableConcept(                                        
+      coding=[Coding(system="http://snomed.info/sct", code="108665006",         
+  display="Proton pump inhibitor-containing product")]                          
   )                                                                             
                                                                                 
-  # 2. Coronary Heart Disease (same as admission)                               
-  cond7 = Condition(                                                            
-      id="cond-chd-discharge",                                                  
-      subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=cond2_code, # reusing code from admission                            
-      clinicalStatus=active_status,                                             
-      recordedDate="2023-06-28"                                                 
-  )                                                                             
+  effective_period = Period()                                                   
+  effective_period.start = "2023-06-20"                                         
+  duration = Duration()                                                         
+  duration.value = 8                                                            
+  duration.unit = "weeks"                                                       
+  duration.system = "http://unitsofmeasure.org"                                 
+  duration.code = "wk"                                                          
                                                                                 
-  # 3. Hyperlipidemia (same as admission)                                       
-  cond8 = Condition(                                                            
-      id="cond-hyperlipidemia-discharge",                                       
-      subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=cond3_code, # reusing code from admission                            
-      clinicalStatus=active_status,                                             
-      recordedDate="2023-06-28"                                                 
-  )                                                                             
                                                                                 
-  # 4. Obesity (same as admission)                                              
-  cond9 = Condition(                                                            
-      id="cond-obesity-discharge",                                              
+  med_statement_ppi = MedicationStatement(                                      
+      id="med-stat-ppi",                                                        
+      status="active",                                                          
+      medicationCodeableConcept=ppi_medication_code,                            
       subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=cond4_code, # reusing code from admission                            
-      clinicalStatus=active_status,                                             
-      recordedDate="2023-06-28"                                                 
+      effectivePeriod=effective_period,                                         
+      reasonReference=[Reference(reference=f"Condition/{condition_gastritis.id  
+  }")]                                                                          
   )                                                                             
+  med_statement_ppi.dosage = [{ "text": "Protonenpumpenhemmer (PPI) für acht    
+  Wochen" }]                                                                    
                                                                                 
-  # 5. Diabetes Mellitus Type 2                                                 
-  cond10_code =                                                                 
-  CodeableConcept(coding=[Coding(system="http://snomed.info/sct",               
-  code="44054006", display="Type 2 diabetes mellitus")])                        
-  cond10 = Condition(                                                           
-      id="cond-diabetes-type2",                                                 
-      subject=Reference(reference=f"Patient/{patient.id}"),                     
-      code=cond10_code,                                                         
-      clinicalStatus=active_status,                                             
-      recordedDate="2023-06-28"                                                 
+                                                                                
+  # Antacid MedicationStatement                                                 
+  antacid_medication_code = CodeableConcept(                                    
+      coding=[Coding(system="http://snomed.info/sct", code="372794006",         
+  display="Antacid")]                                                           
   )                                                                             
+  med_statement_antacid = MedicationStatement(                                  
+      id="med-stat-antacid",                                                    
+      status="active",                                                          
+      medicationCodeableConcept=antacid_medication_code,                        
+      subject=Reference(reference=f"Patient/{patient.id}"),                     
+      reasonReference=[Reference(reference=f"Condition/{condition_gastritis.id  
+  }")]                                                                          
+  )                                                                             
+  med_statement_antacid.dosage = [{ "text": "Antazidum um den sofortigen        
+  Effekt einer schnellen Symptomlinderung zu erzielen"}]                        
                                                                                 
                                                                                 
   # Create Bundle                                                               
@@ -1302,344 +1431,407 @@ LiteLLM completion() model= gemini-2.5-pro; provider = gemini
       type="collection",                                                        
       entry=[                                                                   
           BundleEntry(resource=patient, fullUrl=f"Patient/{patient.id}"),       
-          BundleEntry(resource=cond1, fullUrl=f"Condition/{cond1.id}"),         
-          BundleEntry(resource=cond2, fullUrl=f"Condition/{cond2.id}"),         
-          BundleEntry(resource=cond3, fullUrl=f"Condition/{cond3.id}"),         
-          BundleEntry(resource=cond4, fullUrl=f"Condition/{cond4.id}"),         
-          BundleEntry(resource=cond5, fullUrl=f"Condition/{cond5.id}"),         
-          BundleEntry(resource=cond6, fullUrl=f"Condition/{cond6.id}"),         
-          BundleEntry(resource=cond7, fullUrl=f"Condition/{cond7.id}"),         
-          BundleEntry(resource=cond8, fullUrl=f"Condition/{cond8.id}"),         
-          BundleEntry(resource=cond9, fullUrl=f"Condition/{cond9.id}"),         
-          BundleEntry(resource=cond10, fullUrl=f"Condition/{cond10.id}"),       
+          BundleEntry(resource=condition_gastritis,                             
+  fullUrl=f"Condition/{condition_gastritis.id}"),                               
+          BundleEntry(resource=condition_pain,                                  
+  fullUrl=f"Condition/{condition_pain.id}"),                                    
+          BundleEntry(resource=condition_nausea,                                
+  fullUrl=f"Condition/{condition_nausea.id}"),                                  
+          BundleEntry(resource=condition_vomiting,                              
+  fullUrl=f"Condition/{condition_vomiting.id}"),                                
+          BundleEntry(resource=condition_weight_loss,                           
+  fullUrl=f"Condition/{condition_weight_loss.id}"),                             
+          BundleEntry(resource=condition_anemia,                                
+  fullUrl=f"Condition/{condition_anemia.id}"),                                  
+          BundleEntry(resource=med_statement_ppi,                               
+  fullUrl=f"MedicationStatement/{med_statement_ppi.id}"),                       
+          BundleEntry(resource=med_statement_antacid,                           
+  fullUrl=f"MedicationStatement/{med_statement_antacid.id}"),                   
       ]                                                                         
   )                                                                             
                                                                                 
   final_answer(bundle.json(indent=2))                                           
  ────────────────────────────────────────────────────────────────────────────── 
 
-2025-06-30 13:14:14,516 - root - INFO - 
+2025-07-02 15:48:36,788 - root - INFO - 
 Out - Final answer: {
   "resourceType": "Bundle",
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "Patient/pat-bernd-brauer",
+      "fullUrl": "Patient/pat-uwe-jaeger",
       "resource": {
         "resourceType": "Patient",
-        "id": "pat-bernd-brauer",
+        "id": "pat-uwe-jaeger",
         "name": [
           {
             "use": "official",
-            "family": "Brauer",
+            "family": "Jaeger",
             "given": [
-              "Bernd"
+              "Uwe"
             ]
           }
         ],
         "gender": "male",
-        "birthDate": "1978-03-11",
-        "address": [
+        "birthDate": "1975-02-10"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-gastritis",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-gastritis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
           {
-            "use": "home",
-            "line": [
-              "Fontenay 66"
-            ],
-            "city": "Marktredwitz",
-            "postalCode": "95614",
-            "country": "DE"
+            "coding": [
+              {
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1086791000119100",
+              "display": "Erosive gastritis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-uwe-jaeger"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-pain",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-pain",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "symptom",
+                "display": "Symptom"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "21522001",
+              "display": "Abdominal pain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-uwe-jaeger"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-nausea",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-nausea",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "symptom",
+                "display": "Symptom"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422587007",
+              "display": "Nausea"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-uwe-jaeger"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-vomiting",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-vomiting",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "symptom",
+                "display": "Symptom"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422400008",
+              "display": "Vomiting"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-uwe-jaeger"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-weight-loss",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-weight-loss",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "symptom",
+                "display": "Symptom"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "89362005",
+              "display": "Weight loss"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-uwe-jaeger"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-anemia",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-anemia",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": 
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": 
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "271737000",
+              "display": "Anaemia"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-uwe-jaeger"
+        }
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-stat-ppi",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-stat-ppi",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108665006",
+              "display": "Proton pump inhibitor-containing product"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-uwe-jaeger"
+        },
+        "effectivePeriod": {
+          "start": "2023-06-20"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/cond-gastritis"
+          }
+        ],
+        "dosage": [
+          {
+            "text": "Protonenpumpenhemmer (PPI) für acht Wochen"
           }
         ]
       }
     },
     {
-      "fullUrl": "Condition/cond-hypertensive-crisis",
+      "fullUrl": "MedicationStatement/med-stat-antacid",
       "resource": {
-        "resourceType": "Condition",
-        "id": "cond-hypertensive-crisis",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "code": {
+        "resourceType": "MedicationStatement",
+        "id": "med-stat-antacid",
+        "status": "active",
+        "medicationCodeableConcept": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "706882009",
-              "display": "Hypertensive crisis"
+              "code": "372794006",
+              "display": "Antacid"
             }
           ]
         },
         "subject": {
-          "reference": "Patient/pat-bernd-brauer"
+          "reference": "Patient/pat-uwe-jaeger"
         },
-        "recordedDate": "2023-06-10"
-      }
-    },
-    {
-      "fullUrl": "Condition/cond-chd",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-chd",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "53741008",
-              "display": "Coronary arteriosclerosis"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/pat-bernd-brauer"
-        },
-        "recordedDate": "2023-06-10"
-      }
-    },
-    {
-      "fullUrl": "Condition/cond-hyperlipidemia",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-hyperlipidemia",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "55822004",
-              "display": "Hyperlipidaemia"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/pat-bernd-brauer"
-        },
-        "recordedDate": "2023-06-10"
-      }
-    },
-    {
-      "fullUrl": "Condition/cond-obesity",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-obesity",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "414916001",
-              "display": "Obesity"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/pat-bernd-brauer"
-        },
-        "recordedDate": "2023-06-10"
-      }
-    },
-    {
-      "fullUrl": "Condition/cond-diabetes-unspecified",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-diabetes-unspecified",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "73211009",
-              "display": "Diabetes mellitus"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/pat-bernd-brauer"
-        },
-        "recordedDate": "2023-06-10"
-      }
-    },
-    {
-      "fullUrl": "Condition/cond-hypertension",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-hypertension",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "38341003",
-              "display": "Hypertensive disorder"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/pat-bernd-brauer"
-        },
-        "recordedDate": "2023-06-28"
-      }
-    },
-    {
-      "fullUrl": "Condition/cond-chd-discharge",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-chd-discharge",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "53741008",
-              "display": "Coronary arteriosclerosis"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/pat-bernd-brauer"
-        },
-        "recordedDate": "2023-06-28"
-      }
-    },
-    {
-      "fullUrl": "Condition/cond-hyperlipidemia-discharge",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-hyperlipidemia-discharge",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "55822004",
-              "display": "Hyperlipidaemia"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/pat-bernd-brauer"
-        },
-        "recordedDate": "2023-06-28"
-      }
-    },
-    {
-      "fullUrl": "Condition/cond-obesity-discharge",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-obesity-discharge",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "414916001",
-              "display": "Obesity"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/pat-bernd-brauer"
-        },
-        "recordedDate": "2023-06-28"
-      }
-    },
-    {
-      "fullUrl": "Condition/cond-diabetes-type2",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-diabetes-type2",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": 
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "44054006",
-              "display": "Type 2 diabetes mellitus"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/pat-bernd-brauer"
-        },
-        "recordedDate": "2023-06-28"
+        "reasonReference": [
+          {
+            "reference": "Condition/cond-gastritis"
+          }
+        ],
+        "dosage": [
+          {
+            "text": "Antazidum um den sofortigen Effekt einer schnellen 
+Symptomlinderung zu erzielen"
+          }
+        ]
       }
     }
   ]
