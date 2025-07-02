@@ -3,10 +3,10 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "urn:uuid:patient-scholz-1",
+      "fullUrl": "Patient/pat-001",
       "resource": {
         "resourceType": "Patient",
-        "id": "patient-scholz-1",
+        "id": "pat-001",
         "name": [
           {
             "use": "official",
@@ -21,10 +21,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:condition-scholz-1",
+      "fullUrl": "Condition/cond-001",
       "resource": {
         "resourceType": "Condition",
-        "id": "condition-scholz-1",
+        "id": "cond-001",
         "clinicalStatus": {
           "coding": [
             {
@@ -42,19 +42,18 @@
               "code": "25064002",
               "display": "Headache"
             }
-          ],
-          "text": "Anhaltende Kopfschmerzen"
+          ]
         },
         "subject": {
-          "reference": "Patient/patient-scholz-1"
+          "reference": "Patient/pat-001"
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:condition-scholz-2",
+      "fullUrl": "Condition/cond-002",
       "resource": {
         "resourceType": "Condition",
-        "id": "condition-scholz-2",
+        "id": "cond-002",
         "clinicalStatus": {
           "coding": [
             {
@@ -69,22 +68,21 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "26677001",
-              "display": "Sleep pattern disturbance"
+              "code": "44186003",
+              "display": "Dyssomnia"
             }
-          ],
-          "text": "Schlafstörungen"
+          ]
         },
         "subject": {
-          "reference": "Patient/patient-scholz-1"
+          "reference": "Patient/pat-001"
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:condition-scholz-3",
+      "fullUrl": "Condition/cond-003",
       "resource": {
         "resourceType": "Condition",
-        "id": "condition-scholz-3",
+        "id": "cond-003",
         "clinicalStatus": {
           "coding": [
             {
@@ -99,14 +97,42 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "84229001",
-              "display": "Fatigue"
+              "code": "60119000",
+              "display": "Exhaustion"
             }
-          ],
-          "text": "Allgemeine Erschöpfung und Antriebslosigkeit"
+          ]
         },
         "subject": {
-          "reference": "Patient/patient-scholz-1"
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-004",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-004",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "20602000",
+              "display": "Indifference"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
         }
       }
     }

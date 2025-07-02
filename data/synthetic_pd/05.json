@@ -9,7 +9,6 @@
         "id": "pat-kappel",
         "name": [
           {
-            "use": "official",
             "family": "Kappel",
             "given": [
               "Robert"
@@ -52,8 +51,7 @@
               "code": "53741008",
               "display": "Coronary arteriosclerosis"
             }
-          ],
-          "text": "koronare Herzerkrankung"
+          ]
         },
         "subject": {
           "reference": "Patient/pat-kappel"
@@ -92,8 +90,163 @@
               "code": "38341003",
               "display": "Hypertensive disorder"
             }
-          ],
-          "text": "Hypertonie"
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-kappel"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-chest-pain",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-chest-pain",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "29857009",
+              "display": "Chest pain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-kappel"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-radiating-pain",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-radiating-pain",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "425677008",
+              "display": "Pain radiating to left arm"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-kappel"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-chest-tightness",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-chest-tightness",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "23924001",
+              "display": "Tight chest"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-kappel"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-dyspnea",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-dyspnea",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267036007",
+              "display": "Dyspnea"
+            }
+          ]
         },
         "subject": {
           "reference": "Patient/pat-kappel"
@@ -120,7 +273,6 @@
         },
         "dosage": [
           {
-            "text": "Aspirin 100 mg täglich",
             "timing": {
               "repeat": {
                 "frequency": 1,
@@ -128,14 +280,11 @@
                 "periodUnit": "d"
               }
             },
-            "asNeededBoolean": false,
             "doseAndRate": [
               {
                 "doseQuantity": {
                   "value": 100.0,
-                  "unit": "mg",
-                  "system": "http://unitsofmeasure.org",
-                  "code": "mg"
+                  "unit": "mg"
                 }
               }
             ]
@@ -163,7 +312,6 @@
         },
         "dosage": [
           {
-            "text": "Clopidogrel 75 mg täglich",
             "timing": {
               "repeat": {
                 "frequency": 1,
@@ -171,14 +319,11 @@
                 "periodUnit": "d"
               }
             },
-            "asNeededBoolean": false,
             "doseAndRate": [
               {
                 "doseQuantity": {
                   "value": 75.0,
-                  "unit": "mg",
-                  "system": "http://unitsofmeasure.org",
-                  "code": "mg"
+                  "unit": "mg"
                 }
               }
             ]
@@ -206,7 +351,6 @@
         },
         "dosage": [
           {
-            "text": "Bisoprolol 5 mg täglich",
             "timing": {
               "repeat": {
                 "frequency": 1,
@@ -214,14 +358,11 @@
                 "periodUnit": "d"
               }
             },
-            "asNeededBoolean": false,
             "doseAndRate": [
               {
                 "doseQuantity": {
                   "value": 5.0,
-                  "unit": "mg",
-                  "system": "http://unitsofmeasure.org",
-                  "code": "mg"
+                  "unit": "mg"
                 }
               }
             ]
@@ -249,7 +390,6 @@
         },
         "dosage": [
           {
-            "text": "Ramipril 2,5 mg täglich",
             "timing": {
               "repeat": {
                 "frequency": 1,
@@ -257,14 +397,11 @@
                 "periodUnit": "d"
               }
             },
-            "asNeededBoolean": false,
             "doseAndRate": [
               {
                 "doseQuantity": {
                   "value": 2.5,
-                  "unit": "mg",
-                  "system": "http://unitsofmeasure.org",
-                  "code": "mg"
+                  "unit": "mg"
                 }
               }
             ]

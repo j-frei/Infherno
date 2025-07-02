@@ -30,8 +30,8 @@
             {
               "system":
 "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
+              "code": "resolved",
+              "display": "Resolved"
             }
           ]
         },
@@ -45,31 +45,33 @@
             }
           ]
         },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "116290004",
-              "display": "Acute abdominal pain"
-            }
-          ],
-          "text": "Akute Bauchschmerzen im rechten Unterbauch"
-        },
-        "bodySite": [
+        "category": [
           {
             "coding": [
               {
-                "system": "http://snomed.info/sct",
-                "code": "48544008",
-                "display": "Structure of right lower quadrant of abdomen"
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
               }
             ]
           }
         ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "301754002",
+              "display": "Right lower quadrant pain"
+            }
+          ],
+          "text": "Akute Bauchschmerzen im rechten Unterbauch"
+        },
         "subject": {
           "reference": "Patient/pat-001"
         },
-        "onsetDateTime": "2023-06-15"
+        "onsetDateTime": "2023-06-15",
+        "abatementDateTime": "2023-06-24"
       }
     },
     {
@@ -82,8 +84,8 @@
             {
               "system":
 "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
+              "code": "resolved",
+              "display": "Resolved"
             }
           ]
         },
@@ -97,6 +99,18 @@
             }
           ]
         },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
         "code": {
           "coding": [
             {
@@ -110,7 +124,8 @@
         "subject": {
           "reference": "Patient/pat-001"
         },
-        "onsetDateTime": "2023-06-15"
+        "onsetDateTime": "2023-06-15",
+        "abatementDateTime": "2023-06-24"
       }
     },
     {
@@ -123,8 +138,8 @@
             {
               "system":
 "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
+              "code": "resolved",
+              "display": "Resolved"
             }
           ]
         },
@@ -138,6 +153,18 @@
             }
           ]
         },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
         "code": {
           "coding": [
             {
@@ -151,7 +178,8 @@
         "subject": {
           "reference": "Patient/pat-001"
         },
-        "onsetDateTime": "2023-06-15"
+        "onsetDateTime": "2023-06-15",
+        "abatementDateTime": "2023-06-24"
       }
     },
     {
@@ -179,6 +207,18 @@
             }
           ]
         },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
         "code": {
           "coding": [
             {
