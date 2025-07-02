@@ -1,0 +1,114 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-scholz-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-scholz-1",
+        "name": [
+          {
+            "use": "official",
+            "family": "Scholz",
+            "given": [
+              "Susanne"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1983-03-05"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-scholz-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-scholz-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25064002",
+              "display": "Headache"
+            }
+          ],
+          "text": "Anhaltende Kopfschmerzen"
+        },
+        "subject": {
+          "reference": "Patient/patient-scholz-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-scholz-2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-scholz-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "26677001",
+              "display": "Sleep pattern disturbance"
+            }
+          ],
+          "text": "Schlafstörungen"
+        },
+        "subject": {
+          "reference": "Patient/patient-scholz-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-scholz-3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-scholz-3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "84229001",
+              "display": "Fatigue"
+            }
+          ],
+          "text": "Allgemeine Erschöpfung und Antriebslosigkeit"
+        },
+        "subject": {
+          "reference": "Patient/patient-scholz-1"
+        }
+      }
+    }
+  ]
+}

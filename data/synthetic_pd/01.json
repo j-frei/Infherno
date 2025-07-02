@@ -1,0 +1,331 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-001",
+        "name": [
+          {
+            "use": "official",
+            "family": "Jaeger",
+            "given": [
+              "Uwe"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1975-02-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-001",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "unconfirmed",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "21522001",
+              "display": "Abdominal pain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-002",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "unconfirmed",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422587007",
+              "display": "Nausea"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-003",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "unconfirmed",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422400008",
+              "display": "Vomiting"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-004",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "unconfirmed",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "89362005",
+              "display": "Weight loss"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-005",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1086791000119100",
+              "display": "Erosive gastritis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-stat-001",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372525000",
+              "display": "Proton pump inhibitor"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        },
+        "dosage": [
+          {
+            "timing": {
+              "repeat": {
+                "boundsDuration": {
+                  "value": 8.0,
+                  "unit": "wk",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "wk"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-stat-002",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372794006",
+              "display": "Antacid"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        },
+        "dosage": [
+          {
+            "text": "um den sofortigen Effekt einer schnellen Symptomlinderung zu erzielen",
+            "asNeededBoolean": true
+          }
+        ]
+      }
+    }
+  ]
+}

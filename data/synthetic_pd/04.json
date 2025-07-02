@@ -1,0 +1,288 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "Patient/pat-001",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-001",
+        "identifier": [
+          {
+            "value": "wechsler-alexander-19600624"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Wechsler",
+            "given": [
+              "Alexander"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1960-06-24"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-001",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-001",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "53741008",
+              "display": "Coronary arteriosclerosis"
+            }
+          ],
+          "text": "Koronare Herzerkrankung"
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-002",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-002",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertensive disorder"
+            }
+          ],
+          "text": "Hypertonie"
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-003",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-003",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233819005",
+              "display": "Stable angina"
+            }
+          ],
+          "text": "Stabile Angina pectoris"
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-004",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-004",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55827005",
+              "display": "Left ventricular hypertrophy"
+            }
+          ],
+          "text": "Linksventrikuläre Hypertrophie"
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-stat-001",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-stat-001",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386872004",
+              "display": "Ramipril"
+            }
+          ],
+          "text": "Ramipril"
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-stat-002",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-stat-002",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372826007",
+              "display": "Metoprolol"
+            }
+          ],
+          "text": "Metoprolol"
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-stat-003",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-stat-003",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387404004",
+              "display": "Nitroglycerin"
+            }
+          ],
+          "text": "Nitroglycerin"
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    }
+  ]
+}

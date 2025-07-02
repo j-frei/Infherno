@@ -1,0 +1,312 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "Patient/patient-buerger-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-buerger-1",
+        "name": [
+          {
+            "use": "official",
+            "family": "Bürger",
+            "given": [
+              "Christine"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1985-03-12"
+      }
+    },
+    {
+      "fullUrl": "Condition/condition-fever-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-fever-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386661006",
+              "display": "Fever"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-buerger-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/condition-sorethroat-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-sorethroat-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "162397003",
+              "display": "Pain in throat"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-buerger-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/condition-malaise-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-malaise-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "367391008",
+              "display": "Malaise"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-buerger-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/condition-viralpharyngitis-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-viralpharyngitis-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "unconfirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1532007",
+              "display": "Viral pharyngitis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-buerger-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/condition-tropical-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-tropical-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "unconfirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40733004",
+              "display": "Infectious disease"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-buerger-1"
+        },
+        "note": [
+          {
+            "text": "Possible infection with tropical pathogens after a trip to South America."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/medstmt-paracetamol-1",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medstmt-paracetamol-1",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387517004",
+              "display": "Paracetamol"
+            }
+          ],
+          "text": "Paracetamol 500mg"
+        },
+        "subject": {
+          "reference": "Patient/patient-buerger-1"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-fever-1"
+          }
+        ],
+        "dosage": [
+          {
+            "text": "Bei Bedarf zur Fiebersenkung, maximal 3x täglich",
+            "timing": {
+              "repeat": {
+                "frequency": 3,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": true,
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 500.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/medstmt-ibuprofen-1",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medstmt-ibuprofen-1",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387207008",
+              "display": "Ibuprofen"
+            }
+          ],
+          "text": "Ibuprofen 400mg"
+        },
+        "subject": {
+          "reference": "Patient/patient-buerger-1"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-sorethroat-1"
+          }
+        ],
+        "dosage": [
+          {
+            "text": "Bei Bedarf zur Schmerzlinderung, maximal 3x täglich",
+            "timing": {
+              "repeat": {
+                "frequency": 3,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": true,
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 400.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

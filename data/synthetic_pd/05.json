@@ -1,0 +1,276 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "Patient/pat-kappel",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-kappel",
+        "name": [
+          {
+            "use": "official",
+            "family": "Kappel",
+            "given": [
+              "Robert"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1965-02-21"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-chd",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-chd",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "53741008",
+              "display": "Coronary arteriosclerosis"
+            }
+          ],
+          "text": "koronare Herzerkrankung"
+        },
+        "subject": {
+          "reference": "Patient/pat-kappel"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-hypertension",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-hypertension",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertensive disorder"
+            }
+          ],
+          "text": "Hypertonie"
+        },
+        "subject": {
+          "reference": "Patient/pat-kappel"
+        }
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-aspirin",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-aspirin",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387458008",
+              "display": "Aspirin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-kappel"
+        },
+        "dosage": [
+          {
+            "text": "Aspirin 100 mg täglich",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 100.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-clopidogrel",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-clopidogrel",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386952008",
+              "display": "Clopidogrel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-kappel"
+        },
+        "dosage": [
+          {
+            "text": "Clopidogrel 75 mg täglich",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 75.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-bisoprolol",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-bisoprolol",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386868003",
+              "display": "Bisoprolol"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-kappel"
+        },
+        "dosage": [
+          {
+            "text": "Bisoprolol 5 mg täglich",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 5.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-ramipril",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-ramipril",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386872004",
+              "display": "Ramipril"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-kappel"
+        },
+        "dosage": [
+          {
+            "text": "Ramipril 2,5 mg täglich",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 2.5,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

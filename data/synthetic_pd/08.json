@@ -1,0 +1,255 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "Patient/patient-anke-busch",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-anke-busch",
+        "name": [
+          {
+            "use": "official",
+            "family": "Busch",
+            "given": [
+              "Anke"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1986-04-06"
+      }
+    },
+    {
+      "fullUrl": "Condition/condition-migraine",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-migraine",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "unconfirmed",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "37796009",
+              "display": "Migraine"
+            }
+          ],
+          "text": "migräneartige Zephalalgie"
+        },
+        "subject": {
+          "reference": "Patient/patient-anke-busch"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Condition/condition-headache"
+              }
+            ]
+          },
+          {
+            "detail": [
+              {
+                "reference": "Condition/condition-dizziness"
+              }
+            ]
+          },
+          {
+            "detail": [
+              {
+                "reference": "Condition/condition-nausea"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "Condition/condition-headache",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-headache",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "symptom",
+                "display": "Symptom"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25064002",
+              "display": "Headache"
+            }
+          ],
+          "text": "Kopfschmerzen"
+        },
+        "subject": {
+          "reference": "Patient/patient-anke-busch"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/condition-dizziness",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-dizziness",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "symptom",
+                "display": "Symptom"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "404640003",
+              "display": "Dizziness"
+            }
+          ],
+          "text": "Schwindelgefühl"
+        },
+        "subject": {
+          "reference": "Patient/patient-anke-busch"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/condition-nausea",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-nausea",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "symptom",
+                "display": "Symptom"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422587007",
+              "display": "Nausea"
+            }
+          ],
+          "text": "leichte Übelkeit"
+        },
+        "subject": {
+          "reference": "Patient/patient-anke-busch"
+        }
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/medicationstatement-ibuprofen",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medicationstatement-ibuprofen",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387207008",
+              "display": "Ibuprofen"
+            }
+          ],
+          "text": "Ibuprofen 400mg"
+        },
+        "subject": {
+          "reference": "Patient/patient-anke-busch"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-headache"
+          }
+        ],
+        "dosage": [
+          {
+            "text": "Ibuprofen 400mg bei akuten Kopfschmerzepisoden",
+            "asNeededBoolean": true,
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 400.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

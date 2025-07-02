@@ -1,0 +1,267 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "Patient/pat-weissmuller",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-weissmuller",
+        "name": [
+          {
+            "use": "official",
+            "family": "Weissmuller",
+            "given": [
+              "Matthias"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1964-06-30",
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "Eichendorffstr. 86"
+            ],
+            "city": "Friedrichshafen",
+            "postalCode": "88045",
+            "country": "DE"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-0",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "I25.9"
+            }
+          ],
+          "text": "Koronare Herzkrankheit"
+        },
+        "subject": {
+          "reference": "Patient/pat-weissmuller"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "E11.9"
+            }
+          ],
+          "text": "Diabetes mellitus Typ 2"
+        },
+        "subject": {
+          "reference": "Patient/pat-weissmuller"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "I10"
+            }
+          ],
+          "text": "Hypertonie Grad II"
+        },
+        "subject": {
+          "reference": "Patient/pat-weissmuller"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "E66.9"
+            }
+          ],
+          "text": "Adipositas"
+        },
+        "subject": {
+          "reference": "Patient/pat-weissmuller"
+        }
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/medstat-0",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medstat-0",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372567009",
+              "display": "Metformin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-weissmuller"
+        }
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/medstat-1",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medstat-1",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "34012005",
+              "display": "Sulfonylurea-containing product"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-weissmuller"
+        }
+      }
+    }
+  ]
+}
