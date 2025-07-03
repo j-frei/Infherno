@@ -3,9 +3,15 @@
   "type": "collection",
   "entry": [
     {
+      "fullUrl": "Patient/pat-001",
       "resource": {
         "resourceType": "Patient",
         "id": "pat-001",
+        "identifier": [
+          {
+            "value": "123456789"
+          }
+        ],
         "name": [
           {
             "use": "official",
@@ -20,6 +26,7 @@
       }
     },
     {
+      "fullUrl": "Condition/cond-001",
       "resource": {
         "resourceType": "Condition",
         "id": "cond-001",
@@ -37,7 +44,27 @@
             {
               "system":
 "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed"
+              "code": "provisional"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "symptom"
+              }
+            ]
+          }
+        ],
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24484000",
+              "display": "Severe"
             }
           ]
         },
@@ -50,12 +77,18 @@
             }
           ]
         },
+        "bodySite": [
+          {
+            "text": "Stirnbereich"
+          }
+        ],
         "subject": {
           "reference": "Patient/pat-001"
         }
       }
     },
     {
+      "fullUrl": "Condition/cond-002",
       "resource": {
         "resourceType": "Condition",
         "id": "cond-002",
@@ -73,7 +106,27 @@
             {
               "system":
 "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed"
+              "code": "provisional"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "symptom"
+              }
+            ]
+          }
+        ],
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "255604002",
+              "display": "Mild"
             }
           ]
         },
@@ -92,6 +145,7 @@
       }
     },
     {
+      "fullUrl": "Condition/cond-003",
       "resource": {
         "resourceType": "Condition",
         "id": "cond-003",
@@ -109,10 +163,21 @@
             {
               "system":
 "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed"
+              "code": "provisional"
             }
           ]
         },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "symptom"
+              }
+            ]
+          }
+        ],
         "code": {
           "coding": [
             {
@@ -128,6 +193,7 @@
       }
     },
     {
+      "fullUrl": "Condition/cond-004",
       "resource": {
         "resourceType": "Condition",
         "id": "cond-004",
@@ -145,10 +211,21 @@
             {
               "system":
 "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed"
+              "code": "provisional"
             }
           ]
         },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "symptom"
+              }
+            ]
+          }
+        ],
         "code": {
           "coding": [
             {
@@ -158,12 +235,24 @@
             }
           ]
         },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "89357003",
+                "display": "Structure of left eye"
+              }
+            ]
+          }
+        ],
         "subject": {
           "reference": "Patient/pat-001"
         }
       }
     },
     {
+      "fullUrl": "Condition/cond-005",
       "resource": {
         "resourceType": "Condition",
         "id": "cond-005",
@@ -185,6 +274,17 @@
             }
           ]
         },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
         "code": {
           "coding": [
             {

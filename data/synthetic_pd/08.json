@@ -3,10 +3,10 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "Patient/patient-anke-busch",
+      "fullUrl": "Patient/pat-busch-01",
       "resource": {
         "resourceType": "Patient",
-        "id": "patient-anke-busch",
+        "id": "pat-busch-01",
         "name": [
           {
             "use": "official",
@@ -18,13 +18,17 @@
         ],
         "gender": "female",
         "birthDate": "1986-04-06"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
       }
     },
     {
-      "fullUrl": "Condition/condition-migraine",
+      "fullUrl": "Condition/cond-headache-01",
       "resource": {
         "resourceType": "Condition",
-        "id": "condition-migraine",
+        "id": "cond-headache-01",
         "clinicalStatus": {
           "coding": [
             {
@@ -40,61 +44,8 @@
             {
               "system":
 "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "unconfirmed",
-              "display": "Unconfirmed"
-            }
-          ]
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "37796009",
-              "display": "Migraine"
-            }
-          ],
-          "text": "migräneartige Zephalalgie"
-        },
-        "subject": {
-          "reference": "Patient/patient-anke-busch"
-        },
-        "evidence": [
-          {
-            "detail": [
-              {
-                "reference": "Condition/condition-headache"
-              }
-            ]
-          },
-          {
-            "detail": [
-              {
-                "reference": "Condition/condition-dizziness"
-              }
-            ]
-          },
-          {
-            "detail": [
-              {
-                "reference": "Condition/condition-nausea"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "Condition/condition-headache",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "condition-headache",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system":
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
+              "code": "confirmed",
+              "display": "Confirmed"
             }
           ]
         },
@@ -104,8 +55,8 @@
               {
                 "system":
 "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "symptom",
-                "display": "Symptom"
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
               }
             ]
           }
@@ -117,19 +68,23 @@
               "code": "25064002",
               "display": "Headache"
             }
-          ],
-          "text": "Kopfschmerzen"
+          ]
         },
         "subject": {
-          "reference": "Patient/patient-anke-busch"
-        }
+          "reference": "Patient/pat-busch-01"
+        },
+        "onsetDateTime": "2023-06-22"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
       }
     },
     {
-      "fullUrl": "Condition/condition-dizziness",
+      "fullUrl": "Condition/cond-dizziness-01",
       "resource": {
         "resourceType": "Condition",
-        "id": "condition-dizziness",
+        "id": "cond-dizziness-01",
         "clinicalStatus": {
           "coding": [
             {
@@ -140,14 +95,24 @@
             }
           ]
         },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
         "category": [
           {
             "coding": [
               {
                 "system":
 "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "symptom",
-                "display": "Symptom"
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
               }
             ]
           }
@@ -159,19 +124,23 @@
               "code": "404640003",
               "display": "Dizziness"
             }
-          ],
-          "text": "Schwindelgefühl"
+          ]
         },
         "subject": {
-          "reference": "Patient/patient-anke-busch"
-        }
+          "reference": "Patient/pat-busch-01"
+        },
+        "onsetDateTime": "2023-06-22"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
       }
     },
     {
-      "fullUrl": "Condition/condition-nausea",
+      "fullUrl": "Condition/cond-nausea-01",
       "resource": {
         "resourceType": "Condition",
-        "id": "condition-nausea",
+        "id": "cond-nausea-01",
         "clinicalStatus": {
           "coding": [
             {
@@ -182,14 +151,24 @@
             }
           ]
         },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
         "category": [
           {
             "coding": [
               {
                 "system":
 "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "symptom",
-                "display": "Symptom"
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
               }
             ]
           }
@@ -201,19 +180,79 @@
               "code": "422587007",
               "display": "Nausea"
             }
-          ],
-          "text": "leichte Übelkeit"
+          ]
         },
         "subject": {
-          "reference": "Patient/patient-anke-busch"
-        }
+          "reference": "Patient/pat-busch-01"
+        },
+        "onsetDateTime": "2023-06-22"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
       }
     },
     {
-      "fullUrl": "MedicationStatement/medicationstatement-ibuprofen",
+      "fullUrl": "Condition/cond-migraine-01",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-migraine-01",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "provisional",
+              "display": "Provisional"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "37796009",
+              "display": "Migraine"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-busch-01"
+        },
+        "recordedDate": "2023-06-22"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-stmt-ibu-01",
       "resource": {
         "resourceType": "MedicationStatement",
-        "id": "medicationstatement-ibuprofen",
+        "id": "med-stmt-ibu-01",
         "status": "active",
         "medicationCodeableConcept": {
           "coding": [
@@ -226,17 +265,27 @@
           "text": "Ibuprofen 400mg"
         },
         "subject": {
-          "reference": "Patient/patient-anke-busch"
+          "reference": "Patient/pat-busch-01"
         },
+        "effectiveDateTime": "2023-06-22",
+        "dateAsserted": "2023-06-22",
         "reasonReference": [
           {
-            "reference": "Condition/condition-headache"
+            "reference": "Condition/cond-headache-01"
           }
         ],
         "dosage": [
           {
             "text": "Ibuprofen 400mg bei akuten Kopfschmerzepisoden",
-            "asNeededBoolean": true,
+            "asNeededCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "735938006",
+                  "display": "Acute headache"
+                }
+              ]
+            },
             "doseAndRate": [
               {
                 "doseQuantity": {
@@ -249,6 +298,10 @@
             ]
           }
         ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
       }
     }
   ]

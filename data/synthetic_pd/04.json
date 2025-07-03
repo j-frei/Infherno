@@ -1,17 +1,13 @@
 {
   "resourceType": "Bundle",
+  "id": "bundle-wechsler",
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "Patient/pat-001",
+      "fullUrl": "Patient/pat-alexander-wechsler",
       "resource": {
         "resourceType": "Patient",
-        "id": "pat-001",
-        "identifier": [
-          {
-            "value": "wechsler-alexander-19600624"
-          }
-        ],
+        "id": "pat-alexander-wechsler",
         "name": [
           {
             "use": "official",
@@ -26,186 +22,80 @@
       }
     },
     {
-      "fullUrl": "Condition/cond-001",
+      "fullUrl": "Condition/cond-angina",
       "resource": {
         "resourceType": "Condition",
-        "id": "cond-001",
+        "id": "cond-angina",
         "clinicalStatus": {
           "coding": [
             {
               "system":
 "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
+              "code": "active",
+              "display": "Active"
             }
           ]
         },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system":
-"http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed"
-            }
-          ]
-        },
-        "category": [
-          {
-            "coding": [
-              {
-                "system":
-"http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "problem-list-item"
-              }
-            ]
-          }
-        ],
         "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "53741008",
-              "display": "Coronary arteriosclerosis"
-            }
-          ],
-          "text": "Koronare Herzerkrankung"
-        },
-        "subject": {
-          "reference": "Patient/pat-001"
-        }
-      }
-    },
-    {
-      "fullUrl": "Condition/cond-002",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-002",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system":
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system":
-"http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed"
-            }
-          ]
-        },
-        "category": [
-          {
-            "coding": [
-              {
-                "system":
-"http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "problem-list-item"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "38341003",
-              "display": "Hypertensive disorder"
-            }
-          ],
-          "text": "Hypertonie"
-        },
-        "subject": {
-          "reference": "Patient/pat-001"
-        }
-      }
-    },
-    {
-      "fullUrl": "Condition/cond-003",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-003",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system":
-"http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system":
-"http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed"
-            }
-          ]
-        },
-        "category": [
-          {
-            "coding": [
-              {
-                "system":
-"http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "problem-list-item"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "233819005",
-              "display": "Stable angina"
+              "code": "194828000",
+              "display": "Angina pectoris"
             }
           ],
           "text": "Stabile Angina pectoris"
         },
         "subject": {
-          "reference": "Patient/pat-001"
+          "reference": "Patient/pat-alexander-wechsler"
         }
       }
     },
     {
-      "fullUrl": "Condition/cond-004",
+      "fullUrl": "Condition/cond-hypertonie",
       "resource": {
         "resourceType": "Condition",
-        "id": "cond-004",
+        "id": "cond-hypertonie",
         "clinicalStatus": {
           "coding": [
             {
               "system":
 "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
+              "code": "active",
+              "display": "Active"
             }
           ]
         },
-        "verificationStatus": {
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "59621000",
+              "display": "Essential hypertension"
+            }
+          ],
+          "text": "Hypertonie"
+        },
+        "subject": {
+          "reference": "Patient/pat-alexander-wechsler"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-hypertrophie",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-hypertrophie",
+        "clinicalStatus": {
           "coding": [
             {
               "system":
-"http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed"
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
             }
           ]
         },
-        "category": [
-          {
-            "coding": [
-              {
-                "system":
-"http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "problem-list-item"
-              }
-            ]
-          }
-        ],
         "code": {
           "coding": [
             {
@@ -214,18 +104,138 @@
               "display": "Left ventricular hypertrophy"
             }
           ],
-          "text": "Linksventrikuläre Hypertrophie"
+          "text": "linksventrikuläre Hypertrophie"
         },
         "subject": {
-          "reference": "Patient/pat-001"
+          "reference": "Patient/pat-alexander-wechsler"
         }
       }
     },
     {
-      "fullUrl": "MedicationStatement/med-stat-001",
+      "fullUrl": "Condition/cond-herzerkrankung",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-herzerkrankung",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "53741008",
+              "display": "Coronary arteriosclerosis"
+            }
+          ],
+          "text": "koronare Herzerkrankung"
+        },
+        "subject": {
+          "reference": "Patient/pat-alexander-wechsler"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-atemnot",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-atemnot",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267036007",
+              "display": "Dyspnea"
+            }
+          ],
+          "text": "Atemnot"
+        },
+        "subject": {
+          "reference": "Patient/pat-alexander-wechsler"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-muedigkeit",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-muedigkeit",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "84229001",
+              "display": "Fatigue"
+            }
+          ],
+          "text": "Müdigkeit"
+        },
+        "subject": {
+          "reference": "Patient/pat-alexander-wechsler"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-brustschmerz",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-brustschmerz",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "29857009",
+              "display": "Chest pain"
+            }
+          ],
+          "text": "Schmerzen im Brustbereich"
+        },
+        "subject": {
+          "reference": "Patient/pat-alexander-wechsler"
+        }
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-ramipril",
       "resource": {
         "resourceType": "MedicationStatement",
-        "id": "med-stat-001",
+        "id": "med-ramipril",
         "status": "active",
         "medicationCodeableConcept": {
           "coding": [
@@ -234,19 +244,18 @@
               "code": "386872004",
               "display": "Ramipril"
             }
-          ],
-          "text": "Ramipril"
+          ]
         },
         "subject": {
-          "reference": "Patient/pat-001"
+          "reference": "Patient/pat-alexander-wechsler"
         }
       }
     },
     {
-      "fullUrl": "MedicationStatement/med-stat-002",
+      "fullUrl": "MedicationStatement/med-metoprolol",
       "resource": {
         "resourceType": "MedicationStatement",
-        "id": "med-stat-002",
+        "id": "med-metoprolol",
         "status": "active",
         "medicationCodeableConcept": {
           "coding": [
@@ -255,19 +264,18 @@
               "code": "372826007",
               "display": "Metoprolol"
             }
-          ],
-          "text": "Metoprolol"
+          ]
         },
         "subject": {
-          "reference": "Patient/pat-001"
+          "reference": "Patient/pat-alexander-wechsler"
         }
       }
     },
     {
-      "fullUrl": "MedicationStatement/med-stat-003",
+      "fullUrl": "MedicationStatement/med-nitroglycerin",
       "resource": {
         "resourceType": "MedicationStatement",
-        "id": "med-stat-003",
+        "id": "med-nitroglycerin",
         "status": "active",
         "medicationCodeableConcept": {
           "coding": [
@@ -276,11 +284,10 @@
               "code": "387404004",
               "display": "Nitroglycerin"
             }
-          ],
-          "text": "Nitroglycerin"
+          ]
         },
         "subject": {
-          "reference": "Patient/pat-001"
+          "reference": "Patient/pat-alexander-wechsler"
         }
       }
     }
