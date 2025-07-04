@@ -56,9 +56,8 @@ def list_log_files(directory="./logs"):
 log_files = list_log_files()
 
 
-def respond(
-    message,
-):
+def agent_chat_fn(message, history, system_message, max_tokens, temperature, top_p):
+    SNOMED_INSTANCE = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch())
     try:
         logger, log_file = setup_logging(config)
         logger.info(f"Analysis results will be saved to: {log_file}")
@@ -80,22 +79,6 @@ def respond(
             logger=agent_logger,
             fhir_config=config,
         )
-
-        result = agent.run(f"The input text is as follows:\n```\n{message}\n```")
-        try:
-            gr.JSON(result)
-        except:
-            return result
-
-    except Exception as e:
-        raise gr.Error(str(e))
-
-
-def agent_chat_fn(message, history, system_message, max_tokens, temperature, top_p):
-    SNOMED_INSTANCE = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch())
-    try:
-        # -- Place your agent code here (see your original function) --
-        # For demo, we'll just echo the message as JSON:
         result = {"message": message}
         formatted_json = json.dumps(result, indent=2)
         chat = history[:] if history else []
