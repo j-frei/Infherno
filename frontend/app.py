@@ -1,5 +1,9 @@
 import gradio as gr
+import os
+import re
+import time
 import json
+from datetime import datetime
 
 from infherno import default_config as config
 from infherno.data_utils import load_dummy, load_synthetic
@@ -10,13 +14,50 @@ from infherno.smolagents_utils.smolcodesearch import search_for_code_or_coding
 from infherno.tools.fhircodes.instance import GenericSnomedInstance
 from infherno.utils import setup_logging
 
+
+def parse_log(filepath):
+    messages = []
+    with open(filepath, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    log_pattern = re.compile(r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3}) - .*? - (.*)", re.DOTALL)
+    current_time = None
+    current_msg = []
+    for line in lines:
+        match = log_pattern.match(line)
+        if match:
+            if current_time and current_msg:
+                messages.append((current_time, ''.join(current_msg).rstrip()))
+            current_time = datetime.strptime(match.group(1), "%Y-%m-%d %H:%M:%S,%f")
+            current_msg = [match.group(2) + "\n"]
+        else:
+            current_msg.append(line)
+    if current_time and current_msg:
+        messages.append((current_time, ''.join(current_msg).rstrip()))
+    return messages
+
+def replay_log_chat(message, history, log_file_name, speedup=1.0):
+    messages = parse_log(log_file_name)
+    chat = history[:] if history else []
+    for i, (timestamp, log_message) in enumerate(messages):
+        if i > 0:
+            delay = (timestamp - messages[i - 1][0]).total_seconds() / speedup
+            if delay > 0:
+                time.sleep(delay)
+        chat = chat + [log_message]
+        yield chat
+
+def list_log_files(directory="./logs"):
+    files = [
+        os.path.join(directory, f) for f in os.listdir(directory)
+        if os.path.isfile(os.path.join(directory, f)) and f.endswith(".log")
+    ]
+    return files
+
+log_files = list_log_files()
+
+
 def respond(
     message,
-    history: list[tuple[str, str]],
-    system_message,
-    max_tokens,
-    temperature,
-    top_p,
 ):
     try:
         logger, log_file = setup_logging(config)
@@ -41,22 +82,54 @@ def respond(
         )
 
         result = agent.run(f"The input text is as follows:\n```\n{message}\n```")
-        return result
+        try:
+            gr.JSON(result)
+        except:
+            return result
 
     except Exception as e:
         raise gr.Error(str(e))
 
 
-SNOMED_INSTANCE = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch())
+def agent_chat_fn(message, history, system_message, max_tokens, temperature, top_p):
+    SNOMED_INSTANCE = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch())
+    try:
+        # -- Place your agent code here (see your original function) --
+        # For demo, we'll just echo the message as JSON:
+        result = {"message": message}
+        formatted_json = json.dumps(result, indent=2)
+        chat = history[:] if history else []
+        chat.append((message, f"```json\n{formatted_json}\n```"))
+        return chat
+    except Exception as e:
+        chat = history[:] if history else []
+        chat.append((message, f"❌ Error: {str(e)}"))
+        return chat
 
-chatbot = gr.Chatbot(type="messages", scale=9)
-
-demo = gr.ChatInterface(respond,
-    title="Infherno",
-    examples=load_dummy()["text"],
-    chatbot=chatbot
-)
+with gr.Blocks() as demo:
+    gr.Markdown("# 🔥Infherno")
+    with gr.Tabs():
+        with gr.Tab("Agent Chat"):
+            chatbot1 = gr.Chatbot()
+            agent_chat = gr.ChatInterface(
+                fn=agent_chat_fn,
+                chatbot=chatbot1,
+                examples=load_dummy()["text"],
+                title="Infherno Agent",
+                description="Chat with the agent. Returns JSON."
+            )
+        with gr.Tab("Log Replay"):
+            chatbot2 = gr.Chatbot()
+            with gr.Row():
+                log_dropdown = gr.Dropdown(choices=log_files, label="Choose a log file")
+                speed_slider = gr.Slider(0.1, 10, value=1.0, label="Speedup (higher is faster)")
+            log_chat = gr.ChatInterface(
+                fn=replay_log_chat,
+                chatbot=chatbot2,
+                additional_inputs=[log_dropdown, speed_slider],
+                title="Log Replay",
+                description="Select a log file to replay as chat. Press enter to start replay.",
+            )
 
 if __name__ == "__main__":
-    demo.queue(default_concurrency_limit=40)
-    demo.launch(max_threads=40)
+    demo.launch()
