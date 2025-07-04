@@ -37,15 +37,20 @@ def parse_file(file_path: str) -> List[dict]:
         for em in elements:
             element_flag = em.group("element_flag")
 
+            # print("Processing resource:", m.group("resource_info") + " with element:", em.group("comment"), "and flag:", element_flag)
+
             element_cruciality = outer_cruciality
             if "?" in element_flag:
-                element_cruciality = True
-            if "!" in element_flag:
                 element_cruciality = False
+            if "!" in element_flag:
+                element_cruciality = True
 
             element_negative = "\\" in element_flag
             element_positive = "/" in element_flag
             element_hallucination = "X" in element_flag
+
+            if element_hallucination:
+                element_negative = True
 
             element_total_equivalence = "==" in element_flag
             element_partial_equivalence = "==" not in element_flag and "=" in element_flag
@@ -54,19 +59,17 @@ def parse_file(file_path: str) -> List[dict]:
             element_addition = "+" in element_flag and not element_difference
             element_lack = "-" in element_flag and not element_difference
 
-            if element_hallucination:
-                element_negative = True
 
             item_stats.append({
                 "crucial": element_cruciality,
                 "negative": element_negative,
                 "positive": element_positive,
-                "hallucinate": element_hallucination,
-                "total_equal": element_total_equivalence,
                 "partial_equal": element_partial_equivalence,
-                "difference": element_difference,
+                "total_equal": element_total_equivalence,
                 "addition": element_addition,
-                "lacking": element_lack
+                "lacking": element_lack,
+                "difference": element_difference,
+                "hallucinate": element_hallucination,
             })
 
     return item_stats
@@ -104,4 +107,15 @@ print()
 
 print("Non-Crucial and Better than GT:")
 print(df[(~df["crucial"]) & (df["positive"])].sum(numeric_only=True))
+print()
+
+# Total better than GT, worse than GT, neutral
+print("Total better than GT:")
+print(len(df[df["positive"]]))
+print()
+print("Total worse than GT:")
+print(len(df[df["negative"]]))
+print()
+print("Total neutral:")
+print(len(df[~df["positive"] & ~df["negative"]]))
 print()
