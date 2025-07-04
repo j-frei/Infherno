@@ -6,7 +6,7 @@ import json
 from datetime import datetime
 
 from infherno import default_config as config
-from infherno.data_utils import load_dummy, load_synthetic
+from infherno.data_utils import load_dummy, load_dummy_en
 from infherno.defaults import determine_snowstorm_url, determine_snowstorm_branch
 from infherno.models import load_model
 from infherno.smolagents_utils.fhiragent import FHIRAgent, FHIRAgentLogger
@@ -56,7 +56,7 @@ def list_log_files(directory="./logs"):
 log_files = list_log_files()
 
 
-def agent_chat_fn(message, history, system_message, max_tokens, temperature, top_p):
+def agent_chat_fn(message, history):
     SNOMED_INSTANCE = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch())
     try:
         logger, log_file = setup_logging(config)
@@ -79,14 +79,15 @@ def agent_chat_fn(message, history, system_message, max_tokens, temperature, top
             logger=agent_logger,
             fhir_config=config,
         )
-        result = {"message": message}
-        formatted_json = json.dumps(result, indent=2)
+        result = agent.run(f"The input text is as follows:\n```\n{message}\n```")
         chat = history[:] if history else []
-        chat.append((message, f"```json\n{formatted_json}\n```"))
+        formatted_json = json.dumps(result, indent=2, ensure_ascii=False)
+        # Use list, not tuple
+        chat.append(f"```json\n{formatted_json}\n```")
         return chat
     except Exception as e:
         chat = history[:] if history else []
-        chat.append((message, f"❌ Error: {str(e)}"))
+        chat.append(f"❌ Error: {str(e)}")
         return chat
 
 with gr.Blocks() as demo:
@@ -97,9 +98,13 @@ with gr.Blocks() as demo:
             agent_chat = gr.ChatInterface(
                 fn=agent_chat_fn,
                 chatbot=chatbot1,
-                examples=load_dummy()["text"],
-                title="Infherno Agent",
-                description="Chat with the agent. Returns JSON."
+                examples=[
+                    load_dummy()["text"],
+                    load_dummy_en()["text"],
+                ],
+                title="Agent Chat",
+                description="Chat with the agent. Returns FHIR.",
+                fill_height=True
             )
         with gr.Tab("Log Replay"):
             chatbot2 = gr.Chatbot()
@@ -112,6 +117,7 @@ with gr.Blocks() as demo:
                 additional_inputs=[log_dropdown, speed_slider],
                 title="Log Replay",
                 description="Select a log file to replay as chat. Press enter to start replay.",
+                fill_height=True
             )
 
 if __name__ == "__main__":

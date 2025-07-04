@@ -68,6 +68,14 @@ def load_dummy() -> Dataset:
     return dataset
 
 
+def load_dummy_en() -> Dataset:
+    dummy_str = ("Patient presents with headache and dizziness lasting 3 days, no fever.\n"
+                 "History of hypertension, currently on Lisinopril, no known drug allergies.\n"
+                 "Prescribed Ibuprofen 400mg as needed for pain, advised hydration and rest.")
+    dataset = Dataset.from_dict({"text": [dummy_str]})
+    return dataset
+
+
 def load_cardiode(data_path: str = f"./") -> Dataset:
     raw_dataset = load_dataset("json", data_files=data_path + "CARDIODE400_main@deanonymized_slim.jsonl")["train"]
     return raw_dataset
