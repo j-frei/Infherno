@@ -5,79 +5,81 @@ from collections import defaultdict
 anno_dir = "../data/synthetic_gt"
 markdown_files = [f for f in os.listdir(anno_dir) if f.endswith(".md")]
 
-taxonomy_signs = ["?", "!", "+", "-", "/", "\\", "X", "=", "==", "+-", "-+"]
+sign_categories = ["=", "==", "+", "-", "+-", "X", "\\", "/"]
+quality_map = {"=": "Neutral", "==": "Neutral", "+": "Better", "-": "Worse", "+-": "Neutral", "X": "Worse", "\\": "Worse", "/": "Better"}
 
 
-def parse_markdown_annotations(file_path):
-    counts = defaultdict(int)
-    total_annotations = 0
+def parse_annotations(file_path):
+    counts = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
     inherited = []
 
     with open(file_path, "r") as f:
         lines = f.readlines()
 
     for line in lines:
-        indent_level = len(line) - len(line.lstrip())
+        indent = len(line) - len(line.lstrip())
         match = re.search(r'\[([^\]]+)\]', line)
         if match:
-            total_annotations += 1  # Every line with annotation counts as one
-            signs = match.group(1)
+            signs = re.findall(r'(==|\+-|-\+|=|[!?+\-/\\X])', match.group(1))
+            cruciality = '!' if '!' in signs else '?' if '?' in signs else inherited[-1][1] if inherited else '?'
 
-            # Corrected regex:
-            signs_split = re.findall(r'(==|\+-|-\+|=|[!?+\-/\\X])', signs)
-
-            # Update inheritance stack
-            while inherited and inherited[-1][0] >= indent_level:
+            while inherited and inherited[-1][0] >= indent:
                 inherited.pop()
 
-            current_signs = set(signs_split)
+            inherited.append((indent, cruciality))
 
-            # Inherit from parents if not overridden
-            for lvl, parent_signs in inherited:
-                current_signs.update(parent_signs)
+            combined_signs = set(signs)
+            combined_signs = {"+-" if s in {"+-", "-+"} else s for s in combined_signs}
 
-            for sign in current_signs:
-                counts[sign] += 1
+            for sign in combined_signs:
+                if sign in sign_categories:
+                    quality = quality_map[sign]
+                    counts[cruciality][sign][quality] += 1
 
-            inherited.append((indent_level, current_signs))
-
-    return counts, total_annotations
+    return counts
 
 
-# Aggregating across files
-agg_counts = defaultdict(int)
-agg_total_annotations = 0
+# Aggregate
+agg_counts = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
 
 for md_file in markdown_files:
-    file_path = os.path.join(anno_dir, md_file)
-    counts, total_annotations = parse_markdown_annotations(file_path)
-    agg_total_annotations += total_annotations
-    for sign, count in counts.items():
-        agg_counts[sign] += count
+    file_counts = parse_annotations(os.path.join(anno_dir, md_file))
+    for cruciality in file_counts:
+        for sign in file_counts[cruciality]:
+            for quality in file_counts[cruciality][sign]:
+                agg_counts[cruciality][sign][quality] += file_counts[cruciality][sign][quality]
 
-# Generate LaTeX table
-print(r"\begin{tabular}{cr}")
-print(r"\textbf{Sign} & \textbf{Count} \\")
-print(r"\hline")
 
-sign_descriptions = {
-    "?": "optional, not pressing",
-    "!": "crucial, important",
-    "+": "Present in PD (Lacks in GT)",
-    "-": "Lacking in PD (Present in GT)",
-    "/": "Better than GT",
-    "\\": "Worse than GT",
-    "X": "Hallucination or Invalid",
-    "=": "Semantically identical",
-    "==": "(nearly) completely identical",
-    "+-": "Difference (+-)",
-    "-+": "Difference (-+)",
-}
+# Generate LaTeX Table
+print(r"""\begin{tabular}{cl|>{\columncolor{lightred}}r>{\columncolor{lightyellow}}r>{\columncolor{lightgreen}}r}
+\textbf{Sign} & \textbf{Description} & \textbf{Worse than GT} & \textbf{Neutral} & \textbf{Better than GT} \\
+\toprule
+""")
 
-for sign in taxonomy_signs:
-    count = agg_counts.get(sign, 0)
-    ratio = f"{count}/{agg_total_annotations}" if agg_total_annotations else "-"
-    description = sign_descriptions[sign]
-    print(f"{sign} ({description}) & {count} \\\\")
+for cruciality in ['!', '?']:
+    label = "crucial items" if cruciality == '!' else "non-crucial items"
+    print(f"& & \multicolumn{{3}}{{c}}{{\texttt{{{cruciality}}} ({label})}} \\")
+    print(r"\hdashline")
 
+    for sign in ["=", "==", "+", "-", "+-", "X"]:
+        worse = agg_counts[cruciality][sign]['Worse'] + agg_counts[cruciality]["\\"]['Worse']
+        neutral = agg_counts[cruciality][sign]['Neutral']
+        better = agg_counts[cruciality][sign]['Better'] + agg_counts[cruciality]["/"]['Better']
+
+        descriptions = {
+            "=": "(semantically related)",
+            "==": "(completely identical)",
+            "+": "(lacking in GT)",
+            "-": "(lacking in PD)",
+            "+-": "(value difference)",
+            "X": "(hallucinated or invalid)",
+        }
+
+        description = descriptions[sign]
+        print(f"\\texttt{{{sign}}} & {description} & {worse} & {neutral} & {better} \\\\")
+
+    if cruciality == '!':
+        print(r"\midrule")
+
+print(r"\bottomrule")
 print(r"\end{tabular}")
