@@ -5,7 +5,7 @@ from collections import defaultdict
 anno_dir = "../data/synthetic_gt"
 markdown_files = [f for f in os.listdir(anno_dir) if f.endswith(".md")]
 
-taxonomy_signs = ["?", "!", "+", "-", "/", "\\", "X", "=", "=="]
+taxonomy_signs = ["?", "!", "+", "-", "/", "\\", "X", "=", "==", "+-", "-+"]
 
 
 def parse_markdown_annotations(file_path):
@@ -22,7 +22,9 @@ def parse_markdown_annotations(file_path):
         if match:
             total_annotations += 1  # Every line with annotation counts as one
             signs = match.group(1)
-            signs_split = re.findall(r'(==|=|[!?+\-/\\X])', signs)
+
+            # Corrected regex:
+            signs_split = re.findall(r'(==|\+-|-\+|=|[!?+\-/\\X])', signs)
 
             # Update inheritance stack
             while inherited and inherited[-1][0] >= indent_level:
@@ -54,8 +56,8 @@ for md_file in markdown_files:
         agg_counts[sign] += count
 
 # Generate LaTeX table
-print(r"\begin{tabular}{lcc}")
-print(r"\textbf{Sign} & \textbf{Count} & \textbf{Ratio}\\")
+print(r"\begin{tabular}{cr}")
+print(r"\textbf{Sign} & \textbf{Count} \\")
 print(r"\hline")
 
 sign_descriptions = {
@@ -67,14 +69,15 @@ sign_descriptions = {
     "\\": "Worse than GT",
     "X": "Hallucination or Invalid",
     "=": "Semantically identical",
-    "==": "(nearly) completely identical"
+    "==": "(nearly) completely identical",
+    "+-": "Difference (+-)",
+    "-+": "Difference (-+)",
 }
 
 for sign in taxonomy_signs:
     count = agg_counts.get(sign, 0)
     ratio = f"{count}/{agg_total_annotations}" if agg_total_annotations else "-"
     description = sign_descriptions[sign]
-    print(f"{sign} ({description}) & {count} & {ratio} \\\\")
+    print(f"{sign} ({description}) & {count} \\\\")
 
 print(r"\end{tabular}")
-

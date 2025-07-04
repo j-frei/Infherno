@@ -64,7 +64,7 @@ def load_dummy() -> Dataset:
     dummy_str = ("Magenbeschwerden seit 2 Tagen, Übelkeit, Erbrechen, kein Durchfall.\n"
                  "Patient hat eine Allergie gegen Penicillin, keine weiteren Allergien bekannt.\n"
                  "Verschrieben wurde deshalb Pantoprazol 20mg 1-0-1.")
-    dataset = Dataset.from_dict({"text": dummy_str})
+    dataset = Dataset.from_dict({"text": [dummy_str]})
     return dataset
 
 
