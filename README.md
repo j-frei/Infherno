@@ -65,3 +65,9 @@ python -m spacy download en_core_web_sm
 ### Smolagent
 
 Run the agent using `SNOWSTORM_URL="http://<SNOMED-Instance>" PYTHONPATH=. python3 infherno/smol.py`
+
+
+## Live Demo
+
+Our Gradio demo will be accessible via [Hugging Face Spaces](https://huggingface.co/spaces/nfel/infherno) very shortly.
+However, due to resource and context limitations with open-source models, we recommend launching Infherno locally with a proprietary model via API.
