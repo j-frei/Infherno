@@ -33,7 +33,7 @@ def parse_log(filepath):
         else:
             if line.startswith("Out - Final answer:"):
                 is_final_output = True
-                current_msg.append("```json\n{")
+                current_msg.append("```json\n{\n")
             elif is_final_output and len(lines) - 1 == i:
                 current_msg.append(line + "\n" + "```")
             else:
