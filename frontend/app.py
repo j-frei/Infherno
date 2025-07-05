@@ -21,8 +21,9 @@ def parse_log(filepath):
         lines = f.readlines()
     log_pattern = re.compile(r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3}) - .*? - (.*)", re.DOTALL)
     current_time = None
+    is_final_output = False
     current_msg = []
-    for line in lines:
+    for i, line in enumerate(lines):
         match = log_pattern.match(line)
         if match:
             if current_time and current_msg:
@@ -30,7 +31,13 @@ def parse_log(filepath):
             current_time = datetime.strptime(match.group(1), "%Y-%m-%d %H:%M:%S,%f")
             current_msg = [match.group(2) + "\n"]
         else:
-            current_msg.append(line)
+            if line.startswith("Out - Final answer:"):
+                is_final_output = True
+                current_msg.append("```json\n{")
+            elif is_final_output and len(lines) - 1 == i:
+                current_msg.append(line + "\n" + "```")
+            else:
+                current_msg.append(line)
     if current_time and current_msg:
         messages.append((current_time, ''.join(current_msg).rstrip()))
     return messages
