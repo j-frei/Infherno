@@ -95,9 +95,25 @@ def agent_chat_fn(message, history):
             fhir_config=config,
         )
         result = agent.run(f"The input text is as follows:\n```\n{message}\n```")
-        formatted_json = json.dumps(result, indent=2, ensure_ascii=False)
-        # Return only the bot's response, formatted as a Markdown code block
-        return f"```json\n{formatted_json}\n```"
+        final_content = ""
+        if isinstance(result, (dict, list)):
+            # If the agent returns a Python object, dump it to a formatted string.
+            final_content = json.dumps(result, indent=2, ensure_ascii=False)
+        else:
+            # If the agent returns anything else (like a pre-formatted string),
+            # use it directly. We convert to string just in case.
+            final_content = str(result)
+            # Defensive check: if it's a string that looks like JSON,
+            # we can try to parse and re-format it to ensure it's pretty.
+            try:
+                parsed_json = json.loads(final_content)
+                final_content = json.dumps(parsed_json, indent=2, ensure_ascii=False)
+            except (json.JSONDecodeError, TypeError):
+                # If it fails, it wasn't a JSON string, so we just use the original.
+                pass
+
+        # Return the final content wrapped in Markdown for proper rendering.
+        return f"```json\n{final_content}\n```"
     except Exception as e:
         chat = history[:] if history else []
         chat.append(f"❌ Error: {str(e)}")
@@ -107,7 +123,13 @@ with gr.Blocks() as demo:
     gr.Markdown("# 🔥Infherno")
     with gr.Tabs():
         with gr.Tab("Agent Chat"):
-            chatbot1 = gr.Chatbot()
+            chatbot1 = gr.Chatbot(
+                label="FHIR Agent",
+                bubble_full_width=True,
+                height=600,
+                render_markdown=True,
+                show_copy_button=True
+            )
             agent_chat = gr.ChatInterface(
                 fn=agent_chat_fn,
                 chatbot=chatbot1,
@@ -116,7 +138,7 @@ with gr.Blocks() as demo:
                     load_dummy_en()["text"],
                 ],
                 title="Agent Chat",
-                description="Chat with the agent. Returns FHIR.",
+                description="Chat with the agent. Returns a FHIR resource.",
                 fill_height=True
             )
         with gr.Tab("Log Replay"):
