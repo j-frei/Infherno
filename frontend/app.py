@@ -42,18 +42,26 @@ def parse_log(filepath):
         messages.append((current_time, ''.join(current_msg).rstrip()))
     return messages
 
+
 def replay_log_chat(message, history, log_file_name, speedup=1.0):
     messages = parse_log(log_file_name)
-    chat = history[:] if history else []
+    full_response = ""
     for i, (timestamp, log_message) in enumerate(messages):
+        # Format each log entry as a distinct, readable block in Markdown
+        # We add the timestamp as a header for clarity
+        entry_markdown = f"\n`{timestamp.strftime('%Y-%m-%d %H:%M:%S,%f')[:-3]}`\n```\n{log_message}\n```\n---\n"
+        full_response += entry_markdown
+
         if i > 0:
             delay = (timestamp - messages[i - 1][0]).total_seconds() / speedup
+            # Prevent excessively long sleeps
             if delay > 0:
-                time.sleep(delay)
-        chat = chat + [log_message]
-        yield chat
+                time.sleep(min(delay, 2.0))  # Sleep for a max of 2s between entries
 
-def list_log_files(directory="./logs"):
+        yield full_response
+
+
+def list_log_files(directory="./gemini_logs"):
     files = [
         os.path.join(directory, f) for f in os.listdir(directory)
         if os.path.isfile(os.path.join(directory, f)) and f.endswith(".log")
@@ -87,11 +95,9 @@ def agent_chat_fn(message, history):
             fhir_config=config,
         )
         result = agent.run(f"The input text is as follows:\n```\n{message}\n```")
-        chat = history[:] if history else []
         formatted_json = json.dumps(result, indent=2, ensure_ascii=False)
-        # Use list, not tuple
-        chat.append(f"```json\n{formatted_json}\n```")
-        return chat
+        # Return only the bot's response, formatted as a Markdown code block
+        return f"```json\n{formatted_json}\n```"
     except Exception as e:
         chat = history[:] if history else []
         chat.append(f"❌ Error: {str(e)}")
