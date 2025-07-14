@@ -22,7 +22,3 @@ litellm
 
 # For demo
 gradio
-
-# For AcademicCloud
-requests
-BeautifulSoup4

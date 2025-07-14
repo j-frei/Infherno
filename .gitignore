@@ -1,9 +1,6 @@
 # Manual stuff
 /env/
 /cache/
-/grammar/
-/infherno/smolagents_utils/academiccloud/.auth_cookie
-
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

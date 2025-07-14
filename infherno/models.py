@@ -1,9 +1,6 @@
 """ Choose which LLM engine to use!"""
 from smolagents import HfApiModel, LiteLLMModel, TransformersModel
 
-from infherno.smolagents_utils.academiccloud.model import AcademicCloudModel
-from infherno.smolagents_utils.academiccloud.auth import AcademicAuth, AcademicUniAugsburgCredentialsFlow
-
 
 def load_model(model_class, model_id, context_length, max_new_tokens, device_map, api_key):
     if model_class == "HfApiModel":
@@ -44,14 +41,6 @@ def load_model(model_class, model_id, context_length, max_new_tokens, device_map
             #model_id="bartowski/Llama-3.3-70B-Instruct-GGUF",
             max_new_tokens=32000,
             device_map=device_map,
-        )
-
-    elif model_class == "AcademicCloudModel":
-        model = AcademicCloudModel(
-            #model_id="meta-llama-3.1-8b-instruct",
-            #model_id="llama-4-scout-17b-16e-instruct",
-            model_id="llama-3.3-70b-instruct",
-            openidc_session_cookie=AcademicAuth().authenticate(AcademicUniAugsburgCredentialsFlow()),
         )
 
     else:
