@@ -130,7 +130,7 @@ system_prompt: |-
   Try to avoid exclusively text-only encodings (e.g. for Dosage.text) in MedicationStatement that could also be encoded in a structured fashion using dosage and timing. Other information, such as the reasonCode or reasonReference may be used as well (e.g. referencing to Conditions).
   Use the code search tool to find the appropriate codes for these fields.
 
-  E.g. if you have a text phrase like 'x Pantoprazol (5mg) pro Tag (oral)', and you queried:
+  E.g. if you have a text phrase like '1x Pantoprazol (5mg) pro Tag (oral)', and you queried:
   - MedicationStatement.medication[x] for Pantoprazole: {'system': 'http://snomed.info/sct', 'code': '395821003', 'display': 'Pantoprazole'}
   - MedicationStatement.doseAndRate.type for 'ordered': {'system': 'http://terminology.hl7.org/CodeSystem/dose-rate-type', 'code': 'ordered', 'display': 'Ordered'}
   - Dosage.doseAndRate.type for 'ordered': {'system': 'http://terminology.hl7.org/CodeSystem/dose-rate-type', 'code': 'ordered', 'display': 'Ordered'}
