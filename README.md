@@ -22,7 +22,7 @@ python -m spacy download en_core_web_sm
 
 ### Smolagent
 
-Run the agent using `SNOWSTORM_URL="http://<SNOMED-Instance>" PYTHONPATH=. python3 infherno/smol.py`
+Run the agent using `SNOWSTORM_URL="http://<SNOMED-Instance>" PYTHONPATH=. python3 infherno/smol_fhiragent.py`
 
 
 ## Live Demo
