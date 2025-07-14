@@ -3,8 +3,6 @@
 # For the agent, we use the latest version of fhir.resources (v 8.0.0)
 fhir.resources==8.0.0
 
-outlines
-
 transformers
 datasets
 accelerate
@@ -16,11 +14,6 @@ tqdm
 #spacy
 #nltk
 #sacremoses
-
-# xgrammar (alternative to outlines)
-#xgrammar
-#cuda-python
-#nvidia-cuda-nvrtc-cu12
 
 # For Smolagents
 smolagents==1.13.0
