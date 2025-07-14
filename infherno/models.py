@@ -19,6 +19,7 @@ def load_model(model_class, model_id, context_length, max_new_tokens, device_map
             model = LiteLLMModel(
                 # model_id="ollama/gemma3:12b",
                 # model_id="ollama/llama3.3:70b-instruct-q4_K_M",
+                model_id=model_id,
                 num_ctx=context_length,
                 api_key=api_key,
                 api_base=os.environ.get("OLLAMA_ENDPOINT", "http://localhost:11434"),

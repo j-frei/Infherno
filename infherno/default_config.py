@@ -1,5 +1,7 @@
 # === MODEL ===
 
+# For Ollama, use the following format in your local_config.py definition:
+# MODEL_ID = "ollama_chat/gemma3:27b"
 MODEL_ID = "gemini/gemini-1.5-pro"
 MODEL_CLASS = "LiteLLMModel"
 CONTEXT_LENGTH = 131072

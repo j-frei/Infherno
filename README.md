@@ -22,8 +22,22 @@ python -m spacy download en_core_web_sm
 
 ### Smolagent
 
-Run the agent using `SNOWSTORM_URL="http://<SNOMED-Instance>" PYTHONPATH=. python3 infherno/smol_fhiragent.py`
+Run the Infherno agent as follows:
+```bash
+# Define custom Ollama model to be used
+cat > local_config.py <<EOF
+MODEL_ID = "ollama_chat/gemma3:27b"
+EOF
 
+# Define self-hosted Snowstorm instance
+export SNOWSTORM_URL="http://<SNOMED-Instance>"
+
+# Set Ollama endpoint
+export OLLAMA_ENDPOINT="http://127.0.0.1:11434"
+
+# Run the agent with dummy data
+PYTHONPATH=. python3 infherno/smol_fhiragent.py
+```
 
 ## Live Demo
 
