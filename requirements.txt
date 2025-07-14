@@ -20,6 +20,9 @@ smolagents==1.13.0
 openai
 litellm
 
+# For demo
+gradio
+
 # For AcademicCloud
 requests
 BeautifulSoup4
