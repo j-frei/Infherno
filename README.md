@@ -16,7 +16,7 @@ Our Gradio demo will be accessible via [Hugging Face Spaces](https://huggingface
 However, due to resource and context limitations with open-source models, we recommend launching Infherno locally with a proprietary model via API.
 
 
-### Run Infherno locally
+## Run Infherno locally
 
 Install the dependencies first.
 
