@@ -38,7 +38,7 @@ export OLLAMA_ENDPOINT="http://127.0.0.1:11434"
 # Define custom open-weights model from Ollama to be used.
 # MAKE SURE THAT THE MODEL IS ALREADY PULLED!
 cat > local_config.py <<EOF
-MODEL_ID = "ollama_chat/deepseek:32b"
+MODEL_ID = "ollama_chat/deepseek-r1:32b"
 EOF
 
 # Run the agent with dummy data
