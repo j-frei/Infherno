@@ -11,22 +11,14 @@ source env/bin/activate
 python3 -m pip install -r requirements.txt
 ```
 
-#### Tests
-Most tests rely on [NL-Augmenter](https://github.com/GEM-benchmark/NL-Augmenter).
-
-1. Download glove into nlaugmenter folder: http://nlp.stanford.edu/data/glove.6B.zip
-2. Install spaCy core model 
-```bash
-python -m spacy download en_core_web_sm
-```
-
 ### Smolagent
 
 Run the Infherno agent as follows:
 ```bash
 # Define custom Ollama model to be used
+# MAKE SURE THAT THE MODEL IS ALREADY PULLED!
 cat > local_config.py <<EOF
-MODEL_ID = "ollama_chat/gemma3:27b"
+MODEL_ID = "ollama_chat/deepseek:70b"
 EOF
 
 # Define self-hosted Snowstorm instance
@@ -37,6 +29,9 @@ export OLLAMA_ENDPOINT="http://127.0.0.1:11434"
 
 # Run the agent with dummy data
 PYTHONPATH=. python3 infherno/smol_fhiragent.py
+
+# Check the results in the logs:
+ls logs/*.log
 ```
 
 ## Live Demo
