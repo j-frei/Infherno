@@ -192,9 +192,14 @@ with gr.Blocks() as demo:
                     value="HuggingFaceTB/SmolLM2-360M-Instruct",
                     label="Model ID",
                     allow_custom_value=True)
-                api_key = gr.Textbox(label="API Key (if required)", type="password")
-                snowstorm_url = gr.Textbox(value="https://browser.ihtsdotools.org/snowstorm/snomed-ct",
-                                           label="SNOMED CT Server URL")
+                api_key = gr.Textbox(
+                    label="API Key (if required)",
+                    type="password"
+                )
+                snowstorm_url = gr.Textbox(
+                    label="SNOMED CT Server URL",
+                    value="https://browser.ihtsdotools.org/snowstorm/snomed-ct",
+                )
 
             chatbot1 = gr.Chatbot(
                 label="FHIR Agent",
