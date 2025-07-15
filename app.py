@@ -219,14 +219,14 @@ with gr.Blocks() as demo:
                 ],
                 examples=[
                     [
-                        load_dummy()["text"],
+                        load_dummy()["text"][0],
                         "TransformersModel",  # Default model_class
                         "HuggingFaceTB/SmolLM2-360M-Instruct",  # Default model_id
                         None,  # Default api_key (empty)
                         "https://browser.ihtsdotools.org/snowstorm/snomed-ct"  # Default snowstorm_url
                     ],
                     [
-                        load_dummy_en()["text"],
+                        load_dummy_en()["text"][0],
                         "TransformersModel",
                         "HuggingFaceTB/SmolLM2-360M-Instruct",
                         None,
