@@ -24,8 +24,6 @@ Infherno also provides ontology support for SNOMED CT and HL7 ValueSets using Re
 ## Live Demo
 
 **Gradio Demo Video**: [See the clip here](https://myweb.rz.uni-augsburg.de/~freijoha/Infherno_Gradio_Demo.mp4).  
-<img src="https://myweb.rz.uni-augsburg.de/~freijoha/Infherno_Gradio_Demo.gif" alt="Demo" style="border: 2px solid #ccc; border-radius: 8px;" width="600">
-
 Our Gradio demo is accessible via [Hugging Face Spaces](https://huggingface.co/spaces/nfel/infherno).  
 Due to resource and context limitations with open-source models, we recommend launching Infherno locally with a proprietary model via API.
 
