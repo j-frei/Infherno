@@ -1,0 +1,24 @@
+# This is the last version that uses Pydantic 1.X (required to generate valid schemas)
+# fhir.resources==7.1.0 (needed for CFG)
+# For the agent, we use the latest version of fhir.resources (v 8.0.0)
+fhir.resources==8.0.0
+
+transformers
+datasets
+accelerate
+torch
+sentencepiece
+tqdm
+
+# For tests:
+#spacy
+#nltk
+#sacremoses
+
+# For Smolagents
+smolagents==1.13.0
+openai
+litellm
+
+# For demo
+gradio

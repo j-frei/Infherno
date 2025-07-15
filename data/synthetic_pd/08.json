@@ -1,0 +1,308 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "Patient/pat-busch-01",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-busch-01",
+        "name": [
+          {
+            "use": "official",
+            "family": "Busch",
+            "given": [
+              "Anke"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1986-04-06"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-headache-01",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-headache-01",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25064002",
+              "display": "Headache"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-busch-01"
+        },
+        "onsetDateTime": "2023-06-22"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-dizziness-01",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-dizziness-01",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "404640003",
+              "display": "Dizziness"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-busch-01"
+        },
+        "onsetDateTime": "2023-06-22"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-nausea-01",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-nausea-01",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422587007",
+              "display": "Nausea"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-busch-01"
+        },
+        "onsetDateTime": "2023-06-22"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-migraine-01",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-migraine-01",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "provisional",
+              "display": "Provisional"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "37796009",
+              "display": "Migraine"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/pat-busch-01"
+        },
+        "recordedDate": "2023-06-22"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-stmt-ibu-01",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-stmt-ibu-01",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387207008",
+              "display": "Ibuprofen"
+            }
+          ],
+          "text": "Ibuprofen 400mg"
+        },
+        "subject": {
+          "reference": "Patient/pat-busch-01"
+        },
+        "effectiveDateTime": "2023-06-22",
+        "dateAsserted": "2023-06-22",
+        "reasonReference": [
+          {
+            "reference": "Condition/cond-headache-01"
+          }
+        ],
+        "dosage": [
+          {
+            "text": "Ibuprofen 400mg bei akuten Kopfschmerzepisoden",
+            "asNeededCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "735938006",
+                  "display": "Acute headache"
+                }
+              ]
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 400.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      }
+    }
+  ]
+}

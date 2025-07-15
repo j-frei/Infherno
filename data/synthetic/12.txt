@@ -1,0 +1,40 @@
+Patienteninformationen:
+Name: Bernd Brauer
+Geburtsdatum: 11.März 1978
+Adresse: Fontenay 66, 95614 Marktredwitz
+Aufnahme-Datum: 10. Juni 2023
+Entlassungs-Datum: 28. Juni 2023
+
+Sehr geehrter Hr. Dr. med. Reiniger,
+
+ich möchte Sie über den aktuellen Gesundheitszustand Ihres Patienten Bernd Brauer informieren, der sich vom 10. Juni 2023 bis zum 28. Juni 2023 in unserer Klinik in Behandlung befand.
+
+Aufnahmediagnose:
+Hypertensive Krise (ICD-10: I10.0)
+Koronare Herzkrankheit (ICD-10: I25.10)
+Hyperlipidämie (ICD-10: E78.5)
+Adipositas (ICD-10: E66.01)
+Nicht näher bezeichnete Diabetes mellitus (ICD-10: E11.9)
+
+Verlauf und Therapie:
+Herr Brauer wurde bei Aufnahme in unserer Notaufnahme aufgrund einer hypertensiven Krise mit deutlich erhöhtem Blutdruck, begleitender Angina pectoris und Atemnot vorgestellt. Nach umgehender Diagnostik und Stabilisierung wurde eine medikamentöse Therapie eingeleitet, um den Blutdruck zu kontrollieren und die Symptome der koronaren Herzkrankheit zu behandeln. Zudem wurde eine Diätberatung sowie eine Schulung zur Blutzuckerkontrolle bei der diagnostizierten Diabetes mellitus Typ 2 durchgeführt.
+
+Während seines Aufenthalts zeigte Herr Brauer eine positive Resonanz auf die Behandlung, und sein Zustand stabilisierte sich allmählich. Er reagierte gut auf die verordneten Medikamente und konnte seine Blutzuckerwerte unter Kontrolle halten. Wir haben ihn intensiv darüber aufgeklärt, wie er seine Lebensgewohnheiten verbessern kann, um langfristige gesundheitliche Vorteile zu erzielen, insbesondere hinsichtlich seiner Adipositas und Hyperlipidämie.
+
+Entlassungsdiagnose:
+Stabile Hypertonie (ICD-10: I10)
+Koronare Herzkrankheit (ICD-10: I25.10)
+Hyperlipidämie (ICD-10: E78.5)
+Adipositas (ICD-10: E66.01)
+Diabetes mellitus Typ 2 (ICD-10: E11)
+
+Empfehlungen:
+Wir empfehlen, dass Herr Brauer regelmäßige Kontrolluntersuchungen bei Ihnen, seinem Hausarzt, durchführt, um seinen Gesundheitszustand zu überwachen und gegebenenfalls seine Medikation anzupassen. Es ist wichtig, dass er weiterhin seine verschriebenen Medikamente gemäß den Anweisungen einnimmt und seinen Lebensstil entsprechend den Ratschlägen der Fachleute anpasst, um seine Gesundheit zu fördern.
+
+Abschließend möchten wir Ihnen für Ihr Vertrauen in unsere Klinik und unser medizinisches Team danken. Sollten Sie weitere Informationen benötigen, zögern Sie bitte nicht, uns zu kontaktieren.
+
+Mit freundlichen Grüßen,
+
+Dr. med. Paula Wurfel
+Fachärztin für Innere Medizin
+Klinik Eckersdorf

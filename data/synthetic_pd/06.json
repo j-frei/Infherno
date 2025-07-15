@@ -1,0 +1,240 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "Patient/pat-001",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-001",
+        "name": [
+          {
+            "use": "official",
+            "family": "Herz",
+            "given": [
+              "Uta"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1991-12-09"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-001",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-001",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "301754002",
+              "display": "Right lower quadrant pain"
+            }
+          ],
+          "text": "Akute Bauchschmerzen im rechten Unterbauch"
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        },
+        "onsetDateTime": "2023-06-15",
+        "abatementDateTime": "2023-06-24"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-002",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-002",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422587007",
+              "display": "Nausea"
+            }
+          ],
+          "text": "Übelkeit"
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        },
+        "onsetDateTime": "2023-06-15",
+        "abatementDateTime": "2023-06-24"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-003",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-003",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386661006",
+              "display": "Fever"
+            }
+          ],
+          "text": "leichtes Fieber"
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        },
+        "onsetDateTime": "2023-06-15",
+        "abatementDateTime": "2023-06-24"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-004",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-004",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system":
+"http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "85189001",
+              "display": "Acute appendicitis"
+            }
+          ],
+          "text": "Akute Appendizitis"
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        },
+        "onsetDateTime": "2023-06-15",
+        "abatementDateTime": "2023-06-24"
+      }
+    }
+  ]
+}

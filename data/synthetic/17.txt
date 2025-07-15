@@ -1,0 +1,55 @@
+Klinik für Innere Medizin
+Kastanienallee 34
+24590 Hohenwestedt
+Telefon: 04871 79 63 48
+Fax: 04871 79 63 48
+E-Mail: innere@kh-hohenstadt.de
+
+Entlassbrief
+
+Patientendaten:
+Name: Jürgen Baier
+Geburtsdatum: 01.01.1970
+Adresse: Musterstraße 456, 54321 Musterstadt
+Versicherungsnummer: 1234567890
+
+Aufnahmedatum: 15.06.2023
+Entlassungsdatum: 28.06.2023
+
+Sehr geehrte Damen und Herren,
+
+hiermit möchten wir Ihnen den aktuellen Gesundheitszustand von Herrn Jürgen Baier, geboren am 24.12.1972, mitteilen. Herr Baier wurde am 15.06.2023 in unsere Klinik für Innere Medizin eingewiesen und am 28.06.2023 wieder entlassen.
+
+Diagnosen bei Aufnahme:
+
+    Akute Bronchitis (ICD-Code: J20.0)
+    Hypertonie Grad II (ICD-Code: I10)
+    Diabetes mellitus Typ 2 (ICD-Code: E11.9)
+
+Medikation bei Entlassung:
+
+    Amoxicillin 500 mg (1-0-1) - Antibiotikum gegen die akute Bronchitis
+    Ibuprofen 400 mg (0-1-0) - Schmerzlinderung und Fiebersenkung
+    Salbutamol Spray (nach Bedarf) - Bronchodilatator zur Erweiterung der Atemwege
+    Amlodipin 5 mg (1-0-0) - zur Behandlung der Hypertonie
+    Metformin 850 mg (1-0-1) - zur Regulation des Blutzuckers bei Diabetes mellitus Typ 2
+
+Entlassungsbericht:
+Herr Baier hat während seines Aufenthalts eine angemessene Besserung seiner akuten Bronchitis gezeigt. Die Infektion scheint unter Kontrolle zu sein, und die Atemwege haben sich deutlich verbessert. Die Hypertonie und Diabetes wurden ebenfalls stabilisiert, und die entsprechende Medikation wurde angepasst, um eine optimale Behandlung sicherzustellen. Herr Baier wurde ausführlich über seine Diagnosen, die Medikation und notwendige Verhaltensänderungen informiert.
+
+Empfehlungen für die Zeit nach der Entlassung:
+
+    Bitte halten Sie sich an die verschriebene Medikation und beachten Sie die angegebenen Dosierungen.
+    Führen Sie eine gesunde Lebensweise mit ausgewogener Ernährung und regelmäßiger Bewegung ein.
+    Kontrollieren Sie regelmäßig Ihren Blutdruck und den Blutzuckerspiegel.
+    Rauchen Sie nicht und meiden Sie Passivrauchen, um Ihre Atemwege zu schützen.
+    Bei neuen oder sich verschlimmernden Symptomen wenden Sie sich umgehend an Ihren Hausarzt oder die Klinik für Innere Medizin.
+
+Bitte vereinbaren Sie innerhalb der nächsten zwei Wochen einen Termin bei Ihrem Hausarzt zur weiteren Nachbehandlung und Kontrolle Ihrer Diagnosen.
+
+Wir wünschen Herrn Baier eine schnelle Genesung und eine gute Gesundheit.
+
+Mit freundlichen Grüßen,
+
+Dr. med. Lucas Dresner
+Facharzt für Innere Medizin

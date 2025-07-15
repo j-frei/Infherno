@@ -1,0 +1,49 @@
+Patienteninformationen:
+Name: Matthias Weissmuller
+Geburtsdatum: 30. Juni, 1964
+Adresse: Eichendorffstr. 86, 88045 Friedrichshafen Schnetzenhausen
+
+Sehr geehrter Herr Koch,
+
+ich möchte Ihnen hiermit den Entlassungsbericht für unseren Patienten Matthias Weissmuller vorlegen, der sich in den letzten Tagen in unserer Klinik in Behandlung befand.
+
+Eintrittsdatum: 17.04.22
+Entlassungsdatum: 28.04.22
+Behandlungsdauer: 11 Tage
+
+Diagnosen:
+
+    Koronare Herzkrankheit (ICD-Code: I25.9)
+    Diabetes mellitus Typ 2 (ICD-Code: E11.9)
+    Hypertonie Grad II (ICD-Code: I10)
+    Adipositas (ICD-Code: E66.9)
+
+Verlauf der Behandlung:
+Herr Weissmuller wurde am 17.04.22 in unsere Klinik aufgrund von Brustschmerzen und Atemnot aufgenommen. Die Untersuchungen zeigten eine koronare Herzkrankheit sowie einen Diabetes mellitus Typ 2. Während des stationären Aufenthalts erhielt der Patient eine medikamentöse Therapie zur Stabilisierung seiner Herzfunktion und zur Blutzuckereinstellung.
+
+Zusätzlich zur pharmakologischen Behandlung wurde eine diätetische Beratung durch unsere Ernährungsfachkräfte durchgeführt, um die Adipositas zu behandeln und das Gewicht von Herrn Weissmuller zu reduzieren. Die Patientenschulung zur richtigen Selbstmessung des Blutzuckerspiegels und zur Vermeidung von Komplikationen durch Diabetes wurde ebenfalls erfolgreich durchgeführt.
+
+Herr Weissmuller zeigte während seines Aufenthalts eine positive Reaktion auf die Therapie, und sein Zustand stabilisierte sich allmählich. Die Brustschmerzen und Atemnot verbesserten sich deutlich, und die Laborergebnisse zeigten eine bessere Kontrolle des Blutzuckerspiegels.
+
+Entlassungsplan:
+Herr Weissmuller wurde heute in einen guten Allgemeinzustand entlassen. Folgende Maßnahmen und Empfehlungen wurden für die weitere Behandlung festgelegt:
+
+    Medikamentöse Therapie: Herr Weissmuller wurde mit den folgenden Medikamenten entlassen und sollte diese gemäß ärztlicher Verordnung einnehmen:
+        Metformin
+        Sulfonylharnstoffe
+
+    Diätetische Empfehlungen: Herr Weissmuller sollte sich weiterhin an die von den Ernährungsfachkräften empfohlenen Ernährungsgewohnheiten halten, um sein Gewicht zu reduzieren und den Blutzuckerspiegel unter Kontrolle zu halten.
+
+    Blutzuckerselbstmessung: Der Patient wurde im Umgang mit dem Blutzuckermessgerät geschult und sollte den Blutzuckerspiegel regelmäßig zu Hause überwachen.
+
+    Körperliche Aktivität: Regelmäßige körperliche Aktivität wird empfohlen, um die Herzgesundheit und den allgemeinen Gesundheitszustand zu fördern. Eine ärztliche Rücksprache vor Beginn eines Trainingsprogramms ist ratsam.
+
+    Folgetermine: Herr Weissmuller sollte die vereinbarten Folgetermine bei seinem Hausarzt und den Fachärzten einhalten, um den Behandlungsverlauf zu überwachen und eventuelle Anpassungen an der Therapie vorzunehmen.
+
+Wir sind zuversichtlich, dass Herr Weissmuller mit der angemessenen Nachsorge und der Umsetzung der empfohlenen Maßnahmen eine positive Prognose hat.
+
+Vielen Dank für die Zusammenarbeit und die Betreuung von Herrn Weissmuller während seines Aufenthalts in unserer Klinik. Bitte zögern Sie nicht, uns bei Fragen oder Anliegen zu kontaktieren.
+
+Mit freundlichen Grüßen,
+
+Dr. Andrea Maurer

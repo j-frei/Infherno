@@ -1,0 +1,148 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "Patient/pat-001",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-001",
+        "name": [
+          {
+            "use": "official",
+            "family": "Traugott",
+            "given": [
+              "Ute"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1978-05-14"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-001",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-001",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "12367411000119102",
+              "display": "Osteoarthritis of left patellofemoral joint"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "735263003",
+                "display": "Entire left knee joint"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/pat-001"
+        },
+        "onsetDateTime": "2023-05-14"
+      }
+    },
+    {
+      "fullUrl": "Condition/cond-002",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-002",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system":
+"http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "445247000",
+              "display": "Inflammation of bursa of patella"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "735263003",
+                "display": "Entire left knee joint"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/pat-001"
+        }
+      }
+    },
+    {
+      "fullUrl": "MedicationStatement/med-stat-001",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-stat-001",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372665008",
+              "display": "Non-steroidal anti-inflammatory agent"
+            }
+          ],
+          "text": "Entzündungshemmende Medikamente"
+        },
+        "subject": {
+          "reference": "Patient/pat-001"
+        },
+        "effectiveDateTime": "2023-06-25",
+        "dosage": [
+          {
+            "text": "Entzündungshemmende Medikamente wurden verordnet, um die Entzündungsreaktion zu reduzieren und die Schmerzen zu lindern."
+          }
+        ]
+      }
+    }
+  ]
+}

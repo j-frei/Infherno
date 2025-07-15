@@ -1,0 +1,44 @@
+Patient: Jan Hofmann
+Geburtsdatum: 11. Dezember 1966
+Aufnahmedatum: 10. Juni 2023
+Entlassungsdatum: 28. Juni 2023
+
+Liebes medizinisches Team,
+
+hiermit möchte ich Sie über den aktuellen Gesundheitszustand unseres Patienten Jan Hofmann informieren, der in Ihrer Einrichtung behandelt wurde. Herr Hofmann wurde am 10. Juni 2023 wegen akuter Atemnot und Brustschmerzen in unsere Klinik eingeliefert.
+
+Diagnosen bei Aufnahme:
+
+    Akutes koronares Syndrom
+    Unstabile Angina pectoris
+
+Behandlungsverlauf:
+Nach seiner Aufnahme in die Klinik wurde Herr Hofmann sofort in die Notaufnahme gebracht, wo ein EKG durchgeführt wurde, das Anomalien im ST-Segment zeigte. Daraufhin erfolgte umgehend eine Herzkatheteruntersuchung, bei der eine signifikante Verengung der rechten Koronararterie festgestellt wurde. Es wurde eine perkutane koronare Intervention (PCI) mit Stentplatzierung durchgeführt, um den Blutfluss wiederherzustellen.
+
+Medikation während des Klinikaufenthalts:
+
+    Acetylsalicylsäure 100mg, 1x täglich
+    Clopidogrel 75mg, 1x täglich
+    Metoprolol 50mg, 2x täglich
+    Ramipril 5mg, 1x täglich
+    Atorvastatin 40mg, 1x täglich
+
+Verlauf und Entlassungsgrund:
+Während seines Aufenthalts hat sich der Gesundheitszustand von Jan Hofmann deutlich verbessert. Die Atemnot und Brustschmerzen sind zurückgegangen, und er zeigt eine gute klinische Stabilität. Die Laborergebnisse zeigen eine Normalisierung der Entzündungswerte und eine verbesserte Lipidkontrolle.
+
+Entlassungsanweisungen:
+
+    Herr Hofmann sollte die verordnete Medikation gemäß den Angaben weiter einnehmen.
+    Er sollte sich regelmäßig ärztlichen Kontrolluntersuchungen unterziehen und die empfohlenen diagnostischen Tests durchführen lassen.
+    Eine Anpassung der Medikation sollte nur nach Rücksprache mit seinem behandelnden Kardiologen erfolgen.
+    Herrn Hofmann wird dringend empfohlen, seinen Lebensstil zu ändern, indem er eine herzgesunde Ernährung einhält, Rauchen und Alkoholkonsum vermeidet und regelmäßige Bewegung in seinen Alltag integriert.
+    Bei erneut auftretenden Symptomen wie Brustschmerzen oder Atemnot sollte er umgehend ärztliche Hilfe in Anspruch nehmen.
+
+Bitte stellen Sie sicher, dass der Patient und seine Familie über die Entlassungsanweisungen und die Bedeutung der Medikation vollständig aufgeklärt werden, um einen erfolgreichen Genesungsprozess zu gewährleisten.
+
+Vielen Dank für Ihre hervorragende Betreuung während seines Aufenthalts.
+
+Mit freundlichen Grüßen,
+
+Dr. med. Karolin Nacht
+Kardiologin, Universitätsklinkum Leipzig
