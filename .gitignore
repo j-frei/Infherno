@@ -187,3 +187,6 @@ nlaugmenter_package
 
 SnomedCT_*
 assets/overview.png
+
+logs/
+infherno/logs/
