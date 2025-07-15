@@ -203,7 +203,6 @@ with gr.Blocks() as demo:
 
             chatbot1 = gr.Chatbot(
                 label="FHIR Agent",
-                type="tuples",
                 height=600,
                 render_markdown=True,
                 show_copy_button=True
@@ -230,7 +229,6 @@ with gr.Blocks() as demo:
         with gr.Tab("Log Replay"):
             chatbot2 = gr.Chatbot(
                 label="Log Replay",
-                type="tuples",
                 height=600,
                 render_markdown=True
             )
