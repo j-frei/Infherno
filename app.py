@@ -218,8 +218,20 @@ with gr.Blocks() as demo:
                     snowstorm_url
                 ],
                 examples=[
-                    [load_dummy()["text"], None, None, None, None],
-                    [load_dummy_en()["text"], None, None, None, None],
+                    [
+                        load_dummy()["text"],
+                        "TransformersModel",  # Default model_class
+                        "HuggingFaceTB/SmolLM2-360M-Instruct",  # Default model_id
+                        None,  # Default api_key (empty)
+                        "https://browser.ihtsdotools.org/snowstorm/snomed-ct"  # Default snowstorm_url
+                    ],
+                    [
+                        load_dummy_en()["text"],
+                        "TransformersModel",
+                        "HuggingFaceTB/SmolLM2-360M-Instruct",
+                        None,
+                        "https://browser.ihtsdotools.org/snowstorm/snomed-ct"
+                    ],
                 ],
                 title="Agent Chat",
                 description="Chat with the agent. Returns a FHIR resource.",
