@@ -219,8 +219,8 @@ with gr.Blocks() as demo:
                     snowstorm_url
                 ],
                 examples=[
-                    load_dummy()["text"],
-                    load_dummy_en()["text"],
+                    [load_dummy()["text"], None, None, None, None],
+                    [load_dummy_en()["text"], None, None, None, None],
                 ],
                 title="Agent Chat",
                 description="Chat with the agent. Returns a FHIR resource.",
