@@ -186,3 +186,6 @@ nlaugmenter
 nlaugmenter_package
 
 SnomedCT_*
+
+logs/
+infherno/logs/

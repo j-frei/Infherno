@@ -1,14 +1,3 @@
----  
-title: Infherno  
-emoji: 🔥  
-colorFrom: yellow  
-colorTo: red  
-sdk: gradio  
-sdk_version: 5.0.1  
-app_file: app.py  
-pinned: false  
----
-
 # 🔥 Infherno
 
 Infherno is an end-to-end agent that transforms unstructured clinical notes into structured FHIR (Fast Healthcare Interoperability Resources) format. It automates the parsing and mapping of free-text medical documentation into standardized FHIR resources, enabling interoperability across healthcare systems.
