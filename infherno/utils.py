@@ -55,35 +55,24 @@ def setup_logging(
     log_filename = f"{log_dir}/{safe_model_name}_{data_name}_{data_instance_id}_{timestamp}.log"
 
     # Configure root logger
-    logger = logging.getLogger()
+    logger = logging.getLogger(log_filename)
     logger.setLevel(logging.INFO)
 
-    # Ensure smolagents logs propagate and are at INFO level
-    for name in logging.root.manager.loggerDict:
-        if "smol" in name.lower():
-            logging.getLogger(name).setLevel(logging.INFO)
-            logging.getLogger(name).propagate = True
+    logger.propagate = False
 
-    # Clear any existing handlers
-    for handler in logger.handlers[:]:
-        logger.removeHandler(handler)
+    if logger.hasHandlers():
+        logger.handlers.clear()
 
     # Create file handler
     file_handler = logging.FileHandler(log_filename)
     file_handler.setLevel(logging.INFO)
 
-    # Create console handler
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO)
-
     # Create formatter
     formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
     file_handler.setFormatter(formatter)
-    console_handler.setFormatter(formatter)
 
     # Add handlers to logger
     logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
 
     # Log config at the beginning of the file
     logger.info("")

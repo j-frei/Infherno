@@ -1,3 +1,14 @@
+---  
+title: Infherno  
+emoji: 🔥  
+colorFrom: yellow  
+colorTo: red  
+sdk: gradio  
+sdk_version: 5.0.1  
+app_file: app.py  
+pinned: false  
+---
+
 # 🔥 Infherno
 
 Infherno is an end-to-end agent that transforms unstructured clinical notes into structured FHIR (Fast Healthcare Interoperability Resources) format. It automates the parsing and mapping of free-text medical documentation into standardized FHIR resources, enabling interoperability across healthcare systems.
@@ -12,8 +23,8 @@ Infherno also provides ontology support for SNOMED CT and HL7 ValueSets using Re
 
 ## Live Demo
 
-Our Gradio demo will be accessible via [Hugging Face Spaces](https://huggingface.co/spaces/nfel/infherno) very shortly.
-However, due to resource and context limitations with open-source models, we recommend launching Infherno locally with a proprietary model via API.
+Our Gradio demo is accessible via [Hugging Face Spaces](https://huggingface.co/spaces/nfel/infherno).  
+Due to resource and context limitations with open-source models, we recommend launching Infherno locally with a proprietary model via API.
 
 
 ## Run Infherno locally

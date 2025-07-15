@@ -53,7 +53,7 @@ for instance_id, instance in enumerate(tqdm(data, total=len(data), desc=f"\nInst
     logger, log_file = setup_logging(config)
     logger.info(f"Analysis results will be saved to: {log_file}")
 
-    agent_logger = FHIRAgentLogger(logger, level=2)
+    agent_logger = FHIRAgentLogger(logger, level=1)
 
     agent = FHIRAgent(
         tools=[
@@ -72,5 +72,9 @@ for instance_id, instance in enumerate(tqdm(data, total=len(data), desc=f"\nInst
     )
 
     instance_text = instance["text"]
-    result = agent.run(f"The input text is as follows:\n```\n{instance_text}\n```")
+    result = agent.run(
+        f"The input text is as follows:\n```\n{instance_text}\n```",
+        max_steps=config.MAX_STEPS,
+        callback=lambda log_message: tqdm.write(log_message)
+    )
     time.sleep(config.API_SLEEP_SECONDS)

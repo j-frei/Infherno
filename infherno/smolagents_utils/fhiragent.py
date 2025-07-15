@@ -1,4 +1,3 @@
-import gradio as gr
 import hashlib
 import httpx
 import json
@@ -8,6 +7,7 @@ import time
 import types
 import yaml
 from collections import defaultdict
+from rich.markdown import Markdown
 from rich.panel import Panel
 from rich.rule import Rule
 from smolagents import AgentLogger
@@ -15,7 +15,6 @@ from smolagents.agents import (
     MultiStepAgent,
     Tool,
     ChatMessage,
-    PromptTemplates,
     BASE_BUILTIN_MODULES,
     PythonExecutor,
     LocalPythonExecutor,
@@ -23,9 +22,8 @@ from smolagents.agents import (
     populate_template,
     DockerExecutor,
     ActionStep,
-    AgentGenerationError,
+    TaskStep,
     LogLevel,
-    AgentExecutionError,
     AgentParsingError,
     ToolCall,
     fix_final_answer_code,
@@ -35,8 +33,12 @@ from smolagents.agents import (
     Group,
     Text,
 )
+from smolagents.local_python_executor import BASE_PYTHON_TOOLS
 from typing import List, Callable, Dict, Optional, Any, Union
-from infherno.tools.fhircodes.terminology_bindings import getTerminologyBindingData, loadTerminologyBindings
+
+from infherno.smolagents_utils.smolcodesearch import search_for_code_or_coding
+from infherno.tools.fhircodes.terminology_bindings import loadTerminologyBindings
+
 
 class FHIRAgentLogger(AgentLogger):
     def __init__(self, root_logger, **kwargs):
@@ -52,15 +54,8 @@ class FHIRAgentLogger(AgentLogger):
                 expanded.append(arg)
         return expanded
 
-    def log(self, *args, level: str | LogLevel = LogLevel.INFO, **kwargs) -> None:
-        """Logs a message to the console.
-
-        Args:
-            level (LogLevel, optional): Defaults to LogLevel.INFO.
-        """
-        if isinstance(level, str):
-            level = LogLevel[level.upper()]
-
+    def _format_log_entry(self, *args, **kwargs) -> str:
+        """Formats rich printable objects into a plain text string."""
         safe_args = self._expand_args(args)
 
         # Capture the rich renderable as plain text and send to logger
@@ -74,16 +69,95 @@ class FHIRAgentLogger(AgentLogger):
         # Heuristic: add newline before "block-like" renderables
         if args and isinstance(args[0], (Panel, Rule, Group)):
             text_output = "\n" + text_output
+        return text_output.strip()
 
-        # Log the rendered string
-        if level == LogLevel.DEBUG:
-            self.root_logger.debug(text_output)
-        elif level == LogLevel.INFO:
-            self.root_logger.info(text_output)
-        elif level == LogLevel.ERROR:
-            self.root_logger.error(text_output)
+    def log(self, *args, level: str | LogLevel = LogLevel.INFO, **kwargs) -> str:
+        """Logs a message to the file and returns the formatted string for streaming."""
+        if isinstance(level, str):
+            level = LogLevel[level.upper()]
 
-        gr.ChatMessage(text_output)
+        text_output = self._format_log_entry(*args, **kwargs)
+
+        # Log the rendered string to the file
+        if self.level <= level:
+            log_method = getattr(self.root_logger, level.name.lower(), self.root_logger.info)
+            # Split the formatted output by newlines and log each line
+            for line in text_output.split('\n'):
+                log_method(line)
+
+        # Return the formatted string so it can be yielded
+        return text_output
+
+    def log_code(self, content: str, title: str = "Code", level: LogLevel = LogLevel.INFO) -> str:
+        """Logs a code block and returns the formatted string."""
+        from rich.syntax import Syntax
+        syntax = Syntax(content, "python", theme="github-dark", line_numbers=True)
+        panel = Panel(syntax, title=title, expand=False)
+        return self.log(panel, level=level)
+
+    def log_markdown(self, content: str, title: str = "Markdown", level: LogLevel = LogLevel.INFO) -> str:
+        """Logs a markdown block and returns the formatted string."""
+        md = Markdown(content)
+        panel = Panel(md, title=title, expand=False)
+        return self.log(panel, level=level)
+
+
+class FixedLocalPythonExecutor(LocalPythonExecutor):
+    """
+    This class inherits from LocalPythonExecutor and overrides the send_tools
+    method to correctly handle cases where BASE_PYTHON_TOOLS is a list.
+    """
+
+    def send_tools(self, custom_tools_dict: dict[str, Tool]):
+        merged_tools = {}
+
+        # Safely add the base tools, whether they are a dict or a list
+        if isinstance(BASE_PYTHON_TOOLS, dict):
+            merged_tools.update(BASE_PYTHON_TOOLS)
+        elif isinstance(BASE_PYTHON_TOOLS, list):
+            for tool in BASE_PYTHON_TOOLS:
+                if hasattr(tool, 'name'):
+                    merged_tools[tool.name] = tool
+
+        # Safely add your custom tools, which are already a dict
+        if isinstance(custom_tools_dict, dict):
+            merged_tools.update(custom_tools_dict)
+
+        self.static_tools = merged_tools
+
+
+class SnomedTool(Tool):
+    """A dedicated Tool subclass for the SNOMED code search functionality."""
+
+    def __init__(self):
+        super().__init__()  # Call the parent constructor
+
+        # --- Define all required class attributes ---
+        self.name = "search_for_code_or_coding"
+        self.description = "Use this tool to search for SNOMED CT codes. Input is a string search query."
+        self.output_type = "string"  # Define the output type
+
+        # The 'inputs' attribute must be a DICTIONARY, not a list.
+        self.inputs = {
+            "fhir_attribute_path": {
+                "type": "string",
+                "description": "The FHIR attribute path for the code search, e.g., 'Condition.code'."
+            },
+            "search_term": {
+                "type": "string",
+                "description": "The clinical term to search for, e.g., 'abdominal pain'."
+            }
+        }
+
+    # Implement the 'forward' method with a signature matching the keys in 'inputs'.
+    def forward(self, fhir_attribute_path: str, search_term: str):
+        """
+        This method is called by the executor and will run your actual function.
+        """
+        return search_for_code_or_coding(
+            fhir_attribute_path=fhir_attribute_path,
+            search_term=search_term
+        )
 
 
 '''
@@ -111,19 +185,19 @@ class FHIRAgent(MultiStepAgent):
     """
 
     def __init__(
-        self,
-        tools: List[Tool],
-        model: Callable[[List[Dict[str, str]]], ChatMessage],
-        #prompt_templates: Optional[PromptTemplates] = None,
-        grammar: Optional[Dict[str, str]] = None,
-        #additional_authorized_imports: Optional[List[str]] = None,
-        planning_interval: Optional[int] = None,
-        executor_type: str | None = "local",
-        executor_kwargs: Optional[Dict[str, Any]] = None,
-        max_print_outputs_length: Optional[int] = None,
-        logger: FHIRAgentLogger = None,
-        fhir_config = None,
-        **kwargs,
+            self,
+            tools: List[Tool],
+            model: Callable[[List[Dict[str, str]]], ChatMessage],
+            # prompt_templates: Optional[PromptTemplates] = None,
+            grammar: Optional[Dict[str, str]] = None,
+            # additional_authorized_imports: Optional[List[str]] = None,
+            planning_interval: Optional[int] = None,
+            executor_type: str | None = "local",
+            executor_kwargs: Optional[Dict[str, Any]] = None,
+            max_print_outputs_length: Optional[int] = None,
+            logger: FHIRAgentLogger = None,
+            fhir_config=None,
+            **kwargs,
     ):
         self.additional_authorized_imports = ["fhir.resources", "datetime", "time", "dateutil"]
         self.authorized_imports = sorted(set(BASE_BUILTIN_MODULES) | set(self.additional_authorized_imports))
@@ -141,16 +215,12 @@ class FHIRAgent(MultiStepAgent):
             planning_interval=planning_interval,
             **kwargs,
         )
-        if "*" in self.additional_authorized_imports:
-            self.logger.log(
-                "Caution: you set an authorization for all imports, meaning your agent can decide to import "
-                "any package it deems necessary. This might raise issues if the package is not installed in your "
-                "environment.",
-                0,
-            )
         self.executor_type = executor_type or "local"
         self.executor_kwargs = executor_kwargs or {}
         self.python_executor = self.create_python_executor()
+        if self.tools:
+            self.python_executor.send_tools(self.tools)
+
         self.logger = logger
         self._seen_message_hashes = set()
 
@@ -164,7 +234,7 @@ class FHIRAgent(MultiStepAgent):
                 else:
                     return DockerExecutor(self.additional_authorized_imports, self.logger, **self.executor_kwargs)
             case "local":
-                return LocalPythonExecutor(
+                return FixedLocalPythonExecutor(
                     self.additional_authorized_imports,
                     max_print_outputs_length=self.max_print_outputs_length,
                 )
@@ -173,7 +243,8 @@ class FHIRAgent(MultiStepAgent):
 
     def initialize_system_prompt(self) -> str:
         # Get the FHIR valuesets from the fhir_config, or use default ones
-        root_fhir_resources = getattr(self.fhir_config, "ROOT_FHIR_RESOURCES", ["Patient", "Condition", "MedicationStatement"])
+        root_fhir_resources = getattr(self.fhir_config, "ROOT_FHIR_RESOURCES",
+                                      ["Patient", "Condition", "MedicationStatement"])
         terminology_bindings = loadTerminologyBindings(root_fhir_resources, "R4")
 
         system_prompt = populate_template(
@@ -181,11 +252,7 @@ class FHIRAgent(MultiStepAgent):
             variables={
                 "tools": self.tools,
                 "managed_agents": self.managed_agents,
-                "authorized_imports": (
-                    "You can import from any package you want."
-                    if "*" in self.authorized_imports
-                    else str(self.authorized_imports)
-                ),
+                "authorized_imports": str(self.authorized_imports),
                 "fhir_config": {
                     "ROOT_FHIR_RESOURCES": root_fhir_resources,
                     "SUPPORTED_QUERY_PATHS": terminology_bindings.keys()
@@ -207,11 +274,16 @@ class FHIRAgent(MultiStepAgent):
                 new_messages.append(msg)
         return new_messages
 
-    def step(self, memory_step: ActionStep) -> Union[None, Any]:
+    def step(self, memory_step: ActionStep, callback: Optional[Callable[[str], None]] = None) -> Union[None, Any]:
         """
         Perform one step in the ReAct framework: the agent thinks, acts, and observes the result.
         Returns None if the step is not final.
         """
+
+        def _callback_if_exists(log_message: str):
+            if callback:
+                callback(log_message)
+
         memory_messages = self.write_memory_to_messages()
 
         self.input_messages = memory_messages.copy()
@@ -229,7 +301,7 @@ class FHIRAgent(MultiStepAgent):
             for role, texts in messages_by_role.items():
                 block = "\n".join(texts)
                 panel = Panel(block, title=role, expand=False)
-                self.logger.log(panel)
+                _callback_if_exists(self.logger.log(panel))
 
         # Add new step in logs
         memory_step.model_input_messages = memory_messages.copy()
@@ -255,30 +327,32 @@ class FHIRAgent(MultiStepAgent):
                 memory_step.model_output = model_output
                 break
             except (httpx.ConnectError, litellm.APIConnectionError) as e:
-                print(f"Attempt {attempt}: Connection error: {e}")
+                self.logger.log(f"Attempt {attempt}: Connection error: {e}")
                 if attempt < self.fhir_config.MAX_API_RETRIES:
-                    print(f"Sleeping {self.fhir_config.API_SLEEP_SECONDS} seconds before retry...")
+                    self.logger.log(f"Sleeping {self.fhir_config.API_SLEEP_SECONDS} seconds before retry...")
                     time.sleep(self.fhir_config.API_SLEEP_SECONDS)
                 else:
-                    print("Max retries reached. Giving up.")
+                    self.logger.log("Max retries reached. Giving up.")
 
             except Exception as e:
-                self.logger.log(f"Error in generating model output:\n{e}")
+                err_msg = self.logger.log(f"Error in generating model output:\n{e}", level=LogLevel.ERROR)
+                _callback_if_exists(err_msg)
 
-        if model_output:
-            self.logger.log_markdown(
-                content=model_output,
-                title="Output message of the LLM:",
-                level=LogLevel.DEBUG,
-            )
-        else:
+        # Gracefully handle cases where the model returns an empty or None response.
+        if not model_output:
+            empty_response_msg = "The model returned an empty response. The agent will try again in the next step."
+            _callback_if_exists(self.logger.log(empty_response_msg, level=LogLevel.ERROR))
+            # Return None to allow the agent's run loop to continue to the next step.
             return None
+
+        _callback_if_exists(self.logger.log_markdown(content=model_output, title="LLM Output", level=LogLevel.DEBUG))
 
         # Parse
         try:
             code_action = fix_final_answer_code(parse_code_blobs(model_output))
         except Exception as e:
             error_msg = f"Error in code parsing:\n{e}\nMake sure to provide correct code blobs."
+            _callback_if_exists(self.logger.log(error_msg, level=LogLevel.ERROR))
             raise AgentParsingError(error_msg, self.logger)
 
         memory_step.tool_calls = [
@@ -288,67 +362,62 @@ class FHIRAgent(MultiStepAgent):
                 id=f"call_{len(self.memory.steps)}",
             )
         ]
+        _callback_if_exists(self.logger.log_code(title="Executing Code", content=code_action, level=LogLevel.INFO))
 
         # Execute
-        self.logger.log_code(title="Executing parsed code:", content=code_action, level=LogLevel.INFO)
-        is_final_answer = False
         try:
             output, execution_logs, is_final_answer = self.python_executor(code_action)
-            execution_outputs_console = []
-            if len(execution_logs) > 0:
-                execution_outputs_console += [
-                    Text("Execution logs:", style="bold"),
-                    Text(execution_logs),
-                ]
-            observation = "Execution logs:\n" + execution_logs
+            observation = ""
+            if execution_logs:
+                log_group = Group(Text("Execution Logs:", style="bold"), Text(execution_logs))
+                _callback_if_exists(self.logger.log(log_group))
+                observation = "Execution logs:\n" + execution_logs
         except Exception as e:
-            if hasattr(self.python_executor, "state") and "_print_outputs" in self.python_executor.state:
-                execution_logs = str(self.python_executor.state["_print_outputs"])
-                if len(execution_logs) > 0:
-                    execution_outputs_console = [
-                        Text("Execution logs:", style="bold"),
-                        Text(execution_logs),
-                    ]
-                    memory_step.observations = "Execution logs:\n" + execution_logs
-                    self.logger.log(Group(*execution_outputs_console), level=LogLevel.INFO)
-            error_msg = str(e)
-            if "Import of " in error_msg and " is not allowed" in error_msg:
-                self.logger.log(
-                    "[bold red]Warning to user: Code execution failed due to an unauthorized import - "
-                    "Consider passing said import under `additional_authorized_imports` "
-                    "when initializing your CodeAgent.",
-                    level=LogLevel.INFO,
-                )
-            raise AgentExecutionError(error_msg, self.logger)
+            # Instead of raising an exception, format the error as an observation for the LLM.
+            error_message = str(e)
+            observation = f"Tool execution failed with an error: {error_message}"
+
+            # Log the error and send it to the UI via callback.
+            _callback_if_exists(self.logger.log(observation, level=LogLevel.ERROR))
+
+            # Set the step's observation to the error message so the agent can see its mistake.
+            memory_step.observations = observation
+
+            # Return None to allow the agent to continue to the next step.
+            return None
 
         truncated_output = truncate_content(str(output))
         observation += "Last output from code snippet:\n" + truncated_output
         memory_step.observations = observation
 
-        execution_outputs_console += [
-            Text(
-                f"{('Out - Final answer' if is_final_answer else 'Out')}: {truncated_output}",
-                style=(f"bold {YELLOW_HEX}" if is_final_answer else ""),
-            ),
-        ]
-
-        current_step = self.memory.steps[-1]
-        try:
-            execution_outputs_console += [
-                Text(
-                    f"Step {current_step.step_number} | "
-                    f"Duration: {current_step.duration:.2f} seconds | "
-                    f"Input tokens: {current_step.model_output_message.raw.model_extra['usage'].prompt_tokens} | "
-                    f"Output tokens: {current_step.model_output_message.raw.model_extra['usage'].completion_tokens}",
-                    style="bold"
-                )
-            ]
-        except AttributeError:
-            pass
-        self.logger.log(Group(*execution_outputs_console), level=LogLevel.INFO)
+        final_output_text = Text(
+            f"{('Out - Final answer' if is_final_answer else 'Out')}: {truncated_output}",
+            style=(f"bold {YELLOW_HEX}" if is_final_answer else ""),
+        )
+        _callback_if_exists(self.logger.log(Group(final_output_text), level=LogLevel.INFO))
         memory_step.action_output = output
 
         return output if is_final_answer else None
+
+    def run(self, task: str, max_steps: int = 20, callback: Optional[Callable[[str], None]] = None) -> Any:
+        """
+        Override of smolagents default `run` method.
+        Runs the agent and yields intermediate steps.
+        """
+        self.memory.steps.append(TaskStep(task=task))
+        if callback:
+            callback(self.logger.log(Panel(task, title="Input", expand=False)))
+
+        for i in range(max_steps):
+            action_step = ActionStep(step_number=i + 1)
+            self.memory.steps.append(action_step)
+
+            final_answer = self.step(self.memory.steps[-1], callback=callback)
+
+            if final_answer is not None:
+                return final_answer
+
+        return "Max steps reached"
 
     def to_dict(self) -> dict[str, Any]:
         """Convert the agent to a dictionary representation.
