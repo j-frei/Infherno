@@ -52,3 +52,23 @@ PYTHONPATH=. python3 infherno/smol_fhiragent.py
 # Check the results in the logs:
 cat logs/*.log
 ```
+
+---
+
+# Citing Infherno
+
+**Infherno: End-to-end Agent-based FHIR Resource Synthesis from Free-form Clinical Notes**  
+Johann Frei, Nils Feldhus, Lisa Raithel, Roland Roller, Alexander Meyer, Frank Kramer  
+arXiv URL: https://arxiv.org/abs/2507.12261
+
+```
+@article{frei-2025-infherno,
+    title = {Infherno: End-to-end Agent-based FHIR Resource Synthesis from Free-form Clinical Notes}, 
+    author = {Johann Frei and Nils Feldhus and Lisa Raithel and Roland Roller and Alexander Meyer and Frank Kramer},
+    year = {2025},
+    volume = {abs/2507.12261},
+    journal = {arXiv},
+    primaryClass = {cs.CL},
+    url = {https://arxiv.org/abs/2507.12261}, 
+}
+```
