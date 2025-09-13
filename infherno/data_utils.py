@@ -1,3 +1,5 @@
+import glob
+import os
 import re
 from datasets import Dataset, load_dataset
 
@@ -93,9 +95,16 @@ def load_n2c2(data_path: str = f"./") -> Dataset:
 
 
 def load_synthetic(data_path: str = f"./") -> Dataset:
+    file_pattern = data_path + 'data/synthetic/*.txt'
+    file_paths = sorted(glob.glob(file_pattern))
+
     raw_dataset = load_dataset(
         "text",
-        data_files={"train": data_path + 'data/synthetic/*.txt'},
+        data_files={"train": file_paths},
         sample_by="document",
     )["train"]
+
+    filenames = [os.path.basename(path) for path in file_paths]
+    raw_dataset = raw_dataset.add_column("filename", filenames)
+
     return raw_dataset
