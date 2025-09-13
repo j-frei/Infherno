@@ -21,10 +21,15 @@ def load_model(model_class, model_id, context_length, max_new_tokens, device_map
                 api_key=api_key,
                 api_base=os.environ.get("OLLAMA_ENDPOINT", "http://localhost:11434"),
             )
+        elif "anthropic/" in model_id or "deepseek/" in model_id:
+            model = LiteLLMModel(
+                # model_id="anthropic/claude-3-5-sonnet-20240620",
+                model_id=model_id,
+                api_key=api_key,
+            )
         else:
             model = LiteLLMModel(
                 # model_id="gpt-4o",
-                # model_id="anthropic/claude-3-5-sonnet-20240620",
                 model_id=model_id,
                 num_ctx=context_length,
                 api_key=api_key,

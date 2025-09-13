@@ -55,7 +55,7 @@ for instance_id, instance in enumerate(tqdm(data, total=len(data), desc=f"\nInst
     else:
         config.INSTANCE_ID = str(start + instance_id + 1).zfill(2)
 
-    if any(f"{config.TARGET_DATA}_{instance_id}" in filename for filename in os.listdir(LOGS_PATH)):
+    if any(f"{config.TARGET_DATA}_{config.INSTANCE_ID}" in filename for filename in os.listdir(LOGS_PATH)):
         # Skip already processed instances
         continue
 
