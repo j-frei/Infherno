@@ -38,7 +38,12 @@ if len(data) > 1:
         data = data.shuffle(seed=42)
 
     if config.TAKE_SUBSAMPLE:
-        data = data.select(range(config.SUBSAMPLE_SIZE))
+        if isinstance(config.SUBSAMPLE_SIZE, str) and ',' in config.SUBSAMPLE_SIZE:
+            start, stop = [int(i.strip()) for i in config.SUBSAMPLE_SIZE.split(',')]
+            indices = range(start, stop)
+        else:
+            indices = range(int(config.SUBSAMPLE_SIZE))
+        data = data.select(indices)
 
 if config.APPLY_PARTITIONING:
     data = apply_partitioning(data)
