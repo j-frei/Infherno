@@ -15,6 +15,24 @@ from infherno.utils import setup_logging
 
 SNOMED_INSTANCE = GenericSnomedInstance(determine_snowstorm_url(), branch=determine_snowstorm_branch())
 
+# Overwrite config from bash script or environment variables
+# Loop through all uppercase attributes in the config module
+for name in dir(config):
+    if name.isupper():
+        # Check if an environment variable with the same name exists
+        env_value = os.environ.get(name)
+        if env_value is not None:
+            # Get the type of the default value (e.g., str, int, bool)
+            original_type = type(getattr(config, name))
+            try:
+                # Update the config attribute with the environment value, cast to the correct type
+                setattr(config, name, original_type(env_value))
+            except ValueError:
+                print(f"Warning: Could not cast env var {name}='{env_value}' to type {original_type.__name__}. "
+                      f"Using it as a string.")
+                setattr(config, name, env_value)
+
+# Load data
 if config.TARGET_DATA == "dummy":
     data = load_dummy()
 elif config.TARGET_DATA == "n2c2":
