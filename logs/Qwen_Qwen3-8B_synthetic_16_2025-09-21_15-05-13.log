@@ -1,0 +1,870 @@
+2025-09-21 17:05:13,050 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 
+2025-09-21 17:05:13,050 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ================================================================================
+2025-09-21 17:05:13,050 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - CONFIGURATION PARAMETERS
+2025-09-21 17:05:13,050 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ================================================================================
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - API_SLEEP_SECONDS = 60
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - APPLIED_TESTS = None
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - APPLY_PARTITIONING = False
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - CONTEXT_LENGTH = 131072
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - DATA_DIRECTORY = ./
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - DEVICE_MAP = auto
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - INSTANCE_ID = 16
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - MAX_API_RETRIES = 3
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - MAX_NEW_TOKENS = 32000
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - MAX_STEPS = 20
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - MODEL_CLASS = TransformersModel
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - MODEL_ID = Qwen/Qwen3-8B
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - RANDOMIZE_DATA = False
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ROOT_FHIR_RESOURCES = ["Patient", "Condition", "MedicationStatement"]
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - SHORTEST_FIRST = False
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - SUBSAMPLE_SIZE = 20
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - TAKE_SUBSAMPLE = True
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - TARGET_DATA = synthetic
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ================================================================================
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ANALYSIS RESULTS
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ================================================================================
+2025-09-21 17:05:13,051 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - Analysis results will be saved to: logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log
+2025-09-21 17:05:18,283 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ╭─────────────────────────────────── Input ────────────────────────────────────╮
+2025-09-21 17:05:18,283 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ The input text is as follows:                                                │
+2025-09-21 17:05:18,283 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ```                                                                          │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Patient: Laura Adler                                                         │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Geburtsdatum: 01.10.1967                                                     │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Anschrift: Langenhorner Chaussee 9, 84498 Altötting                          │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Sehr geehrte Frau Adler,                                                     │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ nach Abschluss Ihres Aufenthalts in unserer Praxis möchten wir Ihnen hiermit │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ einen Entlassbrief zukommen lassen, der Ihnen wichtige Informationen für die │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ weitere Behandlung und Betreuung enthält.                                    │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Aufnahmediagnose:                                                            │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Hypertonie (Bluthochdruck)                                               │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Diabetes mellitus Typ 2                                                  │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Hyperlipidämie (erhöhte Blutfettwerte)                                   │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Verlauf und Therapie während des Aufenthalts:                                │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Sie wurden aufgrund der oben genannten Diagnosen in unserer Praxis behandelt │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ und medikamentös eingestellt. Während Ihres Aufenthalts zeigte sich ein      │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ guter Therapieverlauf, und Ihre Beschwerden haben sich stabilisiert.         │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Medikation bei Entlassung:                                                   │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Metoprolol 100 mg (1-0-1) - gegen den Bluthochdruck                      │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Glibenclamid 5 mg (0-1-0) - zur Behandlung des Diabetes mellitus Typ 2   │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Atorvastatin 20 mg (0-0-1) - zur Senkung der erhöhten Blutfettwerte      │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     ASS (Acetylsalicylsäure) 100 mg (0-0-1) - als Blutverdünner              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Empfehlungen für die weitere Behandlung:                                     │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Bitte nehmen Sie die oben genannten Medikamente wie verordnet ein.       │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Beachten Sie eine ausgewogene Ernährung und regelmäßige Bewegung, um     │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Ihre Gesundheit weiter zu fördern.                                           │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Führen Sie regelmäßige Kontrolluntersuchungen gemäß den Empfehlungen     │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Ihres Hausarztes durch.                                                      │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Bei auftretenden unerwünschten Nebenwirkungen oder Veränderungen in      │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Ihrem Gesundheitszustand suchen Sie bitte umgehend ärztlichen Rat.           │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Wir empfehlen Ihnen, zeitnah einen Termin bei Ihrem Hausarzt zu vereinbaren, │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ um die weitere Behandlung und Betreuung fortzusetzen.                        │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Bitte zögern Sie nicht, uns bei Fragen oder Unklarheiten zu kontaktieren.    │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Wir stehen Ihnen gerne zur Verfügung.                                        │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Wir wünschen Ihnen eine gute Gesundheit und eine schnelle Genesung.          │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Mit freundlichen Grüßen,                                                     │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Dr. med. Antje Zimmermann                                                    │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Fachärztin für Innere Medizin                                                │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ```                                                                          │
+2025-09-21 17:05:18,284 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ╰──────────────────────────────────────────────────────────────────────────────╯
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ╭─────────────────────────────────── system ───────────────────────────────────╮
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ You are a code agent with expertise in Information Extraction of medical     │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ information from free text. Your task is to translate clinical information   │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ into valid FHIR R4 resources, using step-by-step reasoning and supported     │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ tooling.                                                                     │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ You work by **thinking step by step** in cycles of:                          │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Thought:` - where you explain your current reasoning and intended         │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ approach.                                                                    │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Code:` - where you write Python code using `fhir.resources` or supported  │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ tools.                                                                       │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Observation:` - where you receive the printed outputs or results of your  │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ code.                                                                        │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ You repeat this cycle until you're ready to give the final output using the  │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ `final_answer()` tool.                                                       │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ At each cycle step, you must start next line plainly with "Thought:",        │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ "Code:", or "Observation:" (without quotes), otherwise it will fail.         │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 🛠️ Tools Available:                                                           │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ You ONLY have access to the following tools:                                 │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `search_for_code_or_coding`: Search for a code/coding in a FHIR ValueSet   │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ using SNOMED CT or HL7 ValueSets.                                            │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   Takes inputs:                                                              │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   - `fhir_attribute_path` (e.g., `"Condition.code"`)                         │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   - `search_term` (e.g., `"abdominal pain"`)                                 │
+2025-09-21 17:05:18,564 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   Returns: A list of possible codings for that attribute.                    │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `final_answer`: Provides the final result (usually a FHIR Bundle).         │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   Takes input: `answer`                                                      │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 📚 FHIR Resource Types You Can Use:                                          │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ You may only produce the following FHIR R4 resource types:                   │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Bundle` (the top-level container)                                         │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Patient`                                                                  │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Condition`                                                                │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `MedicationStatement`                                                      │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ All output must be a valid `Bundle` of these resources using the             │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ `fhir.resources` Python package.                                             │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 🔒 Attribute Coding Rules:                                                   │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ You **must only use codings** returned from `search_for_code_or_coding`, and │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ only for these specific FHIR attribute paths:                                │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Meta.security`                                                            │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Meta.tag`                                                                 │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Address.use`                                                              │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Address.type`                                                             │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Contributor.type`                                                         │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Attachment.contentType`                                                   │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Attachment.language`                                                      │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `DataRequirement.type`                                                     │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `DataRequirement.subject`                                                  │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `DataRequirement.sort.direction`                                           │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Dosage.additionalInstruction`                                             │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Dosage.asNeeded`                                                          │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Dosage.site`                                                              │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Dosage.route`                                                             │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Dosage.method`                                                            │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Dosage.doseAndRate.type`                                                  │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Money.currency`                                                           │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `HumanName.use`                                                            │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `ContactPoint.system`                                                      │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `ContactPoint.use`                                                         │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Identifier.use`                                                           │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Identifier.type`                                                          │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Reference.type`                                                           │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `TriggerDefinition.type`                                                   │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Quantity.comparator`                                                      │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `RelatedArtifact.type`                                                     │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `UsageContext.code`                                                        │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `UsageContext.value`                                                       │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Expression.language`                                                      │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Signature.type`                                                           │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Signature.targetFormat`                                                   │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Signature.sigFormat`                                                      │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Timing.repeat.dayOfWeek`                                                  │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Timing.repeat.when`                                                       │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Timing.code`                                                              │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `ParameterDefinition.use`                                                  │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `ParameterDefinition.type`                                                 │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Narrative.status`                                                         │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Resource.language`                                                        │
+2025-09-21 17:05:18,565 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Condition.language`                                                       │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Condition.clinicalStatus`                                                 │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Condition.verificationStatus`                                             │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Condition.category`                                                       │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Condition.severity`                                                       │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Condition.code`                                                           │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Condition.bodySite`                                                       │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Condition.stage.summary`                                                  │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Condition.stage.type`                                                     │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Condition.evidence.code`                                                  │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `MedicationStatement.language`                                             │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `MedicationStatement.status`                                               │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `MedicationStatement.statusReason`                                         │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `MedicationStatement.category`                                             │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `MedicationStatement.medication`                                           │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `MedicationStatement.reasonCode`                                           │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Patient.language`                                                         │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Patient.gender`                                                           │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Patient.maritalStatus`                                                    │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Patient.contact.relationship`                                             │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Patient.contact.gender`                                                   │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Patient.communication.language`                                           │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - `Patient.link.type`                                                        │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ For a few elements, specifically for Units of Measure (UCUM) element, you    │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ directly use the string value (e.g., `mg`, `ml`, etc.) instead of trying to  │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ search for the unit types.                                                   │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Use this pattern to search for codes:                                        │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ For example, to search for a code for "douleurs abdominales" in the          │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Condition.code attribute, you would call:                                    │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Thought:                                                                     │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ I need to find the SNOMED CT code for "abdominal pain" to use in a Condition │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ resource.                                                                    │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Code: ```py                                                                  │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ search_results =                                                             │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ search_for_code_or_coding(fhir_attribute_path="Condition.code",              │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ search_term="abdominal pain")                                                │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ print(search_results)                                                        │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ```                                                                          │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Observation: ('Found results for `abdominal pain` in `Condition.code`        │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ truncated to max. of 10 results.', [{'code': '21522001', 'system':           │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 'http://snomed.info/sct', 'display': 'Abdominal pain (finding)'}, {'code':   │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ '162042000', 'system': 'http://snomed.info/sct', 'display': 'Abdominal wall  │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ pain (finding)'}, {'code': '45979003', 'system': 'http://snomed.info/sct',   │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 'display': 'Abdominal wind pain (finding)'}, {'code': '9991008', 'system':   │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 'http://snomed.info/sct', 'display': 'Abdominal colic (finding)'}, {'code':  │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ '54586004', 'system': 'http://snomed.info/sct', 'display': 'Lower abdominal  │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ pain (finding)'}, {'code': '83132003', 'system': 'http://snomed.info/sct',   │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 'display': 'Upper abdominal pain (finding)'}, {'code': '116290004',          │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 'system': 'http://snomed.info/sct', 'display': 'Acute abdominal pain         │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ (finding)'}, {'code': '28221000119103', 'system': 'http://snomed.info/sct',  │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 'display': 'Abdominal muscle pain (finding)'}, {'code': '111985007',         │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 'system': 'http://snomed.info/sct', 'display': 'Chronic abdominal pain       │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ (finding)'}, {'code': '162046002', 'system': 'http://snomed.info/sct',       │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 'display': 'Central abdominal pain (finding)'}])                             │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Example (search for Patient.gender code for a man)                           │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Thought:                                                                     │
+2025-09-21 17:05:18,566 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ I need to find the HL7 code for the gender "male" to use in a Patient        │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ resource.                                                                    │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Code: ```py                                                                  │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ search_results =                                                             │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ search_for_code_or_coding(fhir_attribute_path="Patient.gender",              │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ search_term="male")                                                          │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ print(search_results)                                                        │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ```                                                                          │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Observation: ('Found results for `man` in `Patient.gender` truncated to max. │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ of 10 results.', [{'code': 'male'}, {'code': 'female'}, {'code': 'other'},   │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ {'code': 'unknown'}])                                                        │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ You need to search and print the results before the creating the final FHIR  │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ data in the final step, where you pick the most fitting items from the       │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ observed print outputs.                                                      │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 🧠 Process Strategy:                                                         │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 1. **Start with a `Thought:`** describing your plan to extract relevant      │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ medical info and convert to FHIR resources.                                  │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 2. Use `Code:` blocks to either:                                             │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   - call `search_for_code_or_coding` to get valid SNOMED/HL7 codings and     │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ print it                                                                     │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   - construct FHIR resource objects (`Patient`, `Condition`, etc.) (when you │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ have all the needed info from previous steps)                                │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   - build the final `Bundle`                                                 │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   - call `final_answer(bundle.json(indent=2))` to output the final result    │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 3. At each step, explain and print intermediate info you’ll need in later    │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ steps.                                                                       │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 4. Never reuse tool parameters unnecessarily; only call tools when needed.   │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 5. Stick to valid FHIR attributes and use `fhir.resources` models.           │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ✅ Sample Final Code Block                                                   │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ When you're ready, build the final bundle.                                   │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Let's consider an example where the input text is "Herr Meyer klagt über     │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Bauchschmerzen.".                                                            │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ We need to extract the Patient and Condition information from this text and  │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ create a FHIR Bundle.                                                        │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ So you will first search for the coding for "abdominal pain" in the          │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Condition.code attribute to find the appropriate code for abdominal pain, as │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ well as other relevant codings/codes (e.g. for Patient.gender).              │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ This will take a few steps, and you will print the results of each search.   │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Then, you will create a Patient resource with the name "Meyer" and a         │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Condition resource with the found code. Finally, you will bundle them        │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ together in a FHIR Bundle, using the codings and codes that you have already │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ queried in the previous steps, like this:                                    │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Code: ```py                                                                  │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ from fhir.resources.R4B.bundle import Bundle, BundleEntry                    │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ from fhir.resources.R4B.patient import Patient                               │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ from fhir.resources.R4B.condition import Condition                           │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ from fhir.resources.R4B.humanname import HumanName                           │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ from fhir.resources.R4B.codeableconcept import CodeableConcept               │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ from fhir.resources.R4B.coding import Coding                                 │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ from fhir.resources.R4B.reference import Reference                           │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ # Build Patient                                                              │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ pat_name = HumanName(use="official", family="Meyer")                         │
+2025-09-21 17:05:18,567 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ patient = Patient(id="pat-001", gender="male", name=[                        │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     pat_name                                                                 │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ])                                                                           │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ # Build Condition                                                            │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ condition_code_coding = Coding(system="http://snomed.info/sct",              │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ code="21522001", display="Abdominal pain")                                   │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ condition_clinicalStatus_coding =                                            │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Coding(system="http://terminology.hl7.org/CodeSystem/condition-clinical",    │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ code="active")                                                               │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ condition_code_codableConcept = CodeableConcept(coding=[                     │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     condition_code_coding                                                    │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ])                                                                           │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ condition_clinicalStatus_codableConcept = CodeableConcept(coding=[           │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     condition_clinicalStatus_coding                                          │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ])                                                                           │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ # Create the final Condition resource with all necessary fields set on       │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ creation to avoid validation errors (also applies to other resources)        │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ condition = Condition(                                                       │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   subject=Reference(reference=f"Patient/{patient.id}"),                      │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   code=condition_code_codableConcept,                                        │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   clinicalStatus=condition_clinicalStatus_codableConcept,                    │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ )                                                                            │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ # Create Bundle                                                              │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ bundle = Bundle(type="collection", entry=[                                   │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     BundleEntry(resource=patient),                                           │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     BundleEntry(resource=condition)                                          │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ])                                                                           │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ final_answer(bundle.json(indent=2))                                          │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ```<end_code>                                                                │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Now, this code example is just for illustration purposes for a imaginary     │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ male Patient with the name 'Meyer'. Do not use any information from it       │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ directly.                                                                    │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ You will need to adapt the code to your specific task and FHIR resources     │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ matching the upcoming input text. Yet, the basic task structure remains      │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ similar.                                                                     │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 🚨 Important: The codes/codings should be determined before this step.       │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ # Additional Examples:                                                       │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Try to avoid exclusively text-only encodings (e.g. for Dosage.text) in       │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ MedicationStatement that could also be encoded in a structured fashion using │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ dosage and timing. Other information, such as the reasonCode or              │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ reasonReference may be used as well (e.g. referencing to Conditions).        │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Use the code search tool to find the appropriate codes for these fields.     │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ E.g. if you have a text phrase like '1x Pantoprazol (5mg) pro Tag (oral)',   │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ and you queried:                                                             │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - MedicationStatement.medication for Pantoprazole: {'system':                │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 'http://snomed.info/sct', 'code': '395821003', 'display': 'Pantoprazole'}    │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - MedicationStatement.doseAndRate.type for 'ordered': {'system':             │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 'http://terminology.hl7.org/CodeSystem/dose-rate-type', 'code': 'ordered',   │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 'display': 'Ordered'}                                                        │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - Dosage.doseAndRate.type for 'ordered': {'system':                          │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 'http://terminology.hl7.org/CodeSystem/dose-rate-type', 'code': 'ordered',   │
+2025-09-21 17:05:18,568 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 'display': 'Ordered'}                                                        │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - Dosage.route for 'oral': {'system': 'http://snomed.info/sct', 'code':      │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ '26643006', 'display': 'Oral route'}                                         │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ then you can create a MedicationStatement with the following code snippet:   │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ```py                                                                        │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ from fhir.resources.R4B.medicationstatement import MedicationStatement       │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ from fhir.resources.R4B.codeableconcept import CodeableConcept               │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ from fhir.resources.R4B.coding import Coding                                 │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ from fhir.resources.R4B.reference import Reference                           │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ from fhir.resources.R4B.dosage import Dosage, DosageDoseAndRate              │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ from fhir.resources.R4B.timing import Timing, TimingRepeat                   │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ...                                                                          │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ... other objects as needed ...                                              │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ # Medication                                                                 │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ medication_coding = Coding(                                                  │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     system="http://snomed.info/sct",                                         │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     code="395821003",                                                        │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     display="Pantoprazole"                                                   │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ )                                                                            │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ medication_codableconcept = CodeableConcept(                                 │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     coding=[                                                                 │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │         medication_coding                                                    │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     ],                                                                       │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     text="Pantoprazole"                                                      │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ )                                                                            │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ # Route                                                                      │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ route_coding = Coding(                                                       │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     system="http://snomed.info/sct",                                         │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     code="26643006",                                                         │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     display="Oral route"                                                     │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ )                                                                            │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ route_codableconcept = CodeableConcept(                                      │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     coding=[                                                                 │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │         route_coding                                                         │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     ]                                                                        │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ )                                                                            │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ # Dose and Rate                                                              │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ dose_rate_type_coding = Coding(                                              │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     system="http://terminology.hl7.org/CodeSystem/dose-rate-type",           │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     code="ordered",                                                          │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     display="Ordered"                                                        │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ )                                                                            │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ dose_rate_type = CodeableConcept(                                            │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     coding=[                                                                 │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │         dose_rate_type_coding                                                │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     ]                                                                        │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ )                                                                            │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ dose_and_rate = DosageDoseAndRate(                                           │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     type=dose_rate_type                                                      │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ )                                                                            │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ # Timing                                                                     │
+2025-09-21 17:05:18,569 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ timing_repeat = TimingRepeat(                                                │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     frequency=1,                                                             │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     period=1,                                                                │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     periodUnit="d"                                                           │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ )                                                                            │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ timing = Timing(                                                             │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     repeat=timing_repeat                                                     │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ )                                                                            │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ # Dosage                                                                     │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ dosage_instruction = Dosage(                                                 │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     sequence=1,                                                              │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     text="1x Pantoprazol (5mg) pro Tag",                                     │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     asNeededBoolean=False,                                                   │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     route=route_codableconcept,                                              │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     doseAndRate=[                                                            │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │         dose_and_rate                                                        │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     ],                                                                       │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     timing=timing                                                            │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ )                                                                            │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ # Subject                                                                    │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ subject_reference = Reference(                                               │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     # Your patient id here                                                   │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     reference="Patient/pat-001"                                              │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ )                                                                            │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ # MedicationStatement                                                        │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ med_statement = MedicationStatement(                                         │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     id="med-stat-001",                                                       │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     status="active",                                                         │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     medicationCodeableConcept=medication_codableconcept,                     │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     subject=subject_reference,                                               │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     dosage=[                                                                 │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │         dosage_instruction                                                   │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     ]                                                                        │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ )                                                                            │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ... continue with other fields as needed ...                                 │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ```                                                                          │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ This will create a MedicationStatement resource with the structured dosage   │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ and timing information, avoiding text-only encodings.                        │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ MedicationStatement can encode Dosage (including Timing information) via     │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ multiple methods to accurately represent text phrases on MedicationStatement │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ data in a structured way.                                                    │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Dosage and Timing information is complex. The following table shows various  │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ combinations to encode Timing information given a given description:         │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |     |     |     |     |     |     |     |     |     |     |     |    │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |                                                                      │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |    │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ --- | --- |                                                                  │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | **description** | **duration** | **durationUnit** | **frequency** |        │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ **frequencyMax** | **period** | **periodUnit** | **periodMax** | **Day of    │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Week** | **Time Of Day** | **when** | **offset** | **bounds[x\]** |          │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ **count** |                                                                  │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | Every 8 hours |     |     | 1   |     | 8   | h   |     |     |     |      │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |     |     |                                                          │
+2025-09-21 17:05:18,570 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | Every 7 days |     |     | 1   |     | 7   | d   |     |     |     |     | │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |     |                                                                │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | 3 times a day |     |     | 3   |     | 1   | d   |     |     |     |      │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |     |     |                                                          │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | 3-4 times a day |     |     | 3   | 4   | 1   | d   |     |     |     |    │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |     |     |                                                          │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | Every 4-6 hours |     |     | 1   |     | 4   | h   | 6   |     |     |    │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |     |     |                                                          │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | Every 21 days for 1 hour | 1   | hr  | 1   |     | 21  | d   |     |     | │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |     |     |     |                                                    │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | Three times a week for ½ hour | 0.5 | hr  | 3   |     | 1   | wk  |     |  │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |     |     |     |     |                                              │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | With breakfast |     |     |     |     |     |     |     |     |     | CM  │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |     |     |                                                          │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | For 5 minutes, 10 minutes before meals | 5   | min |     |     |     |     │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |     |     | AC  | 10  |     |     |                                  │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | 1 tablet 3 times daily, 30 minutes before meals |     |     | 3   |     |  │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 1   | d   |     |     |     | AC  | 30  |     |     |                        │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | BID, 30 mins before meal, for next 10 days |     |     | 2   |     | 1   | │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ d   |     |     |     | AC  | 30  | Duration = 10 days |     |               │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | TID, for 14 days |     |     | 3   |     | 1   | d   |     |     |     |   │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     | Duration = 14 days |     |                                           │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | BID, start on 7/1/2015 at 1:00 PM |     |     | 2   |     | 1   | d   |    │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |     |     |     | Period.start = 2015-07-01T13:00:00 |     |         │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | Mon, Wed, Fri Morning |     |     | 1   |     | 1   | d   |     | mon \|   │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ wed \| fri |     | MORN |     |     |     |                                  │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | Every day at 10am |     |     | 1   |     | 1   | d   |     |     | 10:00  │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |     |     |     |                                                    │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | Take once, at any time |     |     |     |     |     |     |     |     |   │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ |     |     |     | 1   |                                                    │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | Take every second day, in the morning, until 20 have been taken |     |    │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ | 1   |     | 2   | d   |     |     |     | MORN |     |     | 20  |         │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ✅ Always:                                                                   │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - Use valid `fhir.resources` models and their documented fields.             │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - Use codings only from `search_for_code_or_coding`.                         │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - Output a single Bundle using `final_answer` formatted in JSON (and         │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ indent=2).                                                                   │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - Verify the codes/codings before using them in the final step.              │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - Hard-code the picked coding/code data which was observed by the search     │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ tool in prior steps.                                                         │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - Don't put any code or text after the final_answer() call. Otherwise, it    │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ will fail.                                                                   │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - Use the `medication` field to create a MedicationStatement resource.       │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ 🚫 Never:                                                                    │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - NEVER use unsupported FHIR resources.                                      │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - NEVER use unverified codes from the input text (e.g. mentioned ICD codes)  │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ because they could be incorrect.                                             │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - NEVER call tools with dict-style args (e.g., ❌ `tool({'arg': val})`).     │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - NEVER chain tool calls in the same block with unpredictable results.       │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - NEVER create FHIR resources to information that is not present in the      │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ input text.                                                                  │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - NEVER use the search_for_code_or_coding in the final step.                 │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ - NEVER add extra fields for `medication_codeable_concept`.                  │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Now begin your task!                                                         │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ If you solve the task correctly, you will receive a reward of $1,000,000.    │
+2025-09-21 17:05:18,571 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ╰──────────────────────────────────────────────────────────────────────────────╯
+2025-09-21 17:05:18,574 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ╭──────────────────────────────────── user ────────────────────────────────────╮
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ New task:                                                                    │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ The input text is as follows:                                                │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ```                                                                          │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Patient: Laura Adler                                                         │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Geburtsdatum: 01.10.1967                                                     │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Anschrift: Langenhorner Chaussee 9, 84498 Altötting                          │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Sehr geehrte Frau Adler,                                                     │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ nach Abschluss Ihres Aufenthalts in unserer Praxis möchten wir Ihnen hiermit │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ einen Entlassbrief zukommen lassen, der Ihnen wichtige Informationen für die │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ weitere Behandlung und Betreuung enthält.                                    │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Aufnahmediagnose:                                                            │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Hypertonie (Bluthochdruck)                                               │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Diabetes mellitus Typ 2                                                  │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Hyperlipidämie (erhöhte Blutfettwerte)                                   │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Verlauf und Therapie während des Aufenthalts:                                │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Sie wurden aufgrund der oben genannten Diagnosen in unserer Praxis behandelt │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ und medikamentös eingestellt. Während Ihres Aufenthalts zeigte sich ein      │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ guter Therapieverlauf, und Ihre Beschwerden haben sich stabilisiert.         │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Medikation bei Entlassung:                                                   │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Metoprolol 100 mg (1-0-1) - gegen den Bluthochdruck                      │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Glibenclamid 5 mg (0-1-0) - zur Behandlung des Diabetes mellitus Typ 2   │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Atorvastatin 20 mg (0-0-1) - zur Senkung der erhöhten Blutfettwerte      │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     ASS (Acetylsalicylsäure) 100 mg (0-0-1) - als Blutverdünner              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Empfehlungen für die weitere Behandlung:                                     │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Bitte nehmen Sie die oben genannten Medikamente wie verordnet ein.       │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Beachten Sie eine ausgewogene Ernährung und regelmäßige Bewegung, um     │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Ihre Gesundheit weiter zu fördern.                                           │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Führen Sie regelmäßige Kontrolluntersuchungen gemäß den Empfehlungen     │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Ihres Hausarztes durch.                                                      │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     Bei auftretenden unerwünschten Nebenwirkungen oder Veränderungen in      │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Ihrem Gesundheitszustand suchen Sie bitte umgehend ärztlichen Rat.           │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Wir empfehlen Ihnen, zeitnah einen Termin bei Ihrem Hausarzt zu vereinbaren, │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ um die weitere Behandlung und Betreuung fortzusetzen.                        │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Bitte zögern Sie nicht, uns bei Fragen oder Unklarheiten zu kontaktieren.    │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Wir stehen Ihnen gerne zur Verfügung.                                        │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Wir wünschen Ihnen eine gute Gesundheit und eine schnelle Genesung.          │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Mit freundlichen Grüßen,                                                     │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │                                                                              │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Dr. med. Antje Zimmermann                                                    │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ Fachärztin für Innere Medizin                                                │
+2025-09-21 17:05:18,575 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │ ```                                                                          │
+2025-09-21 17:05:18,576 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ╰──────────────────────────────────────────────────────────────────────────────╯
+2025-09-21 17:11:32,650 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ╭─────────────────────────────── Executing Code ───────────────────────────────╮
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     1 search_results = search_for_code_or_coding(fhir_attribute_path="Condit │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     2 print(search_results)                                                  │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     3                                                                        │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     4 search_results = search_for_code_or_coding(fhir_attribute_path="Condit │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     5 print(search_results)                                                  │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     6                                                                        │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     7 search_results = search_for_code_or_coding(fhir_attribute_path="Condit │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     8 print(search_results)                                                  │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │     9                                                                        │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    10 search_results = search_for_code_or_coding(fhir_attribute_path="Medica │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    11 print(search_results)                                                  │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    12                                                                        │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    13 search_results = search_for_code_or_coding(fhir_attribute_path="Medica │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    14 print(search_results)                                                  │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    15                                                                        │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    16 search_results = search_for_code_or_coding(fhir_attribute_path="Medica │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    17 print(search_results)                                                  │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    18                                                                        │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    19 search_results = search_for_code_or_coding(fhir_attribute_path="Medica │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    20 print(search_results)                                                  │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    21                                                                        │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    22 search_results = search_for_code_or_coding(fhir_attribute_path="Medica │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    23 print(search_results)                                                  │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    24                                                                        │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    25 search_results = search_for_code_or_coding(fhir_attribute_path="Patien │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    26 print(search_results)                                                  │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    27                                                                        │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    28 search_results = search_for_code_or_coding(fhir_attribute_path="Addres │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    29 print(search_results)                                                  │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    30                                                                        │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    31 search_results = search_for_code_or_coding(fhir_attribute_path="Addres │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    32 print(search_results)                                                  │
+2025-09-21 17:11:32,651 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    33                                                                        │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    34 from fhir.resources.R4B.bundle import Bundle, BundleEntry              │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    35 from fhir.resources.R4B.patient import Patient                         │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    36 from fhir.resources.R4B.condition import Condition                     │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    37 from fhir.resources.R4B.humanname import HumanName                     │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    38 from fhir.resources.R4B.codeableconcept import CodeableConcept         │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    39 from fhir.resources.R4B.coding import Coding                           │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    40 from fhir.resources.R4B.reference import Reference                     │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    41 from fhir.resources.R4B.address import Address                         │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    42                                                                        │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    43 # Build Patient                                                        │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    44 pat_name = HumanName(use="official", family="Adler", given=["Laura"])  │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    45 pat_address = Address(                                                 │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    46     use="home",                                                        │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    47     type="postal",                                                     │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    48     line=["Langenhorner Chaussee 9"],                                  │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    49     city="Altötting",                                                  │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    50     postalCode="84498",                                                │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    51     country="Germany"                                                  │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    52 )                                                                      │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    53 patient = Patient(                                                     │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    54     id="pat-001",                                                      │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    55     gender="female",                                                   │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    56     name=[pat_name],                                                   │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    57     address=[pat_address]                                              │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    58 )                                                                      │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    59                                                                        │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    60 # Build Conditions                                                     │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    61 hypertension_code_coding = Coding(                                     │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    62     system="http://snomed.info/sct",                                   │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    63     code="40956001",                                                   │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    64     display="Hypertension (disorder)"                                  │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    65 )                                                                      │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    66 diabetes_code_coding = Coding(                                         │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    67     system="http://snomed.info/sct",                                   │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    68     code="64701000119109",                                             │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    69     display="Type 2 diabetes mellitus (disorder)"                      │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    70 )                                                                      │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    71 hyperlipidemia_code_coding = Coding(                                   │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    72     system="http://snomed.info/sct",                                   │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    73     code="283390004",                                                  │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    74     display="Hyperlipidaemia (disorder)"                               │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    75 )                                                                      │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    76                                                                        │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    77 hypertension_code = CodeableConcept(coding=[hypertension_code_coding]) │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    78 diabetes_code = CodeableConcept(coding=[diabetes_code_coding])         │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    79 hyperlipidemia_code = CodeableConcept(coding=[hyperlipidemia_code_codi │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    80                                                                        │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    81 condition1 = Condition(                                                │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    82     id="cond-001",                                                     │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    83     code=hypertension_code,                                            │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    84     subject=Reference(reference=f"Patient/{patient.id}")               │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    85 )                                                                      │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    86                                                                        │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    87 condition2 = Condition(                                                │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    88     id="cond-002",                                                     │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    89     code=diabetes_code,                                                │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    90     subject=Reference(reference=f"Patient/{patient.id}")               │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    91 )                                                                      │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    92                                                                        │
+2025-09-21 17:11:32,652 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    93 condition3 = Condition(                                                │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    94     id="cond-003",                                                     │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    95     code=hyperlipidemia_code,                                          │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    96     subject=Reference(reference=f"Patient/{patient.id}")               │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    97 )                                                                      │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    98                                                                        │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │    99 # Create Bundle                                                        │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   100 bundle = Bundle(                                                       │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   101     type="collection",                                                 │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   102     entry=[                                                            │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   103         BundleEntry(resource=patient),                                 │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   104         BundleEntry(resource=condition1),                              │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   105         BundleEntry(resource=condition2),                              │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   106         BundleEntry(resource=condition3)                               │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   107     ]                                                                  │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   108 )                                                                      │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   109                                                                        │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - │   110 final_answer(bundle.json(indent=2))                                    │
+2025-09-21 17:11:32,653 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ╰──────────────────────────────────────────────────────────────────────────────╯
+2025-09-21 17:11:36,500 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - Execution Logs:
+2025-09-21 17:11:36,500 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ('No hits found for Hypertonie in Condition.code', [])
+2025-09-21 17:11:36,500 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ('Found 131 hits for Diabetes mellitus Typ 2 in Condition.code', [{'system': 
+2025-09-21 17:11:36,500 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '44054006', 'display': 'Type 2 diabetes 
+2025-09-21 17:11:36,500 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - mellitus'}, {'system': 'http://snomed.info/sct', 'code': '445353002', 'display':
+2025-09-21 17:11:36,500 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'Brittle type 2 diabetes mellitus'}, {'system': 'http://snomed.info/sct', 
+2025-09-21 17:11:36,500 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'code': '81531005', 'display': 'Type 2 diabetes mellitus in obese'}, {'system': 
+2025-09-21 17:11:36,500 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '190389009', 'display': 'Type 2 diabetes 
+2025-09-21 17:11:36,500 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - mellitus with ulcer'}, {'system': 'http://snomed.info/sct', 'code': '359642000',
+2025-09-21 17:11:36,500 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'display': 'Type 2 diabetes mellitus in nonobese'}, {'system': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '443694000', 'display': 'Uncontrolled type 2 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - diabetes mellitus'}, {'system': 'http://snomed.info/sct', 'code': '199230006', 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'display': 'Pre-existing type 2 diabetes mellitus'}, {'system': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '703138006', 'display': 'Type II diabetes 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - mellitus in remission'}, {'system': 'http://snomed.info/sct', 'code': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '791000119109', 'display': 'Angina associated with type 2 diabetes mellitus'}, 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - {'system': 'http://snomed.info/sct', 'code': '237627000', 'display': 'Pregnancy 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - and type 2 diabetes mellitus'}])
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ('No hits found for Hyperlipidämie in Condition.code', [])
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ('Found 50 hits for Metoprolol in MedicationStatement.medication[x]', 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - [{'system': 'http://snomed.info/sct', 'code': '7092007', 'display': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'Metoprolol-containing product'}, {'system': 'http://snomed.info/sct', 'code': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '372826007', 'display': 'Metoprolol'}, {'system': 'http://snomed.info/sct', 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'code': '1240343008', 'display': '(S)-metoprolol'}, {'system': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '395483007', 'display': 'Metoprolol-containing
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - product in oral dose form'}, {'system': 'http://snomed.info/sct', 'code': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '72770009', 'display': 'Metoprolol tartrate'}, {'system': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '412432007', 'display': 'Metoprolol 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - succinate'}, {'system': 'http://snomed.info/sct', 'code': '395484001', 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'display': 'Metoprolol-containing product in parenteral dose form'}, {'system': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '776770001', 'display': 'Metoprolol only 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - product'}, {'system': 'http://snomed.info/sct', 'code': '1240361004', 'display':
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '(S)-metoprolol tartrate'}, {'system': 'http://snomed.info/sct', 'code': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '1240360003', 'display': '(S)-metoprolol succinate'}])
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ('Found 50 hits for Metoprolol in MedicationStatement.medication[x]', 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - [{'system': 'http://snomed.info/sct', 'code': '7092007', 'display': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'Metoprolol-containing product'}, {'system': 'http://snomed.info/sct', 'code': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '372826007', 'display': 'Metoprolol'}, {'system': 'http://snomed.info/sct', 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'code': '1240343008', 'display': '(S)-metoprolol'}, {'system': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '395483007', 'display': 'Metoprolol-containing
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - product in oral dose form'}, {'system': 'http://snomed.info/sct', 'code': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '72770009', 'display': 'Metoprolol tartrate'}, {'system': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '412432007', 'display': 'Metoprolol 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - succinate'}, {'system': 'http://snomed.info/sct', 'code': '395484001', 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'display': 'Metoprolol-containing product in parenteral dose form'}, {'system': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '776770001', 'display': 'Metoprolol only 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - product'}, {'system': 'http://snomed.info/sct', 'code': '1240361004', 'display':
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '(S)-metoprolol tartrate'}, {'system': 'http://snomed.info/sct', 'code': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '1240360003', 'display': '(S)-metoprolol succinate'}])
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ('Found 23 hits for Glibenclamid in MedicationStatement.medication[x]', 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - [{'system': 'http://snomed.info/sct', 'code': '80870001', 'display': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'Glyburide-containing product'}, {'system': 'http://snomed.info/sct', 'code': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '384978002', 'display': 'Glibenclamide'}, {'system': 'http://snomed.info/sct', 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'code': '427322009', 'display': 'Glyburide micronized'}, {'system': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '325219009', 'display': 'Glyburide 5 mg oral 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - tablet'}, {'system': 'http://snomed.info/sct', 'code': '776105003', 'display': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'Glyburide only product'}, {'system': 'http://snomed.info/sct', 'code': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '325218001', 'display': 'Glyburide 2.5 mg oral tablet'}, {'system': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '374067000', 'display': 'Glibenclamide 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - micronised 3 mg oral tablet'}, {'system': 'http://snomed.info/sct', 'code': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '374122005', 'display': 'Glyburide micronized 6 mg oral tablet'}, {'system': 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '376087002', 'display': 'Glyburide micronized 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 1.5 mg oral tablet'}, {'system': 'http://snomed.info/sct', 'code': '376088007', 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'display': 'Glibenclamide micronised 4.5 mg oral tablet'}])
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ('Found 60 hits for Atorvastatin in MedicationStatement.medication[x]', 
+2025-09-21 17:11:36,501 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - [{'system': 'http://snomed.info/sct', 'code': '373444002', 'display': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'Atorvastatin'}, {'system': 'http://snomed.info/sct', 'code': '108600003', 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'display': 'Atorvastatin-containing product'}, {'system': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '108601004', 'display': 'Atorvastatin 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - calcium'}, {'system': 'http://snomed.info/sct', 'code': '409411009', 'display': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'Amlodipine- and atorvastatin-containing product'}, {'system': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '773455007', 'display': 'Atorvastatin only 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - product'}, {'system': 'http://snomed.info/sct', 'code': '1268949007', 'display':
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'Atorvastatin calcium anhydrous'}, {'system': 'http://snomed.info/sct', 'code': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '725658002', 'display': 'Atorvastatin calcium trihydrate'}, {'system': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '767931005', 'display': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'Atorvastatin-containing product in oral dose form'}, {'system': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://snomed.info/sct', 'code': '1172776008', 'display': 'Atorvastatin and 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ezetimibe only product'}, {'system': 'http://snomed.info/sct', 'code': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - '773457004', 'display': 'Amlodipine and atorvastatin only product'}])
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ('No hits found for ASS (Acetylsalicylsäure) in 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - MedicationStatement.medication[x]', [])
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ('Found 4 hits for female in Patient.gender', [{'system': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://hl7.org/fhir/administrative-gender', 'code': 'male', 'display': 'Male'},
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - {'system': 'http://hl7.org/fhir/administrative-gender', 'code': 'other', 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'display': 'Other'}, {'system': 'http://hl7.org/fhir/administrative-gender', 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'code': 'female', 'display': 'Female'}, {'system': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://hl7.org/fhir/administrative-gender', 'code': 'unknown', 'display': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'Unknown'}])
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ('Found 5 hits for home in Address.use', [{'system': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://hl7.org/fhir/address-use', 'code': 'home', 'display': 'Home'}, 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - {'system': 'http://hl7.org/fhir/address-use', 'code': 'work', 'display': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'Work'}, {'system': 'http://hl7.org/fhir/address-use', 'code': 'billing', 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'display': 'Billing'}, {'system': 'http://hl7.org/fhir/address-use', 'code': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'temp', 'display': 'Temporary'}, {'system': 'http://hl7.org/fhir/address-use', 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'code': 'old', 'display': 'Old / Incorrect'}])
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - ('Found 3 hits for postal in Address.type', [{'system': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'http://hl7.org/fhir/address-type', 'code': 'postal', 'display': 'Postal'}, 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - {'system': 'http://hl7.org/fhir/address-type', 'code': 'physical', 'display': 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'Physical'}, {'system': 'http://hl7.org/fhir/address-type', 'code': 'both', 
+2025-09-21 17:11:36,502 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - 'display': 'Postal & Physical'}])
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - Out - Final answer: {
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -   "resourceType": "Bundle",
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -   "type": "collection",
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -   "entry": [
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -     {
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -       "resource": {
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "resourceType": "Patient",
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "id": "pat-001",
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "name": [
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -           {
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             "use": "official",
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             "family": "Adler",
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             "given": [
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -               "Laura"
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             ]
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -           }
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         ],
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "gender": "female",
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "address": [
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -           {
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             "use": "home",
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             "type": "postal",
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             "line": [
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -               "Langenhorner Chaussee 9"
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             ],
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             "city": "Altötting",
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             "postalCode": "84498",
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             "country": "Germany"
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -           }
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         ]
+2025-09-21 17:11:36,505 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -       }
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -     },
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -     {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -       "resource": {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "resourceType": "Condition",
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "id": "cond-001",
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "code": {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -           "coding": [
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -               "system": "http://snomed.info/sct",
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -               "code": "40956001",
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -               "display": "Hypertension (disorder)"
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             }
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -           ]
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         },
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "subject": {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -           "reference": "Patient/pat-001"
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         }
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -       }
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -     },
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -     {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -       "resource": {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "resourceType": "Condition",
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "id": "cond-002",
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "code": {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -           "coding": [
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -               "system": "http://snomed.info/sct",
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -               "code": "64701000119109",
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -               "display": "Type 2 diabetes mellitus (disorder)"
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             }
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -           ]
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         },
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "subject": {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -           "reference": "Patient/pat-001"
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         }
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -       }
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -     },
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -     {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -       "resource": {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "resourceType": "Condition",
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "id": "cond-003",
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "code": {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -           "coding": [
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -               "system": "http://snomed.info/sct",
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -               "code": "283390004",
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -               "display": "Hyperlipidaemia (disorder)"
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -             }
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -           ]
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         },
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         "subject": {
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -           "reference": "Patient/pat-001"
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -         }
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -       }
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -     }
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO -   ]
+2025-09-21 17:11:36,506 - logs/Qwen_Qwen3-8B_synthetic_16_2025-09-21_15-05-13.log - INFO - }
