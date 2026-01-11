@@ -13,7 +13,7 @@ Infherno also provides ontology support for SNOMED CT and HL7 ValueSets using Re
 ## Live Demo
 
 **Gradio Demo Video**: [See the clip here](https://myweb.rz.uni-augsburg.de/~freijoha/Infherno_Gradio_Demo.mp4).  
-**Public Demo**: A public demo is available at [https://infherno.misit-augsburg.de/](https://infherno.misit-augsburg.de/). It runs with an internal Snowstorm instance. (**EDIT:** Currently unavailable due to ECC errors on server.)
+**Public Demo**: A public demo is available at [https://infherno.misit-augsburg.de/](https://infherno.misit-augsburg.de/). It runs with an internal Snowstorm instance.
 
 ~~Our Gradio demo is accessible via [Hugging Face Spaces](https://huggingface.co/spaces/nfel/infherno)~~. Although a Hugging Face Spaces instance was successfully running, we would like to ask you to use the other public demo above. 
 **Use of Local Models**: For optimal performance and reliable results, it is recommended to use a strong commercial LLM like Gemini Pro 2.5, which was the model used in the experiments described in this paper. While local models were explored to a limited extent, their performance was observed to be substantially less reliable, and they were not used for the main evaluations. Also due to resource and context limitations with open-source models, we recommend launching Infherno locally with a proprietary model via API.
