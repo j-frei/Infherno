@@ -1,6 +1,7 @@
 # 🔥 Infherno
 
 Infherno is an end-to-end agent that transforms unstructured clinical notes into structured FHIR (Fast Healthcare Interoperability Resources) format. It automates the parsing and mapping of free-text medical documentation into standardized FHIR resources, enabling interoperability across healthcare systems.  
+
 This repository contains the resources to the EACL 2026 System Demo paper **Infherno: End-to-end Agent-based FHIR Resource Synthesis from Free-form Clinical Notes**: https://aclanthology.org/2026.eacl-demo.13/
 
 <p align="center">
