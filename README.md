@@ -1,6 +1,7 @@
 # 🔥 Infherno
 
-Infherno is an end-to-end agent that transforms unstructured clinical notes into structured FHIR (Fast Healthcare Interoperability Resources) format. It automates the parsing and mapping of free-text medical documentation into standardized FHIR resources, enabling interoperability across healthcare systems.
+Infherno is an end-to-end agent that transforms unstructured clinical notes into structured FHIR (Fast Healthcare Interoperability Resources) format. It automates the parsing and mapping of free-text medical documentation into standardized FHIR resources, enabling interoperability across healthcare systems.  
+This repository contains the resources to the EACL 2026 System Demo paper **Infherno: End-to-end Agent-based FHIR Resource Synthesis from Free-form Clinical Notes**: https://aclanthology.org/2026.eacl-demo.13/
 
 <p align="center">
   <img src="assets/overview.png" height="350">
@@ -59,8 +60,41 @@ cat logs/*.log
 
 **Infherno: End-to-end Agent-based FHIR Resource Synthesis from Free-form Clinical Notes**  
 Johann Frei, Nils Feldhus, Lisa Raithel, Roland Roller, Alexander Meyer, Frank Kramer  
-arXiv URL: https://arxiv.org/abs/2507.12261
 
+ACL Anthology URL: https://aclanthology.org/2026.eacl-demo.13/
+<details>
+<summary>BibTex</summary>
+
+```
+@inproceedings{frei-etal-2026-infherno,
+    title = "Infherno: End-to-end Agent-based {FHIR} Resource Synthesis from Free-form Clinical Notes",
+    author = "Frei, Johann  and
+      Feldhus, Nils  and
+      Raithel, Lisa  and
+      Roller, Roland  and
+      Meyer, Alexander  and
+      Kramer, Frank",
+    editor = "Croce, Danilo  and
+      Leidner, Jochen  and
+      Moosavi, Nafise Sadat",
+    booktitle = "Proceedings of the 19th Conference of the {E}uropean Chapter of the {A}ssociation for {C}omputational {L}inguistics (Volume 3: System Demonstrations)",
+    month = mar,
+    year = "2026",
+    address = "Rabat, Marocco",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.eacl-demo.13/",
+    doi = "10.18653/v1/2026.eacl-demo.13",
+    pages = "163--174",
+    ISBN = "979-8-89176-382-1",
+    abstract = "For clinical data integration and healthcare services, the HL7 FHIR standard has established itself as a desirable format for interoperability between complex health data. Previous attempts at automating the translation from free-form clinical notes into structured FHIR resources address narrowly defined tasks and rely on modular approaches or LLMs with instruction tuning and constrained decoding. As those solutions frequently suffer from limited generalizability and structural inconformity, we propose an end-to-end framework powered by LLM agents, code execution, and healthcare terminology database tools to address these issues. Our solution, called Infherno, is designed to adhere to the FHIR document schema and competes well with a human baseline in predicting FHIR resources from unstructured text. The implementation features a front end for custom and synthetic data and both local and proprietary models, supporting clinical data integration processes and interoperability across institutions. Gemini 2.5-Pro excels in our evaluation on synthetic and clinical datasets, yet ambiguity and feasibility of collecting ground-truth data remain open problems."
+}
+```
+</details>
+
+<details>
+<summary>ArXiv</summary>
+
+ArXiv URL: https://arxiv.org/abs/2507.12261
 ```
 @article{frei-2025-infherno,
     title = {Infherno: End-to-end Agent-based FHIR Resource Synthesis from Free-form Clinical Notes}, 
@@ -72,3 +106,4 @@ arXiv URL: https://arxiv.org/abs/2507.12261
     url = {https://arxiv.org/abs/2507.12261}, 
 }
 ```
+</details>
